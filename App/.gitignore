@@ -4,6 +4,7 @@
 # assets
 /src/assets/blackjack
 /src/assets/dauntless/icons
+/src/assets/mhfu/original
 
 # commands
 /src/commands/utility/dauntless-gauntlet-leaderboard.png
