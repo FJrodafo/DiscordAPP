@@ -8,6 +8,7 @@
         "Description": ["Bipedal creatures resembling cats, known for their light hair. Though usually docile, they will attack viciously if provoked. Naturally curious, some try to enter human society, and are often hired by the Guild to cook for and otherwise assist hunters."],
         "Class": ["Lynian"],
         "Size": ["103.37cm"],
+        "Habitat": ["All Main Areas"],
         "Elements": ["N/A"],
         "Ailments": ["N/A"],
         "Weakness": [":fire: Fire\n:droplet: Water\n:zap: Thunder\n:ice_cube: Ice"]
@@ -18,6 +19,7 @@
         "Description": ["Bipedal creatures resembling cats, known for their dark hair. More curious than Felynes and possessed by kleptomania, Melynxes take what they steal back to their dens."],
         "Class": ["Lynian"],
         "Size": ["103.37cm"],
+        "Habitat": ["All Main Areas"],
         "Elements": ["N/A"],
         "Ailments": ["N/A"],
         "Weakness": [":fire: Fire\n:droplet: Water\n:zap: Thunder\n:ice_cube: Ice"]
@@ -27,8 +29,19 @@
         "Name": ["Shakalaka チャチャブー (Chachabū)"],
         "Class": ["Lynian"],
         "Size": ["110cm"],
+        "Habitat": ["None Listed"],
         "Elements": ["N/A"],
         "Ailments": [":zzz: Sleep\n:test_tube: Poison"],
+        "Weakness": [":ice_cube: Ice"]
+    },
+    "King Shakalaka":{
+        "Icon": ["King_Shakalaka.png"],
+        "Name": ["King Shakalaka キングチャチャブー (Kingu Chachabū)"],
+        "Class": ["Lynian"],
+        "Size": ["None Listed"],
+        "Habitat": ["None Listed"],
+        "Elements": [":fire: Fire"],
+        "Ailments": [":zzz: Sleep"],
         "Weakness": [":ice_cube: Ice"]
     }
 }

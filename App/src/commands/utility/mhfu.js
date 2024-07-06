@@ -13,6 +13,7 @@ module.exports = {
                 { name: 'Felyne アイルー (Airū)', value: 'Felyne' },
                 { name: 'Melynx メラルー (Merarū)', value: 'Melynx' },
                 { name: 'Shakalaka チャチャブー (Chachabū)', value: 'Shakalaka' },
+                { name: 'King Shakalaka キングチャチャブー (Kingu Chachabū)', value: 'King Shakalaka' },
             ),
         ),
     async execute(interaction) {
@@ -30,6 +31,7 @@ module.exports = {
                 .addFields(
                     { name: 'Monster Class:', value: `${monsterInfo.Class}`, inline: true },
                     { name: 'Size:', value: `${monsterInfo.Size}`, inline: true },
+                    { name: 'Habitat:', value: `${monsterInfo.Habitat}`, inline: true },
                     { name: 'Elements:', value: `${monsterInfo.Elements}`, inline: true },
                     { name: 'Ailments:', value: `${monsterInfo.Ailments}`, inline: true },
                     { name: 'Weakest to:', value: `${monsterInfo.Weakness}`, inline: true },
@@ -43,6 +45,7 @@ module.exports = {
                 .addFields(
                     { name: 'Monster Class:', value: `${monsterInfo.Class}`, inline: true },
                     { name: 'Size:', value: `${monsterInfo.Size}`, inline: true },
+                    { name: 'Habitat:', value: `${monsterInfo.Habitat}`, inline: true },
                     { name: 'Elements:', value: `${monsterInfo.Elements}`, inline: true },
                     { name: 'Ailments:', value: `${monsterInfo.Ailments}`, inline: true },
                     { name: 'Weakest to:', value: `${monsterInfo.Weakness}`, inline: true },
