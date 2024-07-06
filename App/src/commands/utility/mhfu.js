@@ -14,6 +14,10 @@ module.exports = {
                 { name: 'Melynx メラルー (Merarū)', value: 'Melynx' },
                 { name: 'Shakalaka チャチャブー (Chachabū)', value: 'Shakalaka' },
                 { name: 'King Shakalaka キングチャチャブー (Kingu Chachabū)', value: 'King Shakalaka' },
+                { name: 'Vespoid ランゴスタ (Rangosuta)', value: 'Vespoid' },
+                { name: 'Vespoid Queen クイーンランゴスタ (Kuīn Rangosuta)', value: 'Vespoid Queen' },
+                { name: 'Hornetaur カンタロス (Kantarosu)', value: 'Hornetaur' },
+                { name: 'Great Thunderbug 大雷光虫 (Dai Raikō Mushi)', value: 'Great Thunderbug' },
             ),
         ),
     async execute(interaction) {
