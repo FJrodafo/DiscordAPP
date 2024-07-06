@@ -24,6 +24,8 @@ App/
 │   ├── assets/
 │   │   └── ...
 │   ├── commands/
+│   │   ├── context-menu/
+│   │   │   └── avatar.js
 │   │   ├── fun/
 │   │   │   └── ping.js
 │   │   ├── moderation/
@@ -34,15 +36,16 @@ App/
 │   │       ├── server.js
 │   │       └── user.js
 │   ├── data/
-│   │   └── ...
+│   │   └── *.json
 │   ├── events/
 │   │   ├── interactionCreate.js
 │   │   └── ready.js
 │   ├── scripts/
-│   │   └── ...
+│   │   └── *.sh
 │   ├── config.json
 │   ├── deploy-commands.js
 │   └── index.js
+├── docker-compose.yaml
 ├── Dockerfile
 ├── package-lock.json
 └── package.json
