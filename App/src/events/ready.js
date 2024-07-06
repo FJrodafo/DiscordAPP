@@ -16,9 +16,9 @@ module.exports = {
             { activities: [{ name: 'Dauntless', type: ActivityType.Streaming, url: 'https://www.twitch.tv/directory/category/dauntless' }] },
 
             // Monster Hunter Freedom Unite
-            { activities: [{ name: 'Monster Hunter Freedom Unite', type: ActivityType.Playing }], status: 'idle' },
-            { activities: [{ name: 'Monster Hunter Freedom Unite', type: ActivityType.Competing }], status: 'dnd' },
-            { activities: [{ name: 'Monster Hunter Freedom Unite', type: ActivityType.Streaming, url: 'https://www.twitch.tv/directory/category/monster-hunter-freedom-unite' }] },
+            { activities: [{ name: 'MHFU', type: ActivityType.Playing }], status: 'idle' },
+            { activities: [{ name: 'MHFU', type: ActivityType.Competing }], status: 'dnd' },
+            { activities: [{ name: 'MHFU', type: ActivityType.Streaming, url: 'https://www.twitch.tv/directory/category/monster-hunter-freedom-unite' }] },
         ];
         function updateStatus() {
             const random = Math.floor(Math.random() * status.length);

@@ -22,36 +22,19 @@ module.exports = {
         const monsterInfo = data[monster];
         const thumbnailPath = `./../../assets/mhfu/monsters/${monsterInfo.Icon}`;
         const thumbnailFile = new AttachmentBuilder(thumbnailPath);
-        let embed;
-        if (monsterInfo.Description) {
-            embed = new EmbedBuilder()
-                .setColor(0xFFFFFF)
-                .setTitle(`${monsterInfo.Name}`)
-                .setDescription(`${monsterInfo.Description}`)
-                .addFields(
-                    { name: 'Monster Class:', value: `${monsterInfo.Class}`, inline: true },
-                    { name: 'Size:', value: `${monsterInfo.Size}`, inline: true },
-                    { name: 'Habitat:', value: `${monsterInfo.Habitat}`, inline: true },
-                    { name: 'Elements:', value: `${monsterInfo.Elements}`, inline: true },
-                    { name: 'Ailments:', value: `${monsterInfo.Ailments}`, inline: true },
-                    { name: 'Weakest to:', value: `${monsterInfo.Weakness}`, inline: true },
-                )
-                .setThumbnail(`attachment://${monsterInfo.Icon}`);
-        }
-        else {
-            embed = new EmbedBuilder()
-                .setColor(0xFFFFFF)
-                .setTitle(`${monsterInfo.Name}`)
-                .addFields(
-                    { name: 'Monster Class:', value: `${monsterInfo.Class}`, inline: true },
-                    { name: 'Size:', value: `${monsterInfo.Size}`, inline: true },
-                    { name: 'Habitat:', value: `${monsterInfo.Habitat}`, inline: true },
-                    { name: 'Elements:', value: `${monsterInfo.Elements}`, inline: true },
-                    { name: 'Ailments:', value: `${monsterInfo.Ailments}`, inline: true },
-                    { name: 'Weakest to:', value: `${monsterInfo.Weakness}`, inline: true },
-                )
-                .setThumbnail(`attachment://${monsterInfo.Icon}`);
-        }
+        const embed = new EmbedBuilder()
+            .setColor(0xFFFFFF)
+            .setTitle(`${monsterInfo.Name}`)
+            .setDescription(`${monsterInfo.Description}`)
+            .addFields(
+                { name: 'Monster Class:', value: `${monsterInfo.Class}`, inline: true },
+                { name: 'Size:', value: `${monsterInfo.Size}`, inline: true },
+                { name: 'Habitat:', value: `${monsterInfo.Habitat}`, inline: true },
+                { name: 'Elements:', value: `${monsterInfo.Elements}`, inline: true },
+                { name: 'Ailments:', value: `${monsterInfo.Ailments}`, inline: true },
+                { name: 'Weakest to:', value: `${monsterInfo.Weakness}`, inline: true },
+            )
+            .setThumbnail(`attachment://${monsterInfo.Icon}`);
         interaction.reply({ embeds: [embed], files: [thumbnailFile] });
     },
 };

@@ -5,7 +5,7 @@
     "Felyne":{
         "Icon": ["Felyne.png"],
         "Name": ["Felyne アイルー (Airū)"],
-        "Description": ["Bipedal creatures resembling cats, known for their light hair. Though usually docile, they will attack viciously if provoked. Naturally curious, some try to enter human society, and are often hired by the Guild to cook for and otherwise assist hunters."],
+        "Description": ["Cat-like humanoids called Lynians that are noted for their white fur. Felynes are quiet and peaceful until angered, in which case they may attack. Capable of speech, they are sometimes found in the employ of human masters."],
         "Class": ["Lynian"],
         "Size": ["103.37cm"],
         "Habitat": ["All Main Areas"],
@@ -16,7 +16,7 @@
     "Melynx":{
         "Icon": ["Melynx.png"],
         "Name": ["Melynx メラルー (Merarū)"],
-        "Description": ["Bipedal creatures resembling cats, known for their dark hair. More curious than Felynes and possessed by kleptomania, Melynxes take what they steal back to their dens."],
+        "Description": ["Cat-like humanoids called Lynians with black fur. Their sticky-fingers never miss a chance to steal things and take them back to their den, forcing victims to seek out their lost items. Distracted by the sight of Felvine."],
         "Class": ["Lynian"],
         "Size": ["103.37cm"],
         "Habitat": ["All Main Areas"],
@@ -27,9 +27,10 @@
     "Shakalaka":{
         "Icon": ["Shakalaka.png"],
         "Name": ["Shakalaka チャチャブー (Chachabū)"],
+        "Description": ["A small, four-limbed monster known for always wearing a mask. Their camouflage-like qualities make them difficult to spot, but if you do, you're in trouble! Their leader, the King Shakalaka, is known to wear a crown like object."],
         "Class": ["Lynian"],
         "Size": ["110cm"],
-        "Habitat": ["None Listed"],
+        "Habitat": ["Various Locations"],
         "Elements": ["N/A"],
         "Ailments": [":zzz: Sleep\n:test_tube: Poison"],
         "Weakness": [":ice_cube: Ice"]
@@ -37,9 +38,10 @@
     "King Shakalaka":{
         "Icon": ["King_Shakalaka.png"],
         "Name": ["King Shakalaka キングチャチャブー (Kingu Chachabū)"],
+        "Description": ["This Shakalaka chieftain pulls together the Shakalaka's as one, in order to act. Extremely quick to anger when approached, this hot-head can invoke his fiery wrath with emotion alone. Feared by even the most skilled hunters."],
         "Class": ["Lynian"],
         "Size": ["None Listed"],
-        "Habitat": ["None Listed"],
+        "Habitat": ["Forest and Hills\nGreat Forest"],
         "Elements": [":fire: Fire"],
         "Ailments": [":zzz: Sleep"],
         "Weakness": [":ice_cube: Ice"]
