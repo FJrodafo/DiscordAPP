@@ -2,7 +2,7 @@ const { ContextMenuCommandBuilder, ApplicationCommandType, EmbedBuilder } = requ
 
 module.exports = {
     data: new ContextMenuCommandBuilder()
-        .setName('ship')
+        .setName('Ship')
         .setType(ApplicationCommandType.User),
     async execute(interaction) {
         const embed = new EmbedBuilder()
