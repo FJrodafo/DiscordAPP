@@ -3,7 +3,7 @@ const { SlashCommandBuilder } = require('discord.js');
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('direct-message-remover')
-        .setDescription('Delete a specific direct message sent by the bot by its ID.')
+        .setDescription('Delete a specific direct message sent by the APP by its ID.')
         .setDefaultMemberPermissions(0)
         .addStringOption(option => option
             .setName('message_id')

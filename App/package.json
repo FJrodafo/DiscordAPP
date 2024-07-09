@@ -1,7 +1,7 @@
 {
-  "name": "discordbot",
+  "name": "discordapp",
   "version": "1.0.0",
-  "description": "A simple Discord bot made in JavaScript!",
+  "description": "A simple Discord APP made in JavaScript!",
   "main": "index.js",
   "scripts": {
     "start": "node ./src/deploy-commands.js && node ./src/index.js",
@@ -11,12 +11,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/FJrodafo/DiscordBOT.git"
+    "url": "git+https://github.com/FJrodafo/DiscordAPP.git"
   },
   "keywords": [
     "discord",
-    "bot",
-    "npm",
+    "app",
+    "npmjs",
     "nodejs",
     "javascript",
     "fjrodafo"
@@ -24,9 +24,9 @@
   "author": "FJrodafo - Francisco José Rodríguez Afonso",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/FJrodafo/DiscordBOT/issues"
+    "url": "https://github.com/FJrodafo/DiscordAPP/issues"
   },
-  "homepage": "https://github.com/FJrodafo/DiscordBOT#readme",
+  "homepage": "https://github.com/FJrodafo/DiscordAPP#readme",
   "dependencies": {
     "canvas": "^2.11.2",
     "discord.js": "^14.14.1",

@@ -55,7 +55,7 @@ App/
 
 ## Run it!
 
-This project needs a `config.json` into the `src` directory with some data related to your Discord server and your BOT token (Make sure you have a BOT created in the [Discord Developer Portal](https://discord.com/developers/applications)):
+This project needs a `config.json` into the `src` directory with some data related to your Discord server and your APP token (Make sure you have an APP created in the [Discord Developer Portal](https://discord.com/developers/applications)):
 
 ```json
 {
@@ -75,7 +75,7 @@ If you have the `config.json` file into the `src` directory correctly configurat
 
 To check if you already have Node installed on your machine, run `node -v` in your terminal. Otherwise, you will need to install Node v16.11.0 or higher or, as a last option, check out the [Docker](#docker) alternative.
 
-Finally, if you have Node installed, run the following command to activate your Discord BOT (Make sure you are in the `App` directory):
+Finally, if you have Node installed, run the following command to activate your Discord APP (Make sure you are in the `App` directory):
 
 ```shell
 npm start
@@ -111,13 +111,13 @@ If you don't have Node v16.11.0 or higher installed on your machine, you can bui
 Open a terminal and run the following command (Make sure you are in the `App` directory):
 
 ```shell
-docker build -t discord-bot .
+docker build -t discord-app .
 ```
 
 After the build completes, you can run your container with the following command:
 
 ```shell
-docker run -dp 127.0.0.1:3000:3000 discord-bot
+docker run -dp 127.0.0.1:3000:3000 discord-app
 ```
 
 ## Available Scripts
@@ -126,7 +126,7 @@ In the project directory, you can run:
 
 ### `npm start`
 
-Once configured, run the bot. It first deploy the commands, updating both on the guild server and globally (You can edit the commented lines of code in the [deploy-commands.js](./src/deploy-commands.js) file to customize the deploy of the bot commands).
+Once configured, run the APP. It first deploy the commands, updating both on the guild server and globally (You can edit the commented lines of code in the [deploy-commands.js](./src/deploy-commands.js) file to customize the deploy of the APP commands).
 
 ### `npm run eslint`
 
