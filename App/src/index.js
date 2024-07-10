@@ -8,6 +8,7 @@ const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
 // Command handling
 client.commands = new Collection();
+
 const foldersPath = path.join(__dirname, 'commands');
 const commandFolders = fs.readdirSync(foldersPath);
 
@@ -41,5 +42,28 @@ for (const file of eventFiles) {
     }
 }
 
+// Error handling and reconnection
+client.on('error', error => {
+    console.error('Error in client:', error);
+});
+
+const handleReconnect = () => {
+    console.log('Attempting to reconnect...');
+    client.login(token).catch(err => {
+        console.error('Failed to reconnect:', err);
+        setTimeout(handleReconnect, 5000); // Try to reconnect after 5 seconds
+    });
+};
+
+client.on('shardDisconnect', (event, id) => {
+    console.warn(`Shard ${id} disconnected (${event.code}): ${event.reason}`);
+    if (event.code === 1000) {
+        return;
+    }
+    handleReconnect();
+});
+
 // Log in to Discord with your client's token
-client.login(token);
+client.login(token).catch(error => {
+    console.error('Failed to login:', error);
+});
