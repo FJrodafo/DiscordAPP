@@ -25,15 +25,13 @@ App/
 │   │   └── ...
 │   ├── commands/
 │   │   ├── context-menu/
-│   │   │   ├── avatar.js
-│   │   │   └── kick.js
+│   │   │   └── avatar.js
 │   │   ├── fun/
 │   │   │   └── ping.js
 │   │   ├── moderation/
 │   │   │   ├── kick.js
 │   │   │   └── prune.js
 │   │   └── utility/
-│   │       ├── avatar.js
 │   │       ├── server.js
 │   │       └── user.js
 │   ├── data/
@@ -59,8 +57,8 @@ This project needs a `config.json` into the `src` directory with some data relat
 
 ```json
 {
-    "clientId": "",
     "guildId": "",
+    "clientId": "",
     "token": ""
 }
 ```

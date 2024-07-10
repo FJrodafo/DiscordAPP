@@ -6,6 +6,6 @@ module.exports = {
         .setDescription('Press F to pay respect.'),
     async execute(interaction) {
         const message = await interaction.reply({ content: 'Press F to pay respect.', fetchReply: true });
-        message.react('🇫');
+        if (message.channel) message.react('🇫');
     },
 };

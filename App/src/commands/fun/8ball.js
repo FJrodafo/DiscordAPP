@@ -27,6 +27,6 @@ module.exports = {
                 { name: 'Answer:', value: `- ${randomMessage()}` },
             );
         const message = await interaction.reply({ embeds: [embed], fetchReply: true });
-        message.react('🎱');
+        if (message.channel) message.react('🎱');
     },
 };

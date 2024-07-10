@@ -6,8 +6,22 @@ module.exports = {
     execute(client) {
         console.log(`Ready! Logged in as ${client.user.tag}`);
         const status = [
+            // Custom
             { activities: [{ name: 'I respond to DMs', type: ActivityType.Custom }], status: 'online' },
+            {
+                activities: [{
+                    // name is exposed through the API but not shown in the client for ActivityType.Custom
+                    name: 'custom',
+                    type: ActivityType.Custom,
+                    state: '🍋',
+                }],
+                status: 'online',
+            },
+
+            // Listening
             { activities: [{ name: 'me', type: ActivityType.Listening }], status: 'idle' },
+
+            // Watching
             { activities: [{ name: 'One Piece', type: ActivityType.Watching }], status: 'dnd' },
 
             // Dauntless
@@ -25,6 +39,6 @@ module.exports = {
             client.user.setPresence(status[random]);
         }
         updateStatus();
-        setInterval(updateStatus, 3_600_000);
+        setInterval(updateStatus, 4_000_000);
     },
 };

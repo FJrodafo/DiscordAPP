@@ -15,6 +15,6 @@ module.exports = {
             .setColor(0xFF0000)
             .setDescription(`${interaction.user} shipped with ${user} and it is ${Math.floor(Math.random() * 100) + 1}%`);
         const message = await interaction.reply({ embeds: [embed], fetchReply: true });
-        message.react('💞');
+        if (message.channel) message.react('💞');
     },
 };

@@ -3,16 +3,19 @@
 
 # assets
 /src/assets/blackjack
-/src/assets/dauntless/icons
+/src/assets/dauntless/original
 /src/assets/mhfu/original
 
 # commands
 /src/commands/utility/dauntless-gauntlet-leaderboard.png
 /src/commands/utility/dauntless-meta-builds.png
 /src/commands/utility/web-screenshot.png
-/src/deprecated
+
+# secrets
+/src/config.json
+
+# versions
+deprecated
+sample
 bonney
 luffy
-
-# misc
-/src/config.json

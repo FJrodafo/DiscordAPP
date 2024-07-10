@@ -17,14 +17,14 @@ module.exports = {
                 .setAuthor({ name: `${user.tag} is a BOT!`, iconURL: `${user.displayAvatarURL({ dynamic: true, size: 512 })}` })
                 .setColor(0xFFFFFF);
             message = await interaction.reply({ embeds: [embed], fetchReply: true });
-            message.react('🤖');
+            if (message.channel) message.react('🤖');
         }
         else {
             embed = new EmbedBuilder()
                 .setAuthor({ name: `${user.tag} is not a BOT.`, iconURL: `${user.displayAvatarURL({ dynamic: true, size: 512 })}` })
                 .setColor(0xFFFFFF);
             message = await interaction.reply({ embeds: [embed], fetchReply: true });
-            message.react('👤');
+            if (message.channel) message.react('👤');
         }
     },
 };
