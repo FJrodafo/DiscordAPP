@@ -51,7 +51,8 @@ const handleReconnect = () => {
     console.log('Attempting to reconnect...');
     client.login(token).catch(err => {
         console.error('Failed to reconnect:', err);
-        setTimeout(handleReconnect, 5000); // Try to reconnect after 5 seconds
+        // Try to reconnect after 5 seconds
+        setTimeout(handleReconnect, 5000);
     });
 };
 
