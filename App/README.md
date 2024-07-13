@@ -139,4 +139,4 @@ Automatically fixes all errors caught by eslint.
 There are currently no tests configured.
 
 <link rel="stylesheet" href="./README.css">
-<a class="scrollup" href="#top">&#x1F53A</a>
+<a class="scrollup" href="#top">&#x1F53C</a>
