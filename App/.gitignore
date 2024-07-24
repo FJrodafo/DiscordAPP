@@ -14,8 +14,8 @@
 /src/commands/utility/web-screenshot.png
 
 # secrets
+/sample/config.json
 /src/config.json
 
-# versions
+# misc
 deprecated
-sample
