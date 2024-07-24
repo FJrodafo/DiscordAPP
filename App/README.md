@@ -53,6 +53,19 @@ App/
 
 ## Run it!
 
+Open your directory where you save your repositories and clone it with the following command:
+
+```shell
+# GitHub
+git clone https://github.com/FJrodafo/DiscordAPP.git
+
+# GitLab
+git clone https://gitlab.com/FJrodafo/DiscordAPP.git
+
+# Bitbucket
+git clone https://bitbucket.org/fjrodafo/discordapp.git
+```
+
 This project needs a `config.json` into the `src` directory with some data related to your Discord server and your APP token (Make sure you have an APP created in the [Discord Developer Portal](https://discord.com/developers/applications)):
 
 ```json
