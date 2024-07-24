@@ -36,5 +36,5 @@ function optimize_path () {
 }
 
 echo "Optimizing images..."
-optimize_path ./App/src/assets/mhfu/monsters
+optimize_path ./App/src/assets/monster-hunter/mhtri/monsters
 echo "...done"

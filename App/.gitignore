@@ -2,9 +2,11 @@
 /node_modules
 
 # assets
-/src/assets/blackjack
+/src/assets/blackjack/*/
 /src/assets/dauntless/original
-/src/assets/mhfu/original
+/src/assets/monster-hunter/mhfu/original
+/src/assets/monster-hunter/mhp3rd/original
+/src/assets/monster-hunter/mhtri/original
 
 # commands
 /src/commands/utility/dauntless-gauntlet-leaderboard.png

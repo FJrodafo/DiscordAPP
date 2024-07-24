@@ -12,20 +12,30 @@ module.exports = {
             .setRequired(false),
         ),
     async execute(interaction) {
+        let embed;
         const amount = interaction.options.getInteger('amount');
         if (!interaction.guild.members.me.permissions.has(PermissionFlagsBits.ManageMessages)) {
-            return interaction.reply({ content: 'I do not have permission to prune messages in this channel.', ephemeral: true });
+            embed = new EmbedBuilder()
+                .setColor(0xFF005C)
+                .setDescription('🧹 I do not have permission to prune messages in this channel.');
+            return interaction.reply({ embeds: [embed], ephemeral: true });
         }
         if (amount < 1 || amount > 99) {
-            return interaction.reply({ content: 'You need to input a number between 1 and 99.', ephemeral: true });
+            embed = new EmbedBuilder()
+                .setColor(0xFF005C)
+                .setDescription('🧹 You need to input a number between `1` and `99`');
+            return interaction.reply({ embeds: [embed], ephemeral: true });
         }
         await interaction.channel.bulkDelete(amount, true).catch(error => {
             console.error(error);
-            interaction.reply({ content: 'There was an error trying to prune messages in this channel!', ephemeral: true });
+            embed = new EmbedBuilder()
+                .setColor(0xFF005C)
+                .setDescription('🧹 There was an error trying to prune messages in this channel.');
+            interaction.reply({ embeds: [embed], ephemeral: true });
         });
-        const embed = new EmbedBuilder()
+        embed = new EmbedBuilder()
             .setColor(0xFF005C)
-            .setDescription(`🧹 Successfully pruned \`${amount}\` messages.`);
+            .setDescription(`🧹 Successfully pruned \`${amount}\` messages!`);
         return interaction.reply({ embeds: [embed], ephemeral: true });
     },
 };

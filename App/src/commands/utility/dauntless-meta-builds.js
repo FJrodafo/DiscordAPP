@@ -1,7 +1,7 @@
 const { SlashCommandBuilder, AttachmentBuilder, EmbedBuilder } = require('discord.js');
 const { createCanvas, loadImage } = require('canvas');
 const fs = require('fs');
-const jsonPath = '../../data/dauntless-meta-builds.json';
+const jsonPath = './../../data/dauntless-meta-builds.json';
 process.chdir(__dirname);
 
 module.exports = {
@@ -84,7 +84,7 @@ async function drawIcons(ctx, icons, yOffset, startX, scale) {
     let x = startX;
     for (let i = 0; i < icons.length; i++) {
         const iconName = icons[i];
-        const iconPath = `../../assets/dauntless/builds/${iconName}`;
+        const iconPath = `./../../assets/dauntless/builds/${iconName}`;
         const icon = await loadImage(iconPath);
         const scaledWidth = 64 * scale;
         const scaledHeight = 64 * scale;

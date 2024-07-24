@@ -3,8 +3,7 @@
 - [x] fix ship
 - [ ] fix clover
 
-- [x] mhfu from Vespoid to Great Thunderbug
-- [ ] mhfu from Anteka to Apceros
+- [ ] MHFU Piscine Wyvern Data
 
 ## Events
 
