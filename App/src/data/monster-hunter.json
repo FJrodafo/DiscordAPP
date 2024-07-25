@@ -111,7 +111,7 @@
         "Neopteron": {
             "Altaroth": {
                 "Icon": ["Altaroth.png"],
-                "Name": ["オルタロス (Orutarosu)"],
+                "Name": ["Altaroth オルタロス (Orutarosu)"],
                 "Description": ["様々な場所に広く生息する “甲虫” 。実やキノコ、ハチミツなどを体内に取り込み、巣まで運んでいくという習性を持つ。そのため、腹部が膨らんでいる固体からは有益な素材が採取できる。また、摂取している素材によって腹部の色が変化するようだ。"],
                 "Elements": ["N/A"],
                 "Ailments": [":shield: Defense Down\n:zap: Paralysis"],
@@ -119,7 +119,7 @@
             },
             "Bnahabra": {
                 "Icon": ["Bnahabra.png"],
-                "Name": ["ブナハブラ (Bunahabura)"],
+                "Name": ["Bnahabra ブナハブラ (Bunahabura)"],
                 "Description": ["あらゆる環境に生息する “飛甲虫” 。麻痺性の毒を持ちテリトリーに入ってくる者を襲ってくる。死体に卵を産みつけ繁殖する事でも知られ、耐性を下げる特殊な体液で腐食を促進させるようだ。この飛甲虫の素材を手に入れるためには毒を用いるのがベスト。"],
                 "Elements": ["N/A"],
                 "Ailments": [":zap: Paralysis\n:shield: Defense Down"],
@@ -129,7 +129,7 @@
         "Piscine Wyvern": {
             "Delex": {
                 "Icon": ["Delex.png"],
-                "Name": ["デルクス (Derukusu)"],
+                "Name": ["Delex デルクス (Derukusu)"],
                 "Description": ["砂漠地帯に生息する肉食モンスター。常に４～５匹の群れで行動する。大型のモンスターが狩りをする場に居合わせるとその獲物を取り囲むように泳ぎだし、獲物を追い詰め、おこぼれにあずかろうとする。音には敏感なため音爆弾などで一網打尽にできる。"],
                 "Elements": [":droplet: Water"],
                 "Ailments": [":droplet: Waterblight"],
@@ -166,7 +166,7 @@
         "Neopteron": {
             "Altaroth": {
                 "Icon": ["Altaroth.png"],
-                "Name": ["オルタロス (Orutarosu)"],
+                "Name": ["Altaroth オルタロス (Orutarosu)"],
                 "Description": ["Insects that widely inhabit many areas. Noted for absorbing fruit, mushrooms and honey, then carrying them back to their nest. Materials can thus be collected from their swollen abdomens, whose color is related to what is being carried."],
                 "Elements": ["N/A"],
                 "Ailments": [":shield: Defense Down\n:zap: Paralysis"],
@@ -174,7 +174,7 @@
             },
             "Bnahabra": {
                 "Icon": ["Bnahabra.png"],
-                "Name": ["ブナハブラ (Bunahabura)"],
+                "Name": ["Bnahabra ブナハブラ (Bunahabura)"],
                 "Description": ["Flying insects that inhabit most environments. They attack invaders with a paralyzing poison and lay eggs in carrion together with a bodily fluid that hastens decomposition. Attracted to light, they will gather around any fire."],
                 "Elements": ["N/A"],
                 "Ailments": [":zap: Paralysis\n:shield: Defense Down"],
@@ -184,7 +184,7 @@
         "Piscine Wyvern": {
             "Delex": {
                 "Icon": ["Delex.png"],
-                "Name": ["デルクス (Derukusu)"],
+                "Name": ["Delex デルクス (Derukusu)"],
                 "Description": ["Carnivorous monsters that inhabit deserts. Delex always travel in schools of five or six. When near large monsters on a hunt, they attempt to surround the prey and scavenge food. Known to flee if other Delex are injured."],
                 "Elements": [":droplet: Water"],
                 "Ailments": [":droplet: Waterblight"],
