@@ -16,6 +16,6 @@ module.exports = {
                 { name: 'ID:', value: `${user.id}`, inline: true },
                 { name: 'Joined at:', value: `${member.joinedAt}`, inline: false },
             );
-        return interaction.reply({ embeds: [embed] });
+        return interaction.reply({ embeds: [embed], ephemeral: true });
     },
 };

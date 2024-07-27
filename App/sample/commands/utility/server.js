@@ -15,6 +15,6 @@ module.exports = {
                 { name: 'Total members:', value: `${interaction.guild.memberCount}`, inline: true },
                 { name: 'Created at:', value: `${interaction.guild.createdAt}`, inline: false },
             );
-        return interaction.reply({ embeds: [embed] });
+        return interaction.reply({ embeds: [embed], ephemeral: true });
     },
 };

@@ -17,7 +17,7 @@ module.exports = {
             return interaction.reply({ content: 'I do not have permission to prune messages in this channel.', ephemeral: true });
         }
         if (amount < 1 || amount > 99) {
-            return interaction.reply({ content: 'You need to input a number between 1 and 99.', ephemeral: true });
+            return interaction.reply({ content: 'You need to input a number between `1` and `99`', ephemeral: true });
         }
         await interaction.channel.bulkDelete(amount, true).catch(error => {
             console.error(error);
