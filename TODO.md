@@ -1,7 +1,5 @@
 ## Commands
 
-- [x] Select Menu Sample 
-
 - [x] fix ship
 - [ ] fix clover
 

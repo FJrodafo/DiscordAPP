@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Source folder path
-source_folder="./App/src/assets/dauntless/icons"
+source_folder="./App/src/assets/dauntless/original"
 
 # Destination folder path
 destination_folder="./App/src/assets/dauntless/builds"
