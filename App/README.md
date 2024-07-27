@@ -56,10 +56,14 @@ Open your directory where you save your repositories and clone it with the follo
 ```shell
 # GitHub
 git clone https://github.com/FJrodafo/DiscordAPP.git
+```
 
+```shell
 # GitLab
 git clone https://gitlab.com/FJrodafo/DiscordAPP.git
+```
 
+```shell
 # Bitbucket
 git clone https://bitbucket.org/fjrodafo/discordapp.git
 ```
