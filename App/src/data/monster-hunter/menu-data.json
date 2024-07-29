@@ -1,0 +1,230 @@
+{
+    "games": [
+        {
+            "label": "Monster Hunter Freedom Unite",
+            "description": "Flagship Monster: Nargacuga",
+            "value": "mhfu"
+        },
+        {
+            "label": "Monster Hunter Portable 3rd",
+            "description": "Flagship Monster: Zinogre",
+            "value": "mhp3rd"
+        },
+        {
+            "label": "Monster Hunter Tri",
+            "description": "Flagship Monster: Lagiacrus",
+            "value": "mhtri"
+        }
+    ],
+    "mhfu": {
+        "monster_classes": [
+            {
+                "label": "Lynian",
+                "description": "獣人種 (Jūjinshu)",
+                "value": "lynian"
+            },
+            {
+                "label": "Neopteron",
+                "description": "甲虫種 (Kōchūshu)",
+                "value": "neopteron"
+            },
+            {
+                "label": "Piscine Wyvern",
+                "description": "魚竜種 (Gyoryūshu)",
+                "value": "piscine_wyvern"
+            }
+        ],
+        "bird_wyverns": [],
+        "carapaceons": [],
+        "elder_dragons": [],
+        "fanged_beasts": [],
+        "flying_wyverns": [],
+        "herbivores": [],
+        "lynians": [
+            {
+                "label": "Felyne",
+                "description": "アイルー (Airū)",
+                "value": "felyne"
+            },
+            {
+                "label": "Melynx",
+                "description": "メラルー (Merarū)",
+                "value": "melynx"
+            },
+            {
+                "label": "Shakalaka",
+                "description": "チャチャブー (Chachabū)",
+                "value": "shakalaka"
+            },
+            {
+                "label": "King Shakalaka",
+                "description": "キングチャチャブー (Kingu Chachabū)",
+                "value": "king_shakalaka"
+            }
+        ],
+        "neopterons": [
+            {
+                "label": "Vespoid",
+                "description": "ランゴスタ (Rangosuta)",
+                "value": "vespoid"
+            },
+            {
+                "label": "Vespoid Queen",
+                "description": "クイーンランゴスタ (Kuīn Rangosuta)",
+                "value": "vespoid_queen"
+            },
+            {
+                "label": "Hornetaur",
+                "description": "カンタロス (Kantarosu)",
+                "value": "hornetaur"
+            },
+            {
+                "label": "Great Thunderbug",
+                "description": "大雷光虫 (Dai Raikō Mushi)",
+                "value": "great_thunderbug"
+            }
+        ],
+        "piscine_wyverns": [
+            {
+                "label": "Cephalos",
+                "description": "ガレオス (Gareosu)",
+                "value": "cephalos"
+            },
+            {
+                "label": "Cephadrome",
+                "description": "ドスガレオス (Dosugareosu)",
+                "value": "cephadrome"
+            },
+            {
+                "label": "Plesioth",
+                "description": "ガノトトス (Ganototosu)",
+                "value": "plesioth"
+            },
+            {
+                "label": "Green Plesioth",
+                "description": "ガノトトス亜種 (Ganototosu Ashu)",
+                "value": "green_plesioth"
+            },
+            {
+                "label": "Lavasioth",
+                "description": "ヴォルガノス (Voruganosu)",
+                "value": "lavasioth"
+            }
+        ]
+    },
+    "mhp3rd": {
+        "monster_classes": [
+            {
+                "label": "Lynian",
+                "description": "獣人種 (Jūjinshu)",
+                "value": "lynian"
+            },
+            {
+                "label": "Neopteron",
+                "description": "甲虫種 (Kōchūshu)",
+                "value": "neopteron"
+            },
+            {
+                "label": "Piscine Wyvern",
+                "description": "魚竜種 (Gyoryūshu)",
+                "value": "piscine_wyvern"
+            }
+        ],
+        "bird_wyverns": [],
+        "brute_wyverns": [],
+        "elder_dragons": [],
+        "fanged_beasts": [],
+        "fanged_wyverns": [],
+        "flying_wyverns": [],
+        "herbivores": [],
+        "leviathans": [],
+        "lynians": [
+            {
+                "label": "Felyne",
+                "description": "アイルー (Airū)",
+                "value": "felyne"
+            },
+            {
+                "label": "Melynx",
+                "description": "メラルー (Merarū)",
+                "value": "melynx"
+            }
+        ],
+        "neopterons": [
+            {
+                "label": "Altaroth",
+                "description": "オルタロス (Orutarosu)",
+                "value": "altaroth"
+            },
+            {
+                "label": "Bnahabra",
+                "description": "ブナハブラ (Bunahabura)",
+                "value": "bnahabra"
+            }
+        ],
+        "piscine_wyverns": [
+            {
+                "label": "Delex",
+                "description": "デルクス (Derukusu)",
+                "value": "delex"
+            }
+        ]
+    },
+    "mhtri": {
+        "monster_classes": [
+            {
+                "label": "Lynian",
+                "description": "獣人種 (Jūjinshu)",
+                "value": "lynian"
+            },
+            {
+                "label": "Neopteron",
+                "description": "甲虫種 (Kōchūshu)",
+                "value": "neopteron"
+            },
+            {
+                "label": "Piscine Wyvern",
+                "description": "魚竜種 (Gyoryūshu)",
+                "value": "piscine_wyvern"
+            }
+        ],
+        "bird_wyverns": [],
+        "brute_wyverns": [],
+        "elder_dragons": [],
+        "fishes": [],
+        "flying_wyverns": [],
+        "herbivores": [],
+        "leviathans": [],
+        "lynians": [
+            {
+                "label": "Felyne",
+                "description": "アイルー (Airū)",
+                "value": "felyne"
+            },
+            {
+                "label": "Melynx",
+                "description": "メラルー (Merarū)",
+                "value": "melynx"
+            }
+        ],
+        "neopterons": [
+            {
+                "label": "Altaroth",
+                "description": "オルタロス (Orutarosu)",
+                "value": "altaroth"
+            },
+            {
+                "label": "Bnahabra",
+                "description": "ブナハブラ (Bunahabura)",
+                "value": "bnahabra"
+            }
+        ],
+        "piscine_wyverns": [
+            {
+                "label": "Delex",
+                "description": "デルクス (Derukusu)",
+                "value": "delex"
+            }
+        ]
+    }
+}

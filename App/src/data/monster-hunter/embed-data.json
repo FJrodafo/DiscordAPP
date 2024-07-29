@@ -4,36 +4,7 @@
         "mhp3rd": ["Agnaktor.png","Akantor.png","Alatreon.png","Altaroth.png","Amatsu.png","Anteka.png","Aptonoth.png","Arzuros.png","Baggi.png","Baleful_Gigginox.png","Barioth.png","Barroth.png","Black_Diablos.png","Bnahabra.png","Brute_Tigrex.png","Bulldrome.png","Bullfango.png","Crimson_Qurupeco.png","Delex.png","Deviljho.png","Diablos.png","Duramboros.png","Felyne.png","Gargwa.png","Gigginox.png","Giggi.png","Glacial_Agnaktor.png","Gold_Rathian.png","Great_Baggi.png","Great_Jaggi.png","Great_Wroggi.png","Green_Nargacuga.png","Jade_Barroth.png","Jaggia.png","Jaggi.png","Jhen_Mohran.png","Kelbi.png","Lagombi.png","Ludroth.png","Melynx.png","Nargacuga.png","Nibelsnarf.png","Popo.png","Purple_Ludroth.png","Qurupeco.png","Rathalos.png","Rathian.png","Rhenoplos.png","Royal_Ludroth.png","Sand_Barioth.png","Silver_Rathalos.png","Slagtoth.png","Steel_Uragaan.png","Tigrex.png","Ukanlos.png","Uragaan.png","Uroktor.png","Volvidon.png","Wroggi.png","Zinogre.png"],
         "mhtri": ["Agnaktor.png","Alatreon.png","Altaroth.png","Aptonoth.png","Baggi.png","Barioth.png","Barroth.png","Bnahabra.png","Ceadeus.png","Delex.png","Deviljho.png","Diablos.png","Epioth.png","Felyne.png","Fish.png","Gigginox.png","Giggi.png","Gobul.png","Great_Baggi.png","Great_Jaggi.png","Jaggia.png","Jaggi.png","Jhen_Mohran.png","Kelbi.png","Lagiacrus.png","Ludroth.png","Melynx.png","Popo.png","Qurupeco.png","Rathalos.png","Rathian.png","Rhenoplos.png","Royal_Ludroth.png","Uragaan.png","Uroktor.png"]
     },
-    "games": [
-        {
-            "label": "Monster Hunter Freedom Unite",
-            "description": "Flagship Monster: Nargacuga",
-            "value": "mhfu"
-        },
-        {
-            "label": "Monster Hunter Portable 3rd",
-            "description": "Flagship Monster: Zinogre",
-            "value": "mhp3rd"
-        },
-        {
-            "label": "Monster Hunter Tri",
-            "description": "Flagship Monster: Lagiacrus",
-            "value": "mhtri"
-        }
-    ],
     "mhfu": {
-        "monster_classes": [
-            {
-                "label": "Lynian",
-                "description": "獣人種 (Jūjinshu)",
-                "value": "lynian"
-            },
-            {
-                "label": "Neopteron",
-                "description": "甲虫種 (Kōchūshu)",
-                "value": "neopteron"
-            }
-        ],
         "bird_wyvern": {},
         "carapaceon": {},
         "elder_dragon": {},
@@ -108,26 +79,50 @@
                 "weakness": [":droplet: Water"]
             }
         },
-        "piscine_wyvern": {}
+        "piscine_wyvern": {
+            "cephalos": {
+                "icon": ["Cephalos.png"],
+                "name": ["Cephalos ガレオス (Gareosu)"],
+                "description": ["Wyverns found only in the Desert. They resemble a Plesioth, but live and \"swim\" in sand rather than water. They seldom appear above land, but when their hearing is disturbed..."],
+                "elements": [":droplet: Water"],
+                "ailments": [":zap: Paralysis\n:droplet: Waterblight"],
+                "weakness": [":ice_cube: Ice\n:zap: Thunder"]
+            },
+            "cephadrome": {
+                "icon": ["Cephadrome.png"],
+                "name": ["Cephadrome ドスガレオス (Dosugareosu)"],
+                "description": ["The alpha monster form of the Cephalos. Larger and armored with black scales, they fit the appearance of a leader perfectly. Their fins hold a paralyzing toxin."],
+                "elements": [":droplet: Water"],
+                "ailments": [":zap: Paralysis\n:droplet: Waterblight"],
+                "weakness": [":ice_cube: Ice\n:zap: Thunder"]
+            },
+            "plesioth": {
+                "icon": ["Plesioth.png"],
+                "name": ["Plesioth ガノトトス (Ganototosu)"],
+                "description": ["An enormous, flightless, aquatic wyvern with wings that have evolved into fins for swimming. Although superficially fish-like, they can move on land as well. They love frogs."],
+                "elements": [":droplet: Water"],
+                "ailments": [":zzz: Sleep"],
+                "weakness": [":zap: Thunder\n:fire: Fire"]
+            },
+            "green_plesioth": {
+                "icon": ["Green_Plesioth.png"],
+                "name": ["Green Plesioth ガノトトス亜種 (Ganototosu Ashu)"],
+                "description": ["An enormous, flightless, aquatic wyvern with wings that have evolved into fins for swimming. Although superficially fish-like, they can move on land as well. They love frogs."],
+                "elements": [":droplet: Water"],
+                "ailments": [":zzz: Sleep"],
+                "weakness": [":zap: Thunder\n:fire: Fire"]
+            },
+            "lavasioth": {
+                "icon": ["Lavasioth.png"],
+                "name": ["Lavasioth ヴォルガノス (Voruganosu)"],
+                "description": ["A piscine wyvern that resides in magma. Its scales are covered by layers of cooled magma, which makes it one hard nut to crack. It swims around in lava, spewing the molten rock it takes in at its prey... Researchers love to study its peculiar way of life."],
+                "elements": [":fire: Fire"],
+                "ailments": ["N/A"],
+                "weakness": [":droplet: Water"]
+            }
+        }
     },
     "mhp3rd": {
-        "monster_classes": [
-            {
-                "label": "Lynian",
-                "description": "獣人種 (Jūjinshu)",
-                "value": "lynian"
-            },
-            {
-                "label": "Neopteron",
-                "description": "甲虫種 (Kōchūshu)",
-                "value": "neopteron"
-            },
-            {
-                "label": "Piscine Wyvern",
-                "description": "魚竜種 (Gyoryūshu)",
-                "value": "piscine_wyvern"
-            }
-        ],
         "bird_wyvern": {},
         "brute_wyvern": {},
         "elder_dragon": {},
@@ -184,23 +179,6 @@
         }
     },
     "mhtri": {
-        "monster_classes": [
-            {
-                "label": "Lynian",
-                "description": "獣人種 (Jūjinshu)",
-                "value": "lynian"
-            },
-            {
-                "label": "Neopteron",
-                "description": "甲虫種 (Kōchūshu)",
-                "value": "neopteron"
-            },
-            {
-                "label": "Piscine Wyvern",
-                "description": "魚竜種 (Gyoryūshu)",
-                "value": "piscine_wyvern"
-            }
-        ],
         "bird_wyvern": {},
         "brute_wyvern": {},
         "elder_dragon": {},

@@ -3,7 +3,8 @@
 - [x] fix ship
 - [ ] fix clover
 
-- [ ] MHFU Piscine Wyvern Data
+- [x] MHFU Piscine Wyvern Data
+- [ ] MHFU Herbivores Data
 
 ## Events
 
