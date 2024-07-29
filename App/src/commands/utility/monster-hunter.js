@@ -1,102 +1,125 @@
-const { SlashCommandBuilder, StringSelectMenuBuilder, StringSelectMenuOptionBuilder, ActionRowBuilder, ComponentType, AttachmentBuilder, EmbedBuilder } = require('discord.js');
-const jsonPath = './../../data/monster-hunter.json';
-const data = require(jsonPath);
+const { SlashCommandBuilder, ActionRowBuilder, StringSelectMenuBuilder, StringSelectMenuOptionBuilder, AttachmentBuilder, EmbedBuilder, ComponentType } = require('discord.js');
 
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('monster-hunter')
         .setDescription('Monster ecodata!'),
     async execute(interaction) {
-        // Variables
-        let monsterInfo, thumbnailPath, thumbnailFile, MHembed, output = false;
+        let selectedGame, selectedClass, monsterInfo, thumbnailPath, thumbnailFile, MHembed, output = false;
+        const jsonPath = './../../data/monster-hunter.json';
+        const data = require(jsonPath);
 
         // Main Menu
-        const mainMenu = new StringSelectMenuBuilder().setCustomId('mainMenu').setPlaceholder('Select the game!').addOptions(
-            new StringSelectMenuOptionBuilder().setLabel('Monster Hunter Freedom Unite').setDescription('Flagship Monster: Nargacuga').setValue('MHFU'),
-            new StringSelectMenuOptionBuilder().setLabel('Monster Hunter Portable 3rd').setDescription('Flagship Monster: Zinogre').setValue('MHP3rd'),
-            new StringSelectMenuOptionBuilder().setLabel('Monster Hunter Tri').setDescription('Flagship Monster: Lagiacrus').setValue('MHTri'),
+        const mainMenu = new ActionRowBuilder().addComponents(
+            new StringSelectMenuBuilder().setCustomId('mainMenu').setPlaceholder('Select the game!').addOptions(
+                data.games.map((game) =>
+                    new StringSelectMenuOptionBuilder().setLabel(game.label).setDescription(game.description).setValue(game.value),
+                ),
+            ),
         );
-        const mainMenuRow = new ActionRowBuilder().addComponents(mainMenu);
+
         // ////////////////////////////////////////////////////////////////////////////////////////////////////
         //                                                                                                   //
         // Monster Hunter Freedom Unite                                                                      //
         //                                                                                                   //
         // ////////////////////////////////////////////////////////////////////////////////////////////////////
-        const MHFU = new StringSelectMenuBuilder().setCustomId('MHFU').setPlaceholder('Select the monster class!').addOptions(
-            new StringSelectMenuOptionBuilder().setLabel('Lynian').setDescription('獣人種 (Jūjinshu)').setValue('MHFU Lynian'),
-            new StringSelectMenuOptionBuilder().setLabel('Neopteron').setDescription('甲虫種 (Kōchūshu)').setValue('MHFU Neopteron'),
+        const MHFU = new ActionRowBuilder().addComponents(
+            new StringSelectMenuBuilder().setCustomId('MHFU').setPlaceholder('Select the monster class!').addOptions(
+                data.mhfu.monster_classes.map((mhfu_monster_class) =>
+                    new StringSelectMenuOptionBuilder().setLabel(mhfu_monster_class.label).setDescription(mhfu_monster_class.description).setValue(mhfu_monster_class.value),
+                ),
+            ),
         );
-        const MHFUlynian = new StringSelectMenuBuilder().setCustomId('MHFUlynian').setPlaceholder('Select the monster!').addOptions(
-            new StringSelectMenuOptionBuilder().setLabel('Felyne').setDescription('アイルー (Airū)').setValue('MHFU Felyne'),
-            new StringSelectMenuOptionBuilder().setLabel('Melynx').setDescription('メラルー (Merarū)').setValue('MHFU Melynx'),
-            new StringSelectMenuOptionBuilder().setLabel('Shakalaka').setDescription('チャチャブー (Chachabū)').setValue('MHFU Shakalaka'),
-            new StringSelectMenuOptionBuilder().setLabel('King Shakalaka').setDescription('キングチャチャブー (Kingu Chachabū)').setValue('MHFU King Shakalaka'),
+
+        const MHFUlynian = new ActionRowBuilder().addComponents(
+            new StringSelectMenuBuilder().setCustomId('MHFUlynian').setPlaceholder('Select the monster!').addOptions(
+                new StringSelectMenuOptionBuilder().setLabel('Felyne').setDescription('アイルー (Airū)').setValue('MHFU Felyne'),
+                new StringSelectMenuOptionBuilder().setLabel('Melynx').setDescription('メラルー (Merarū)').setValue('MHFU Melynx'),
+                new StringSelectMenuOptionBuilder().setLabel('Shakalaka').setDescription('チャチャブー (Chachabū)').setValue('MHFU Shakalaka'),
+                new StringSelectMenuOptionBuilder().setLabel('King Shakalaka').setDescription('キングチャチャブー (Kingu Chachabū)').setValue('MHFU King Shakalaka'),
+            ),
         );
-        const MHFUneopteron = new StringSelectMenuBuilder().setCustomId('MHFUneopteron').setPlaceholder('Select the monster!').addOptions(
-            new StringSelectMenuOptionBuilder().setLabel('Vespoid').setDescription('ランゴスタ (Rangosuta)').setValue('MHFU Vespoid'),
-            new StringSelectMenuOptionBuilder().setLabel('Vespoid Queen').setDescription('クイーンランゴスタ (Kuīn Rangosuta)').setValue('MHFU Vespoid Queen'),
-            new StringSelectMenuOptionBuilder().setLabel('Hornetaur').setDescription('カンタロス (Kantarosu)').setValue('MHFU Hornetaur'),
-            new StringSelectMenuOptionBuilder().setLabel('Great Thunderbug').setDescription('大雷光虫 (Dai Raikō Mushi)').setValue('MHFU Great Thunderbug'),
+
+        const MHFUneopteron = new ActionRowBuilder().addComponents(
+            new StringSelectMenuBuilder().setCustomId('MHFUneopteron').setPlaceholder('Select the monster!').addOptions(
+                new StringSelectMenuOptionBuilder().setLabel('Vespoid').setDescription('ランゴスタ (Rangosuta)').setValue('MHFU Vespoid'),
+                new StringSelectMenuOptionBuilder().setLabel('Vespoid Queen').setDescription('クイーンランゴスタ (Kuīn Rangosuta)').setValue('MHFU Vespoid Queen'),
+                new StringSelectMenuOptionBuilder().setLabel('Hornetaur').setDescription('カンタロス (Kantarosu)').setValue('MHFU Hornetaur'),
+                new StringSelectMenuOptionBuilder().setLabel('Great Thunderbug').setDescription('大雷光虫 (Dai Raikō Mushi)').setValue('MHFU Great Thunderbug'),
+            ),
         );
-        const MHFUrow = new ActionRowBuilder().addComponents(MHFU);
-        const MHFUlynianRow = new ActionRowBuilder().addComponents(MHFUlynian);
-        const MHFUneopteronRow = new ActionRowBuilder().addComponents(MHFUneopteron);
+
         // ////////////////////////////////////////////////////////////////////////////////////////////////////
         //                                                                                                   //
         // Monster Hunter 3rd                                                                                //
         //                                                                                                   //
         // ////////////////////////////////////////////////////////////////////////////////////////////////////
-        const MHP3rd = new StringSelectMenuBuilder().setCustomId('MHP3rd').setPlaceholder('Select the monster class!').addOptions(
-            new StringSelectMenuOptionBuilder().setLabel('Lynian').setDescription('獣人種 (Jūjinshu)').setValue('MHP3rd Lynian'),
-            new StringSelectMenuOptionBuilder().setLabel('Neopteron').setDescription('甲虫種 (Kōchūshu)').setValue('MHP3rd Neopteron'),
-            new StringSelectMenuOptionBuilder().setLabel('Piscine Wyvern').setDescription('魚竜種 (Gyoryūshu)').setValue('MHP3rd Piscine Wyvern'),
+        const MHP3rd = new ActionRowBuilder().addComponents(
+            new StringSelectMenuBuilder().setCustomId('MHP3rd').setPlaceholder('Select the monster class!').addOptions(
+                data.mhp3rd.monster_classes.map((mhp3rd_monster_class) =>
+                    new StringSelectMenuOptionBuilder().setLabel(mhp3rd_monster_class.label).setDescription(mhp3rd_monster_class.description).setValue(mhp3rd_monster_class.value),
+                ),
+            ),
         );
-        const MHP3rdLynian = new StringSelectMenuBuilder().setCustomId('MHP3rdLynian').setPlaceholder('Select the monster!').addOptions(
-            new StringSelectMenuOptionBuilder().setLabel('Felyne').setDescription('アイルー (Airū)').setValue('MHP3rd Felyne'),
-            new StringSelectMenuOptionBuilder().setLabel('Melynx').setDescription('メラルー (Merarū)').setValue('MHP3rd Melynx'),
+
+        const MHP3rdLynian = new ActionRowBuilder().addComponents(
+            new StringSelectMenuBuilder().setCustomId('MHP3rdLynian').setPlaceholder('Select the monster!').addOptions(
+                new StringSelectMenuOptionBuilder().setLabel('Felyne').setDescription('アイルー (Airū)').setValue('MHP3rd Felyne'),
+                new StringSelectMenuOptionBuilder().setLabel('Melynx').setDescription('メラルー (Merarū)').setValue('MHP3rd Melynx'),
+            ),
         );
-        const MHP3rdNeopteron = new StringSelectMenuBuilder().setCustomId('MHP3rdNeopteron').setPlaceholder('Select the monster!').addOptions(
-            new StringSelectMenuOptionBuilder().setLabel('Altaroth').setDescription('オルタロス (Orutarosu)').setValue('MHP3rd Altaroth'),
-            new StringSelectMenuOptionBuilder().setLabel('Bnahabra').setDescription('ブナハブラ (Bunahabura)').setValue('MHP3rd Bnahabra'),
+
+        const MHP3rdNeopteron = new ActionRowBuilder().addComponents(
+            new StringSelectMenuBuilder().setCustomId('MHP3rdNeopteron').setPlaceholder('Select the monster!').addOptions(
+                new StringSelectMenuOptionBuilder().setLabel('Altaroth').setDescription('オルタロス (Orutarosu)').setValue('MHP3rd Altaroth'),
+                new StringSelectMenuOptionBuilder().setLabel('Bnahabra').setDescription('ブナハブラ (Bunahabura)').setValue('MHP3rd Bnahabra'),
+            ),
         );
-        const MHP3rdPiscineWyvern = new StringSelectMenuBuilder().setCustomId('MHP3rdPiscineWyvern').setPlaceholder('Select the monster!').addOptions(
-            new StringSelectMenuOptionBuilder().setLabel('Delex').setDescription('デルクス (Derukusu)').setValue('MHP3rd Delex'),
+
+        const MHP3rdPiscineWyvern = new ActionRowBuilder().addComponents(
+            new StringSelectMenuBuilder().setCustomId('MHP3rdPiscineWyvern').setPlaceholder('Select the monster!').addOptions(
+                new StringSelectMenuOptionBuilder().setLabel('Delex').setDescription('デルクス (Derukusu)').setValue('MHP3rd Delex'),
+            ),
         );
-        const MHP3rdRow = new ActionRowBuilder().addComponents(MHP3rd);
-        const MHP3rdLynianRow = new ActionRowBuilder().addComponents(MHP3rdLynian);
-        const MHP3rdNeopteronRow = new ActionRowBuilder().addComponents(MHP3rdNeopteron);
-        const MHP3rdPiscineWyvernRow = new ActionRowBuilder().addComponents(MHP3rdPiscineWyvern);
+
         // ////////////////////////////////////////////////////////////////////////////////////////////////////
         //                                                                                                   //
         // Monster Hunter Tri                                                                                //
         //                                                                                                   //
         // ////////////////////////////////////////////////////////////////////////////////////////////////////
-        const MHTri = new StringSelectMenuBuilder().setCustomId('MHTri').setPlaceholder('Select the monster class!').addOptions(
-            new StringSelectMenuOptionBuilder().setLabel('Lynian').setDescription('獣人種 (Jūjinshu)').setValue('MHTri Lynian'),
-            new StringSelectMenuOptionBuilder().setLabel('Neopteron').setDescription('甲虫種 (Kōchūshu)').setValue('MHTri Neopteron'),
-            new StringSelectMenuOptionBuilder().setLabel('Piscine Wyvern').setDescription('魚竜種 (Gyoryūshu)').setValue('MHTri Piscine Wyvern'),
+        const MHTri = new ActionRowBuilder().addComponents(
+            new StringSelectMenuBuilder().setCustomId('MHTri').setPlaceholder('Select the monster class!').addOptions(
+                data.mhtri.monster_classes.map((mhtri_monster_class) =>
+                    new StringSelectMenuOptionBuilder().setLabel(mhtri_monster_class.label).setDescription(mhtri_monster_class.description).setValue(mhtri_monster_class.value),
+                ),
+            ),
         );
-        const MHTriLynian = new StringSelectMenuBuilder().setCustomId('MHTriLynian').setPlaceholder('Select the monster!').addOptions(
-            new StringSelectMenuOptionBuilder().setLabel('Felyne').setDescription('アイルー (Airū)').setValue('MHTri Felyne'),
-            new StringSelectMenuOptionBuilder().setLabel('Melynx').setDescription('メラルー (Merarū)').setValue('MHTri Melynx'),
+
+        const MHTriLynian = new ActionRowBuilder().addComponents(
+            new StringSelectMenuBuilder().setCustomId('MHTriLynian').setPlaceholder('Select the monster!').addOptions(
+                new StringSelectMenuOptionBuilder().setLabel('Felyne').setDescription('アイルー (Airū)').setValue('MHTri Felyne'),
+                new StringSelectMenuOptionBuilder().setLabel('Melynx').setDescription('メラルー (Merarū)').setValue('MHTri Melynx'),
+            ),
         );
-        const MHTriNeopteron = new StringSelectMenuBuilder().setCustomId('MHTriNeopteron').setPlaceholder('Select the monster!').addOptions(
-            new StringSelectMenuOptionBuilder().setLabel('Altaroth').setDescription('オルタロス (Orutarosu)').setValue('MHTri Altaroth'),
-            new StringSelectMenuOptionBuilder().setLabel('Bnahabra').setDescription('ブナハブラ (Bunahabura)').setValue('MHTri Bnahabra'),
+
+        const MHTriNeopteron = new ActionRowBuilder().addComponents(
+            new StringSelectMenuBuilder().setCustomId('MHTriNeopteron').setPlaceholder('Select the monster!').addOptions(
+                new StringSelectMenuOptionBuilder().setLabel('Altaroth').setDescription('オルタロス (Orutarosu)').setValue('MHTri Altaroth'),
+                new StringSelectMenuOptionBuilder().setLabel('Bnahabra').setDescription('ブナハブラ (Bunahabura)').setValue('MHTri Bnahabra'),
+            ),
         );
-        const MHTriPiscineWyvern = new StringSelectMenuBuilder().setCustomId('MHTriPiscineWyvern').setPlaceholder('Select the monster!').addOptions(
-            new StringSelectMenuOptionBuilder().setLabel('Delex').setDescription('デルクス (Derukusu)').setValue('MHTri Delex'),
+
+        const MHTriPiscineWyvern = new ActionRowBuilder().addComponents(
+            new StringSelectMenuBuilder().setCustomId('MHTriPiscineWyvern').setPlaceholder('Select the monster!').addOptions(
+                new StringSelectMenuOptionBuilder().setLabel('Delex').setDescription('デルクス (Derukusu)').setValue('MHTri Delex'),
+            ),
         );
-        const MHTriRow = new ActionRowBuilder().addComponents(MHTri);
-        const MHTriLynianRow = new ActionRowBuilder().addComponents(MHTriLynian);
-        const MHTriNeopteronRow = new ActionRowBuilder().addComponents(MHTriNeopteron);
-        const MHTriPiscineWyvernRow = new ActionRowBuilder().addComponents(MHTriPiscineWyvern);
 
         // First message
         const iconPath = './../../assets/monster-hunter/Monster_Hunter.png';
         const iconFile = new AttachmentBuilder(iconPath);
         const mainEmbed = new EmbedBuilder().setColor(0x000000).setImage('attachment://Monster_Hunter.png');
-        const reply = await interaction.reply({ embeds: [mainEmbed], files: [iconFile], components: [mainMenuRow] });
+        const reply = await interaction.reply({ embeds: [mainEmbed], files: [iconFile], components: [mainMenu] });
 
         const collector = reply.createMessageComponentCollector({
             componentType: ComponentType.StringSelect,
@@ -106,116 +129,152 @@ module.exports = {
 
         collector.on('collect', async (i) => {
             await i.deferUpdate();
-            const selectedValue = i.values[0];
+            const selectedValues = i.values[0];
 
             // Main Menu - Select the game!
-            if (selectedValue === 'MHFU') await interaction.editReply({ components: [MHFUrow] });
-            if (selectedValue === 'MHP3rd') await interaction.editReply({ components: [MHP3rdRow] });
-            if (selectedValue === 'MHTri') await interaction.editReply({ components: [MHTriRow] });
+            if (i.customId === 'mainMenu') {
+                selectedGame = selectedValues;
+
+                if (selectedGame === 'mhfu') await interaction.editReply({ components: [MHFU] });
+                if (selectedGame === 'mhp3rd') await interaction.editReply({ components: [MHP3rd] });
+                if (selectedGame === 'mhtri') await interaction.editReply({ components: [MHTri] });
+            }
             // ////////////////////////////////////////////////////////////////////////////////////////////////////
             //                                                                                                   //
             // Monster Hunter Freedom Unite                                                                      //
             //                                                                                                   //
             // ////////////////////////////////////////////////////////////////////////////////////////////////////
-            if (selectedValue === 'MHFU Lynian') await interaction.editReply({ components: [MHFUlynianRow] });
-            if (selectedValue === 'MHFU Felyne') {
-                monsterInfo = data['MHFU']['Lynian']['Felyne']; output = true;
-                thumbnailPath = `./../../assets/monster-hunter/mhfu/monsters/${monsterInfo.Icon}`;
+            if (i.customId === 'MHFU') {
+                selectedClass = selectedValues;
+
+                if (selectedClass === 'lynian') await interaction.editReply({ components: [MHFUlynian] });
+                if (selectedClass === 'neopteron') await interaction.editReply({ components: [MHFUneopteron] });
             }
-            if (selectedValue === 'MHFU Melynx') {
-                monsterInfo = data['MHFU']['Lynian']['Melynx']; output = true;
-                thumbnailPath = `./../../assets/monster-hunter/mhfu/monsters/${monsterInfo.Icon}`;
+
+            if (selectedValues === 'MHFU Felyne') {
+                monsterInfo = data[selectedGame][selectedClass]['felyne']; output = true;
+                thumbnailPath = `./../../assets/monster-hunter/${selectedGame}/monsters/${monsterInfo.icon}`;
             }
-            if (selectedValue === 'MHFU Shakalaka') {
-                monsterInfo = data['MHFU']['Lynian']['Shakalaka']; output = true;
-                thumbnailPath = `./../../assets/monster-hunter/mhfu/monsters/${monsterInfo.Icon}`;
+            if (selectedValues === 'MHFU Melynx') {
+                monsterInfo = data[selectedGame][selectedClass]['melynx']; output = true;
+                thumbnailPath = `./../../assets/monster-hunter/${selectedGame}/monsters/${monsterInfo.icon}`;
             }
-            if (selectedValue === 'MHFU King Shakalaka') {
-                monsterInfo = data['MHFU']['Lynian']['King Shakalaka']; output = true;
-                thumbnailPath = `./../../assets/monster-hunter/mhfu/monsters/${monsterInfo.Icon}`;
+            if (selectedValues === 'MHFU Shakalaka') {
+                monsterInfo = data[selectedGame][selectedClass]['shakalaka']; output = true;
+                thumbnailPath = `./../../assets/monster-hunter/${selectedGame}/monsters/${monsterInfo.icon}`;
             }
-            if (selectedValue === 'MHFU Neopteron') await interaction.editReply({ components: [MHFUneopteronRow] });
-            if (selectedValue === 'MHFU Vespoid') {
-                monsterInfo = data['MHFU']['Neopteron']['Vespoid']; output = true;
-                thumbnailPath = `./../../assets/monster-hunter/mhfu/monsters/${monsterInfo.Icon}`;
+            if (selectedValues === 'MHFU King Shakalaka') {
+                monsterInfo = data[selectedGame][selectedClass]['king_shakalaka']; output = true;
+                thumbnailPath = `./../../assets/monster-hunter/${selectedGame}/monsters/${monsterInfo.icon}`;
             }
-            if (selectedValue === 'MHFU Vespoid Queen') {
-                monsterInfo = data['MHFU']['Neopteron']['Vespoid Queen']; output = true;
-                thumbnailPath = `./../../assets/monster-hunter/mhfu/monsters/${monsterInfo.Icon}`;
+
+
+            if (selectedValues === 'MHFU Vespoid') {
+                monsterInfo = data[selectedGame][selectedClass]['vespoid']; output = true;
+                thumbnailPath = `./../../assets/monster-hunter/${selectedGame}/monsters/${monsterInfo.icon}`;
             }
-            if (selectedValue === 'MHFU Hornetaur') {
-                monsterInfo = data['MHFU']['Neopteron']['Hornetaur']; output = true;
-                thumbnailPath = `./../../assets/monster-hunter/mhfu/monsters/${monsterInfo.Icon}`;
+            if (selectedValues === 'MHFU Vespoid Queen') {
+                monsterInfo = data[selectedGame][selectedClass]['vespoid_queen']; output = true;
+                thumbnailPath = `./../../assets/monster-hunter/${selectedGame}/monsters/${monsterInfo.icon}`;
             }
-            if (selectedValue === 'MHFU Great Thunderbug') {
-                monsterInfo = data['MHFU']['Neopteron']['Great Thunderbug']; output = true;
-                thumbnailPath = `./../../assets/monster-hunter/mhfu/monsters/${monsterInfo.Icon}`;
+            if (selectedValues === 'MHFU Hornetaur') {
+                monsterInfo = data[selectedGame][selectedClass]['hornetaur']; output = true;
+                thumbnailPath = `./../../assets/monster-hunter/${selectedGame}/monsters/${monsterInfo.icon}`;
             }
+            if (selectedValues === 'MHFU Great Thunderbug') {
+                monsterInfo = data[selectedGame][selectedClass]['great_thunderbug']; output = true;
+                thumbnailPath = `./../../assets/monster-hunter/${selectedGame}/monsters/${monsterInfo.icon}`;
+            }
+
             // ////////////////////////////////////////////////////////////////////////////////////////////////////
             //                                                                                                   //
             // Monster Hunter 3rd                                                                                //
             //                                                                                                   //
             // ////////////////////////////////////////////////////////////////////////////////////////////////////
-            if (selectedValue === 'MHP3rd Lynian') await interaction.editReply({ components: [MHP3rdLynianRow] });
-            if (selectedValue === 'MHP3rd Felyne') {
-                monsterInfo = data['MHP3rd']['Lynian']['Felyne']; output = true;
-                thumbnailPath = `./../../assets/monster-hunter/mhp3rd/monsters/${monsterInfo.Icon}`;
+            if (i.customId === 'MHP3rd') {
+                selectedClass = selectedValues;
+
+                if (selectedClass === 'lynian') await interaction.editReply({ components: [MHP3rdLynian] });
+                if (selectedClass === 'neopteron') await interaction.editReply({ components: [MHP3rdNeopteron] });
+                if (selectedClass === 'piscine_wyvern') await interaction.editReply({ components: [MHP3rdPiscineWyvern] });
             }
-            if (selectedValue === 'MHP3rd Melynx') {
-                monsterInfo = data['MHP3rd']['Lynian']['Melynx']; output = true;
-                thumbnailPath = `./../../assets/monster-hunter/mhp3rd/monsters/${monsterInfo.Icon}`;
+
+            if (selectedValues === 'MHP3rd Felyne') {
+                monsterInfo = data[selectedGame][selectedClass]['felyne']; output = true;
+                thumbnailPath = `./../../assets/monster-hunter/mhp3rd/monsters/${monsterInfo.icon}`;
             }
-            if (selectedValue === 'MHP3rd Neopteron') await interaction.editReply({ components: [MHP3rdNeopteronRow] });
-            if (selectedValue === 'MHP3rd Altaroth') {
-                monsterInfo = data['MHP3rd']['Neopteron']['Altaroth']; output = true;
-                thumbnailPath = `./../../assets/monster-hunter/mhp3rd/monsters/${monsterInfo.Icon}`;
+            if (selectedValues === 'MHP3rd Melynx') {
+                monsterInfo = data[selectedGame][selectedClass]['melynx']; output = true;
+                thumbnailPath = `./../../assets/monster-hunter/mhp3rd/monsters/${monsterInfo.icon}`;
             }
-            if (selectedValue === 'MHP3rd Bnahabra') {
-                monsterInfo = data['MHP3rd']['Neopteron']['Bnahabra']; output = true;
-                thumbnailPath = `./../../assets/monster-hunter/mhp3rd/monsters/${monsterInfo.Icon}`;
+
+
+            if (selectedValues === 'MHP3rd Altaroth') {
+                monsterInfo = data[selectedGame][selectedClass]['altaroth']; output = true;
+                thumbnailPath = `./../../assets/monster-hunter/mhp3rd/monsters/${monsterInfo.icon}`;
             }
-            if (selectedValue === 'MHP3rd Piscine Wyvern') await interaction.editReply({ components: [MHP3rdPiscineWyvernRow] });
-            if (selectedValue === 'MHP3rd Delex') {
-                monsterInfo = data['MHP3rd']['Piscine Wyvern']['Delex']; output = true;
-                thumbnailPath = `./../../assets/monster-hunter/mhp3rd/monsters/${monsterInfo.Icon}`;
+            if (selectedValues === 'MHP3rd Bnahabra') {
+                monsterInfo = data[selectedGame][selectedClass]['bnahabra']; output = true;
+                thumbnailPath = `./../../assets/monster-hunter/mhp3rd/monsters/${monsterInfo.icon}`;
             }
+
+
+            if (selectedValues === 'MHP3rd Delex') {
+                monsterInfo = data[selectedGame][selectedClass]['delex']; output = true;
+                thumbnailPath = `./../../assets/monster-hunter/mhp3rd/monsters/${monsterInfo.icon}`;
+            }
+
             // ////////////////////////////////////////////////////////////////////////////////////////////////////
             //                                                                                                   //
             // Monster Hunter Tri                                                                                //
             //                                                                                                   //
             // ////////////////////////////////////////////////////////////////////////////////////////////////////
-            if (selectedValue === 'MHTri Lynian') await interaction.editReply({ components: [MHTriLynianRow] });
-            if (selectedValue === 'MHTri Felyne') {
-                monsterInfo = data['MHTri']['Lynian']['Felyne']; output = true;
-                thumbnailPath = `./../../assets/monster-hunter/mhtri/monsters/${monsterInfo.Icon}`;
+            if (i.customId === 'MHTri') {
+                selectedClass = selectedValues;
+
+                if (selectedClass === 'lynian') await interaction.editReply({ components: [MHTriLynian] });
+                if (selectedClass === 'neopteron') await interaction.editReply({ components: [MHTriNeopteron] });
+                if (selectedClass === 'piscine_wyvern') await interaction.editReply({ components: [MHTriPiscineWyvern] });
             }
-            if (selectedValue === 'MHTri Melynx') {
-                monsterInfo = data['MHTri']['Lynian']['Melynx']; output = true;
-                thumbnailPath = `./../../assets/monster-hunter/mhtri/monsters/${monsterInfo.Icon}`;
+
+            if (selectedValues === 'MHTri Felyne') {
+                monsterInfo = data[selectedGame][selectedClass]['felyne']; output = true;
+                thumbnailPath = `./../../assets/monster-hunter/mhtri/monsters/${monsterInfo.icon}`;
             }
-            if (selectedValue === 'MHTri Neopteron') await interaction.editReply({ components: [MHTriNeopteronRow] });
-            if (selectedValue === 'MHTri Altaroth') {
-                monsterInfo = data['MHTri']['Neopteron']['Altaroth']; output = true;
-                thumbnailPath = `./../../assets/monster-hunter/mhtri/monsters/${monsterInfo.Icon}`;
+            if (selectedValues === 'MHTri Melynx') {
+                monsterInfo = data[selectedGame][selectedClass]['melynx']; output = true;
+                thumbnailPath = `./../../assets/monster-hunter/mhtri/monsters/${monsterInfo.icon}`;
             }
-            if (selectedValue === 'MHTri Bnahabra') {
-                monsterInfo = data['MHTri']['Neopteron']['Bnahabra']; output = true;
-                thumbnailPath = `./../../assets/monster-hunter/mhtri/monsters/${monsterInfo.Icon}`;
+
+
+            if (selectedValues === 'MHTri Altaroth') {
+                monsterInfo = data[selectedGame][selectedClass]['altaroth']; output = true;
+                thumbnailPath = `./../../assets/monster-hunter/mhtri/monsters/${monsterInfo.icon}`;
             }
-            if (selectedValue === 'MHTri Piscine Wyvern') await interaction.editReply({ components: [MHTriPiscineWyvernRow] });
-            if (selectedValue === 'MHTri Delex') {
-                monsterInfo = data['MHTri']['Piscine Wyvern']['Delex']; output = true;
-                thumbnailPath = `./../../assets/monster-hunter/mhtri/monsters/${monsterInfo.Icon}`;
+            if (selectedValues === 'MHTri Bnahabra') {
+                monsterInfo = data[selectedGame][selectedClass]['bnahabra']; output = true;
+                thumbnailPath = `./../../assets/monster-hunter/mhtri/monsters/${monsterInfo.icon}`;
+            }
+
+
+            if (selectedValues === 'MHTri Delex') {
+                monsterInfo = data[selectedGame][selectedClass]['delex']; output = true;
+                thumbnailPath = `./../../assets/monster-hunter/mhtri/monsters/${monsterInfo.icon}`;
             }
 
             // Output
             if (output === true) {
                 thumbnailFile = new AttachmentBuilder(thumbnailPath);
-                MHembed = new EmbedBuilder().setColor(0xFFFFFF).setTitle(`${monsterInfo.Name}`).setDescription(`${monsterInfo.Description}`).setThumbnail(`attachment://${monsterInfo.Icon}`).addFields(
-                    { name: 'Elements:', value: `${monsterInfo.Elements}`, inline: true },
-                    { name: 'Ailments:', value: `${monsterInfo.Ailments}`, inline: true },
-                    { name: 'Weakest to:', value: `${monsterInfo.Weakness}`, inline: true },
-                );
+                MHembed = new EmbedBuilder()
+                    .setColor(0xFFFFFF)
+                    .setTitle(`${monsterInfo.name}`)
+                    .setDescription(`${monsterInfo.description}`)
+                    .setThumbnail(`attachment://${monsterInfo.icon}`)
+                    .addFields(
+                        { name: 'Elements:', value: `${monsterInfo.elements}`, inline: true },
+                        { name: 'Ailments:', value: `${monsterInfo.ailments}`, inline: true },
+                        { name: 'Weakest to:', value: `${monsterInfo.weakness}`, inline: true },
+                    );
                 await interaction.editReply({ embeds: [MHembed], files: [thumbnailFile], components: [] });
             }
         });

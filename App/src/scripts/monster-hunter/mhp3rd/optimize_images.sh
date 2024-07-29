@@ -25,9 +25,9 @@ fi
 function optimize_path () {
     for file in $(find $1 -name '*.png')
     do
-        if [[ $(identify -format "%wx%h" $file) != "84x84" ]]; then
-            # resize to 84px height
-            $CONVERT -resize 84x84 -gravity center -extent 84x84 -background none "$file" "$file"
+        if [[ $(identify -format "%wx%h" $file) != "64x64" ]]; then
+            # resize to 64x64 px
+            $CONVERT -resize 64x64 -gravity center -extent 64x64 -background none "$file" "$file"
         fi
 
         # optmize images

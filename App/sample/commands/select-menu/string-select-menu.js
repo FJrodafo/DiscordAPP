@@ -1,4 +1,4 @@
-const { SlashCommandBuilder, StringSelectMenuBuilder, StringSelectMenuOptionBuilder, ActionRowBuilder, ComponentType } = require('discord.js');
+const { SlashCommandBuilder, ActionRowBuilder, StringSelectMenuBuilder, StringSelectMenuOptionBuilder, ComponentType } = require('discord.js');
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -26,27 +26,27 @@ module.exports = {
             },
         ];
 
-        const select = new StringSelectMenuBuilder()
-            .setCustomId('starter')
-            .setPlaceholder('Make a selection!')
-            .setMinValues(0)
-            .setMaxValues(starters.length)
-            .addOptions(
-                starters.map((starter) =>
-                    new StringSelectMenuOptionBuilder()
-                        .setLabel(starter.label)
-                        .setDescription(starter.description)
-                        .setValue(starter.value)
-                        .setEmoji(starter.emoji),
-                ),
+        const select = new ActionRowBuilder()
+            .addComponents(
+                new StringSelectMenuBuilder()
+                    .setCustomId('starter')
+                    .setPlaceholder('Make a selection!')
+                    .setMinValues(0)
+                    .setMaxValues(starters.length)
+                    .addOptions(
+                        starters.map((starter) =>
+                            new StringSelectMenuOptionBuilder()
+                                .setLabel(starter.label)
+                                .setDescription(starter.description)
+                                .setValue(starter.value)
+                                .setEmoji(starter.emoji),
+                        ),
+                    ),
             );
-
-        const actionRow = new ActionRowBuilder()
-            .addComponents(select);
 
         const reply = await interaction.reply({
             content: 'Choose your starter!',
-            components: [actionRow],
+            components: [select],
             ephemeral: true,
         });
 

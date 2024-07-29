@@ -26,7 +26,7 @@ function optimize_path () {
     for file in $(find $1 -name '*.png')
     do
         if [[ $(identify -format "%wx%h" $file) != "832x1109" ]]; then
-            # resize to 128px height
+            # resize to 832x1109 px
             $CONVERT -resize 832x1109 -gravity center -extent 832x1109 -background none "$file" "$file"
         fi
 
