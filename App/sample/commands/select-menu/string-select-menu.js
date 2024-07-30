@@ -1,6 +1,7 @@
 const { SlashCommandBuilder, ActionRowBuilder, StringSelectMenuBuilder, StringSelectMenuOptionBuilder, ComponentType } = require('discord.js');
 
 module.exports = {
+    category: 'select-menu',
     data: new SlashCommandBuilder()
         .setName('string-select-menu')
         .setDescription('Example of a string selection menu!'),

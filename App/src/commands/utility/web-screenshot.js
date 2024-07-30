@@ -20,11 +20,11 @@ module.exports = {
         await page.setViewport({ width: 1920, height: 1080 });
         await page.goto(URL, { waitUntil: 'networkidle2' });
         await page.screenshot({
-            path: 'web-screenshot.png',
+            path: './../../assets/command-output/web-screenshot.png',
             type: 'png',
             fullPage: true,
         });
-        const imagePath = './web-screenshot.png';
+        const imagePath = './../../assets/command-output/web-screenshot.png';
         const imageFile = new AttachmentBuilder(imagePath);
         await interaction.editReply({ files: [imageFile] });
         await browser.close();

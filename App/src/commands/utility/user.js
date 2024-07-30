@@ -4,14 +4,14 @@ module.exports = {
     category: 'utility',
     data: new SlashCommandBuilder()
         .setName('user')
-        .setDescription('Provides information about the user.')
+        .setDescription('Provides information about the user!')
         .setDMPermission(false),
     async execute(interaction) {
         const user = interaction.user;
         const member = interaction.member;
         const embed = new EmbedBuilder()
             .setColor(0xFFFFFF)
-            .setThumbnail(`${interaction.user.displayAvatarURL()}`)
+            .setThumbnail(`${user.displayAvatarURL()}`)
             .addFields(
                 { name: 'User Name:', value: `${user.username}`, inline: true },
                 { name: 'ID:', value: `${user.id}`, inline: true },

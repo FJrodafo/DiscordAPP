@@ -1,6 +1,7 @@
 const { SlashCommandBuilder, RoleSelectMenuBuilder, ActionRowBuilder, ComponentType } = require('discord.js');
 
 module.exports = {
+    category: 'select-menu',
     data: new SlashCommandBuilder()
         .setName('role-select-menu')
         .setDescription('Example of a role selection menu!'),

@@ -1,6 +1,7 @@
 const { SlashCommandBuilder, UserSelectMenuBuilder, ActionRowBuilder, ComponentType } = require('discord.js');
 
 module.exports = {
+    category: 'select-menu',
     data: new SlashCommandBuilder()
         .setName('user-select-menu')
         .setDescription('Example of a user selection menu!'),

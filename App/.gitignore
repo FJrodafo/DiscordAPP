@@ -3,16 +3,12 @@
 
 # assets
 /src/assets/blackjack/*/
+/src/assets/command-output/*.png
 /src/assets/dauntless/original
 /src/assets/games/original
 /src/assets/monster-hunter/mhfu/original
 /src/assets/monster-hunter/mhp3rd/original
 /src/assets/monster-hunter/mhtri/original
-
-# commands
-/src/commands/utility/dauntless-gauntlet-leaderboard.png
-/src/commands/utility/dauntless-meta-builds.png
-/src/commands/utility/web-screenshot.png
 
 # secrets
 /sample/config.json

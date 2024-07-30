@@ -1,6 +1,7 @@
 const { SlashCommandBuilder, PermissionFlagsBits } = require('discord.js');
 
 module.exports = {
+    category: 'moderation',
     data: new SlashCommandBuilder()
         .setName('prune')
         .setDescription('Prune up to 99 messages.')
