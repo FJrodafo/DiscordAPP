@@ -1,6 +1,7 @@
 const { ContextMenuCommandBuilder, ApplicationCommandType, EmbedBuilder } = require('discord.js');
 
 module.exports = {
+    category: 'context-menu',
     data: new ContextMenuCommandBuilder()
         .setName('Bot-Check')
         .setType(ApplicationCommandType.User),

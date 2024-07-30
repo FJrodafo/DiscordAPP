@@ -1,6 +1,7 @@
 const { SlashCommandBuilder, ActionRowBuilder, StringSelectMenuBuilder, StringSelectMenuOptionBuilder, AttachmentBuilder, EmbedBuilder, ComponentType } = require('discord.js');
 
 module.exports = {
+    category: 'utility',
     data: new SlashCommandBuilder()
         .setName('monster-hunter')
         .setDescription('Monster ecodata!'),

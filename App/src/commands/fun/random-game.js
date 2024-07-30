@@ -1,6 +1,7 @@
 const { SlashCommandBuilder, AttachmentBuilder, EmbedBuilder } = require('discord.js');
 
 module.exports = {
+    category: 'fun',
     data: new SlashCommandBuilder()
         .setName('random-game')
         .setDescription('Replies with a random game to play!'),

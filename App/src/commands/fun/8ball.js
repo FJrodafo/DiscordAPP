@@ -1,6 +1,7 @@
 const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 
 module.exports = {
+    category: 'fun',
     data: new SlashCommandBuilder()
         .setName('8ball')
         .setDescription('Get your 8ball answer!')

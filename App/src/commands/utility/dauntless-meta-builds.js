@@ -4,6 +4,7 @@ const fs = require('fs');
 process.chdir(__dirname);
 
 module.exports = {
+    category: 'utility',
     data: new SlashCommandBuilder()
         .setName('dauntless-meta-builds')
         .setDescription('Find your meta build!')

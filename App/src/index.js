@@ -6,6 +6,9 @@ const { token } = require('./config.json');
 // Create a new client instance
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
+// Cooldowns
+client.cooldowns = new Collection();
+
 // Command handling
 client.commands = new Collection();
 

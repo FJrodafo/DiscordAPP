@@ -8,8 +8,8 @@
 
 ## Events
 
-- [ ] [Cooldowns](https://discordjs.guide/additional-features/cooldowns.html)
-- [ ] [Reloading commands](https://discordjs.guide/additional-features/reloading-commands.html)
+- [x] [Cooldowns](https://discordjs.guide/additional-features/cooldowns.html)
+- [x] [Reloading commands](https://discordjs.guide/additional-features/reloading-commands.html)
 
 ## Database
 

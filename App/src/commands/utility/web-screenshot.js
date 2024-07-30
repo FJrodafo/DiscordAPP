@@ -2,6 +2,7 @@ const { SlashCommandBuilder, AttachmentBuilder } = require('discord.js');
 const puppeteer = require('puppeteer');
 
 module.exports = {
+    category: 'utility',
     data: new SlashCommandBuilder()
         .setName('web-screenshot')
         .setDescription('Take a screenshot of the entire website.')

@@ -1,6 +1,7 @@
 const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 
 module.exports = {
+    category: 'fun',
     data: new SlashCommandBuilder()
         .setName('ship')
         .setDescription('Find your better half!')

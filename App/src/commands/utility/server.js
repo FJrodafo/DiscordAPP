@@ -1,6 +1,7 @@
 const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 
 module.exports = {
+    category: 'utility',
     data: new SlashCommandBuilder()
         .setName('server')
         .setDescription('Display info about this server!')

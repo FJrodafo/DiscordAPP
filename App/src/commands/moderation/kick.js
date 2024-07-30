@@ -1,6 +1,7 @@
 const { SlashCommandBuilder } = require('discord.js');
 
 module.exports = {
+    category: 'moderation',
     data: new SlashCommandBuilder()
         .setName('kick')
         .setDescription('Select a member and kick them (but not really).')

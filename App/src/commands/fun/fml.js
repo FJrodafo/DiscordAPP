@@ -2,6 +2,7 @@ const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 const puppeteer = require('puppeteer');
 
 module.exports = {
+    category: 'fun',
     data: new SlashCommandBuilder()
         .setName('fml')
         .setDescription('Your everyday life stories!'),

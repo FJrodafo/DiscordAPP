@@ -2,6 +2,7 @@ const { SlashCommandBuilder, AttachmentBuilder } = require('discord.js');
 const puppeteer = require('puppeteer');
 
 module.exports = {
+    category: 'utility',
     data: new SlashCommandBuilder()
         .setName('dauntless-gauntlet-leaderboard')
         .setDescription('Provides information on the top 5 in Gauntlet.'),
@@ -29,6 +30,7 @@ const { SlashCommandBuilder, AttachmentBuilder, EmbedBuilder } = require('discor
 const puppeteer = require('puppeteer');
 
 module.exports = {
+    category: 'utility',
     data: new SlashCommandBuilder()
         .setName('dauntless-gauntlet-leaderboard')
         .setDescription('Provides information on the top 5 in Gauntlet.'),
@@ -88,6 +90,7 @@ const { SlashCommandBuilder, AttachmentBuilder, EmbedBuilder } = require('discor
 const https = require('https');
 
 module.exports = {
+    category: 'utility',
     data: new SlashCommandBuilder()
         .setName('dauntless-gauntlet-leaderboard')
         .setDescription('Provides information on the top 5 in Gauntlet.'),

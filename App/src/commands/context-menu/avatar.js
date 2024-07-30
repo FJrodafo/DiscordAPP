@@ -1,6 +1,7 @@
 const { ContextMenuCommandBuilder, ApplicationCommandType } = require('discord.js');
 
 module.exports = {
+    category: 'context-menu',
     data: new ContextMenuCommandBuilder()
         .setName('Avatar')
         .setType(ApplicationCommandType.User),
