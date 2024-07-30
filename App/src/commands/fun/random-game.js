@@ -11,6 +11,6 @@ module.exports = {
         const imagePath = `./../../assets/games/list/${data.icon[randomGame]}`;
         const imageFile = new AttachmentBuilder(imagePath);
         const embed = new EmbedBuilder().setImage(`attachment://${data.icon[randomGame]}`);
-        interaction.reply({ embeds: [embed], files: [imageFile] });
+        await interaction.reply({ embeds: [embed], files: [imageFile] });
     },
 };
