@@ -156,7 +156,7 @@ module.exports = {
                     .setThumbnail(`attachment://${buildInfo.omnicell}`)
                     .setImage('attachment://meta-builds.png');
             }
-            await interaction.reply({ embeds: [embed], files: [thumbnailFile, imageFile] });
+            await interaction.reply({ embeds: [embed], files: [thumbnailFile, imageFile], ephemeral: true });
         }
     },
 };
