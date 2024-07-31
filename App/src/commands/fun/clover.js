@@ -2,7 +2,7 @@ const { SlashCommandBuilder } = require('discord.js');
 
 module.exports = {
     category: 'fun',
-    cooldown: 86400,
+    cooldown: 86_400,
     data: new SlashCommandBuilder()
         .setName('clover')
         .setDescription('Find a clover!'),

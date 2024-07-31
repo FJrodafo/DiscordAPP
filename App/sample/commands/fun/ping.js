@@ -2,6 +2,7 @@ const { SlashCommandBuilder } = require('discord.js');
 
 module.exports = {
     category: 'fun',
+    // 60 seconds
     cooldown: 60,
     data: new SlashCommandBuilder()
         .setName('ping')

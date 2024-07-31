@@ -172,5 +172,8 @@ module.exports = {
                 await interaction.editReply({ embeds: [MHembed], files: [thumbnailFile], components: [] });
             }
         });
+        collector.on('end', async () => {
+            await interaction.editReply({ components: [] });
+        });
     },
 };
