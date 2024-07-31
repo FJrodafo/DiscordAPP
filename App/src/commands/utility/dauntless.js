@@ -129,7 +129,7 @@ module.exports = {
         else if (subcommand === 'meta-builds') {
             const weapon = interaction.options.getString('weapon');
             const element = interaction.options.getString('element');
-            const jsonPath = './../../data/dauntless-meta-builds.json';
+            const jsonPath = './../../database/dauntless/meta-builds.json';
             const data = require(jsonPath);
             const buildInfo = data[weapon][element];
             const thumbnailPath = `./../../assets/dauntless/builds/${buildInfo.omnicell}`;

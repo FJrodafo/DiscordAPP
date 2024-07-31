@@ -5,9 +5,9 @@ module.exports = {
     once: true,
     execute(client) {
         console.log(`Ready! Logged in as ${client.user.tag}`);
-        const jsonPath = './../data/games.json';
+        const jsonPath = './../database/games/names.json';
         const data = require(jsonPath);
-        const randomGame = Math.floor(Math.random() * data.name.length);
+        const randomGame = Math.floor(Math.random() * data.length);
         const status = [
             // Custom
             { activities: [{ name: 'I respond to DMs', type: ActivityType.Custom }], status: 'online' },
@@ -28,9 +28,9 @@ module.exports = {
             { activities: [{ name: 'One Piece', type: ActivityType.Watching }], status: 'dnd' },
 
             // Games
-            { activities: [{ name: data.name[randomGame], type: ActivityType.Playing }], status: 'idle' },
-            { activities: [{ name: data.name[randomGame], type: ActivityType.Competing }], status: 'dnd' },
-            { activities: [{ name: data.name[randomGame], type: ActivityType.Streaming, url: 'https://www.twitch.tv/directory' }] },
+            { activities: [{ name: data[randomGame], type: ActivityType.Playing }], status: 'idle' },
+            { activities: [{ name: data[randomGame], type: ActivityType.Competing }], status: 'dnd' },
+            { activities: [{ name: data[randomGame], type: ActivityType.Streaming, url: 'https://www.twitch.tv/directory' }] },
         ];
         function updateStatus() {
             const random = Math.floor(Math.random() * status.length);

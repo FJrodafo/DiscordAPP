@@ -6,10 +6,12 @@ module.exports = {
         .setName('monster-hunter')
         .setDescription('Monster ecodata!'),
     async execute(interaction) {
+        const embedJsonPath = './../../database/monster-hunter/embed.json';
+        const menuJsonPath = './../../database/monster-hunter/menu.json';
+        const embedData = require(embedJsonPath);
+        const menuData = require(menuJsonPath);
         // Variables
         let selectedGame, selectedClass, selectedMonster, monsterInfo, thumbnailPath, thumbnailFile, MHembed, output = false;
-        const embedJsonPath = './../../data/monster-hunter/embed-data.json', menuJsonPath = './../../data/monster-hunter/menu-data.json';
-        const embedData = require(embedJsonPath), menuData = require(menuJsonPath);
         // Main Menu
         const mainMenu = new ActionRowBuilder().addComponents(
             new StringSelectMenuBuilder().setCustomId('Main Menu').setPlaceholder('Select the game!').addOptions(
