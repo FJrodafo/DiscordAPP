@@ -142,19 +142,19 @@ module.exports = {
             if (buildInfo.best) {
                 embed = new EmbedBuilder()
                     .setColor(0xFFFFFF)
-                    .setTitle(`${element} ${weapon} Meta Build:`)
+                    .setTitle(`${buildInfo.name} Meta Build:`)
                     .setDescription(buildInfo.perks.join('\n'))
                     .setThumbnail(`attachment://${buildInfo.omnicell}`)
-                    .setImage('attachment://dauntless-meta-builds.png')
+                    .setImage('attachment://meta-builds.png')
                     .setFooter({ text: `${buildInfo.best}` });
             }
             else {
                 embed = new EmbedBuilder()
                     .setColor(0xFFFFFF)
-                    .setTitle(`${element} ${weapon} Meta Build:`)
+                    .setTitle(`${buildInfo.name} Meta Build:`)
                     .setDescription(buildInfo.perks.join('\n'))
                     .setThumbnail(`attachment://${buildInfo.omnicell}`)
-                    .setImage('attachment://dauntless-meta-builds.png');
+                    .setImage('attachment://meta-builds.png');
             }
             await interaction.reply({ embeds: [embed], files: [thumbnailFile, imageFile] });
         }
