@@ -40,8 +40,8 @@ module.exports = {
                 ),
             ),
         );
-        const MHFUPiscineWyverns = new ActionRowBuilder().addComponents(
-            new StringSelectMenuBuilder().setCustomId('MHFUPiscineWyverns').setPlaceholder('Select the monster!').addOptions(
+        const MHFUpiscineWyverns = new ActionRowBuilder().addComponents(
+            new StringSelectMenuBuilder().setCustomId('MHFUpiscineWyverns').setPlaceholder('Select the monster!').addOptions(
                 menuData.mhfu.piscine_wyverns.map((mhfu_piscine_wyvern) =>
                     new StringSelectMenuOptionBuilder().setLabel(mhfu_piscine_wyvern.label).setDescription(mhfu_piscine_wyvern.description).setValue(mhfu_piscine_wyvern.value),
                 ),
@@ -131,7 +131,7 @@ module.exports = {
                 selectedClass = selectedValues;
                 if (selectedClass === 'lynian') await interaction.editReply({ components: [MHFUlynians] });
                 if (selectedClass === 'neopteron') await interaction.editReply({ components: [MHFUneopterons] });
-                if (selectedClass === 'piscine_wyvern') await interaction.editReply({ components: [MHFUPiscineWyverns] });
+                if (selectedClass === 'piscine_wyvern') await interaction.editReply({ components: [MHFUpiscineWyverns] });
             }
             // Monster Hunter 3rd
             if (i.customId === 'MHP3rd') {
@@ -151,7 +151,7 @@ module.exports = {
             if (
                 i.customId === 'MHFUlynians' || i.customId === 'MHP3rdLynians' || i.customId === 'MHTriLynians' ||
                 i.customId === 'MHFUneopterons' || i.customId === 'MHP3rdNeopterons' || i.customId === 'MHTriNeopterons' ||
-                i.customId === 'MHFUPiscineWyverns' || i.customId === 'MHP3rdPiscineWyverns' || i.customId === 'MHTriPiscineWyvern'
+                i.customId === 'MHFUpiscineWyverns' || i.customId === 'MHP3rdPiscineWyverns' || i.customId === 'MHTriPiscineWyvern'
             ) {
                 selectedMonster = selectedValues;
                 monsterInfo = embedData[selectedGame][selectedClass][selectedMonster]; output = true;

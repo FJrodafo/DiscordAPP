@@ -13,7 +13,7 @@ const {
 module.exports = {
     category: 'utility',
     data: new SlashCommandBuilder()
-        .setName('select-menu')
+        .setName('select-menus')
         .setDescription('Make a selection!')
         .setDMPermission(false)
         .addSubcommand(subcommand => subcommand
