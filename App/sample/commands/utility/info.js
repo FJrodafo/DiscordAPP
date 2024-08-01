@@ -23,7 +23,6 @@ module.exports = {
 
         if (subcommand === 'server') {
             embed = new EmbedBuilder()
-                .setColor(0xFFFFFF)
                 .setThumbnail(`${guild.iconURL()}`)
                 .addFields(
                     { name: 'Server Name:', value: `${guild.name}`, inline: true },
@@ -35,7 +34,6 @@ module.exports = {
         }
         else if (subcommand === 'user') {
             embed = new EmbedBuilder()
-                .setColor(0xFFFFFF)
                 .setThumbnail(`${user.displayAvatarURL()}`)
                 .addFields(
                     { name: 'User:', value: `${user.username}`, inline: true },

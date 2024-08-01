@@ -9,7 +9,6 @@ module.exports = {
     async execute(interaction) {
         const guild = interaction.guild;
         const embed = new EmbedBuilder()
-            .setColor(0xFFFFFF)
             .setThumbnail(`${guild.iconURL()}`)
             .addFields(
                 { name: 'Server Name:', value: `${guild.name}`, inline: true },

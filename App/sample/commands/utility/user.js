@@ -10,7 +10,6 @@ module.exports = {
         const user = interaction.user;
         const member = interaction.member;
         const embed = new EmbedBuilder()
-            .setColor(0xFFFFFF)
             .setThumbnail(`${user.displayAvatarURL()}`)
             .addFields(
                 { name: 'User:', value: `${user.username}`, inline: true },

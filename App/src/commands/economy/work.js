@@ -49,23 +49,8 @@ module.exports = {
             });
         }
 
-        // Embed color based on user role
-        let embedColor = 'Default';
-        const pirate = '1205938469797625947';
-        if (member.roles.cache.has(pirate)) embedColor = 0x71368A;
-        const captain = '1259986911460851783';
-        if (member.roles.cache.has(captain)) embedColor = 0x9B59B6;
-        const serverBooster = '1207653983850594335';
-        if (member.roles.cache.has(serverBooster)) embedColor = 0xF47FFF;
-        const treasurerOfTheNight = '1205938707442434118';
-        if (member.roles.cache.has(treasurerOfTheNight)) embedColor = 0x010000;
-        const serverOwner = '1205588374354796574';
-        if (member.roles.cache.has(serverOwner)) embedColor = 0xF1C40F;
-
         // Result
-        const embed = new EmbedBuilder()
-            .setColor(embedColor)
-            .setDescription('You have earned `40` coins!');
+        const embed = new EmbedBuilder().setDescription('You have earned `40` coins!');
         return interaction.reply({ embeds: [embed] });
     },
 };

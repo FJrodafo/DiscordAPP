@@ -1,4 +1,4 @@
-const { SlashCommandBuilder } = require('discord.js');
+const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 
 module.exports = {
     category: 'fun',
@@ -9,6 +9,7 @@ module.exports = {
     async execute(interaction) {
         const randomNumber = Math.floor(Math.random() * 1000);
         const randomClover = (randomNumber === 0) ? ':four_leaf_clover:' : ':shamrock:';
-        await interaction.reply({ content: `${interaction.user} found a ${randomClover}` });
+        const embed = new EmbedBuilder().setDescription(`You found a ${randomClover}`);
+        await interaction.reply({ embeds: [embed] });
     },
 };

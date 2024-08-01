@@ -8,16 +8,12 @@ module.exports = {
     async execute(interaction) {
         let embed, message;
         if (interaction.targetUser.bot) {
-            embed = new EmbedBuilder()
-                .setAuthor({ name: `${interaction.targetUser.tag} is a BOT!`, iconURL: `${interaction.targetUser.displayAvatarURL({ dynamic: true, size: 512 })}` })
-                .setColor(0xFFFFFF);
+            embed = new EmbedBuilder().setAuthor({ name: `${interaction.targetUser.tag} is a BOT!`, iconURL: `${interaction.targetUser.displayAvatarURL({ dynamic: true, size: 512 })}` });
             message = await interaction.reply({ embeds: [embed], fetchReply: true });
             if (message.channel) message.react('🤖');
         }
         else {
-            embed = new EmbedBuilder()
-                .setAuthor({ name: `${interaction.targetUser.tag} is not a BOT.`, iconURL: `${interaction.targetUser.displayAvatarURL({ dynamic: true, size: 512 })}` })
-                .setColor(0xFFFFFF);
+            embed = new EmbedBuilder().setAuthor({ name: `${interaction.targetUser.tag} is not a BOT.`, iconURL: `${interaction.targetUser.displayAvatarURL({ dynamic: true, size: 512 })}` });
             message = await interaction.reply({ embeds: [embed], fetchReply: true });
             if (message.channel) message.react('👤');
         }

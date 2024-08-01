@@ -21,12 +21,10 @@ module.exports = {
             'Very doubtful.',
         ];
         const randomMessage = () => msg[Math.floor(Math.random() * msg.length)];
-        const embed = new EmbedBuilder()
-            .setColor(0xFFFFFF)
-            .addFields(
-                { name: 'Question:', value: `- ${question}` },
-                { name: 'Answer:', value: `- ${randomMessage()}` },
-            );
+        const embed = new EmbedBuilder().addFields(
+            { name: 'Question:', value: `${question}` },
+            { name: 'Answer:', value: `${randomMessage()}` },
+        );
         const message = await interaction.reply({ embeds: [embed], fetchReply: true });
         if (message.channel) message.react('🎱');
     },
