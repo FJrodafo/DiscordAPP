@@ -8,5 +8,5 @@
 
 ## Database
 
-- [ ] Deploy a database
+- [x] Deploy a database
 - [ ] Currency system

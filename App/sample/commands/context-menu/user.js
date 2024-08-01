@@ -1,14 +1,13 @@
-const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
+const { ContextMenuCommandBuilder, ApplicationCommandType, EmbedBuilder } = require('discord.js');
 
 module.exports = {
-    category: 'utility',
-    data: new SlashCommandBuilder()
-        .setName('user')
-        .setDescription('Provides information about the user!')
-        .setDMPermission(false),
+    category: 'context-menu',
+    data: new ContextMenuCommandBuilder()
+        .setName('User')
+        .setType(ApplicationCommandType.User),
     async execute(interaction) {
-        const user = interaction.user;
-        const member = interaction.member;
+        const user = interaction.targetUser;
+        const member = interaction.targetMember;
         const embed = new EmbedBuilder()
             .setColor(0xFFFFFF)
             .setThumbnail(`${user.displayAvatarURL()}`)

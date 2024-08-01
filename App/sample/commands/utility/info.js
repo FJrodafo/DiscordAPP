@@ -38,7 +38,7 @@ module.exports = {
                 .setColor(0xFFFFFF)
                 .setThumbnail(`${user.displayAvatarURL()}`)
                 .addFields(
-                    { name: 'User Name:', value: `${user.username}`, inline: true },
+                    { name: 'User:', value: `${user.username}`, inline: true },
                     { name: 'ID:', value: `${user.id}`, inline: true },
                     { name: 'Joined at:', value: `${member.joinedAt}`, inline: false },
                 );

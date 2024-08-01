@@ -10,6 +10,9 @@
 /src/assets/monster-hunter/mhp3rd/original
 /src/assets/monster-hunter/mhtri/original
 
+# database
+/src/database/data.json
+
 # secrets
 /sample/config.json
 /src/config.json
