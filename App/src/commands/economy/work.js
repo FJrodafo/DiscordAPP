@@ -10,7 +10,6 @@ module.exports = {
     async execute(interaction) {
         const jsonPath = './../../database/data.json';
         const user = interaction.user;
-        const member = interaction.member;
 
         // Read JSON file
         let users = [];
