@@ -20,11 +20,9 @@ module.exports = {
         const jsonPath = './../../database/data.json';
         const user = interaction.user;
 
-        let embed;
-
         if (subcommand === 'payout') {
-            embed = new EmbedBuilder().setDescription('Three Bells :bell: 10\nFlush of - - :hearts: 8\nFlush of - - :diamonds: 6\nFlush of - - :spades: 4\nTwo :gear: :gear: and :boom: 2\nTwo :gear: :gear: 1');
-            return interaction.reply({ embeds: [embed], ephemeral: true });
+            const payoutEmbed = new EmbedBuilder().setDescription('Three Bells :bell: 10\nFlush of - - :hearts: 8\nFlush of - - :diamonds: 6\nFlush of - - :spades: 4\nTwo :gear: :gear: and :boom: 2\nTwo :gear: :gear: 1');
+            return interaction.reply({ embeds: [payoutEmbed], ephemeral: true });
         }
         else if (subcommand === 'machine') {
             // Read JSON file
@@ -55,34 +53,62 @@ module.exports = {
             userExists.coins -= 1;
 
             const slots = [':gear:', ':boom:', ':spades:', ':diamonds:', ':hearts:', ':bell:'];
-            const result1 = Math.floor((Math.random() * slots.length));
-            const result2 = Math.floor((Math.random() * slots.length));
-            const result3 = Math.floor((Math.random() * slots.length));
+
+            const getRandomSlots = () => {
+                const result1 = Math.floor(Math.random() * slots.length);
+                const result2 = Math.floor(Math.random() * slots.length);
+                const result3 = Math.floor(Math.random() * slots.length);
+                return [slots[result1], slots[result2], slots[result3]];
+            };
 
             let payout = 0;
             let title = 'YOU LOST';
             let footerText = 'Try again!';
 
-            if ((slots[result1] === ':gear:' && slots[result2] === ':gear:' && slots[result3] !== ':gear:' && slots[result3] !== ':boom:') ||
-                (slots[result1] === ':gear:' && slots[result2] !== ':gear:' && slots[result2] !== ':boom:' && slots[result3] === ':gear:') ||
-                (slots[result1] !== ':gear:' && slots[result1] !== ':boom:' && slots[result2] === ':gear:' && slots[result3] === ':gear:')) {
+            // Store the result for checking
+            const finalResult = getRandomSlots();
+            const [finalSlot1, finalSlot2, finalSlot3] = finalResult;
+
+            // Send the initial response
+            let randomSlots = getRandomSlots();
+            const embed = new EmbedBuilder()
+                .setTitle('SPINNING')
+                .setDescription(randomSlots.join(' '))
+                .setFooter({ text: '...' });
+            await interaction.reply({ embeds: [embed] });
+
+            // Animation loop
+            for (let i = 0; i < 8; i++) {
+                randomSlots = getRandomSlots();
+                embed.setTitle('SPINNING')
+                    .setDescription(randomSlots.join(' '))
+                    .setFooter({ text: '...' });
+                await interaction.editReply({ embeds: [embed] });
+                // Wait 200ms for animation effect
+                await new Promise(resolve => setTimeout(resolve, 200));
+            }
+
+            // Determine payout based on the final result
+            if ((finalSlot1 === ':gear:' && finalSlot2 === ':gear:' && finalSlot3 !== ':gear:' && finalSlot3 !== ':boom:') ||
+                (finalSlot1 === ':gear:' && finalSlot2 !== ':gear:' && finalSlot2 !== ':boom:' && finalSlot3 === ':gear:') ||
+                (finalSlot1 !== ':gear:' && finalSlot1 !== ':boom:' && finalSlot2 === ':gear:' && finalSlot3 === ':gear:')) {
                 payout = 1;
             }
-            else if ((slots[result1] === ':gear:' && slots[result2] === ':gear:' && slots[result3] === ':boom:') ||
-                (slots[result1] === ':gear:' && slots[result2] === ':boom:' && slots[result3] === ':gear:') ||
-                (slots[result1] === ':boom:' && slots[result2] === ':gear:' && slots[result3] === ':gear:')) {
+            else if ((finalSlot1 === ':gear:' && finalSlot2 === ':gear:' && finalSlot3 === ':boom:') ||
+                (finalSlot1 === ':gear:' && finalSlot2 === ':boom:' && finalSlot3 === ':gear:') ||
+                (finalSlot1 === ':boom:' && finalSlot2 === ':gear:' && finalSlot3 === ':gear:')) {
                 payout = 2;
             }
-            else if (slots[result1] === ':spades:' && slots[result2] === ':spades:' && slots[result3] === ':spades:') {
+            else if (finalSlot1 === ':spades:' && finalSlot2 === ':spades:' && finalSlot3 === ':spades:') {
                 payout = 4;
             }
-            else if (slots[result1] === ':diamonds:' && slots[result2] === ':diamonds:' && slots[result3] === ':diamonds:') {
+            else if (finalSlot1 === ':diamonds:' && finalSlot2 === ':diamonds:' && finalSlot3 === ':diamonds:') {
                 payout = 6;
             }
-            else if (slots[result1] === ':hearts:' && slots[result2] === ':hearts:' && slots[result3] === ':hearts:') {
+            else if (finalSlot1 === ':hearts:' && finalSlot2 === ':hearts:' && finalSlot3 === ':hearts:') {
                 payout = 8;
             }
-            else if (slots[result1] === ':bell:' && slots[result2] === ':bell:' && slots[result3] === ':bell:') {
+            else if (finalSlot1 === ':bell:' && finalSlot2 === ':bell:' && finalSlot3 === ':bell:') {
                 payout = 10;
             }
 
@@ -106,12 +132,11 @@ module.exports = {
                 });
             }
 
-            // Result
-            embed = new EmbedBuilder()
-                .setDescription(slots[result1] + slots[result2] + slots[result3])
-                .setFooter({ text: footerText })
-                .setTitle(title);
-            return interaction.reply({ embeds: [embed] });
+            // Final result
+            embed.setTitle(title)
+                .setDescription(finalResult.join(' '))
+                .setFooter({ text: footerText });
+            await interaction.editReply({ embeds: [embed] });
         }
     },
 };

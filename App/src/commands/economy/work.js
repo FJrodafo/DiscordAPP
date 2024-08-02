@@ -3,7 +3,7 @@ const fs = require('fs');
 
 module.exports = {
     category: 'economy',
-    cooldown: 86_400,
+    cooldown: 28_800,
     data: new SlashCommandBuilder()
         .setName('work')
         .setDescription('Work to earn daily coins!'),
