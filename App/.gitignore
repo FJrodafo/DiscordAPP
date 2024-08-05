@@ -11,7 +11,11 @@
 /src/assets/monster-hunter/mhtri/original
 
 # database
+/src/database/dauntless/trials
 /src/database/data.json
+
+# scripts
+/src/scripts/dauntless/trials
 
 # secrets
 /sample/config.json
