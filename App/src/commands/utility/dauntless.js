@@ -101,10 +101,10 @@ module.exports = {
             if (subcommand === 'trials') {
                 const week = interaction.options.getInteger('week');
                 if (week < 1 || week > 263) return interaction.reply({ content: 'You need to input a number between `1` and `263`', ephemeral: true });
-                const jsonPath = `./../../database/dauntless/trials/week${week}.json`;
+                const jsonPath = `./../../database/dauntless/trials/solo/week${week}.json`;
                 const leaderboardData = require(jsonPath);
-                const topPlayers = leaderboardData.payload.world.solo.all.entries.slice(0, 5);
-                const topPlayersInfo = topPlayers.map((player, index) => (`\n${getRankEmoji(index + 1)} **${player.platform_name}**\nWeapon: **${getWeapon(player.weapon)}** Completion time: **${formatTimeMiliseconds(player.completion_time)}**`)).join('\n');
+                const topPlayers = leaderboardData.payload.entries.slice(0, 5);
+                const topPlayersInfo = topPlayers.map((player, index) => (`\n${getRankEmoji(index + 1)} **${player.platform_name}** [${player.platform}]\nWeapon: **${getWeapon(player.weapon)}** Completion time: **${formatTimeMiliseconds(player.completion_time)}**`)).join('\n');
                 const iconPath = './../../assets/dauntless/leaderboards/Trials.png';
                 const iconFile = new AttachmentBuilder(iconPath);
                 const embed = new EmbedBuilder()
