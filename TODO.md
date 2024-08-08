@@ -5,7 +5,3 @@
 
 - [x] MHFU Piscine Wyvern Data
 - [ ] MHFU Herbivores Data
-
-## Database
-
-- [x] Currency system

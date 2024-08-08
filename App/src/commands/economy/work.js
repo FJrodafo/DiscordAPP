@@ -48,7 +48,7 @@ module.exports = {
             });
         }
 
-        // Result
+        // Final result
         const embed = new EmbedBuilder().setDescription('You have earned `40` coins!');
         return interaction.reply({ embeds: [embed] });
     },

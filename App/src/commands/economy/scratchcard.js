@@ -66,7 +66,7 @@ module.exports = {
             });
         }
 
-        // Result
+        // Final result
         const embed = new EmbedBuilder()
             .setColor(0x74B454)
             .setDescription(`${scratchResults[0]} ${scratchResults[1]} ${scratchResults[2]} ${scratchResults[3]} ${scratchResults[4]} ${scratchResults[5]}\n${scratchResults[6]} ${scratchResults[7]} ${scratchResults[8]} ${scratchResults[9]} ${scratchResults[10]} ${scratchResults[11]}`)

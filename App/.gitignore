@@ -2,7 +2,6 @@
 /node_modules
 
 # assets
-/src/assets/blackjack/*/
 /src/assets/command-output/*.png
 /src/assets/dauntless/original
 /src/assets/games/original
