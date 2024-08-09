@@ -9,7 +9,7 @@
 
 ## Attribution
 
-This project was build by following the [discord.js guide](https://github.com/discordjs/guide). I have modified small details of the code. This is just an example of what the final project would look like.
+This project was build by following the [Discordjs guide](https://discordjs.guide/). I have modified small details of the code. This is just an example of what the final project would look like. Thanks to the [Discordjs](https://discord.js.org/) team for creating an amazing library and making Discord APP development easier!
 
 ## Project Structure
 
