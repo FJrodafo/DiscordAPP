@@ -100,7 +100,7 @@ module.exports = {
             .setDescription(resultText)
             .setImage('attachment://Roulette.gif')
             .addFields(
-                { name: 'Your bet:', value: `$${bet}`, inline: true },
+                { name: 'Your bet:', value: `${bet} coins`, inline: true },
                 { name: 'Your choice:', value: `${color === 'green' ? '🟢 Green' : color === 'red' ? '🔴 Red' : '⚫ Black'}`, inline: true },
                 { name: 'Result:', value: `${result === 'green' ? '🟢 Green' : result === 'red' ? '🔴 Red' : '⚫ Black'}`, inline: true },
             );
