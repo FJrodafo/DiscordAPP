@@ -1,10 +1,10 @@
-const { SlashCommandBuilder, EmbedBuilder, PermissionFlagsBits } = require('discord.js');
+const { SlashCommandBuilder, PermissionFlagsBits } = require('discord.js');
 
 module.exports = {
     category: 'moderation',
     data: new SlashCommandBuilder()
         .setName('prune')
-        .setDescription('Prune up to 99 messages!')
+        .setDescription('Prune up to 99 messages.')
         .setDefaultMemberPermissions(0)
         .setDMPermission(false)
         .addIntegerOption(option => option
@@ -13,30 +13,17 @@ module.exports = {
             .setRequired(false),
         ),
     async execute(interaction) {
-        let embed;
         const amount = interaction.options.getInteger('amount');
         if (!interaction.guild.members.me.permissions.has(PermissionFlagsBits.ManageMessages)) {
-            embed = new EmbedBuilder()
-                .setColor(0xFF005C)
-                .setDescription('🧹 I do not have permission to prune messages in this channel.');
-            return interaction.reply({ embeds: [embed], ephemeral: true });
+            return interaction.reply({ content: 'I do not have permission to prune messages in this channel.', ephemeral: true });
         }
         if (amount < 1 || amount > 99) {
-            embed = new EmbedBuilder()
-                .setColor(0xFF005C)
-                .setDescription('🧹 You need to input a number between `1` and `99`');
-            return interaction.reply({ embeds: [embed], ephemeral: true });
+            return interaction.reply({ content: 'You need to input a number between `1` and `99`', ephemeral: true });
         }
         await interaction.channel.bulkDelete(amount, true).catch(error => {
             console.error(error);
-            embed = new EmbedBuilder()
-                .setColor(0xFF005C)
-                .setDescription('🧹 There was an error trying to prune messages in this channel.');
-            interaction.reply({ embeds: [embed], ephemeral: true });
+            interaction.reply({ content: 'There was an error trying to prune messages in this channel!', ephemeral: true });
         });
-        embed = new EmbedBuilder()
-            .setColor(0xFF005C)
-            .setDescription(`🧹 Successfully pruned \`${amount}\` messages!`);
-        return interaction.reply({ embeds: [embed], ephemeral: true });
+        return interaction.reply({ content: `Successfully pruned \`${amount}\` messages.`, ephemeral: true });
     },
 };

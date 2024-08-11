@@ -6,6 +6,6 @@ module.exports = {
         .setName('Avatar')
         .setType(ApplicationCommandType.User),
     async execute(interaction) {
-        return interaction.reply(`${interaction.targetUser.username}'s [avatar](${interaction.targetUser.displayAvatarURL({ dynamic: true, size: 512 })})`);
+        return interaction.reply({ content: `${interaction.targetUser.username}'s [avatar](${interaction.targetUser.displayAvatarURL({ dynamic: true, size: 512 })})`, ephemeral: true });
     },
 };

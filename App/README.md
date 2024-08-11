@@ -21,28 +21,21 @@ App/
 ├── node_modules/
 │   └── ...
 ├── src/
-│   ├── assets/
-│   │   └── ...
 │   ├── commands/
 │   │   ├── admin/
 │   │   │   └── reload.js
-│   │   ├── fun/
-│   │   │   └── ping.js
 │   │   ├── context-menu/
 │   │   │   └── avatar.js
+│   │   ├── fun/
+│   │   │   └── ping.js
 │   │   ├── moderation/
-│   │   │   ├── kick.js
 │   │   │   └── prune.js
 │   │   └── utility/
 │   │       └── info.js
-│   ├── data/
-│   │   └── *.json
 │   ├── events/
 │   │   ├── interactionCreate.js
 │   │   ├── messageCreate.js
 │   │   └── ready.js
-│   ├── scripts/
-│   │   └── *.sh
 │   ├── config.json
 │   ├── deploy-commands.js
 │   └── index.js

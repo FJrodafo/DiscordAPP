@@ -2,22 +2,22 @@
 /node_modules
 
 # assets
-/src/assets/command-output/*.png
-/src/assets/dauntless/original
-/src/assets/games/original
-/src/assets/monster-hunter/mhfu/original
-/src/assets/monster-hunter/mhp3rd/original
-/src/assets/monster-hunter/mhtri/original
+/canary/assets/command-output/*.png
+/canary/assets/dauntless/original
+/canary/assets/games/original
+/canary/assets/monster-hunter/mhfu/original
+/canary/assets/monster-hunter/mhp3rd/original
+/canary/assets/monster-hunter/mhtri/original
 
 # database
-/src/database/dauntless/trials
-/src/database/data.json
+/canary/database/dauntless/trials
+/canary/database/data.json
 
 # scripts
-/src/scripts/dauntless/trials
+/canary/scripts/dauntless/trials
 
 # secrets
-/sample/config.json
+/canary/config.json
 /src/config.json
 
 # misc
