@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node ./src/deploy-commands.js && node ./src/index.js",
-    "sample": "node ./canary/deploy-commands.js && node ./canary/index.js",
+    "canary": "node ./canary/deploy-commands.js && node ./canary/index.js",
     "eslint": "eslint './**/*.js'",
     "eslintfix": "eslint './**/*.js' --fix",
     "test": "echo \"Error: no test specified\" && exit 1"
