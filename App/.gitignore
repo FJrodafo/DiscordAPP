@@ -10,15 +10,12 @@
 /canary/assets/monster-hunter/mhtri/original
 
 # database
-/canary/database/dauntless/trials
 /canary/database/data.json
-
-# scripts
-/canary/scripts/dauntless/trials
 
 # secrets
 /canary/config.json
 /src/config.json
+.env
 
 # misc
 /deprecated

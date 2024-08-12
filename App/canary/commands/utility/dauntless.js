@@ -1,8 +1,7 @@
-const { SlashCommandBuilder, AttachmentBuilder, EmbedBuilder } = require('discord.js');
+const { SlashCommandBuilder, AttachmentBuilder, EmbedBuilder, ButtonBuilder, ButtonStyle, ActionRowBuilder, ComponentType } = require('discord.js');
 const { createCanvas, loadImage } = require('canvas');
-/* const https = require('https'); */
-/* const puppeteer = require('puppeteer'); */
 const fs = require('fs');
+
 process.chdir(__dirname);
 
 module.exports = {
@@ -46,7 +45,7 @@ module.exports = {
             .setDescription('A collection of Dauntless leaderboards!')
             .addSubcommand(subcommand => subcommand
                 .setName('trials')
-                .setDescription('Provides information on the top 5 in Trials!')
+                .setDescription('Provides information on the best players in Trials!')
                 .addIntegerOption(option => option
                     .setName('week')
                     .setDescription('The week number you want to view.')
@@ -55,7 +54,7 @@ module.exports = {
             )
             .addSubcommand(subcommand => subcommand
                 .setName('gauntlet')
-                .setDescription('Provides information on the top 5 in Gauntlet!')
+                .setDescription('Provides information on the best guilds in Gauntlet!')
                 .addIntegerOption(option => option
                     .setName('season')
                     .setDescription('The season number you want to view.')
@@ -68,168 +67,147 @@ module.exports = {
         const subcommandGroup = interaction.options.getSubcommandGroup();
 
         if (subcommand === 'meta-builds') {
-            const weapon = interaction.options.getString('weapon');
-            const element = interaction.options.getString('element');
-            const jsonPath = './../../database/dauntless/meta-builds.json';
-            const data = require(jsonPath);
-            const buildInfo = data[weapon][element];
-            const thumbnailPath = `./../../assets/dauntless/builds/${buildInfo.omnicell}`;
-            const imagePath = './../../assets/command-output/meta-builds.png';
-            const combinedImage = await combineImages(buildInfo.weapon, buildInfo.armor, buildInfo.supplies);
-            fs.writeFileSync(imagePath, combinedImage.toBuffer());
-            const thumbnailFile = new AttachmentBuilder(thumbnailPath);
-            const imageFile = new AttachmentBuilder(imagePath);
-            let embed;
-            if (buildInfo.best) {
-                embed = new EmbedBuilder()
-                    .setTitle(`${buildInfo.name} Meta Build:`)
-                    .setDescription(buildInfo.perks.join('\n'))
-                    .setThumbnail(`attachment://${buildInfo.omnicell}`)
-                    .setImage('attachment://meta-builds.png')
-                    .setFooter({ text: `${buildInfo.best}` });
-            }
-            else {
-                embed = new EmbedBuilder()
-                    .setTitle(`${buildInfo.name} Meta Build:`)
-                    .setDescription(buildInfo.perks.join('\n'))
-                    .setThumbnail(`attachment://${buildInfo.omnicell}`)
-                    .setImage('attachment://meta-builds.png');
-            }
-            await interaction.reply({ embeds: [embed], files: [thumbnailFile, imageFile], ephemeral: true });
+            await handleMetaBuilds(interaction);
         }
         else if (subcommandGroup === 'leaderboards') {
             if (subcommand === 'trials') {
                 const week = interaction.options.getInteger('week');
-                if (week < 1 || week > 263) return interaction.reply({ content: 'You need to input a number between `1` and `263`', ephemeral: true });
+                if (week < 1 || week > 107) return interaction.reply({ content: 'You need to input a number between `1` and `107`', ephemeral: true });
                 const jsonPath = `./../../database/dauntless/trials/solo/week${week}.json`;
                 const leaderboardData = require(jsonPath);
-                const topPlayers = leaderboardData.payload.entries.slice(0, 5);
-                const topPlayersInfo = topPlayers.map((player, index) => (`\n${getRankEmoji(index + 1)} **${player.platform_name}** [${player.platform}]\nWeapon: **${getWeapon(player.weapon)}** Completion time: **${formatTimeMiliseconds(player.completion_time)}**`)).join('\n');
-                const iconPath = './../../assets/dauntless/leaderboards/Trials.png';
-                const iconFile = new AttachmentBuilder(iconPath);
-                const embed = new EmbedBuilder()
-                    .setAuthor({ name: 'Trials Leaderboard', iconURL: 'attachment://Trials.png', url: 'https://playdauntless.com/trials/' })
-                    .setDescription(topPlayersInfo);
-                return interaction.reply({ embeds: [embed], files: [iconFile], ephemeral: true });
+                await handleLeaderboardsPagination(interaction, leaderboardData, 'trials', 'Trials.png');
             }
             else if (subcommand === 'gauntlet') {
-                // JSON
                 const season = interaction.options.getInteger('season');
-                if (season < 1 || season > 14) return interaction.reply({ content: 'You need to input a number between `1` and `14`', ephemeral: true });
+                if (season < 1 || season > 13) return interaction.reply({ content: 'You need to input a number between `1` and `13`', ephemeral: true });
                 const jsonPath = `./../../database/dauntless/gauntlet/season${season}.json`;
                 const leaderboardData = require(jsonPath);
-                const topGuilds = leaderboardData.leaderboard.slice(0, 5);
-                const topGuildsInfo = topGuilds.map((guild, index) => (`\n${getRankEmoji(index + 1)} **${guild.guild_name}** [${guild.guild_nameplate}]\nLevel: **${guild.level}** Time Left: **${formatTimeSeconds(guild.remaining_sec)}**`)).join('\n');
-                const iconPath = './../../assets/dauntless/leaderboards/Gauntlet.png';
-                const iconFile = new AttachmentBuilder(iconPath);
-                const embed = new EmbedBuilder()
-                    .setAuthor({ name: 'Gauntlet Leaderboard', iconURL: 'attachment://Gauntlet.png', url: 'https://playdauntless.com/gauntlet/leaderboard/' })
-                    .setDescription(topGuildsInfo);
-                return interaction.reply({ embeds: [embed], files: [iconFile], ephemeral: true });
-
-                // API
-                /*
-                https.get('https://storage.googleapis.com/dauntless-gauntlet-leaderboard/production-gauntlet-season08.json', (response) => {
-                    let data = '';
-                    response.on('data', (chunk) => {
-                        data += chunk;
-                    });
-                    response.on('end', () => {
-                        const leaderboardData = JSON.parse(data);
-                        const topGuilds = leaderboardData.leaderboard.slice(0, 5);
-                        const topGuildsInfo = topGuilds.map((guild, index) => (`\n${getRankEmoji(index + 1)} **${guild.guild_name}** [${guild.guild_nameplate}]\nLevel: **${guild.level}** Time Left: **${formatTimeSeconds(guild.remaining_sec)}**`)).join('\n');
-                        const iconPath = './../../assets/dauntless/Gauntlet.png';
-                        const iconFile = new AttachmentBuilder(iconPath);
-                        const embed = new EmbedBuilder()
-                            .setAuthor({ name: 'Gauntlet Leaderboard', iconURL: 'attachment://Gauntlet.png', url: 'https://playdauntless.com/gauntlet/leaderboard/' })
-                            .setDescription(topGuildsInfo);
-                        interaction.reply({ embeds: [embed], files: [iconFile] });
-                    });
-                }).on('error', (error) => {
-                    console.error('Error obtaining information:', error);
-                    interaction.reply({ content: 'Error obtaining information. Please try again later.', ephemeral: true });
-                });
-                */
-
-                // SCREENSHOT
-                /*
-                await interaction.deferReply();
-                const browser = await puppeteer.launch({ headless: 'new' });
-                const page = await browser.newPage();
-                await page.setViewport({ width: 1920, height: 1080 });
-                await page.goto('https://playdauntless.com/gauntlet/leaderboard/', { waitUntil: 'networkidle2' });
-                await page.screenshot({
-                    path: './../../assets/command-output/gauntlet-leaderboard.png',
-                    type: 'png',
-                    clip: { x: 761, y: 440, width: 600, height: 421 },
-                });
-                const imagePath = './../../assets/command-output/gauntlet-leaderboard.png';
-                const imageFile = new AttachmentBuilder(imagePath);
-                await interaction.editReply({ files: [imageFile] });
-                await browser.close();
-                */
-
-                // DATA EXTRACTION
-                /*
-                await interaction.deferReply();
-                const browser = await puppeteer.launch({ headless: 'new' });
-                const page = await browser.newPage();
-                await page.goto('https://playdauntless.com/gauntlet/leaderboard/', { waitUntil: 'networkidle2' });
-                const topGuilds = await page.$eval('.leaderboard__entries', el => {
-                    const entries = el.querySelectorAll('.leaderboard__entry');
-                    const guilds = [];
-                    entries.forEach((entry) => {
-                        const rank = entry.querySelector('.rank').innerText;
-                        const guildName = entry.querySelector('.guild-name').innerText;
-                        const guildTag = entry.querySelector('.guild-tag').innerText;
-                        const level = entry.querySelector('.level span').innerText;
-                        const timeLeft = entry.querySelector('.time-left span').innerText;
-                        guilds.push({
-                            rank,
-                            guildName,
-                            guildTag,
-                            level,
-                            timeLeft,
-                        });
-                    });
-                    return guilds.slice(0, 5);
-                });
-                const topGuildsInfo = topGuilds.map((guild, index) => (`\n${getRankEmoji(index + 1)} **${guild.guildName}** [${guild.guildTag}]\nLevel: **${guild.level}** Time Left: **${guild.timeLeft}**`)).join('\n');
-                const iconPath = './../../assets/dauntless/Gauntlet.png';
-                const iconFile = new AttachmentBuilder(iconPath);
-                const embed = new EmbedBuilder()
-                    .setAuthor({ name: 'Gauntlet Leaderboard', iconURL: 'attachment://Gauntlet.png', url: 'https://playdauntless.com/gauntlet/leaderboard/' })
-                    .setDescription(topGuildsInfo);
-                await interaction.editReply({ embeds: [embed], files: [iconFile] });
-                await browser.close();
-                */
+                await handleLeaderboardsPagination(interaction, leaderboardData.leaderboard, 'gauntlet', 'Gauntlet.png');
             }
         }
     },
 };
+
+async function handleMetaBuilds(interaction) {
+    const weapon = interaction.options.getString('weapon');
+    const element = interaction.options.getString('element');
+    const jsonPath = './../../database/dauntless/meta-builds.json';
+    const data = require(jsonPath);
+    const buildInfo = data[weapon][element];
+    const thumbnailPath = `./../../assets/dauntless/builds/${buildInfo.omnicell}`;
+    const imagePath = './../../assets/command-output/meta-builds.png';
+    const combinedImage = await combineImages(buildInfo.weapon, buildInfo.armor, buildInfo.supplies);
+    fs.writeFileSync(imagePath, combinedImage.toBuffer());
+    const thumbnailFile = new AttachmentBuilder(thumbnailPath);
+    const imageFile = new AttachmentBuilder(imagePath);
+    let embed;
+    if (buildInfo.best) embed = new EmbedBuilder().setTitle(`${buildInfo.name} Meta Build:`).setDescription(buildInfo.perks.join('\n')).setThumbnail(`attachment://${buildInfo.omnicell}`).setImage('attachment://meta-builds.png').setFooter({ text: `${buildInfo.best}` });
+    else embed = new EmbedBuilder().setTitle(`${buildInfo.name} Meta Build:`).setDescription(buildInfo.perks.join('\n')).setThumbnail(`attachment://${buildInfo.omnicell}`).setImage('attachment://meta-builds.png');
+    await interaction.reply({ embeds: [embed], files: [thumbnailFile, imageFile], ephemeral: true });
+}
+
+// https://storage.googleapis.com/dauntless-gauntlet-leaderboard/production-gauntlet-season08.json
+async function handleLeaderboardsPagination(interaction, leaderboardData, type, imageName) {
+    const itemsPerPage = 5;
+    const totalPages = Math.ceil(leaderboardData.length / itemsPerPage);
+    let currentPage = 0;
+
+    const generateEmbed = (page) => {
+        const start = page * itemsPerPage;
+        const end = start + itemsPerPage;
+        const items = leaderboardData.slice(start, end);
+
+        const description = items.map((item, index) => {
+            const rank = start + index + 1;
+            return type === 'trials'
+                ? `\n${getRankEmoji(rank)} **${item.platform_name}** [${item.platform}]\nWeapon: **${getWeapon(item.weapon)}**\nCompletion time: **${formatTimeMiliseconds(item.completion_time)}**`
+                : `\n${getRankEmoji(rank)} **${item.guild_name}** [${item.guild_nameplate}]\nLevel: **${item.level}** Time Left: **${formatTimeSeconds(item.remaining_sec)}**`;
+        }).join('\n');
+
+        return new EmbedBuilder().setThumbnail(`attachment://${imageName}`).setDescription(description).setFooter({ text: `Page ${page + 1} of ${totalPages}` });
+    };
+
+    const backButton = new ButtonBuilder()
+        .setCustomId('back-button')
+        .setLabel('←')
+        .setStyle(ButtonStyle.Primary)
+        .setDisabled(true);
+
+    const nextButton = new ButtonBuilder()
+        .setCustomId('next-button')
+        .setLabel('→')
+        .setStyle(ButtonStyle.Primary)
+        .setDisabled(totalPages <= 1);
+
+    const buttonRow = new ActionRowBuilder().addComponents(backButton, nextButton);
+    const iconPath = `./../../assets/dauntless/leaderboards/${imageName}`;
+    const iconFile = new AttachmentBuilder(iconPath);
+
+    const reply = await interaction.reply({
+        embeds: [generateEmbed(currentPage)],
+        components: [buttonRow],
+        files: [iconFile],
+        ephemeral: true,
+    });
+
+    const collector = reply.createMessageComponentCollector({
+        componentType: ComponentType.Button,
+        filter: (i) => i.user.id === interaction.user.id,
+        time: 120_000,
+    });
+
+    collector.on('collect', async (i) => {
+        if (i.customId === 'back-button') currentPage--;
+        if (i.customId === 'next-button') currentPage++;
+
+        backButton.setDisabled(currentPage === 0);
+        nextButton.setDisabled(currentPage === totalPages - 1);
+
+        await i.update({
+            embeds: [generateEmbed(currentPage)],
+            components: [buttonRow],
+        });
+    });
+
+    collector.on('end', async () => {
+        backButton.setDisabled(true);
+        nextButton.setDisabled(true);
+
+        await interaction.editReply({
+            components: [buttonRow],
+        });
+    });
+}
 
 async function combineImages(weapon, armor, supplies) {
     const canvas = createCanvas(320, 180);
     const ctx = canvas.getContext('2d');
     const weaponRowStartX = (canvas.width - weapon.length * 64) / 2;
     const suppliesRowStartX = (canvas.width - supplies.length * 32) / 2;
+
     if (weapon.length !== 5) await drawIcons(ctx, weapon, 0, weaponRowStartX, 1);
     else await drawIcons(ctx, weapon, 0, 0, 1);
+
     await drawIcons(ctx, armor, 74, 0, 1);
     await drawIcons(ctx, supplies, 148, suppliesRowStartX, 0.5);
+
     return canvas;
 }
 
 async function drawIcons(ctx, icons, yOffset, startX, scale) {
     let x = startX;
-    for (let i = 0; i < icons.length; i++) {
-        const iconName = icons[i];
+    for (const iconName of icons) {
         const iconPath = `./../../assets/dauntless/builds/${iconName}`;
-        const icon = await loadImage(iconPath);
-        const scaledWidth = 64 * scale;
-        const scaledHeight = 64 * scale;
-        ctx.drawImage(icon, x, yOffset, scaledWidth, scaledHeight);
-        x += scaledWidth;
+        try {
+            const icon = await loadImage(iconPath);
+            const scaledWidth = 64 * scale;
+            const scaledHeight = 64 * scale;
+            ctx.drawImage(icon, x, yOffset, scaledWidth, scaledHeight);
+            x += scaledWidth;
+        }
+        catch (error) {
+            console.error(`Error loading image ${iconName}:`, error);
+        }
     }
 }
 
@@ -259,15 +237,11 @@ function formatTimeMiliseconds(milliseconds) {
     const totalSeconds = Math.floor(milliseconds / 1000);
     const minutes = Math.floor(totalSeconds / 60);
     const remainingSeconds = totalSeconds % 60;
-    const formattedMinutes = String(minutes).padStart(2, '0');
-    const formattedSeconds = String(remainingSeconds).padStart(2, '0');
-    return `${formattedMinutes}:${formattedSeconds}`;
+    return `${String(minutes).padStart(2, '0')}:${String(remainingSeconds).padStart(2, '0')}`;
 }
 
 function formatTimeSeconds(seconds) {
     const minutes = Math.floor(seconds / 60);
     const remainingSeconds = seconds % 60;
-    const formattedMinutes = String(minutes).padStart(2, '0');
-    const formattedSeconds = String(remainingSeconds).padStart(2, '0');
-    return `${formattedMinutes}:${formattedSeconds}`;
+    return `${String(minutes).padStart(2, '0')}:${String(remainingSeconds).padStart(2, '0')}`;
 }
