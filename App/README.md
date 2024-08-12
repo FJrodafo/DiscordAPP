@@ -138,6 +138,10 @@ In the project directory, you can run:
 
 Once configured, run the APP. It first deploy the commands, updating both on the guild server and globally (You can edit the commented lines of code in the [deploy-commands.js](./src/deploy-commands.js) file to customize the deploy of the APP commands).
 
+### `npm run canary`
+
+Once configured, run a Canary version of the APP. It works exactly the same as the main APP. This version is intended to test new commands and experimental implementations to ensure they work before publishing changes, preventing any bugs that may cause malfunctions.
+
 ### `npm run eslint`
 
 Runs the eslint to find possible formatting errors in the code.
