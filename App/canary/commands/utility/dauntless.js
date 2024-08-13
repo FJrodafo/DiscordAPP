@@ -127,19 +127,12 @@ async function handleLeaderboardsPagination(interaction, leaderboardData, type, 
         return new EmbedBuilder().setThumbnail(`attachment://${imageName}`).setDescription(description).setFooter({ text: `Page ${page + 1} of ${totalPages}` });
     };
 
-    const backButton = new ButtonBuilder()
-        .setCustomId('back-button')
-        .setLabel('←')
-        .setStyle(ButtonStyle.Primary)
-        .setDisabled(true);
+    const firstPageButton = new ButtonBuilder().setCustomId('first-page-button').setLabel('↑').setStyle(ButtonStyle.Primary).setDisabled(true);
+    const backButton = new ButtonBuilder().setCustomId('back-button').setLabel('←').setStyle(ButtonStyle.Primary).setDisabled(true);
+    const nextButton = new ButtonBuilder().setCustomId('next-button').setLabel('→').setStyle(ButtonStyle.Primary).setDisabled(totalPages <= 1);
+    const lastPageButton = new ButtonBuilder().setCustomId('last-page-button').setLabel('↓').setStyle(ButtonStyle.Primary).setDisabled(totalPages <= 1);
 
-    const nextButton = new ButtonBuilder()
-        .setCustomId('next-button')
-        .setLabel('→')
-        .setStyle(ButtonStyle.Primary)
-        .setDisabled(totalPages <= 1);
-
-    const buttonRow = new ActionRowBuilder().addComponents(backButton, nextButton);
+    const buttonRow = new ActionRowBuilder().addComponents(firstPageButton, backButton, nextButton, lastPageButton);
     const iconPath = `./../../assets/dauntless/leaderboards/${imageName}`;
     const iconFile = new AttachmentBuilder(iconPath);
 
@@ -157,11 +150,15 @@ async function handleLeaderboardsPagination(interaction, leaderboardData, type, 
     });
 
     collector.on('collect', async (i) => {
+        if (i.customId === 'first-page-button') currentPage = 0;
         if (i.customId === 'back-button') currentPage--;
         if (i.customId === 'next-button') currentPage++;
+        if (i.customId === 'last-page-button') currentPage = totalPages - 1;
 
+        firstPageButton.setDisabled(currentPage === 0);
         backButton.setDisabled(currentPage === 0);
         nextButton.setDisabled(currentPage === totalPages - 1);
+        lastPageButton.setDisabled(currentPage === totalPages - 1);
 
         await i.update({
             embeds: [generateEmbed(currentPage)],
@@ -170,8 +167,10 @@ async function handleLeaderboardsPagination(interaction, leaderboardData, type, 
     });
 
     collector.on('end', async () => {
+        firstPageButton.setDisabled(true);
         backButton.setDisabled(true);
         nextButton.setDisabled(true);
+        lastPageButton.setDisabled(true);
 
         await interaction.editReply({
             components: [buttonRow],
