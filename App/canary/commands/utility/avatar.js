@@ -21,7 +21,7 @@ module.exports = {
         )
         .addUserOption(option => option
             .setName('target')
-            .setDescription('The user\'s avatar to show!')
+            .setDescription('Choose a user!')
             .setRequired(false),
         ),
     async execute(interaction) {

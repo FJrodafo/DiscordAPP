@@ -34,17 +34,7 @@ module.exports = {
         if (!userExists) return interaction.reply({ content: 'This user is not registered yet.', ephemeral: true });
 
         // Embed color based on user role
-        let embedColor = 'Default';
-        const pirate = '1205938469797625947';
-        if (member.roles.cache.has(pirate)) embedColor = 0x71368A;
-        const captain = '1259986911460851783';
-        if (member.roles.cache.has(captain)) embedColor = 0x9B59B6;
-        const serverBooster = '1207653983850594335';
-        if (member.roles.cache.has(serverBooster)) embedColor = 0xF47FFF;
-        const treasurerOfTheNight = '1205938707442434118';
-        if (member.roles.cache.has(treasurerOfTheNight)) embedColor = 0x010000;
-        const serverOwner = '1205588374354796574';
-        if (member.roles.cache.has(serverOwner)) embedColor = 0xF1C40F;
+        const embedColor = getEmbedColor(member);
 
         // Create the embed with the user information
         const embed = new EmbedBuilder()
@@ -60,3 +50,27 @@ module.exports = {
         return interaction.reply({ embeds: [embed], ephemeral: true });
     },
 };
+
+function getEmbedColor(member) {
+    const ROLES = {
+        pirate: '1205938469797625947',
+        captain: '1259986911460851783',
+        serverBooster: '1207653983850594335',
+        treasurerOfTheNight: '1205938707442434118',
+        serverOwner: '1205588374354796574',
+    };
+
+    const ROLE_COLORS = {
+        [ROLES.pirate]: 0x71368A,
+        [ROLES.captain]: 0x9B59B6,
+        [ROLES.serverBooster]: 0xF47FFF,
+        [ROLES.treasurerOfTheNight]: 0x010000,
+        [ROLES.serverOwner]: 0xF1C40F,
+    };
+
+    for (const [role, color] of Object.entries(ROLE_COLORS)) {
+        if (member.roles.cache.has(role)) return color;
+    }
+
+    return 'Default';
+}
