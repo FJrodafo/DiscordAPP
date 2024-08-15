@@ -1,7 +1,7 @@
 const { SlashCommandBuilder } = require('discord.js');
 
 module.exports = {
-    category: 'moderation',
+    category: 'admin',
     data: new SlashCommandBuilder()
         .setName('dm-remover')
         .setDescription('Delete a specific direct message sent by the APP by its ID.')

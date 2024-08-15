@@ -4,7 +4,7 @@ const fs = require('fs');
 module.exports = {
     category: 'economy',
     data: new SlashCommandBuilder()
-        .setName('leaderboard')
+        .setName('wealthy')
         .setDescription('Shows the top 5 users with the most coins!'),
     async execute(interaction) {
         const jsonPath = './../../database/data.json';
@@ -29,10 +29,9 @@ module.exports = {
         // Get the top 5 users
         const topUsers = users.slice(0, 5);
 
-        // Create the leaderboard embed
+        // Create the wealthy embed
         const topUsersInfo = topUsers.map((user, index) => (`\n${getRankEmoji(index + 1)} <@${user.user}> ${user.coins} coins`)).join('\n');
         const embed = new EmbedBuilder()
-            .setTitle('Leaderboard')
             .setDescription(topUsersInfo);
         return interaction.reply({ embeds: [embed], ephemeral: true });
     },

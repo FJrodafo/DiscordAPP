@@ -40,7 +40,7 @@ module.exports = {
                 ),
             ),
         )
-        .addSubcommandGroup((subcommandGroup => subcommandGroup
+        .addSubcommandGroup(subcommandGroup => subcommandGroup
             .setName('leaderboards')
             .setDescription('A collection of Dauntless leaderboards!')
             .addSubcommand(subcommand => subcommand
@@ -60,15 +60,13 @@ module.exports = {
                     .setDescription('The season number you want to view.')
                     .setRequired(true),
                 ),
-            )
-        )),
+            ),
+        ),
     async execute(interaction) {
         const subcommand = interaction.options.getSubcommand();
         const subcommandGroup = interaction.options.getSubcommandGroup();
 
-        if (subcommand === 'meta-builds') {
-            await handleMetaBuilds(interaction);
-        }
+        if (subcommand === 'meta-builds') { await handleMetaBuilds(interaction); }
         else if (subcommandGroup === 'leaderboards') {
             if (subcommand === 'trials') {
                 const week = interaction.options.getInteger('week');
