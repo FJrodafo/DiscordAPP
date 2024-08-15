@@ -131,6 +131,7 @@ async function handleLeaderboardsPagination(interaction, leaderboardData, type, 
     const lastPageButton = new ButtonBuilder().setCustomId('last-page-button').setLabel('↓').setStyle(ButtonStyle.Primary).setDisabled(totalPages <= 1);
 
     const buttonRow = new ActionRowBuilder().addComponents(firstPageButton, backButton, nextButton, lastPageButton);
+
     const iconPath = `./../../assets/dauntless/leaderboards/${imageName}`;
     const iconFile = new AttachmentBuilder(iconPath);
 

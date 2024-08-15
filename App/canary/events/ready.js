@@ -11,6 +11,7 @@ module.exports = {
         const status = [
             // Custom
             { activities: [{ name: 'I respond to DMs', type: ActivityType.Custom }], status: 'online' },
+            { activities: [{ name: '/help', type: ActivityType.Custom }], status: 'online' },
             {
                 activities: [{
                     // name is exposed through the API but not shown in the client for ActivityType.Custom
