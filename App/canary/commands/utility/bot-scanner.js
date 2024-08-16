@@ -3,7 +3,7 @@ const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 module.exports = {
     category: 'utility',
     data: new SlashCommandBuilder()
-        .setName('bot-check')
+        .setName('bot-scanner')
         .setDescription('Are you a bot?')
         .addUserOption(option => option
             .setName('user')

@@ -46,6 +46,15 @@ module.exports = {
             .addSubcommand(subcommand => subcommand
                 .setName('trials')
                 .setDescription('Provides information on the best players in Trials!')
+                .addStringOption(option => option
+                    .setName('mode')
+                    .setDescription('Select the mode.')
+                    .setRequired(true)
+                    .addChoices(
+                        { name: 'Solo', value: 'solo' },
+                        { name: 'Group', value: 'group' },
+                    ),
+                )
                 .addIntegerOption(option => option
                     .setName('week')
                     .setDescription('The week number you want to view.')
@@ -69,18 +78,20 @@ module.exports = {
         if (subcommand === 'meta-builds') { await handleMetaBuilds(interaction); }
         else if (subcommandGroup === 'leaderboards') {
             if (subcommand === 'trials') {
+                const mode = interaction.options.getString('mode');
                 const week = interaction.options.getInteger('week');
                 if (week < 1 || week > 107) return interaction.reply({ content: 'You need to input a number between `1` and `107`', ephemeral: true });
-                const jsonPath = `./../../database/dauntless/trials/solo/week${week}.json`;
+                const jsonPath = `./../../database/dauntless/trials/${mode}/week${week}.json`;
                 const leaderboardData = require(jsonPath);
-                await handleLeaderboardsPagination(interaction, leaderboardData, 'trials', 'Trials.png');
+                if (mode === 'solo') await handleTrialsSoloPagination(interaction, leaderboardData);
+                else await handleTrialsGroupPagination(interaction, leaderboardData);
             }
             else if (subcommand === 'gauntlet') {
                 const season = interaction.options.getInteger('season');
-                if (season < 1 || season > 13) return interaction.reply({ content: 'You need to input a number between `1` and `13`', ephemeral: true });
+                if (season < 1 || season > 14) return interaction.reply({ content: 'You need to input a number between `1` and `13`', ephemeral: true });
                 const jsonPath = `./../../database/dauntless/gauntlet/season${season}.json`;
                 const leaderboardData = require(jsonPath);
-                await handleLeaderboardsPagination(interaction, leaderboardData.leaderboard, 'gauntlet', 'Gauntlet.png');
+                await handleGauntletPagination(interaction, leaderboardData.leaderboard);
             }
         }
     },
@@ -104,8 +115,29 @@ async function handleMetaBuilds(interaction) {
     await interaction.reply({ embeds: [embed], files: [thumbnailFile, imageFile], ephemeral: true });
 }
 
+async function handleTrialsSoloPagination(interaction, leaderboardData) {
+    await handleLeaderboardsPagination(interaction, leaderboardData, 'Trials.png', (item, rank) =>
+        `\n${getRankEmoji(rank)} **${item.platform_name}** [${item.platform}]\nWeapon: **${getWeapon(item.weapon)}**\nCompletion Time: **${formatTimeMiliseconds(item.completion_time)}**`,
+    );
+}
+
+async function handleTrialsGroupPagination(interaction, leaderboardData) {
+    await handleLeaderboardsPagination(interaction, leaderboardData, 'Trials.png', (item, rank) => {
+        const teamMembers = item.entries.map(entry =>
+            `- **${entry.platform_name}** [${entry.platform}] Weapon: **${getWeapon(entry.weapon)}**`,
+        ).join('\n');
+        return `\n${getRankEmoji(rank)} Completion Time: **${formatTimeMiliseconds(item.completion_time)}**\n${teamMembers}`;
+    });
+}
+
+async function handleGauntletPagination(interaction, leaderboardData) {
+    await handleLeaderboardsPagination(interaction, leaderboardData, 'Gauntlet.png', (item, rank) =>
+        `\n${getRankEmoji(rank)} **${item.guild_name}** [${item.guild_nameplate}]\nLevel: **${item.level}** Time Left: **${formatTimeSeconds(item.remaining_sec)}**`,
+    );
+}
+
 // https://storage.googleapis.com/dauntless-gauntlet-leaderboard/production-gauntlet-season08.json
-async function handleLeaderboardsPagination(interaction, leaderboardData, type, imageName) {
+async function handleLeaderboardsPagination(interaction, leaderboardData, imageName, formatItem) {
     const itemsPerPage = 5;
     const totalPages = Math.ceil(leaderboardData.length / itemsPerPage);
     let currentPage = 0;
@@ -115,12 +147,7 @@ async function handleLeaderboardsPagination(interaction, leaderboardData, type, 
         const end = start + itemsPerPage;
         const items = leaderboardData.slice(start, end);
 
-        const description = items.map((item, index) => {
-            const rank = start + index + 1;
-            return type === 'trials'
-                ? `\n${getRankEmoji(rank)} **${item.platform_name}** [${item.platform}]\nWeapon: **${getWeapon(item.weapon)}**\nCompletion time: **${formatTimeMiliseconds(item.completion_time)}**`
-                : `\n${getRankEmoji(rank)} **${item.guild_name}** [${item.guild_nameplate}]\nLevel: **${item.level}** Time Left: **${formatTimeSeconds(item.remaining_sec)}**`;
-        }).join('\n');
+        const description = items.map((item, index) => formatItem(item, start + index + 1)).join('\n');
 
         return new EmbedBuilder().setThumbnail(`attachment://${imageName}`).setDescription(description).setFooter({ text: `Page ${page + 1} of ${totalPages}` });
     };

@@ -146,7 +146,14 @@ async function handleVirtualHorseRacing(interaction, userExists, users, jsonPath
 
     // Generate random positions for the horses
     const horsePositions = Array.from({ length: 8 }, (_, i) => i + 1);
-    horsePositions.sort(() => Math.random() - 0.5);
+    function fisherYatesShuffle(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
+    }
+    fisherYatesShuffle(horsePositions);
 
     // Emojis
     const rankingEmojis = ['🥇', '🥈', '🥉', '**4th**', '**5th**', '**6th**', '**7th**', '**8th**'];
@@ -158,15 +165,15 @@ async function handleVirtualHorseRacing(interaction, userExists, users, jsonPath
     const position = horsePositions.indexOf(selectedHorse) + 1;
     if (position === 1) {
         payout = bet * 5;
-        resultText = `Your horse finished in first place!\nYou have won ${payout} coins!`;
+        resultText = `Your horse finished in first place!\nYou have won ${payout - bet} coins!`;
     }
     else if (position === 2) {
         payout = bet * 3;
-        resultText = `Your horse finished in second place!\nYou have won ${payout} coins!`;
+        resultText = `Your horse finished in second place!\nYou have won ${payout - bet} coins!`;
     }
     else if (position === 3) {
         payout = bet * 2;
-        resultText = `Your horse finished in third place!\nYou have won ${payout} coins!`;
+        resultText = `Your horse finished in third place!\nYou have won ${payout - bet} coins!`;
     }
     else {
         resultText = `Your horse finished in ${position}th position.\nYou have lost ${bet} coins...\nBetter luck next time!`;
@@ -226,7 +233,7 @@ async function handleRoulette(interaction, userExists, users, jsonPath) {
     saveUpdatedJSON(jsonPath, users, interaction);
 
     // Final result
-    const resultText = payout > 0 ? `You won ${bet} coins!` : `You lost ${bet} coins...\nBetter luck next time!`;
+    const resultText = payout > 0 ? `You won ${payout - bet} coins!` : `You lost ${bet} coins...\nBetter luck next time!`;
     const imagePath = './../../assets/casino/Roulette.gif';
     const imageFile = new AttachmentBuilder(imagePath);
     const embed = new EmbedBuilder()

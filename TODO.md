@@ -1,6 +1,6 @@
 ## Commands
 
-- [ ] Dauntless Trials Group
+- [x] Dauntless Trials Group
 
 - [x] fix clover
 - [ ] fix astrology
