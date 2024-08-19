@@ -5,6 +5,7 @@ module.exports = {
     once: true,
     execute(client) {
         console.log(`Ready! Logged in as ${client.user.tag}`);
+        console.log(`Server count: ${client.guilds.cache.size}`);
         const jsonPath = './../database/games/names.json';
         const data = require(jsonPath);
         const randomGame = Math.floor(Math.random() * data.length);
@@ -17,7 +18,7 @@ module.exports = {
                     // name is exposed through the API but not shown in the client for ActivityType.Custom
                     name: 'custom',
                     type: ActivityType.Custom,
-                    state: '🍋',
+                    state: '🐥',
                 }],
                 status: 'online',
             },

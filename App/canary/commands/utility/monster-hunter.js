@@ -4,7 +4,8 @@ module.exports = {
     category: 'utility',
     data: new SlashCommandBuilder()
         .setName('monster-hunter')
-        .setDescription('Monster ecodata!'),
+        .setDescription('Monster ecodata!')
+        .setDMPermission(false),
     async execute(interaction) {
         const embedJsonPath = './../../database/monster-hunter/embed.json';
         const menuJsonPath = './../../database/monster-hunter/menu.json';

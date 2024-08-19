@@ -5,6 +5,7 @@ module.exports = {
     data: new SlashCommandBuilder()
         .setName('echo')
         .setDescription('Replies with your text!')
+        .setDMPermission(false)
         .addStringOption(option => option
             .setName('text')
             .setDescription('Type your message')

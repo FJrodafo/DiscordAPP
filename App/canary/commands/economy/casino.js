@@ -1,4 +1,8 @@
-const { SlashCommandBuilder, AttachmentBuilder, EmbedBuilder } = require('discord.js');
+const {
+    SlashCommandBuilder,
+    AttachmentBuilder,
+    EmbedBuilder,
+} = require('discord.js');
 const fs = require('fs');
 
 module.exports = {
@@ -6,6 +10,7 @@ module.exports = {
     data: new SlashCommandBuilder()
         .setName('casino')
         .setDescription('A collection of Casino commands!')
+        .setDMPermission(false)
         .addSubcommand(subcommand => subcommand
             .setName('japan-world-cup')
             .setDescription('Bet on a horse and win!')
@@ -110,9 +115,15 @@ module.exports = {
         if (!userExists) return interaction.reply({ content: 'To register use: `/register`', ephemeral: true });
 
         // Subcommand Handler
-        if (subcommand === 'japan-world-cup') { await handleVirtualHorseRacing(interaction, userExists, users, jsonPath); }
-        if (subcommand === 'roulette') { await handleRoulette(interaction, userExists, users, jsonPath); }
-        else if (subcommand === 'scratchcard') { await handleScratchcard(interaction, userExists, users, jsonPath); }
+        if (subcommand === 'japan-world-cup') {
+            await handleVirtualHorseRacing(interaction, userExists, users, jsonPath);
+        }
+        else if (subcommand === 'roulette') {
+            await handleRoulette(interaction, userExists, users, jsonPath);
+        }
+        else if (subcommand === 'scratchcard') {
+            await handleScratchcard(interaction, userExists, users, jsonPath);
+        }
         else if (subcommandGroup === 'slot') {
             if (subcommand === 'payout') await handleSlotPayout(interaction);
             else if (subcommand === 'machine') await handleSlotMachine(interaction, userExists, users, jsonPath);
@@ -185,10 +196,6 @@ async function handleVirtualHorseRacing(interaction, userExists, users, jsonPath
     // Save the updated JSON file
     saveUpdatedJSON(jsonPath, users, interaction);
 
-    // Final result
-    const imagePath = `./../../assets/casino/japan-world-cup/${horsePositions[0]}.gif`;
-    const imageFile = new AttachmentBuilder(imagePath);
-
     // Create fields for the leaderboard
     const leaderboardFields = horsePositions.map((pos, index) => {
         return {
@@ -198,6 +205,8 @@ async function handleVirtualHorseRacing(interaction, userExists, users, jsonPath
         };
     });
 
+    // Final result
+    const imageFile = new AttachmentBuilder(`./../../assets/casino/japan-world-cup/${horsePositions[0]}.gif`);
     const embed = new EmbedBuilder()
         .setTitle('Japan World Cup!')
         .setDescription(`${resultText}`)
@@ -234,8 +243,7 @@ async function handleRoulette(interaction, userExists, users, jsonPath) {
 
     // Final result
     const resultText = payout > 0 ? `You won ${payout - bet} coins!` : `You lost ${bet} coins...\nBetter luck next time!`;
-    const imagePath = './../../assets/casino/Roulette.gif';
-    const imageFile = new AttachmentBuilder(imagePath);
+    const imageFile = new AttachmentBuilder('./../../assets/casino/Roulette.gif');
     const embed = new EmbedBuilder()
         .setImage('attachment://Roulette.gif')
         .addFields(
@@ -282,12 +290,14 @@ async function handleScratchcard(interaction, userExists, users, jsonPath) {
             { name: 'BONUS!', value: `${scratchResults[12]} ${scratchResults[13]} ${scratchResults[14]} ${scratchResults[15]}`, inline: true },
             { name: 'x2', value: `${bonusResult}`, inline: true },
         );
-    return interaction.reply({ embeds: [embed] });
+
+    await interaction.reply({ embeds: [embed] });
 }
 
 async function handleSlotPayout(interaction) {
     const payoutEmbed = new EmbedBuilder().setDescription('Three Bells :bell: 10\nFlush of - - :hearts: 8\nFlush of - - :diamonds: 6\nFlush of - - :spades: 4\nTwo :gear: :gear: and :boom: 2\nTwo :gear: :gear: 1');
-    return interaction.reply({ embeds: [payoutEmbed], ephemeral: true });
+
+    await interaction.reply({ embeds: [payoutEmbed], ephemeral: true });
 }
 
 async function handleSlotMachine(interaction, userExists, users, jsonPath) {
@@ -320,6 +330,7 @@ async function handleSlotMachine(interaction, userExists, users, jsonPath) {
         .setTitle('SPINNING')
         .setDescription(randomSlots.join(' '))
         .setFooter({ text: '...' });
+
     await interaction.reply({ embeds: [embed] });
 
     // Animation loop
@@ -359,5 +370,6 @@ async function handleSlotMachine(interaction, userExists, users, jsonPath) {
     embed.setTitle(title)
         .setDescription(finalResult.join(' '))
         .setFooter({ text: footerText });
+
     await interaction.editReply({ embeds: [embed] });
 }

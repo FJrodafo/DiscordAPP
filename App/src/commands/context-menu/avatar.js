@@ -7,8 +7,7 @@ module.exports = {
     category: 'context-menu',
     data: new ContextMenuCommandBuilder()
         .setName('Avatar')
-        .setType(ApplicationCommandType.User)
-        .setDMPermission(false),
+        .setType(ApplicationCommandType.User),
     async execute(interaction) {
         const userName = interaction.targetUser.username;
         const userAvatar = interaction.targetUser

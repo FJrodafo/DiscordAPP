@@ -5,6 +5,7 @@ module.exports = {
     data: new SlashCommandBuilder()
         .setName('bot-scanner')
         .setDescription('Are you a bot?')
+        .setDMPermission(false)
         .addUserOption(option => option
             .setName('user')
             .setDescription('Type a user!')

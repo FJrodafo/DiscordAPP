@@ -5,6 +5,7 @@ module.exports = {
     data: new SlashCommandBuilder()
         .setName('avatar')
         .setDescription('Get the avatar URL of the selected user or your own avatar!')
+        .setDMPermission(false)
         .addIntegerOption(option => option
             .setName('size')
             .setDescription('Select the image size!')

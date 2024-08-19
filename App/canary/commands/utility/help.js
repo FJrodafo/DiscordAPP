@@ -6,7 +6,8 @@ module.exports = {
     category: 'utility',
     data: new SlashCommandBuilder()
         .setName('help')
-        .setDescription('Shows all available commands!'),
+        .setDescription('Shows all available commands!')
+        .setDMPermission(false),
     async execute(interaction) {
         // Function to recursively read commands from directories
         function getCommands(dir) {

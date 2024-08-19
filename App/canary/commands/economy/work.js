@@ -1,4 +1,7 @@
-const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
+const {
+    SlashCommandBuilder,
+    EmbedBuilder,
+} = require('discord.js');
 const fs = require('fs');
 
 module.exports = {
@@ -6,7 +9,8 @@ module.exports = {
     cooldown: 28_800,
     data: new SlashCommandBuilder()
         .setName('work')
-        .setDescription('Work to earn daily coins!'),
+        .setDescription('Work to earn daily coins!')
+        .setDMPermission(false),
     async execute(interaction) {
         const jsonPath = './../../database/data.json';
         const user = interaction.user;
@@ -50,6 +54,7 @@ module.exports = {
 
         // Final result
         const embed = new EmbedBuilder().setDescription('You have earned `40` coins!');
+
         return interaction.reply({ embeds: [embed] });
     },
 };

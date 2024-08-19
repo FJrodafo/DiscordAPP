@@ -9,6 +9,7 @@ module.exports = {
     data: new SlashCommandBuilder()
         .setName('dauntless')
         .setDescription('A collection of Dauntless commands!')
+        .setDMPermission(false)
         .addSubcommand(subcommand => subcommand
             .setName('meta-builds')
             .setDescription('Find your meta build!')

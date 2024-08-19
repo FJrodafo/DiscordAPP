@@ -1,4 +1,7 @@
-const { SlashCommandBuilder, PermissionFlagsBits } = require('discord.js');
+const {
+    SlashCommandBuilder,
+    PermissionFlagsBits,
+} = require('discord.js');
 
 module.exports = {
     category: 'moderation',
@@ -14,6 +17,7 @@ module.exports = {
         ),
     async execute(interaction) {
         const user = interaction.options.getUser('target');
-        return interaction.reply({ content: `You wanted to kick: ${user} :scales:`, ephemeral: true });
+
+        await interaction.reply({ content: `You wanted to kick: ${user} :scales:`, ephemeral: true });
     },
 };

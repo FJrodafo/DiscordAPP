@@ -1,11 +1,15 @@
-const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
+const {
+    SlashCommandBuilder,
+    EmbedBuilder,
+} = require('discord.js');
 const fs = require('fs');
 
 module.exports = {
     category: 'economy',
     data: new SlashCommandBuilder()
         .setName('wealthy')
-        .setDescription('Shows the top 5 users with the most coins!'),
+        .setDescription('Shows the top 5 users with the most coins!')
+        .setDMPermission(false),
     async execute(interaction) {
         const jsonPath = './../../database/data.json';
 
@@ -30,9 +34,11 @@ module.exports = {
         const topUsers = users.slice(0, 5);
 
         // Create the wealthy embed
-        const topUsersInfo = topUsers.map((user, index) => (`\n${getRankEmoji(index + 1)} <@${user.user}> ${user.coins} coins`)).join('\n');
-        const embed = new EmbedBuilder()
-            .setDescription(topUsersInfo);
+        const topUsersInfo = topUsers.map((user, index) =>
+            `\n${getRankEmoji(index + 1)} <@${user.user}> ${user.coins} coins`,
+        ).join('\n');
+        const embed = new EmbedBuilder().setDescription(topUsersInfo);
+
         return interaction.reply({ embeds: [embed], ephemeral: true });
     },
 };

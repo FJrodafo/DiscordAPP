@@ -40,7 +40,11 @@ module.exports = {
         }
         catch (error) {
             console.error(error);
-            if (interaction.replied || interaction.deferred) {
+            // DiscordAPIError[10062]: Unknown interaction
+            if (error.code === 10062) {
+                await interaction.followUp({ content: 'Something happened, to be honest I have no idea what it was...\nTry running the command at another time! 🐥', ephemeral: true });
+            }
+            else if (interaction.replied || interaction.deferred) {
                 await interaction.followUp({ content: 'There was an error while executing this command!', ephemeral: true });
             }
             else {
