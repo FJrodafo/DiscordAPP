@@ -1,4 +1,12 @@
-const { SlashCommandBuilder, ButtonBuilder, ButtonStyle, ActionRowBuilder, ComponentType, EmbedBuilder, PermissionFlagsBits } = require('discord.js');
+const {
+    SlashCommandBuilder,
+    PermissionFlagsBits,
+    EmbedBuilder,
+    ButtonBuilder,
+    ButtonStyle,
+    ActionRowBuilder,
+    ComponentType,
+} = require('discord.js');
 const fs = require('fs');
 const path = require('path');
 
@@ -19,7 +27,7 @@ module.exports = {
                 const stat = fs.statSync(filePath);
 
                 if (stat.isDirectory()) {
-                    if (file !== 'admin' && file !== 'moderation' && file !== 'context-menu') {
+                    if (file !== 'admin' && file !== 'moderation' && file !== 'context-menu' && file !== 'help') {
                         commandFiles.push(...getCommands(filePath));
                     }
                     if (file === 'admin' && interaction.member.permissions.has(PermissionFlagsBits.Administrator)) {
@@ -42,37 +50,11 @@ module.exports = {
 
         const commands = commandFiles.map(file => {
             const command = require(file);
-            const { options } = command.data;
-            const subcommands = [];
-            const commandOptions = [];
-
-            // Iterate through options to identify subcommands and other options
-            options.forEach(option => {
-                // Subcommand
-                if (option.type === 1) {
-                    subcommands.push(option.name);
-                }
-                // Subcommand Group
-                else if (option.type === 2) {
-                    subcommands.push(...option.options.map(sub => sub.name));
-                }
-                // Regular option
-                else {
-                    commandOptions.push(option.name);
-                }
-            });
-
-            // Prepare suffixes for subcommands and options
-            let suffix = '';
-            if (subcommands.length > 0) {
-                suffix += `(${subcommands.join(', ')})`;
-            }
-            else if (commandOptions.length > 0) {
-                suffix += ` [${commandOptions.join(', ')}]`;
-            }
+            // Get the category (folder name)
+            const category = path.basename(path.dirname(file));
 
             return {
-                name: `${command.data.name}${suffix}`,
+                name: `${command.data.name} (${category})`,
                 description: command.data.description || 'No description',
             };
         });
@@ -84,6 +66,7 @@ module.exports = {
         const pages = [];
         for (let i = 0; i < commands.length; i += commandsPerPage) {
             const page = new EmbedBuilder()
+                .setColor(0x5865f2)
                 .setTitle('All available commands:')
                 .setDescription('You have one minute to turn the page until the buttons are disabled...')
                 .setFooter({ text: `Page ${Math.floor(i / commandsPerPage) + 1} of ${totalPages}` });
@@ -135,7 +118,7 @@ module.exports = {
         const collector = reply.createMessageComponentCollector({
             componentType: ComponentType.Button,
             filter: (i) => i.user.id === interaction.user.id,
-            time: 60_000,
+            time: 120_000,
         });
 
         collector.on('collect', async (i) => {

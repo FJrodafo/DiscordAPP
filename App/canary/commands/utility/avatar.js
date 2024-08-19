@@ -28,7 +28,10 @@ module.exports = {
     async execute(interaction) {
         const size = interaction.options.getInteger('size');
         const user = interaction.options.getUser('target') || interaction.user;
-        const userAvatar = user.displayAvatarURL({ dynamic: true, size: size }).replace('webp', 'png');
+        const userAvatar = user
+            .displayAvatarURL({ dynamic: true, size: size })
+            .replace('webp', 'png');
+
         await interaction.reply({ content: userAvatar, ephemeral: true });
     },
 };

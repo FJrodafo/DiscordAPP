@@ -1,7 +1,17 @@
-const { SlashCommandBuilder, AttachmentBuilder, EmbedBuilder, ButtonBuilder, ButtonStyle, ActionRowBuilder, ComponentType } = require('discord.js');
-const { createCanvas, loadImage } = require('canvas');
+const {
+    SlashCommandBuilder,
+    AttachmentBuilder,
+    EmbedBuilder,
+    ButtonBuilder,
+    ButtonStyle,
+    ActionRowBuilder,
+    ComponentType,
+} = require('discord.js');
+const {
+    createCanvas,
+    loadImage,
+} = require('canvas');
 const fs = require('fs');
-
 process.chdir(__dirname);
 
 module.exports = {

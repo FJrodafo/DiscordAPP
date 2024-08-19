@@ -1,4 +1,7 @@
-const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
+const {
+    SlashCommandBuilder,
+    EmbedBuilder,
+} = require('discord.js');
 
 module.exports = {
     category: 'utility',
@@ -13,16 +16,24 @@ module.exports = {
         ),
     async execute(interaction) {
         const user = interaction.options.getUser('user') || interaction.user;
-        let embed, message;
+
+        let embed;
+
         if (user.bot) {
-            embed = new EmbedBuilder().setAuthor({ name: `${user.tag} is a BOT!`, iconURL: `${user.displayAvatarURL({ dynamic: true, size: 512 })}` });
-            message = await interaction.reply({ embeds: [embed], fetchReply: true });
-            if (message.channel) message.react('🤖');
+            embed = new EmbedBuilder().setAuthor({
+                name: 'is a BOT!',
+                iconURL: `${user.displayAvatarURL()}`,
+            });
+
+            await interaction.reply({ embeds: [embed], ephemeral: true });
         }
         else {
-            embed = new EmbedBuilder().setAuthor({ name: `${user.tag} is not a BOT.`, iconURL: `${user.displayAvatarURL({ dynamic: true, size: 512 })}` });
-            message = await interaction.reply({ embeds: [embed], fetchReply: true });
-            if (message.channel) message.react('👤');
+            embed = new EmbedBuilder().setAuthor({
+                name: 'is not a BOT.',
+                iconURL: `${user.displayAvatarURL()}`,
+            });
+
+            await interaction.reply({ embeds: [embed], ephemeral: true });
         }
     },
 };

@@ -1,4 +1,7 @@
-const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
+const {
+    SlashCommandBuilder,
+    EmbedBuilder,
+} = require('discord.js');
 
 module.exports = {
     category: 'utility',
@@ -7,7 +10,7 @@ module.exports = {
         .setDescription('Embed preview!'),
     async execute(interaction) {
         const exampleEmbed = new EmbedBuilder()
-            .setColor(0x0099FF)
+            .setColor(0x5865f2)
             .setTitle('Some title')
             .setURL('https://discord.js.org/')
             .setAuthor({ name: 'Some name', iconURL: 'https://i.imgur.com/AfFp7pu.png', url: 'https://discord.js.org' })
@@ -23,6 +26,7 @@ module.exports = {
             .setImage('https://i.imgur.com/AfFp7pu.png')
             .setTimestamp()
             .setFooter({ text: 'Some footer text here', iconURL: 'https://i.imgur.com/AfFp7pu.png' });
+
         return interaction.reply({ embeds: [exampleEmbed], ephemeral: true });
     },
 };

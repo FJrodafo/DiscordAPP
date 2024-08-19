@@ -1,4 +1,7 @@
-const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
+const {
+    SlashCommandBuilder,
+    EmbedBuilder,
+} = require('discord.js');
 
 module.exports = {
     category: 'utility',
@@ -38,6 +41,7 @@ async function handleServerInfo(interaction) {
             { name: 'Total members:', value: `${guild.memberCount}`, inline: true },
             { name: 'Created at:', value: `${guild.createdAt}`, inline: false },
         );
+
     await interaction.reply({ embeds: [embed], ephemeral: true });
 }
 
@@ -52,5 +56,6 @@ async function handleUserInfo(interaction) {
             { name: 'ID:', value: `${user.id}`, inline: true },
             { name: 'Joined at:', value: `${member.joinedAt}`, inline: false },
         );
+
     await interaction.reply({ embeds: [embed], ephemeral: true });
 }
