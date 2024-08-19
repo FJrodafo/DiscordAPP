@@ -30,7 +30,8 @@
   "homepage": "https://github.com/FJrodafo/DiscordAPP#readme",
   "dependencies": {
     "canvas": "^2.11.2",
-    "discord.js": "^14.15.3"
+    "discord.js": "^14.15.3",
+    "undici": "^6.19.8"
   },
   "devDependencies": {
     "eslint": "^8.48.0"
