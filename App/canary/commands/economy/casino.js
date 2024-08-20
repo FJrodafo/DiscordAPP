@@ -176,18 +176,18 @@ async function handleVirtualHorseRacing(interaction, userExists, users, jsonPath
     const position = horsePositions.indexOf(selectedHorse) + 1;
     if (position === 1) {
         payout = bet * 5;
-        resultText = `Your horse finished in first place!\nYou have won ${payout - bet} coins!`;
+        resultText = `Your horse finished in \`first\` place!\nYou have won \`${payout - bet}\` coins!`;
     }
     else if (position === 2) {
         payout = bet * 3;
-        resultText = `Your horse finished in second place!\nYou have won ${payout - bet} coins!`;
+        resultText = `Your horse finished in \`second\` place!\nYou have won \`${payout - bet}\` coins!`;
     }
     else if (position === 3) {
         payout = bet * 2;
-        resultText = `Your horse finished in third place!\nYou have won ${payout - bet} coins!`;
+        resultText = `Your horse finished in \`third\` place!\nYou have won \`${payout - bet}\` coins!`;
     }
     else {
-        resultText = `Your horse finished in ${position}th position.\nYou have lost ${bet} coins...\nBetter luck next time!`;
+        resultText = `Your horse finished in \`${position}th\` position.\nYou have lost \`${bet}\` coins...\nBetter luck next time!`;
     }
 
     // Add profit
@@ -206,12 +206,13 @@ async function handleVirtualHorseRacing(interaction, userExists, users, jsonPath
     });
 
     // Final result
-    const imageFile = new AttachmentBuilder(`./../../assets/casino/japan-world-cup/${horsePositions[0]}.gif`);
+    const imageFile = new AttachmentBuilder(`./../../assets/economy/casino/japan-world-cup/${horsePositions[0]}.gif`);
     const embed = new EmbedBuilder()
         .setTitle('Japan World Cup!')
         .setDescription(`${resultText}`)
         .addFields(leaderboardFields)
         .setImage(`attachment://${horsePositions[0]}.gif`)
+        .setTimestamp()
         .setFooter({ text: 'Cinema Keiba' });
 
     await interaction.reply({ embeds: [embed], files: [imageFile] });
@@ -242,15 +243,18 @@ async function handleRoulette(interaction, userExists, users, jsonPath) {
     saveUpdatedJSON(jsonPath, users, interaction);
 
     // Final result
-    const resultText = payout > 0 ? `You won ${payout - bet} coins!` : `You lost ${bet} coins...\nBetter luck next time!`;
-    const imageFile = new AttachmentBuilder('./../../assets/casino/Roulette.gif');
+    const resultText = payout > 0 ? `You have won \`${payout - bet}\` coins!` : `You have lost \`${bet}\` coins...\nBetter luck next time!`;
+    const imageFile = new AttachmentBuilder('./../../assets/economy/casino/Roulette.gif');
     const embed = new EmbedBuilder()
-        .setImage('attachment://Roulette.gif')
+        .setTitle('Roulette!')
+        .setDescription(resultText)
         .addFields(
-            { name: 'Roulette', value: resultText, inline: true },
             { name: 'Choice', value: `${color === 'green' ? '🟢 Green' : color === 'red' ? '🔴 Red' : '⚫ Black'}`, inline: true },
             { name: 'Result', value: `${result === 'green' ? '🟢 Green' : result === 'red' ? '🔴 Red' : '⚫ Black'}`, inline: true },
-        );
+        )
+        .setImage('attachment://Roulette.gif')
+        .setTimestamp()
+        .setFooter({ text: 'Caligula\'s Casino' });
 
     await interaction.reply({ embeds: [embed], files: [imageFile] });
 }
@@ -329,7 +333,7 @@ async function handleSlotMachine(interaction, userExists, users, jsonPath) {
     const embed = new EmbedBuilder()
         .setTitle('SPINNING')
         .setDescription(randomSlots.join(' '))
-        .setFooter({ text: '...' });
+        .setFooter({ text: '\u200B' });
 
     await interaction.reply({ embeds: [embed] });
 
@@ -338,7 +342,7 @@ async function handleSlotMachine(interaction, userExists, users, jsonPath) {
         randomSlots = getRandomSlots();
         embed.setTitle('SPINNING')
             .setDescription(randomSlots.join(' '))
-            .setFooter({ text: '...' });
+            .setFooter({ text: '\u200B' });
         await interaction.editReply({ embeds: [embed] });
         // Wait 200ms for animation effect
         await new Promise(resolve => setTimeout(resolve, 200));

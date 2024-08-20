@@ -11,7 +11,7 @@ const fs = require('fs');
 const path = require('path');
 
 module.exports = {
-    category: 'utility',
+    category: 'help',
     data: new SlashCommandBuilder()
         .setName('help')
         .setDescription('Shows all available commands!')

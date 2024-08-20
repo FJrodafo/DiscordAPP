@@ -9,7 +9,6 @@ module.exports = {
         .setDMPermission(false),
     async execute(interaction) {
         const jsonPath = './../../database/data.json';
-        const user = interaction.user;
 
         // Read JSON file
         let users = [];
@@ -26,7 +25,7 @@ module.exports = {
         }
 
         // Check if the user is already registered
-        const userId = user.id.toString();
+        const userId = interaction.user.id.toString();
         const userExists = users.find(u => u.user === userId);
 
         if (userExists) {
@@ -49,7 +48,7 @@ module.exports = {
         // Save the updated JSON file
         try {
             fs.writeFileSync(jsonPath, JSON.stringify(users, null, 2), 'utf8');
-            console.log(`User ${user.id} added to data.json`);
+            console.log(`User ${interaction.user.id} added to data.json`);
         }
         catch (err) {
             console.error('Error writing to data.json:', err);

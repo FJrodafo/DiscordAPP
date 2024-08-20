@@ -1,5 +1,6 @@
 const {
     SlashCommandBuilder,
+    AttachmentBuilder,
     EmbedBuilder,
 } = require('discord.js');
 const fs = require('fs');
@@ -13,7 +14,6 @@ module.exports = {
         .setDMPermission(false),
     async execute(interaction) {
         const jsonPath = './../../database/data.json';
-        const user = interaction.user;
 
         // Read JSON file
         let users = [];
@@ -30,7 +30,7 @@ module.exports = {
         }
 
         // Check if the user is already registered
-        const userId = user.id.toString();
+        const userId = interaction.user.id.toString();
         const userExists = users.find(u => u.user === userId);
 
         // If the user is not registered, send a message to register
@@ -42,7 +42,7 @@ module.exports = {
         // Save the updated JSON file
         try {
             fs.writeFileSync(jsonPath, JSON.stringify(users, null, 2), 'utf8');
-            console.log(`${user.id} coins updated in data.json`);
+            console.log(`${interaction.user.id} coins updated in data.json`);
         }
         catch (err) {
             console.error('Error writing to data.json:', err);
@@ -53,8 +53,14 @@ module.exports = {
         }
 
         // Final result
-        const embed = new EmbedBuilder().setDescription('You have earned `40` coins!');
+        const imageFile = new AttachmentBuilder('./../../assets/economy/Work.gif');
+        const embed = new EmbedBuilder()
+            .setTitle('After eight hours of work!')
+            .setDescription('You have earned `40` coins!')
+            .setImage('attachment://Work.gif')
+            .setTimestamp()
+            .setFooter({ text: 'Discord Inc.' });
 
-        return interaction.reply({ embeds: [embed] });
+        await interaction.reply({ embeds: [embed], files: [imageFile] });
     },
 };
