@@ -14,18 +14,18 @@ module.exports = {
         .addSubcommand(subcommand => subcommand
             .setName('japan-world-cup')
             .setDescription('Bet on a horse and win!')
-            .addStringOption(option => option
+            .addIntegerOption(option => option
                 .setName('bet')
                 .setDescription('Place your bet!')
                 .setRequired(true)
                 .addChoices(
-                    { name: '5 Coins', value: '5' },
-                    { name: '10 Coins', value: '10' },
-                    { name: '20 Coins', value: '20' },
-                    { name: '50 Coins', value: '50' },
-                    { name: '100 Coins', value: '100' },
-                    { name: '200 Coins', value: '200' },
-                    { name: '500 Coins', value: '500' },
+                    { name: '5 Coins', value: 5 },
+                    { name: '10 Coins', value: 10 },
+                    { name: '20 Coins', value: 20 },
+                    { name: '50 Coins', value: 50 },
+                    { name: '100 Coins', value: 100 },
+                    { name: '200 Coins', value: 200 },
+                    { name: '500 Coins', value: 500 },
                 ),
             )
             .addIntegerOption(option => option
@@ -47,18 +47,18 @@ module.exports = {
         .addSubcommand(subcommand => subcommand
             .setName('roulette')
             .setDescription('Spin the roulette!')
-            .addStringOption(option => option
+            .addIntegerOption(option => option
                 .setName('bet')
                 .setDescription('Place your bet!')
                 .setRequired(true)
                 .addChoices(
-                    { name: '5 Coins', value: '5' },
-                    { name: '10 Coins', value: '10' },
-                    { name: '20 Coins', value: '20' },
-                    { name: '50 Coins', value: '50' },
-                    { name: '100 Coins', value: '100' },
-                    { name: '200 Coins', value: '200' },
-                    { name: '500 Coins', value: '500' },
+                    { name: '5 Coins', value: 5 },
+                    { name: '10 Coins', value: 10 },
+                    { name: '20 Coins', value: 20 },
+                    { name: '50 Coins', value: 50 },
+                    { name: '100 Coins', value: 100 },
+                    { name: '200 Coins', value: 200 },
+                    { name: '500 Coins', value: 500 },
                 ),
             )
             .addStringOption(option => option
@@ -146,7 +146,7 @@ async function saveUpdatedJSON(jsonPath, users, interaction) {
 }
 
 async function handleVirtualHorseRacing(interaction, userExists, users, jsonPath) {
-    const bet = parseInt(interaction.options.getString('bet'));
+    const bet = interaction.options.getInteger('bet');
     const selectedHorse = interaction.options.getInteger('horse');
 
     // Check if the user has enough coins
@@ -219,7 +219,7 @@ async function handleVirtualHorseRacing(interaction, userExists, users, jsonPath
 }
 
 async function handleRoulette(interaction, userExists, users, jsonPath) {
-    const bet = parseInt(interaction.options.getString('bet'));
+    const bet = interaction.options.getInteger('bet');
     const color = interaction.options.getString('color');
 
     // Check if the user has enough coins

@@ -37,7 +37,7 @@ module.exports = {
         if (!userExists) return interaction.reply({ content: 'To register use: `/register`', ephemeral: true });
 
         // Update user coins
-        userExists.coins += 40;
+        userExists.coins += (40 + (userExists.karma * 2));
 
         // Save the updated JSON file
         try {
@@ -53,10 +53,14 @@ module.exports = {
         }
 
         // Final result
+        let description = '';
+        if (userExists.karma > 0) description = `You have earned \`40\` coins!\n\nA bonus of \`${userExists.karma * 2}\` coins have been added due to your good karma!`;
+        else if (userExists.karma < 0) description = `You have earned \`40\` coins!\n\nYou have been deducted \`${userExists.karma * 2}\` coins due to your bad karma!`;
+        else description = 'You have earned `40` coins!';
         const imageFile = new AttachmentBuilder('./../../assets/economy/Work.gif');
         const embed = new EmbedBuilder()
             .setTitle('After eight hours of work!')
-            .setDescription('You have earned `40` coins!')
+            .setDescription(description)
             .setImage('attachment://Work.gif')
             .setTimestamp()
             .setFooter({ text: 'Discord Inc.' });

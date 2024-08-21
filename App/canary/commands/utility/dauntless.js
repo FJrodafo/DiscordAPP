@@ -99,7 +99,7 @@ module.exports = {
             }
             else if (subcommand === 'gauntlet') {
                 const season = interaction.options.getInteger('season');
-                if (season < 1 || season > 14) return interaction.reply({ content: 'You need to input a number between `1` and `13`', ephemeral: true });
+                if (season < 1 || season > 14) return interaction.reply({ content: 'You need to input a number between `1` and `14`', ephemeral: true });
                 const jsonPath = `./../../database/dauntless/gauntlet/season${season}.json`;
                 const leaderboardData = require(jsonPath);
                 await handleGauntletPagination(interaction, leaderboardData.leaderboard);

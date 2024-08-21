@@ -2,7 +2,7 @@ const { SlashCommandBuilder } = require('discord.js');
 const fs = require('fs');
 
 module.exports = {
-    category: 'utility',
+    category: 'economy',
     data: new SlashCommandBuilder()
         .setName('register')
         .setDescription('Register if you are not yet registered in the database!')

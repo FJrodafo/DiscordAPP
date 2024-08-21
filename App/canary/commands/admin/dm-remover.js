@@ -4,7 +4,7 @@ module.exports = {
     category: 'admin',
     data: new SlashCommandBuilder()
         .setName('dm-remover')
-        .setDescription('Delete a specific direct message sent by the APP by its ID!')
+        .setDescription('Delete a specific direct message by its ID!')
         .setDefaultMemberPermissions(0)
         .addStringOption(option => option
             .setName('message_id')
