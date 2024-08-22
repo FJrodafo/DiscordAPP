@@ -12,6 +12,7 @@
 
 # database
 /canary/database/data.json
+/canary/database/log.txt
 
 # secrets
 /canary/config.json

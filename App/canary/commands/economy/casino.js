@@ -4,6 +4,7 @@ const {
     EmbedBuilder,
 } = require('discord.js');
 const fs = require('fs');
+process.chdir(__dirname);
 
 module.exports = {
     category: 'economy',
@@ -92,6 +93,7 @@ module.exports = {
         const subcommand = interaction.options.getSubcommand();
         const subcommandGroup = interaction.options.getSubcommandGroup();
         const jsonPath = './../../database/data.json';
+        const logPath = './../../database/log.txt';
 
         // Read JSON file
         let users = [];
@@ -116,28 +118,32 @@ module.exports = {
 
         // Subcommand Handler
         if (subcommand === 'japan-world-cup') {
-            await handleVirtualHorseRacing(interaction, userExists, users, jsonPath);
+            await handleVirtualHorseRacing(interaction, userExists, users, jsonPath, logPath);
         }
         else if (subcommand === 'roulette') {
-            await handleRoulette(interaction, userExists, users, jsonPath);
+            await handleRoulette(interaction, userExists, users, jsonPath, logPath);
         }
         else if (subcommand === 'scratchcard') {
-            await handleScratchcard(interaction, userExists, users, jsonPath);
+            await handleScratchcard(interaction, userExists, users, jsonPath, logPath);
         }
         else if (subcommandGroup === 'slot') {
             if (subcommand === 'payout') await handleSlotPayout(interaction);
-            else if (subcommand === 'machine') await handleSlotMachine(interaction, userExists, users, jsonPath);
+            else if (subcommand === 'machine') await handleSlotMachine(interaction, userExists, users, jsonPath, logPath);
         }
     },
 };
 
-async function saveUpdatedJSON(jsonPath, users, interaction) {
+async function saveUpdatedJSON(interaction, users, jsonPath, logPath, bet, payout) {
     try {
         fs.writeFileSync(jsonPath, JSON.stringify(users, null, 2), 'utf8');
-        console.log(`${interaction.user.id} coins updated in data.json`);
+        const now = new Date();
+        const timestamp = now.toLocaleString();
+        const logMessage = `\n${timestamp} - ${interaction.user.id} bet ${bet} coins and got a payout of ${payout} coins from casino.js\n`;
+        fs.appendFileSync(logPath, logMessage, 'utf8');
+        console.log(logMessage);
     }
     catch (err) {
-        console.error('Error writing to data.json:', err);
+        console.error('Error writing to data.json/log.txt:', err);
         return interaction.reply({
             content: 'There was an error updating the database.',
             ephemeral: true,
@@ -145,7 +151,7 @@ async function saveUpdatedJSON(jsonPath, users, interaction) {
     }
 }
 
-async function handleVirtualHorseRacing(interaction, userExists, users, jsonPath) {
+async function handleVirtualHorseRacing(interaction, userExists, users, jsonPath, logPath) {
     const bet = interaction.options.getInteger('bet');
     const selectedHorse = interaction.options.getInteger('horse');
 
@@ -176,15 +182,15 @@ async function handleVirtualHorseRacing(interaction, userExists, users, jsonPath
     const position = horsePositions.indexOf(selectedHorse) + 1;
     if (position === 1) {
         payout = bet * 5;
-        resultText = `Your horse finished in \`first\` place!\nYou have won \`${payout - bet}\` coins!`;
+        resultText = `Your horse finished in \`first\` place!\nYou have won \`${payout}\` coins!`;
     }
     else if (position === 2) {
         payout = bet * 3;
-        resultText = `Your horse finished in \`second\` place!\nYou have won \`${payout - bet}\` coins!`;
+        resultText = `Your horse finished in \`second\` place!\nYou have won \`${payout}\` coins!`;
     }
     else if (position === 3) {
         payout = bet * 2;
-        resultText = `Your horse finished in \`third\` place!\nYou have won \`${payout - bet}\` coins!`;
+        resultText = `Your horse finished in \`third\` place!\nYou have won \`${payout}\` coins!`;
     }
     else {
         resultText = `Your horse finished in \`${position}th\` position.\nYou have lost \`${bet}\` coins...\nBetter luck next time!`;
@@ -194,7 +200,7 @@ async function handleVirtualHorseRacing(interaction, userExists, users, jsonPath
     if (payout > 0) userExists.coins += payout;
 
     // Save the updated JSON file
-    saveUpdatedJSON(jsonPath, users, interaction);
+    saveUpdatedJSON(interaction, users, jsonPath, logPath, bet, payout);
 
     // Create fields for the leaderboard
     const leaderboardFields = horsePositions.map((pos, index) => {
@@ -218,7 +224,7 @@ async function handleVirtualHorseRacing(interaction, userExists, users, jsonPath
     await interaction.reply({ embeds: [embed], files: [imageFile] });
 }
 
-async function handleRoulette(interaction, userExists, users, jsonPath) {
+async function handleRoulette(interaction, userExists, users, jsonPath, logPath) {
     const bet = interaction.options.getInteger('bet');
     const color = interaction.options.getString('color');
 
@@ -240,10 +246,10 @@ async function handleRoulette(interaction, userExists, users, jsonPath) {
     if (payout > 0) userExists.coins += payout;
 
     // Save the updated JSON file
-    saveUpdatedJSON(jsonPath, users, interaction);
+    saveUpdatedJSON(interaction, users, jsonPath, logPath, bet, payout);
 
     // Final result
-    const resultText = payout > 0 ? `You have won \`${payout - bet}\` coins!` : `You have lost \`${bet}\` coins...\nBetter luck next time!`;
+    const resultText = payout > 0 ? `You have won \`${payout}\` coins!` : `You have lost \`${bet}\` coins...\nBetter luck next time!`;
     const imageFile = new AttachmentBuilder('./../../assets/economy/casino/Roulette.gif');
     const embed = new EmbedBuilder()
         .setTitle('Roulette!')
@@ -259,12 +265,13 @@ async function handleRoulette(interaction, userExists, users, jsonPath) {
     await interaction.reply({ embeds: [embed], files: [imageFile] });
 }
 
-async function handleScratchcard(interaction, userExists, users, jsonPath) {
+async function handleScratchcard(interaction, userExists, users, jsonPath, logPath) {
     // Check if the user has enough coins
     if (userExists.coins < 10) return interaction.reply({ content: 'You don\'t have enough coins to play. Use `/work` to earn coins!', ephemeral: true });
 
     // Discount 10 coins for the scratchcard
-    userExists.coins -= 10;
+    const bet = 10;
+    userExists.coins -= bet;
 
     // Game mechanics
     const randomMessage = () => Math.random() < 0.4 ? '||:money_with_wings:||' : '||:cloud:||';
@@ -276,14 +283,14 @@ async function handleScratchcard(interaction, userExists, users, jsonPath) {
 
     // Calculate the profit
     const moneyCount = scratchResults.filter(result => result === '||:money_with_wings:||').length;
-    let totalWinnings = moneyCount;
-    if (bonusResult === '||:white_check_mark:||') totalWinnings *= 2;
+    let payout = moneyCount;
+    if (bonusResult === '||:white_check_mark:||') payout *= 2;
 
     // Update user coins
-    userExists.coins += totalWinnings;
+    userExists.coins += payout;
 
     // Save the updated JSON file
-    saveUpdatedJSON(jsonPath, users, interaction);
+    saveUpdatedJSON(interaction, users, jsonPath, logPath, bet, payout);
 
     // Final result
     const embed = new EmbedBuilder()
@@ -304,12 +311,13 @@ async function handleSlotPayout(interaction) {
     await interaction.reply({ embeds: [payoutEmbed], ephemeral: true });
 }
 
-async function handleSlotMachine(interaction, userExists, users, jsonPath) {
+async function handleSlotMachine(interaction, userExists, users, jsonPath, logPath) {
     // Check if the user has enough coins
     if (userExists.coins < 1) return interaction.reply({ content: 'You don\'t have enough coins to play. Use `/work` to earn coins!', ephemeral: true });
 
     // Deposit 1 coin to pull the lever
-    userExists.coins -= 1;
+    const bet = 1;
+    userExists.coins -= bet;
 
     const slots = [':gear:', ':boom:', ':spades:', ':diamonds:', ':hearts:', ':bell:'];
 
@@ -368,7 +376,7 @@ async function handleSlotMachine(interaction, userExists, users, jsonPath) {
     }
 
     // Save the updated JSON file
-    saveUpdatedJSON(jsonPath, users, interaction);
+    saveUpdatedJSON(interaction, users, jsonPath, logPath, bet, payout);
 
     // Final result
     embed.setTitle(title)

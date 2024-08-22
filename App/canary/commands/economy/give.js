@@ -4,6 +4,7 @@ const {
     EmbedBuilder,
 } = require('discord.js');
 const fs = require('fs');
+process.chdir(__dirname);
 
 module.exports = {
     category: 'economy',
@@ -29,11 +30,13 @@ module.exports = {
         .addUserOption(option => option
             .setName('user')
             .setDescription('The user to give coins to!')
-            .setRequired(true)),
+            .setRequired(true),
+        ),
     async execute(interaction) {
         const amount = interaction.options.getInteger('amount');
         const targetUser = interaction.options.getUser('user');
         const jsonPath = './../../database/data.json';
+        const logPath = './../../database/log.txt';
 
         // Read JSON file
         let users = [];
@@ -75,10 +78,14 @@ module.exports = {
         // Save the updated JSON file
         try {
             fs.writeFileSync(jsonPath, JSON.stringify(users, null, 2), 'utf8');
-            console.log(`${interaction.user.id} coins & karma updated in data.json`);
+            const now = new Date();
+            const timestamp = now.toLocaleString();
+            const logMessage = `\n${timestamp} - ${interaction.user.id} successfully gave ${amount} coins to ${targetUser.id}\n`;
+            fs.appendFileSync(logPath, logMessage, 'utf8');
+            console.log(logMessage);
         }
         catch (err) {
-            console.error('Error writing to data.json:', err);
+            console.error('Error writing to data.json/log.txt:', err);
             return interaction.reply({
                 content: 'There was an error updating the database.',
                 ephemeral: true,

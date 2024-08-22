@@ -35,7 +35,7 @@ module.exports = {
 
         // Create the wealthy embed
         const topUsersInfo = topUsers.map((user, index) =>
-            `\n${getRankEmoji(index + 1)} <@${user.user}> ${user.coins} coins`,
+            `\n${getRankEmoji(index + 1)} <@${user.user}> :coin: **${user.coins}** :performing_arts: **${user.karma}**`,
         ).join('\n');
         const embed = new EmbedBuilder().setDescription(topUsersInfo);
 

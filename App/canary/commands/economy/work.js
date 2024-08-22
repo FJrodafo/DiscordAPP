@@ -4,6 +4,7 @@ const {
     EmbedBuilder,
 } = require('discord.js');
 const fs = require('fs');
+process.chdir(__dirname);
 
 module.exports = {
     category: 'economy',
@@ -14,6 +15,7 @@ module.exports = {
         .setDMPermission(false),
     async execute(interaction) {
         const jsonPath = './../../database/data.json';
+        const logPath = './../../database/log.txt';
 
         // Read JSON file
         let users = [];
@@ -42,10 +44,14 @@ module.exports = {
         // Save the updated JSON file
         try {
             fs.writeFileSync(jsonPath, JSON.stringify(users, null, 2), 'utf8');
-            console.log(`${interaction.user.id} coins updated in data.json`);
+            const now = new Date();
+            const timestamp = now.toLocaleString();
+            const logMessage = `\n${timestamp} - ${interaction.user.id} got a payout of ${40 + (userExists.karma * 2)} from work.js\n`;
+            fs.appendFileSync(logPath, logMessage, 'utf8');
+            console.log(logMessage);
         }
         catch (err) {
-            console.error('Error writing to data.json:', err);
+            console.error('Error writing to data.json/log.txt:', err);
             return interaction.reply({
                 content: 'There was an error updating the database.',
                 ephemeral: true,
