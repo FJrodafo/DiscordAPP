@@ -52,7 +52,6 @@ module.exports = {
             const now = new Date(), timestamp = now.toLocaleString();
             const logMessage = `${timestamp} - ${interaction.user.id} was successfully registered and added to data.json\n`;
             await fs.appendFile(logPath, logMessage, 'utf8');
-            console.log(logMessage);
         }
         catch (err) {
             console.error('Error writing to data.json/log.txt:', err);

@@ -47,7 +47,6 @@ module.exports = {
             const now = new Date(), timestamp = now.toLocaleString();
             const logMessage = `${timestamp} - ${interaction.user.id} got a payout of ${40 + (userExists.karma * 2)} from work.js\n`;
             await fs.appendFile(logPath, logMessage, 'utf8');
-            console.log(logMessage);
         }
         catch (err) {
             console.error('Error writing to data.json/log.txt:', err);

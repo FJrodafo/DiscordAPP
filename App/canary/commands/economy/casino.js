@@ -140,7 +140,6 @@ async function saveUpdatedJSON(interaction, users, jsonPath, logPath, bet, payou
         const now = new Date(), timestamp = now.toLocaleString();
         const logMessage = `${timestamp} - ${interaction.user.id} bet ${bet} coins and got a payout of ${payout} coins from casino.js\n`;
         await fs.appendFile(logPath, logMessage, 'utf8');
-        console.log(logMessage);
     }
     catch (err) {
         console.error('Error writing to data.json/log.txt:', err);

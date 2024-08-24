@@ -82,7 +82,6 @@ module.exports = {
             const now = new Date(), timestamp = now.toLocaleString();
             const logMessage = `${timestamp} - ${interaction.user.id} gave ${amount} coins to ${targetUser.id}\n`;
             await fs.appendFile(logPath, logMessage, 'utf8');
-            console.log(logMessage);
         }
         catch (err) {
             console.error('Error writing to data.json/log.txt:', err);

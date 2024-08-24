@@ -15,7 +15,7 @@ module.exports = {
         const serverCount = `Server count: ${client.guilds.cache.size}`;
         const logMessage = `${timestamp} - ${readyMessage} ${serverCount}\n`;
         fs.appendFileSync(logPath, logMessage, 'utf8');
-        console.log(`\n${readyMessage}\n${serverCount}`);
+        console.log(`${readyMessage}\n${serverCount}`);
 
         const jsonPath = path.resolve(__dirname, './../database/games/names.json');
         const data = require(jsonPath);
