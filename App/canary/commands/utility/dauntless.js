@@ -12,6 +12,7 @@ const {
     loadImage,
 } = require('canvas');
 const fs = require('fs');
+const path = require('path');
 process.chdir(__dirname);
 
 module.exports = {
@@ -114,8 +115,8 @@ async function handleMetaBuilds(interaction) {
     const jsonPath = './../../database/dauntless/meta-builds.json';
     const data = require(jsonPath);
     const buildInfo = data[weapon][element];
-    const thumbnailPath = `./../../assets/dauntless/builds/${buildInfo.omnicell}`;
-    const imagePath = './../../assets/command-output/meta-builds.png';
+    const thumbnailPath = path.resolve(__dirname, `./../../assets/dauntless/builds/${buildInfo.omnicell}`);
+    const imagePath = path.resolve(__dirname, './../../assets/command-output/meta-builds.png');
     const combinedImage = await combineImages(buildInfo.weapon, buildInfo.armor, buildInfo.supplies);
     fs.writeFileSync(imagePath, combinedImage.toBuffer());
     const thumbnailFile = new AttachmentBuilder(thumbnailPath);
@@ -170,7 +171,7 @@ async function handleLeaderboardsPagination(interaction, leaderboardData, imageN
 
     const buttonRow = new ActionRowBuilder().addComponents(firstPageButton, backButton, nextButton, lastPageButton);
 
-    const iconPath = `./../../assets/dauntless/leaderboards/${imageName}`;
+    const iconPath = path.resolve(__dirname, `./../../assets/dauntless/leaderboards/${imageName}`);
     const iconFile = new AttachmentBuilder(iconPath);
 
     const reply = await interaction.reply({

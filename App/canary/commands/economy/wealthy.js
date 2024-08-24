@@ -2,7 +2,8 @@ const {
     SlashCommandBuilder,
     EmbedBuilder,
 } = require('discord.js');
-const fs = require('fs');
+const fs = require('fs').promises;
+const path = require('path');
 
 module.exports = {
     category: 'economy',
@@ -11,12 +12,12 @@ module.exports = {
         .setDescription('Shows the top 5 users with the most coins!')
         .setDMPermission(false),
     async execute(interaction) {
-        const jsonPath = './../../database/data.json';
+        const jsonPath = path.resolve(__dirname, './../../database/data.json');
 
-        // Read JSON file
+        // Read JSON file asynchronously
         let users = [];
         try {
-            const data = fs.readFileSync(jsonPath, 'utf8');
+            const data = await fs.readFile(jsonPath, 'utf8');
             users = JSON.parse(data);
         }
         catch (err) {
@@ -33,10 +34,19 @@ module.exports = {
         // Get the top 5 users
         const topUsers = users.slice(0, 5);
 
+        // Check if there are users in the database
+        if (topUsers.length === 0) {
+            return interaction.reply({
+                content: 'No users found in the database.',
+                ephemeral: true,
+            });
+        }
+
         // Create the wealthy embed
         const topUsersInfo = topUsers.map((user, index) =>
             `\n${getRankEmoji(index + 1)} <@${user.user}> :coin: **${user.coins}** :performing_arts: **${user.karma}**`,
         ).join('\n');
+
         const embed = new EmbedBuilder().setDescription(topUsersInfo);
 
         return interaction.reply({ embeds: [embed], ephemeral: true });

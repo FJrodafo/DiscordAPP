@@ -5,6 +5,7 @@ const {
     ButtonBuilder, ButtonStyle,
     ActionRowBuilder,
 } = require('discord.js');
+const path = require('path');
 
 module.exports = {
     category: 'fun',
@@ -13,8 +14,12 @@ module.exports = {
         .setDescription('Your everyday life stories!')
         .setDMPermission(false),
     async execute(interaction) {
-        const thumbnail = new AttachmentBuilder('./../../assets/fml/logo.png');
-        const image = new AttachmentBuilder('./../../assets/fml/baseline.png');
+        const thumbnail = new AttachmentBuilder(
+            path.resolve(__dirname, './../../assets/fml/logo.png'),
+        );
+        const image = new AttachmentBuilder(
+            path.resolve(__dirname, './../../assets/fml/baseline.png'),
+        );
 
         const embed = new EmbedBuilder()
             .setColor(0xFC8CB4)

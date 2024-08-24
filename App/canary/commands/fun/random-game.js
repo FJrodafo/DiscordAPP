@@ -3,6 +3,7 @@ const {
     AttachmentBuilder,
     EmbedBuilder,
 } = require('discord.js');
+const path = require('path');
 
 module.exports = {
     category: 'fun',
@@ -16,7 +17,9 @@ module.exports = {
 
         const randomGame = Math.floor(Math.random() * data.length);
 
-        const imageFile = new AttachmentBuilder(`./../../assets/games/list/${data[randomGame]}`);
+        const imageFile = new AttachmentBuilder(
+            path.resolve(__dirname, `./../../assets/games/list/${data[randomGame]}`),
+        );
         const embed = new EmbedBuilder().setImage(`attachment://${data[randomGame]}`);
 
         await interaction.reply({ embeds: [embed], files: [imageFile] });

@@ -3,8 +3,8 @@ const {
     AttachmentBuilder,
     EmbedBuilder,
 } = require('discord.js');
-const fs = require('fs');
-process.chdir(__dirname);
+const fs = require('fs').promises;
+const path = require('path');
 
 module.exports = {
     category: 'economy',
@@ -14,13 +14,13 @@ module.exports = {
         .setDescription('Work to earn daily coins!')
         .setDMPermission(false),
     async execute(interaction) {
-        const jsonPath = './../../database/data.json';
-        const logPath = './../../database/log.txt';
+        const jsonPath = path.resolve(__dirname, './../../database/data.json');
+        const logPath = path.resolve(__dirname, './../../database/log.txt');
 
-        // Read JSON file
+        // Read JSON file asynchronously
         let users = [];
         try {
-            const data = fs.readFileSync(jsonPath, 'utf8');
+            const data = await fs.readFile(jsonPath, 'utf8');
             users = JSON.parse(data);
         }
         catch (err) {
@@ -41,13 +41,12 @@ module.exports = {
         // Update user coins
         userExists.coins += (40 + (userExists.karma * 2));
 
-        // Save the updated JSON file
+        // Save the updated JSON file and log the transaction asynchronously
         try {
-            fs.writeFileSync(jsonPath, JSON.stringify(users, null, 2), 'utf8');
-            const now = new Date();
-            const timestamp = now.toLocaleString();
-            const logMessage = `\n${timestamp} - ${interaction.user.id} got a payout of ${40 + (userExists.karma * 2)} from work.js\n`;
-            fs.appendFileSync(logPath, logMessage, 'utf8');
+            await fs.writeFile(jsonPath, JSON.stringify(users, null, 2), 'utf8');
+            const now = new Date(), timestamp = now.toLocaleString();
+            const logMessage = `${timestamp} - ${interaction.user.id} got a payout of ${40 + (userExists.karma * 2)} from work.js\n`;
+            await fs.appendFile(logPath, logMessage, 'utf8');
             console.log(logMessage);
         }
         catch (err) {
@@ -63,7 +62,9 @@ module.exports = {
         if (userExists.karma > 0) description = `You have earned \`40\` coins!\n\nA bonus of \`${userExists.karma * 2}\` coins have been added due to your good karma!`;
         else if (userExists.karma < 0) description = `You have earned \`40\` coins!\n\nYou have been deducted \`${userExists.karma * 2}\` coins due to your bad karma!`;
         else description = 'You have earned `40` coins!';
-        const imageFile = new AttachmentBuilder('./../../assets/economy/Work.gif');
+        const imageFile = new AttachmentBuilder(
+            path.resolve(__dirname, './../../assets/economy/Work.gif'),
+        );
         const embed = new EmbedBuilder()
             .setTitle('After eight hours of work!')
             .setDescription(description)

@@ -1,4 +1,13 @@
-const { SlashCommandBuilder, ActionRowBuilder, StringSelectMenuBuilder, StringSelectMenuOptionBuilder, AttachmentBuilder, EmbedBuilder, ComponentType } = require('discord.js');
+const {
+    SlashCommandBuilder,
+    ActionRowBuilder,
+    StringSelectMenuBuilder,
+    StringSelectMenuOptionBuilder,
+    AttachmentBuilder,
+    EmbedBuilder,
+    ComponentType,
+} = require('discord.js');
+const path = require('path');
 
 module.exports = {
     category: 'utility',
@@ -109,7 +118,7 @@ module.exports = {
             ),
         );
         // First message
-        const iconPath = './../../assets/monster-hunter/Monster_Hunter.png';
+        const iconPath = path.resolve(__dirname, './../../assets/monster-hunter/Monster_Hunter.png');
         const iconFile = new AttachmentBuilder(iconPath);
         const mainEmbed = new EmbedBuilder().setColor(0x000000).setImage('attachment://Monster_Hunter.png');
         const reply = await interaction.reply({ embeds: [mainEmbed], files: [iconFile], components: [mainMenu], ephemeral: true });
@@ -158,7 +167,7 @@ module.exports = {
             ) {
                 selectedMonster = selectedValues;
                 monsterInfo = embedData[selectedGame][selectedClass][selectedMonster]; output = true;
-                thumbnailPath = `./../../assets/monster-hunter/${selectedGame}/monsters/${monsterInfo.icon}`;
+                thumbnailPath = path.resolve(__dirname, `./../../assets/monster-hunter/${selectedGame}/monsters/${monsterInfo.icon}`);
             }
             if (output === true) {
                 thumbnailFile = new AttachmentBuilder(thumbnailPath);

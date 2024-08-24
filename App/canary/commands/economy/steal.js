@@ -3,8 +3,8 @@ const {
     AttachmentBuilder,
     EmbedBuilder,
 } = require('discord.js');
-const fs = require('fs');
-process.chdir(__dirname);
+const fs = require('fs').promises;
+const path = require('path');
 
 module.exports = {
     category: 'economy',
@@ -19,13 +19,13 @@ module.exports = {
             .setRequired(true)),
     async execute(interaction) {
         const targetUser = interaction.options.getUser('user');
-        const jsonPath = './../../database/data.json';
-        const logPath = './../../database/log.txt';
+        const jsonPath = path.resolve(__dirname, './../../database/data.json');
+        const logPath = path.resolve(__dirname, './../../database/log.txt');
 
-        // Read JSON file
+        // Read JSON file asynchronously
         let users = [];
         try {
-            const data = fs.readFileSync(jsonPath, 'utf8');
+            const data = await fs.readFile(jsonPath, 'utf8');
             users = JSON.parse(data);
         }
         catch (err) {
@@ -59,13 +59,12 @@ module.exports = {
         // Update karma
         if (userExists.karma > -10) userExists.karma -= 1;
 
-        // Save the updated JSON file
+        // Save the updated JSON file and log the transaction asynchronously
         try {
-            fs.writeFileSync(jsonPath, JSON.stringify(users, null, 2), 'utf8');
-            const now = new Date();
-            const timestamp = now.toLocaleString();
-            const logMessage = `\n${timestamp} - ${interaction.user.id} stole ${stealAmount} coins from ${targetUser.id}\n`;
-            fs.appendFileSync(logPath, logMessage, 'utf8');
+            await fs.writeFile(jsonPath, JSON.stringify(users, null, 2), 'utf8');
+            const now = new Date(), timestamp = now.toLocaleString();
+            const logMessage = `${timestamp} - ${interaction.user.id} stole ${stealAmount} coins from ${targetUser.id}\n`;
+            await fs.appendFile(logPath, logMessage, 'utf8');
             console.log(logMessage);
         }
         catch (err) {
@@ -78,28 +77,31 @@ module.exports = {
 
         // Final result
         let imageFile, embed;
+
         if (stealAmount === 0) {
-            imageFile = new AttachmentBuilder('./../../assets/economy/Raid.gif');
+            imageFile = new AttachmentBuilder(
+                path.resolve(__dirname, './../../assets/economy/Raid.gif'),
+            );
             embed = new EmbedBuilder()
                 .setTitle('Steal Attempt!')
                 .setDescription(`The FBI caught you stealing coins from ${targetUser}`)
                 .setImage('attachment://Raid.gif')
                 .setTimestamp()
                 .setFooter({ text: 'Karma -1' });
-
-            return interaction.reply({ embeds: [embed], files: [imageFile] });
         }
         else {
-            imageFile = new AttachmentBuilder('./../../assets/economy/Steal.gif');
+            imageFile = new AttachmentBuilder(
+                path.resolve(__dirname, './../../assets/economy/Steal.gif'),
+            );
             embed = new EmbedBuilder()
                 .setTitle('Steal Attempt!')
                 .setDescription(`You successfully stole \`${stealAmount}\` coins from ${targetUser}`)
                 .setImage('attachment://Steal.gif')
                 .setTimestamp()
                 .setFooter({ text: 'Karma -1' });
-
-            return interaction.reply({ embeds: [embed], files: [imageFile] });
         }
+
+        await interaction.reply({ embeds: [embed], files: [imageFile] });
     },
 };
 

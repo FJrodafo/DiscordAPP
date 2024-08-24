@@ -3,21 +3,21 @@ const {
     ActivityType,
 } = require('discord.js');
 const fs = require('fs');
-process.chdir(__dirname);
+const path = require('path');
 
 module.exports = {
     name: Events.ClientReady,
     once: true,
     execute(client) {
-        const logPath = './../database/log.txt';
-        const now = new Date();
-        const timestamp = now.toLocaleString();
+        const logPath = path.resolve(__dirname, './../database/log.txt');
+        const now = new Date(), timestamp = now.toLocaleString();
         const readyMessage = `Ready! Logged in as ${client.user.tag}`;
         const serverCount = `Server count: ${client.guilds.cache.size}`;
-        const logMessage = `\n${timestamp} - ${readyMessage} ${serverCount}\n`;
+        const logMessage = `${timestamp} - ${readyMessage} ${serverCount}\n`;
         fs.appendFileSync(logPath, logMessage, 'utf8');
         console.log(`\n${readyMessage}\n${serverCount}`);
-        const jsonPath = './../database/games/names.json';
+
+        const jsonPath = path.resolve(__dirname, './../database/games/names.json');
         const data = require(jsonPath);
         const randomGame = Math.floor(Math.random() * data.length);
         const status = [

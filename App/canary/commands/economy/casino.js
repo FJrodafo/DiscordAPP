@@ -3,8 +3,8 @@ const {
     AttachmentBuilder,
     EmbedBuilder,
 } = require('discord.js');
-const fs = require('fs');
-process.chdir(__dirname);
+const fs = require('fs').promises;
+const path = require('path');
 
 module.exports = {
     category: 'economy',
@@ -92,13 +92,14 @@ module.exports = {
     async execute(interaction) {
         const subcommand = interaction.options.getSubcommand();
         const subcommandGroup = interaction.options.getSubcommandGroup();
-        const jsonPath = './../../database/data.json';
-        const logPath = './../../database/log.txt';
 
-        // Read JSON file
+        const jsonPath = path.resolve(__dirname, './../../database/data.json');
+        const logPath = path.resolve(__dirname, './../../database/log.txt');
+
+        // Read JSON file asynchronously
         let users = [];
         try {
-            const data = fs.readFileSync(jsonPath, 'utf8');
+            const data = await fs.readFile(jsonPath, 'utf8');
             users = JSON.parse(data);
         }
         catch (err) {
@@ -135,11 +136,10 @@ module.exports = {
 
 async function saveUpdatedJSON(interaction, users, jsonPath, logPath, bet, payout) {
     try {
-        fs.writeFileSync(jsonPath, JSON.stringify(users, null, 2), 'utf8');
-        const now = new Date();
-        const timestamp = now.toLocaleString();
-        const logMessage = `\n${timestamp} - ${interaction.user.id} bet ${bet} coins and got a payout of ${payout} coins from casino.js\n`;
-        fs.appendFileSync(logPath, logMessage, 'utf8');
+        await fs.writeFile(jsonPath, JSON.stringify(users, null, 2), 'utf8');
+        const now = new Date(), timestamp = now.toLocaleString();
+        const logMessage = `${timestamp} - ${interaction.user.id} bet ${bet} coins and got a payout of ${payout} coins from casino.js\n`;
+        await fs.appendFile(logPath, logMessage, 'utf8');
         console.log(logMessage);
     }
     catch (err) {
@@ -199,7 +199,7 @@ async function handleVirtualHorseRacing(interaction, userExists, users, jsonPath
     // Add profit
     if (payout > 0) userExists.coins += payout;
 
-    // Save the updated JSON file
+    // Save the updated JSON file and log the registration
     saveUpdatedJSON(interaction, users, jsonPath, logPath, bet, payout);
 
     // Create fields for the leaderboard
@@ -212,7 +212,9 @@ async function handleVirtualHorseRacing(interaction, userExists, users, jsonPath
     });
 
     // Final result
-    const imageFile = new AttachmentBuilder(`./../../assets/economy/casino/japan-world-cup/${horsePositions[0]}.gif`);
+    const imageFile = new AttachmentBuilder(
+        path.resolve(__dirname, `./../../assets/economy/casino/japan-world-cup/${horsePositions[0]}.gif`),
+    );
     const embed = new EmbedBuilder()
         .setTitle('Japan World Cup!')
         .setDescription(`${resultText}`)
@@ -240,17 +242,19 @@ async function handleRoulette(interaction, userExists, users, jsonPath, logPath)
 
     // Determine the outcome of the bet
     let payout = 0;
-    if (result === color) payout = color === 'green' ? bet * 10 : bet * 2;
+    if (result === color) payout = color === 'green' ? bet * 35 : bet * 2;
 
     // Add profit
     if (payout > 0) userExists.coins += payout;
 
-    // Save the updated JSON file
+    // Save the updated JSON file and log the registration
     saveUpdatedJSON(interaction, users, jsonPath, logPath, bet, payout);
 
     // Final result
     const resultText = payout > 0 ? `You have won \`${payout}\` coins!` : `You have lost \`${bet}\` coins...\nBetter luck next time!`;
-    const imageFile = new AttachmentBuilder('./../../assets/economy/casino/Roulette.gif');
+    const imageFile = new AttachmentBuilder(
+        path.resolve(__dirname, './../../assets/economy/casino/Roulette.gif'),
+    );
     const embed = new EmbedBuilder()
         .setTitle('Roulette!')
         .setDescription(resultText)
@@ -289,7 +293,7 @@ async function handleScratchcard(interaction, userExists, users, jsonPath, logPa
     // Update user coins
     userExists.coins += payout;
 
-    // Save the updated JSON file
+    // Save the updated JSON file and log the registration
     saveUpdatedJSON(interaction, users, jsonPath, logPath, bet, payout);
 
     // Final result
@@ -375,7 +379,7 @@ async function handleSlotMachine(interaction, userExists, users, jsonPath, logPa
         else footerText = `Pay of ${payout} coins!`;
     }
 
-    // Save the updated JSON file
+    // Save the updated JSON file and log the registration
     saveUpdatedJSON(interaction, users, jsonPath, logPath, bet, payout);
 
     // Final result

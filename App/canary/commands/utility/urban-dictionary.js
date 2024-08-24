@@ -3,6 +3,7 @@ const {
     AttachmentBuilder,
     EmbedBuilder,
 } = require('discord.js');
+const path = require('path');
 const { request } = require('undici');
 
 module.exports = {
@@ -27,7 +28,9 @@ module.exports = {
 
         const [answer] = list;
 
-        const image = new AttachmentBuilder('./../../assets/urban-dictionary/logo.png');
+        const image = new AttachmentBuilder(
+            path.resolve(__dirname, './../../assets/urban-dictionary/logo.png'),
+        );
 
         const embed = new EmbedBuilder()
             .setColor(0xEFFF00)
@@ -36,10 +39,7 @@ module.exports = {
             .addFields(
                 { name: 'Definition', value: answer.definition.substr(0, 1024) },
                 { name: 'Example', value: answer.example.substr(0, 1024) },
-                {
-                    name: 'Rating',
-                    value: `${answer.thumbs_up} thumbs up. ${answer.thumbs_down} thumbs down.`,
-                },
+                { name: 'Rating', value: `${answer.thumbs_up} thumbs up. ${answer.thumbs_down} thumbs down.` },
             )
             .setImage('attachment://logo.png');
 

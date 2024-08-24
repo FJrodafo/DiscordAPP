@@ -3,8 +3,8 @@ const {
     AttachmentBuilder,
     EmbedBuilder,
 } = require('discord.js');
-const fs = require('fs');
-process.chdir(__dirname);
+const fs = require('fs').promises;
+const path = require('path');
 
 module.exports = {
     category: 'economy',
@@ -35,13 +35,14 @@ module.exports = {
     async execute(interaction) {
         const amount = interaction.options.getInteger('amount');
         const targetUser = interaction.options.getUser('user');
-        const jsonPath = './../../database/data.json';
-        const logPath = './../../database/log.txt';
 
-        // Read JSON file
+        const jsonPath = path.resolve(__dirname, './../../database/data.json');
+        const logPath = path.resolve(__dirname, './../../database/log.txt');
+
+        // Read JSON file asynchronously
         let users = [];
         try {
-            const data = fs.readFileSync(jsonPath, 'utf8');
+            const data = await fs.readFile(jsonPath, 'utf8');
             users = JSON.parse(data);
         }
         catch (err) {
@@ -75,13 +76,12 @@ module.exports = {
         // Update karma
         if (userExists.karma < 10) userExists.karma += 1;
 
-        // Save the updated JSON file
+        // Save the updated JSON file and log the transaction asynchronously
         try {
-            fs.writeFileSync(jsonPath, JSON.stringify(users, null, 2), 'utf8');
-            const now = new Date();
-            const timestamp = now.toLocaleString();
-            const logMessage = `\n${timestamp} - ${interaction.user.id} successfully gave ${amount} coins to ${targetUser.id}\n`;
-            fs.appendFileSync(logPath, logMessage, 'utf8');
+            await fs.writeFile(jsonPath, JSON.stringify(users, null, 2), 'utf8');
+            const now = new Date(), timestamp = now.toLocaleString();
+            const logMessage = `${timestamp} - ${interaction.user.id} gave ${amount} coins to ${targetUser.id}\n`;
+            await fs.appendFile(logPath, logMessage, 'utf8');
             console.log(logMessage);
         }
         catch (err) {
@@ -93,7 +93,9 @@ module.exports = {
         }
 
         // Final result
-        const imageFile = new AttachmentBuilder('./../../assets/economy/Give.gif');
+        const imageFile = new AttachmentBuilder(
+            path.resolve(__dirname, './../../assets/economy/Give.gif'),
+        );
         const embed = new EmbedBuilder()
             .setTitle('You decided to give some coins!')
             .setDescription(`You have given \`${amount}\` coins to ${targetUser}\n`)

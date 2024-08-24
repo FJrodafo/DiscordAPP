@@ -1,6 +1,6 @@
 const { SlashCommandBuilder } = require('discord.js');
-const fs = require('fs');
-process.chdir(__dirname);
+const fs = require('fs').promises;
+const path = require('path');
 
 module.exports = {
     category: 'economy',
@@ -9,13 +9,13 @@ module.exports = {
         .setDescription('Register if you are not yet registered in the database!')
         .setDMPermission(false),
     async execute(interaction) {
-        const jsonPath = './../../database/data.json';
-        const logPath = './../../database/log.txt';
+        const jsonPath = path.resolve(__dirname, './../../database/data.json');
+        const logPath = path.resolve(__dirname, './../../database/log.txt');
 
-        // Read JSON file
+        // Read JSON file asynchronously
         let users = [];
         try {
-            const data = fs.readFileSync(jsonPath, 'utf8');
+            const data = await fs.readFile(jsonPath, 'utf8');
             users = JSON.parse(data);
         }
         catch (err) {
@@ -39,7 +39,6 @@ module.exports = {
 
         // Register user
         const newUser = {
-            // Assign a new ID
             id: users.length + 1,
             user: userId,
             karma: 0,
@@ -47,13 +46,12 @@ module.exports = {
         };
         users.push(newUser);
 
-        // Save the updated JSON file
+        // Save the updated JSON file and log the registration asynchronously
         try {
-            fs.writeFileSync(jsonPath, JSON.stringify(users, null, 2), 'utf8');
-            const now = new Date();
-            const timestamp = now.toLocaleString();
-            const logMessage = `\n${timestamp} - ${interaction.user.id} was successfully registered and added to data.json\n`;
-            fs.appendFileSync(logPath, logMessage, 'utf8');
+            await fs.writeFile(jsonPath, JSON.stringify(users, null, 2), 'utf8');
+            const now = new Date(), timestamp = now.toLocaleString();
+            const logMessage = `${timestamp} - ${interaction.user.id} was successfully registered and added to data.json\n`;
+            await fs.appendFile(logPath, logMessage, 'utf8');
             console.log(logMessage);
         }
         catch (err) {
@@ -66,7 +64,7 @@ module.exports = {
 
         // Success message!
         return interaction.reply({
-            content: 'You have been registered successfully!',
+            content: 'You have been successfully registered!',
             ephemeral: true,
         });
     },
