@@ -4,6 +4,7 @@ const {
 } = require('discord.js');
 const fs = require('fs').promises;
 const path = require('path');
+const emoji = require('./../../utils/emoji.js');
 
 module.exports = {
     category: 'economy',
@@ -55,9 +56,9 @@ module.exports = {
 
 function getRankEmoji(rank) {
     switch (rank) {
-        case 1: return '🥇';
-        case 2: return '🥈';
-        case 3: return '🥉';
+        case 1: return emoji.first;
+        case 2: return emoji.second;
+        case 3: return emoji.third;
         default: return `**${rank}.**`;
     }
 }

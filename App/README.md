@@ -39,6 +39,8 @@ App/
 │   │   ├── interactionCreate.js
 │   │   ├── messageCreate.js
 │   │   └── ready.js
+│   ├── utils/
+│   │   └── emoji.js
 │   ├── config.json
 │   ├── deploy-commands.js
 │   └── index.js

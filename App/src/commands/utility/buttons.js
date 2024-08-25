@@ -5,6 +5,7 @@ const {
     ActionRowBuilder,
     ComponentType,
 } = require('discord.js');
+const emoji = require('./../../utils/emoji.js');
 
 module.exports = {
     category: 'utility',
@@ -24,13 +25,13 @@ module.exports = {
 
         const successButton = new ButtonBuilder()
             .setCustomId('success-button')
-            .setEmoji('✅')
+            .setEmoji(emoji.white_check_mark)
             .setLabel('Success button')
             .setStyle(ButtonStyle.Success);
 
         const dangerButton = new ButtonBuilder()
             .setCustomId('danger-button')
-            .setEmoji('⚠️')
+            .setEmoji(emoji.warning)
             .setLabel('Danger button')
             .setStyle(ButtonStyle.Danger);
 

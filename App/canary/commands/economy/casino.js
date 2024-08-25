@@ -5,6 +5,7 @@ const {
 } = require('discord.js');
 const fs = require('fs').promises;
 const path = require('path');
+const emoji = require('./../../utils/emoji.js');
 
 module.exports = {
     category: 'economy',
@@ -172,8 +173,8 @@ async function handleVirtualHorseRacing(interaction, userExists, users, jsonPath
     fisherYatesShuffle(horsePositions);
 
     // Emojis
-    const rankingEmojis = ['🥇', '🥈', '🥉', '**4th**', '**5th**', '**6th**', '**7th**', '**8th**'];
-    const horseEmojis = ['1️⃣', '2️⃣', '3️⃣', '4️⃣', '5️⃣', '6️⃣', '7️⃣', '8️⃣'];
+    const rankingEmojis = [emoji.first, emoji.second, emoji.third, '**4th**', '**5th**', '**6th**', '**7th**', '**8th**'];
+    const horseEmojis = [emoji[1], emoji[2], emoji[3], emoji[4], emoji[5], emoji[6], emoji[7], emoji[8]];
 
     // Determine the outcome of the race
     let payout = 0;

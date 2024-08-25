@@ -13,6 +13,7 @@ const {
 } = require('canvas');
 const fs = require('fs');
 const path = require('path');
+const emoji = require('./../../utils/emoji.js');
 process.chdir(__dirname);
 
 module.exports = {
@@ -164,10 +165,10 @@ async function handleLeaderboardsPagination(interaction, leaderboardData, imageN
         return new EmbedBuilder().setThumbnail(`attachment://${imageName}`).setDescription(description).setFooter({ text: `Page ${page + 1} of ${totalPages}` });
     };
 
-    const firstPageButton = new ButtonBuilder().setCustomId('first-page-button').setLabel('↑').setStyle(ButtonStyle.Primary).setDisabled(true);
-    const backButton = new ButtonBuilder().setCustomId('back-button').setLabel('←').setStyle(ButtonStyle.Primary).setDisabled(true);
-    const nextButton = new ButtonBuilder().setCustomId('next-button').setLabel('→').setStyle(ButtonStyle.Primary).setDisabled(totalPages <= 1);
-    const lastPageButton = new ButtonBuilder().setCustomId('last-page-button').setLabel('↓').setStyle(ButtonStyle.Primary).setDisabled(totalPages <= 1);
+    const firstPageButton = new ButtonBuilder().setCustomId('first-page-button').setLabel(emoji.arrow_up).setStyle(ButtonStyle.Primary).setDisabled(true);
+    const backButton = new ButtonBuilder().setCustomId('back-button').setLabel(emoji.arrow_left).setStyle(ButtonStyle.Primary).setDisabled(true);
+    const nextButton = new ButtonBuilder().setCustomId('next-button').setLabel(emoji.arrow_right).setStyle(ButtonStyle.Primary).setDisabled(totalPages <= 1);
+    const lastPageButton = new ButtonBuilder().setCustomId('last-page-button').setLabel(emoji.arrow_down).setStyle(ButtonStyle.Primary).setDisabled(totalPages <= 1);
 
     const buttonRow = new ActionRowBuilder().addComponents(firstPageButton, backButton, nextButton, lastPageButton);
 
@@ -250,9 +251,9 @@ async function drawIcons(ctx, icons, yOffset, startX, scale) {
 
 function getRankEmoji(rank) {
     switch (rank) {
-        case 1: return '🥇';
-        case 2: return '🥈';
-        case 3: return '🥉';
+        case 1: return emoji.first;
+        case 2: return emoji.second;
+        case 3: return emoji.third;
         default: return `**${rank}.**`;
     }
 }

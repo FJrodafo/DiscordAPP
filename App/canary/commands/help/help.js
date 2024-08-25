@@ -9,6 +9,7 @@ const {
 } = require('discord.js');
 const fs = require('fs');
 const path = require('path');
+const emoji = require('./../../utils/emoji.js');
 
 module.exports = {
     category: 'help',
@@ -83,25 +84,25 @@ module.exports = {
         // Create the pagination buttons
         const firstPageButton = new ButtonBuilder()
             .setCustomId('first-page-button')
-            .setLabel('↑')
+            .setLabel(emoji.arrow_up)
             .setStyle(ButtonStyle.Primary)
             .setDisabled(true);
 
         const backButton = new ButtonBuilder()
             .setCustomId('back-button')
-            .setLabel('←')
+            .setLabel(emoji.arrow_left)
             .setStyle(ButtonStyle.Primary)
             .setDisabled(true);
 
         const nextButton = new ButtonBuilder()
             .setCustomId('next-button')
-            .setLabel('→')
+            .setLabel(emoji.arrow_right)
             .setStyle(ButtonStyle.Primary)
             .setDisabled(totalPages === 1);
 
         const lastPageButton = new ButtonBuilder()
             .setCustomId('last-page-button')
-            .setLabel('↓')
+            .setLabel(emoji.arrow_down)
             .setStyle(ButtonStyle.Primary)
             .setDisabled(totalPages === 1);
 

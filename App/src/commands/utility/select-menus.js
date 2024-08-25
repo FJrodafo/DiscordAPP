@@ -9,6 +9,7 @@ const {
     ActionRowBuilder,
     ComponentType,
 } = require('discord.js');
+const emoji = require('./../../utils/emoji.js');
 
 module.exports = {
     category: 'utility',
@@ -39,19 +40,19 @@ module.exports = {
                 label: 'Bulbasaur',
                 description: 'The dual-type Grass/Poison Seed Pokémon.',
                 value: 'bulbasaur',
-                emoji: '🌿',
+                emoji: emoji.herb,
             },
             {
                 label: 'Charmander',
                 description: 'The Fire-type Lizard Pokémon.',
                 value: 'charmander',
-                emoji: '🔥',
+                emoji: emoji.fire,
             },
             {
                 label: 'Squirtle',
                 description: 'The Water-type Tiny Turtle Pokémon.',
                 value: 'squirtle',
-                emoji: '🫧',
+                emoji: emoji.bubbles,
             },
         ];
 
