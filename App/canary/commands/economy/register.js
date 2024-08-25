@@ -49,7 +49,7 @@ module.exports = {
         // Save the updated JSON file and log the registration asynchronously
         try {
             await fs.writeFile(jsonPath, JSON.stringify(users, null, 2), 'utf8');
-            const now = new Date(), timestamp = now.toLocaleString();
+            const date = new Date(), timestamp = date.toLocaleString();
             const logMessage = `${timestamp} - ${interaction.user.id} was successfully registered and added to data.json\n`;
             await fs.appendFile(logPath, logMessage, 'utf8');
         }

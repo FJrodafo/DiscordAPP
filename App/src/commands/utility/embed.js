@@ -7,7 +7,8 @@ module.exports = {
     category: 'utility',
     data: new SlashCommandBuilder()
         .setName('embed')
-        .setDescription('Embed preview!'),
+        .setDescription('Embed preview!')
+        .setDMPermission(false),
     async execute(interaction) {
         const exampleEmbed = new EmbedBuilder()
             .setColor(0x5865f2)

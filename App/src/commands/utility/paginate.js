@@ -13,6 +13,7 @@ module.exports = {
     data: new SlashCommandBuilder()
         .setName('paginate')
         .setDescription('Navigate through pages using buttons!')
+        .setDMPermission(false)
         .addSubcommand(subcommand => subcommand
             .setName('two-pages')
             .setDescription('Example of pagination with two pages!'),

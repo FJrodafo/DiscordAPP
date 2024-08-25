@@ -138,7 +138,7 @@ module.exports = {
 async function saveUpdatedJSON(interaction, users, jsonPath, logPath, bet, payout) {
     try {
         await fs.writeFile(jsonPath, JSON.stringify(users, null, 2), 'utf8');
-        const now = new Date(), timestamp = now.toLocaleString();
+        const date = new Date(), timestamp = date.toLocaleString();
         const logMessage = `${timestamp} - ${interaction.user.id} bet ${bet} coins and got a payout of ${payout} coins from casino.js\n`;
         await fs.appendFile(logPath, logMessage, 'utf8');
     }

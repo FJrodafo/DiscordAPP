@@ -62,7 +62,7 @@ module.exports = {
         // Save the updated JSON file and log the transaction asynchronously
         try {
             await fs.writeFile(jsonPath, JSON.stringify(users, null, 2), 'utf8');
-            const now = new Date(), timestamp = now.toLocaleString();
+            const date = new Date(), timestamp = date.toLocaleString();
             const logMessage = `${timestamp} - ${interaction.user.id} stole ${stealAmount} coins from ${targetUser.id}\n`;
             await fs.appendFile(logPath, logMessage, 'utf8');
         }

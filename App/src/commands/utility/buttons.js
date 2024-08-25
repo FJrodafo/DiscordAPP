@@ -11,7 +11,8 @@ module.exports = {
     category: 'utility',
     data: new SlashCommandBuilder()
         .setName('buttons')
-        .setDescription('Press the buttons!'),
+        .setDescription('Press the buttons!')
+        .setDMPermission(false),
     async execute(interaction) {
         const primaryButton = new ButtonBuilder()
             .setCustomId('primary-button')

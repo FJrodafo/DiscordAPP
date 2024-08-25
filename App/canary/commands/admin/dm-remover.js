@@ -36,7 +36,7 @@ module.exports = {
         }
         catch (error) {
             // DiscordAPIError[10008]: Unknown Message
-            if (error.code === 10008) {
+            if (error.code === 10_008) {
                 return interaction.reply({ content: 'Message not found or cannot be deleted.', ephemeral: true });
             }
             else {

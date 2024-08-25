@@ -10,7 +10,7 @@ module.exports = {
     once: true,
     execute(client) {
         const logPath = path.resolve(__dirname, './../database/log.txt');
-        const now = new Date(), timestamp = now.toLocaleString();
+        const date = new Date(), timestamp = date.toLocaleString();
         const readyMessage = `Ready! Logged in as ${client.user.tag}`;
         const serverCount = `Server count: ${client.guilds.cache.size}`;
         const logMessage = `${timestamp} - ${readyMessage} ${serverCount}\n`;
