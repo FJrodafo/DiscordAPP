@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # Source folder path
-source_folder="./App/src/assets/monster-hunter/mhtri/original"
+source_folder="./../../../assets/monster-hunter/mhtri/original"
 
 # Destination folder path
-destination_folder="./App/src/assets/monster-hunter/mhtri/monsters"
+destination_folder="./../../../assets/monster-hunter/mhtri/monsters"
 
 # Create the destination folder if it doesn't exist
 mkdir -p "$destination_folder"

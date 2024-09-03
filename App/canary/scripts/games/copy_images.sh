@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # Source folder path
-source_folder="./App/src/assets/games/original"
+source_folder="./../../assets/games/original"
 
 # Destination folder path
-destination_folder="./App/src/assets/games/list"
+destination_folder="./../../assets/games/list"
 
 # Create the destination folder if it doesn't exist
 mkdir -p "$destination_folder"

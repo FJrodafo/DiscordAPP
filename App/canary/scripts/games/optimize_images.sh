@@ -36,5 +36,5 @@ function optimize_path () {
 }
 
 echo "Optimizing images..."
-optimize_path ./App/src/assets/games/list
+optimize_path ./../../assets/games/list
 echo "...done"

@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # Source folder path
-source_folder="./App/src/assets/dauntless/original"
+source_folder="./../../assets/dauntless/original"
 
 # Destination folder path
-destination_folder="./App/src/assets/dauntless/builds"
+destination_folder="./../../assets/dauntless/builds"
 
 # Create the destination folder if it doesn't exist
 mkdir -p "$destination_folder"

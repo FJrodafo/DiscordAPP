@@ -36,5 +36,5 @@ function optimize_path () {
 }
 
 echo "Optimizing images..."
-optimize_path ./App/src/assets/dauntless/builds
+optimize_path ./../../assets/dauntless/builds
 echo "...done"

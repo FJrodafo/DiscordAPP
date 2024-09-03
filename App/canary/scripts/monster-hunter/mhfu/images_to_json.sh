@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # Path to the folder containing the image files
-folder="./App/src/assets/monster-hunter/mhfu/monsters"
+folder="./../../../assets/monster-hunter/mhfu/monsters"
 
 # Output JSON file path
-json_file="./App/src/assets/monster-hunter/mhfu/icons.json"
+json_file="./../../../assets/monster-hunter/mhfu/icons.json"
 
 # Create the header of the JSON file
 echo "[" > $json_file
