@@ -38,13 +38,10 @@ module.exports = {
                 }],
                 status: 'online',
             },
-
             // Listening
             { activities: [{ name: 'me', type: ActivityType.Listening }], status: 'idle' },
-
             // Watching
             { activities: [{ name: moviesData[randomMovie], type: ActivityType.Watching }], status: 'dnd' },
-
             // Games
             { activities: [{ name: gamesData[randomGame], type: ActivityType.Playing }], status: 'idle' },
             { activities: [{ name: gamesData[randomGame], type: ActivityType.Competing }], status: 'dnd' },
