@@ -106,91 +106,91 @@ module.exports = {
 
 // Function to determine steal amount based on target user's coins
 function determineStealAmount(targetCoins) {
-    const random = Math.random() * 100;
-    /*
-    If targetUser is equal to or greater than 1000 coins:
-        10% chance of stealing 500 coins
-        10% chance of stealing 200 coins
-        10% chance of stealing 100 coins
-        10% chance of stealing 50 coins
-        10% chance of stealing 20 coins
-        10% chance of stealing 10 coins
-        20% chance of stealing 5 coins
-        20% chance of not getting anything
-    If targetUser is equal to or greater than 400 coins:
-        10% chance of stealing 200 coins
-        10% chance of stealing 100 coins
-        10% chance of stealing 20 coins
-        10% chance of stealing 10 coins
-        30% chance of stealing 5 coins
-        30% chance of not getting anything
-    If targetUser is equal to or greater than 200 coins:
-        10% chance of stealing 100 coins
-        10% chance of stealing 10 coins
-        40% chance of stealing 5 coins
-        40% chance of not getting anything
-    If targetUser is equal to or greater than 100 coins:
-        20% chance of stealing 50 coins
-        20% chance of stealing 5 coins
-        60% chance of not getting anything
-    If targetUser is equal to or greater than 40 coins:
-        20% chance of stealing 20 coins
-        20% chance of stealing 5 coins
-        60% chance of not getting anything
-    If targetUser is equal to or greater than 20 coins:
-        20% chance of stealing 10 coins
-        20% chance of stealing 5 coins
-        60% chance of not getting anything
-    If targetUser is equal to or greater than 10 coins:
-        40% chance of stealing 5 coins
-        60% chance of not getting anything
-    If targetUser has less than 10 coins:
-        100% chance of not getting anything
-    */
-    if (targetCoins >= 1000) {
+    // Generates a random number between 0 and 100
+    const random = Math.floor(Math.random() * 101);
+    // If targetUser is equal to or greater than 10000 coins:
+    if (targetCoins >= 10000) {
+        // 10% chance of stealing 500 coins
         if (random < 10) return 500;
+        // 10% chance of stealing 200 coins
         if (random < 20) return 200;
+        // 10% chance of stealing 100 coins
         if (random < 30) return 100;
+        // 10% chance of stealing 50 coins
         if (random < 40) return 50;
+        // 10% chance of stealing 20 coins
         if (random < 50) return 20;
+        // 10% chance of stealing 10 coins
         if (random < 60) return 10;
-        if (random < 80) return 5;
-        return 0;
-    }
-    else if (targetCoins >= 400) {
-        if (random < 10) return 200;
-        if (random < 20) return 100;
-        if (random < 30) return 20;
-        if (random < 40) return 10;
+        // 10% chance of stealing 5 coins
         if (random < 70) return 5;
+        // 30% chance of not getting anything
         return 0;
     }
+    // If targetUser is equal to or greater than 1000 coins:
+    if (targetCoins >= 1000) {
+        // 5% chance of stealing 500 coins
+        if (random < 5) return 500;
+        // 15% chance of stealing 5 coins
+        if (random < 20) return 5;
+        // 80% chance of not getting anything
+        return 0;
+    }
+    // If targetUser is equal to or greater than 400 coins:
+    else if (targetCoins >= 400) {
+        // 5% chance of stealing 200 coins
+        if (random < 5) return 200;
+        // 15% chance of stealing 5 coins
+        if (random < 20) return 5;
+        // 80% chance of not getting anything
+        return 0;
+    }
+    // If targetUser is equal to or greater than 200 coins:
     else if (targetCoins >= 200) {
-        if (random < 10) return 100;
-        if (random < 20) return 10;
-        if (random < 60) return 5;
+        // 5% chance of stealing 100 coins
+        if (random < 5) return 100;
+        // 15% chance of stealing 5 coins
+        if (random < 20) return 5;
+        // 80% chance of not getting anything
         return 0;
     }
+    // If targetUser is equal to or greater than 100 coins:
     else if (targetCoins >= 100) {
-        if (random < 20) return 50;
-        if (random < 40) return 5;
+        // 5% chance of stealing 50 coins
+        if (random < 5) return 50;
+        // 15% chance of stealing 5 coins
+        if (random < 20) return 5;
+        // 80% chance of not getting anything
         return 0;
     }
+    // If targetUser is equal to or greater than 40 coins:
     else if (targetCoins >= 40) {
-        if (random < 20) return 20;
-        if (random < 40) return 5;
+        // 5% chance of stealing 20 coins
+        if (random < 5) return 20;
+        // 15% chance of stealing 5 coins
+        if (random < 20) return 5;
+        // 80% chance of not getting anything
         return 0;
     }
+    // If targetUser is equal to or greater than 20 coins:
     else if (targetCoins >= 20) {
-        if (random < 20) return 10;
-        if (random < 40) return 5;
+        // 5% chance of stealing 10 coins
+        if (random < 5) return 10;
+        // 15% chance of stealing 5 coins
+        if (random < 20) return 5;
+        // 80% chance of not getting anything
         return 0;
     }
+    // If targetUser is equal to or greater than 10 coins:
     else if (targetCoins >= 10) {
-        if (random < 40) return 5;
+        // 20% chance of stealing 5 coins
+        if (random < 20) return 5;
+        // 80% chance of not getting anything
         return 0;
     }
+    // If targetUser has less than 10 coins:
     else {
+        // 100% chance of not getting anything
         return 0;
     }
 }
