@@ -97,7 +97,7 @@ npm install
 
 If you have the `config.json` file into the `src` directory correctly configurated and Node v16.11.0 or higher installed on your machine, then you are good to go!
 
-To check if you already have Node installed on your machine, run `node -v` in your terminal. Otherwise, you will need to install Node v16.11.0 or higher or, as a last option, check out the [Docker](#docker) alternative.
+To check if you already have Node installed on your machine, run `node -v` in your terminal. Otherwise, you will need to install Node v16.11.0 or higher or, as a last option, check out the [Docker](#using-docker) alternative.
 
 Finally, if you have Node installed, run the following command to activate your Discord APP (Make sure you are in the `App` directory):
 
