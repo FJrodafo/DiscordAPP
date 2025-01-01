@@ -106,6 +106,8 @@ npm start
 # Press 'Ctrl + C' to exit
 ```
 
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
 ## Using Docker
 
 ### Run with Docker Compose
