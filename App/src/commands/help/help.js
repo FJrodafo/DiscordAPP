@@ -12,7 +12,7 @@ const path = require('path');
 const emoji = require('./../../utils/emoji.js');
 
 module.exports = {
-    category: 'utility',
+    category: 'help',
     data: new SlashCommandBuilder()
         .setName('help')
         .setDescription('Shows all available commands!')

@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node ./src/deploy-commands.js && node ./src/index.js",
     "canary": "node ./canary/deploy-commands.js && node ./canary/index.js",
+    "shrike": "node ./shrike/deploy-commands.js && node ./shrike/index.js",
     "eslint": "eslint './**/*.js'",
     "eslintfix": "eslint './**/*.js' --fix",
     "test": "echo \"Error: no test specified\" && exit 1"
