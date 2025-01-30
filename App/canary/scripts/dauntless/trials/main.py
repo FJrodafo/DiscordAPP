@@ -122,7 +122,7 @@ def get_leaderboards(session_token, trial_id):
             "page_size": 100,
             "trial_id": trial_id,
             # "trial_id": "Arena_MatchmakerHunt_Elite_185",
-            # "trial_id": "Arena_MatchmakerHunt_Elite_New_0080",
+            # "trial_id": "Arena_MatchmakerHunt_Elite_New_0104",
             "target_platforms": [],
         }  # Put your JSON data here if needed
         response = requests.post(url, headers=headers, json=data)

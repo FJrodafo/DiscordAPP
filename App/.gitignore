@@ -10,6 +10,7 @@
 /canary/assets/monster-hunter/mhtri/original
 
 # database
+/canary/database/dauntless/leaderboards-dataset.json
 /canary/database/data.json
 /canary/database/log.txt
 
