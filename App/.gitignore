@@ -16,10 +16,10 @@
 
 # secrets
 /canary/config.json
-/shrike/config.json
+/shrikebot/config.json
 /src/config.json
 .env
 
 # misc
 /deprecated
-/shrike
+/shrikebot
