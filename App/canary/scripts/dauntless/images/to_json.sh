@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # Path to the directory containing the image files
-DIRECTORY="./../../assets/games/list"
+DIRECTORY="./../../../assets/dauntless/builds"
 
 # Output JSON file path
-JSON_FILE="./../../assets/games/icons.json"
+JSON_FILE="./../../../assets/dauntless/icons.json"
 
 # Create the header of the JSON file
 echo "[" > $JSON_FILE

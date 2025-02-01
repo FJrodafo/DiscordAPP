@@ -1,15 +1,15 @@
 #!/bin/bash
 
-# Source folder path
-source_folder="./../../../assets/monster-hunter/mhtri/original"
+# Source directory path
+SOURCE_DIRECTORY="./../../../assets/monster-hunter/mhtri/original"
 
-# Destination folder path
-destination_folder="./../../../assets/monster-hunter/mhtri/monsters"
+# Destination directory path
+DESTINATION_DIRECTORY="./../../../assets/monster-hunter/mhtri/monsters"
 
-# Create the destination folder if it doesn't exist
-mkdir -p "$destination_folder"
+# Create the destination directory if it doesn't exist
+mkdir -p "$DESTINATION_DIRECTORY"
 
-# Copy all images from the source folder to the destination folder
-find "$source_folder" -type f \( -iname \*.jpg -o -iname \*.jpeg -o -iname \*.png \) -exec cp {} "$destination_folder" \;
+# Copy all images from the source directory to the destination directory
+find "$SOURCE_DIRECTORY" -type f \( -iname \*.jpg -o -iname \*.jpeg -o -iname \*.png \) -exec cp {} "$DESTINATION_DIRECTORY" \;
 
-echo "Process completed. Images copied to $destination_folder"
+echo "Process completed. Images copied to $DESTINATION_DIRECTORY"

@@ -23,15 +23,15 @@ if [[ ! $(command -v optipng) ]]; then
 fi
 
 function optimize_path () {
-    for file in $(find $1 -name '*.png')
+    for FILE in $(find $1 -name '*.png')
     do
-        if [[ $(identify -format "%wx%h" $file) != "832x1109" ]]; then
+        if [[ $(identify -format "%wx%h" $FILE) != "832x1109" ]]; then
             # resize to 832x1109 px
-            $CONVERT -resize 832x1109 -gravity center -extent 832x1109 -background none "$file" "$file"
+            $CONVERT -resize 832x1109 -gravity center -extent 832x1109 -background none "$FILE" "$FILE"
         fi
 
         # optmize images
-        optipng -silent -O2 "$file"
+        optipng -silent -O2 "$FILE"
     done
 }
 

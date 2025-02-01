@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # Source directory path
-SOURCE_DIRECTORY="./../../../assets/monster-hunter/mhp3rd/original"
+SOURCE_DIRECTORY="./../../../assets/dauntless/original"
 
 # Destination directory path
-DESTINATION_DIRECTORY="./../../../assets/monster-hunter/mhp3rd/monsters"
+DESTINATION_DIRECTORY="./../../../assets/dauntless/builds"
 
 # Create the destination directory if it doesn't exist
 mkdir -p "$DESTINATION_DIRECTORY"

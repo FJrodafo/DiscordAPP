@@ -4,7 +4,7 @@
 JSON_DIRECTORY="./../../../database/dauntless/trials/group"
 
 # Loop through all JSON files in the directory
-for file in "$JSON_DIRECTORY"/*.json; do
+for FILE in "$JSON_DIRECTORY"/*.json; do
     # We use jq to process each JSON file
     jq '
     .payload.entries |= map(
@@ -13,7 +13,7 @@ for file in "$JSON_DIRECTORY"/*.json; do
         )
         | del(.session_id, .objectives_completed)
     ) | .payload.entries
-    ' "$file" > "$file.tmp" && mv "$file.tmp" "$file"
+    ' "$FILE" > "$FILE.tmp" && mv "$FILE.tmp" "$FILE"
 done
 
 echo "Fields removed in all group JSON files!"
