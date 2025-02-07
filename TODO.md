@@ -5,12 +5,27 @@
 
 ## Database
 
-- [x] MHFU Piscine Wyvern
-    - [Line 77](./App/canary/database/monster-hunter/embed.json)
-    - [Line 87](./App/canary/database/monster-hunter/menu.json)
-- [ ] MHFU Herbivores
-    - [Line 8](./App/canary/database/monster-hunter/embed.json)
-    - [Line 42](./App/canary/database/monster-hunter/menu.json)
+<details>
+<summary>Expand</summary>
+
+- [ ] MHFU [Wiki](https://monsterhunter.fandom.com/wiki/MHFU:_Monsters)
+    - [ ] Herbivores
+        - [ ] [Line 8](./App/canary/database/monster-hunter/embed.json)
+            - [ ] Anteka
+            - [ ] Popo
+            - [ ] Kelbi
+            - [ ] Mosswine
+            - [ ] Aptonoth
+            - [ ] Apceros
+        - [ ] [Line 20](./App/canary/database/monster-hunter/menu.json)
+        - [ ] [Line 42](./App/canary/database/monster-hunter/menu.json)
+            - [ ] Anteka
+            - [ ] Popo
+            - [ ] Kelbi
+            - [ ] Mosswine
+            - [ ] Aptonoth
+            - [ ] Apceros
+</details>
 
 ## New features
 
