@@ -27,7 +27,7 @@
             - [ ] Apceros
 </details>
 
-## New features
+## Features
 
 - [ ] Add [modals](https://discordjs.guide/interactions/modals.html)
 - [ ] Add [localized responses](https://discordjs.guide/slash-commands/advanced-creation.html#localizations)
