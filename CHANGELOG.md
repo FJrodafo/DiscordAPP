@@ -1,4 +1,7 @@
 ```
+* Commit: 9786587 - Upload .vscode
+| Author: fjrodafo - Mon, 17 Feb 2025 20:29:24 +0000
+| 
 * Commit: 631a6c9 - Update workflows runner to ubuntu-latest
 | Author: fjrodafo - Sun, 16 Feb 2025 18:41:59 +0000
 | 
