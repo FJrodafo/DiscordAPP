@@ -1,4 +1,7 @@
 ```
+* Commit: 631a6c9 - Update workflows runner to ubuntu-latest
+| Author: fjrodafo - Sun, 16 Feb 2025 18:41:59 +0000
+| 
 * Commit: 3762dda - Update TODO.md
 | Author: fjrodafo - Sat, 15 Feb 2025 21:58:05 +0000
 | 
