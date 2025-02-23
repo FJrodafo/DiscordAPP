@@ -1,0 +1,40 @@
+{
+  "name": "discordapp",
+  "version": "1.0.0",
+  "description": "A simple Discord APP made in JavaScript!",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./src/deploy-commands.js && node ./src/index.js",
+    "canary": "node ./canary/deploy-commands.js && node ./canary/index.js",
+    "shrikebot": "node ./shrikebot/deploy-commands.js && node ./shrikebot/index.js",
+    "eslint": "eslint './**/*.js'",
+    "eslintfix": "eslint './**/*.js' --fix",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FJrodafo/DiscordAPP.git"
+  },
+  "keywords": [
+    "discord",
+    "app",
+    "npmjs",
+    "nodejs",
+    "javascript",
+    "fjrodafo"
+  ],
+  "author": "FJrodafo - Francisco José Rodríguez Afonso",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/FJrodafo/DiscordAPP/issues"
+  },
+  "homepage": "https://github.com/FJrodafo/DiscordAPP#readme",
+  "dependencies": {
+    "canvas": "^2.11.2",
+    "discord.js": "^14.15.3",
+    "undici": "^6.19.8"
+  },
+  "devDependencies": {
+    "eslint": "^8.48.0"
+  }
+}

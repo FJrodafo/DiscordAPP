@@ -1,0 +1,2051 @@
+{
+    "assets": {
+        "icons": [
+            "AdamantBolt.png",
+            "AdversarysDrive.png",
+            "AdversarysGuile.png",
+            "AdversarysPride.png",
+            "AdversarysWrath.png",
+            "AegisOfValour.png",
+            "AetherdriveTonic.png",
+            "AetherStrikers.png",
+            "AgaricBole.png",
+            "AgaricBranches.png",
+            "AgaricCanopy.png",
+            "AgaricRoots.png",
+            "AgarusLegendaryWeaponAbility.png",
+            "AgentsOfDecay.png",
+            "AirstrikeBeacon.png",
+            "Alacrity.png",
+            "AntiqueClip.png",
+            "ArdentCyclone.png",
+            "ArmsOfIce.png",
+            "Arms.png",
+            "ArtificerAbility.png",
+            "Artificer.png",
+            "AssaultTonic.png",
+            "AvengingOverdrive.png",
+            "Axe.png",
+            "BalancedSpearhead.png",
+            "BarbedSpearhead.png",
+            "BarrageGrenade.png",
+            "BastionAbility.png",
+            "Bastion.png",
+            "BladedBoots.png",
+            "BladedGloves.png",
+            "BladedJacket.png",
+            "BladedMask.png",
+            "Blaze.png",
+            "BlitzTonic.png",
+            "BlizzardsTeeth.png",
+            "BombCyclone.png",
+            "BorealEpiphany.png",
+            "BorealMarch.png",
+            "BorealMight.png",
+            "BorealResolve.png",
+            "BrawlersOfBoreus.png",
+            "BreakdownVoltage.png",
+            "BreakOfDawn.png",
+            "BroadsidesLantern.png",
+            "BrowOfIce.png",
+            "BrutalityOfBoreus.png",
+            "Brutality.png",
+            "BulwarkTonic.png",
+            "CallOfDawn.png",
+            "CallOfTheFirebird.png",
+            "CapacitiveMagazine.png",
+            "CaptainsGrip.png",
+            "ChainBlades.png",
+            "ChaosAndEntropy.png",
+            "ChargedSwordfocus.png",
+            "CharredBlades.png",
+            "CharredCleaver.png",
+            "CharredCrusher.png",
+            "CharredHands.png",
+            "CharredPistols.png",
+            "CharredSaber.png",
+            "CharredSpear.png",
+            "Chronogrips.png",
+            "Chronohelm.png",
+            "Chronoplate.png",
+            "Chronotreads.png",
+            "ChronovoreLegendaryWeaponAbility.png",
+            "CircuitBreakers.png",
+            "CleansingPylon.png",
+            "ClutchesOfTheSwarm.png",
+            "ColdHell.png",
+            "ColdsnapGrenade.png",
+            "ConcussiveGrenade.png",
+            "ConcussivePayload.png",
+            "ConcussiveSalvo.png",
+            "CoreOfIce.png",
+            "CrestOfValour.png",
+            "CruelRiftstrike.png",
+            "CryoCannons.png",
+            "CryOfTheShrike.png",
+            "CyclonicFury.png",
+            "CyclonicStrikeplate.png",
+            "DanceOfTheSwarm.png",
+            "DarkEmbrace.png",
+            "DarkMarrow.png",
+            "DarkPath.png",
+            "DarkWatch.png",
+            "Dawnstars.png",
+            "DeathBlossoms.png",
+            "DemolitionBlades.png",
+            "DemolitionSights.png",
+            "DestinyOfBoreus.png",
+            "DisciplineAbility.png",
+            "Discipline.png",
+            "DraskscaleGauntlets.png",
+            "DraskscaleGreaves.png",
+            "DraskscaleHelmet.png",
+            "DraskscalePlate.png",
+            "DrasksEye.png",
+            "DynamicBladecore.png",
+            "DynamicDeadlights.png",
+            "EchoBracedriver.png",
+            "EdgeOfDawn.png",
+            "EdgeOfTomorrow.png",
+            "EldritchTorments.png",
+            "ElectricCruelties.png",
+            "EmberBlades.png",
+            "EmberCutlass.png",
+            "EmberFists.png",
+            "EmbermanesRapture.png",
+            "EmberMaul.png",
+            "EmberPike.png",
+            "EmberScythe.png",
+            "EmberShots.png",
+            "ExecutionersSpearhead.png",
+            "ExistentialCrisis.png",
+            "ExtendedClip.png",
+            "ExtractionCatalyst.png",
+            "EyeOfTheSwarm.png",
+            "EyesOfNight.png",
+            "EyesOfTheFirebird.png",
+            "EyesOfTheShrike.png",
+            "FallOfNight.png",
+            "FallOfTheShrike.png",
+            "FangsOfDawn.png",
+            "FateOfTheFirebird.png",
+            "FeetOfIce.png",
+            "FenroarsBlade.png",
+            "FenroarsBranch.png",
+            "FenroarsRoots.png",
+            "FenroarsSpine.png",
+            "FenroarsThistles.png",
+            "FenroarsThorns.png",
+            "FenroarsTrunk.png",
+            "FieryBreastplate.png",
+            "FieryGauntlets.png",
+            "FieryGreaves.png",
+            "FieryHelm.png",
+            "Finesse.png",
+            "FistsOfTheFirebird.png",
+            "FistsOfTheShrike.png",
+            "FlightOfRuin.png",
+            "FlightOfTheShrike.png",
+            "Fortitude.png",
+            "FracturedRealities.png",
+            "FrenzyTonic.png",
+            "Frost.png",
+            "FrostwulfsBite.png",
+            "FrostwulfsChillers.png",
+            "FrostwulfsChomp.png",
+            "FrostwulfsRip.png",
+            "FrostwulfsSkinners.png",
+            "FrostwulfsSlam.png",
+            "FrostwulfsTacklers.png",
+            "FullBoreChamber.png",
+            "FuriesOfTheNight.png",
+            "FuriousAxecore.png",
+            "GalvanicImpact.png",
+            "GauntletsOfValour.png",
+            "GlyphWeaverAxe.png",
+            "GlyphWeaverBlades.png",
+            "GlyphWeaverClaws.png",
+            "GlyphWeaverEdge.png",
+            "GlyphWeaverMaul.png",
+            "GlyphWeaverPistols.png",
+            "GlyphWeaverSpear.png",
+            "GnasherCap.png",
+            "GnasherCloak.png",
+            "GnasherGrips.png",
+            "GnasherTreads.png",
+            "GrannysAntidote.png",
+            "GrannysHeartbreaker.png",
+            "GrannysPoisonPuller.png",
+            "GraspOfThorns.png",
+            "GreavesOfValour.png",
+            "GrimOnslaught.png",
+            "GuiseOfTheRift.png",
+            "GyreOfNight.png",
+            "Hammer.png",
+            "HandsOfDawn.png",
+            "HandsOfNight.png",
+            "HandsOfTheRift.png",
+            "Head.png",
+            "HealingFlask.png",
+            "HeartOfStone.png",
+            "HellplateBracers.png",
+            "HellplateCasque.png",
+            "HellplateCuirass.png",
+            "HellplateGreaves.png",
+            "HistorysBurden.png",
+            "HurricaneBlades.png",
+            "Hypothermica.png",
+            "IceborneAbility.png",
+            "Iceborne.png",
+            "IceBreakers.png",
+            "ImpulseCrown.png",
+            "IncineratorsSong.png",
+            "InertialFistguard.png",
+            "InfernoGrenade.png",
+            "InfernosArrow.png",
+            "InfernosBurden.png",
+            "InfernosDecree.png",
+            "InfernosFangs.png",
+            "InfernosFlames.png",
+            "InfernosRazor.png",
+            "InfernosRoar.png",
+            "InsatiableDance.png",
+            "Insight.png",
+            "InsightTonic.png",
+            "InspiringPylon.png",
+            "InversePolarity.png",
+            "IronheartLandbreaker.png",
+            "IronhidePylon.png",
+            "KeenEdge.png",
+            "KharabaksClaw.png",
+            "KharabaksJaw.png",
+            "KharabaksLights.png",
+            "KharabaksPincers.png",
+            "KharabaksSpur.png",
+            "KharabaksSting.png",
+            "KharabaksWings.png",
+            "KoshaisBloom.png",
+            "KrolachiShave.png",
+            "KrolachiShorts.png",
+            "KrolachiTunic.png",
+            "KrolachiWraps.png",
+            "Lantern.png",
+            "Legs.png",
+            "LifedrainTonic.png",
+            "LifespringPylon.png",
+            "LightningBoots.png",
+            "LightningGloves.png",
+            "LightningHelm.png",
+            "LightningPlate.png",
+            "LightsCrown.png",
+            "LightsRefuge.png",
+            "LightsVirtue.png",
+            "LightsWalk.png",
+            "LightweightChain.png",
+            "LightweightFrame.png",
+            "LightweightHaft.png",
+            "LightweightShaft.png",
+            "LuckyMagazine.png",
+            "MagmaQuake.png",
+            "MalignantScourge.png",
+            "MalkarionLegendaryWeaponAbility.png",
+            "MalkarionsGrasp.png",
+            "MalkarionsMarch.png",
+            "MalkarionsSight.png",
+            "MalkarionsSoul.png",
+            "MantleOfTheRift.png",
+            "MantleOfThorns.png",
+            "MarksmanChamber.png",
+            "MendingBladecore.png",
+            "MightOfStone.png",
+            "MightyLandbreaker.png",
+            "MillenniumsEnd.png",
+            "Mindsplitter.png",
+            "MistralCurrents.png",
+            "MoltenEdict.png",
+            "MoltenEdictUniqueEffect.png",
+            "MomentumBlades.png",
+            "MunitionsAmplifier.png",
+            "NayzagasCharge.png",
+            "NayzagasFang.png",
+            "NayzagasRazor.png",
+            "NayzagasReach.png",
+            "NayzagasScythe.png",
+            "NayzagasShockers.png",
+            "NayzagasSpikes.png",
+            "NightTerrors.png",
+            "noicon.png",
+            "Omnicell.png",
+            "OnusOfBoreus.png",
+            "OverchargedCylinder.png",
+            "PangarsCall.png",
+            "PangarsClaws.png",
+            "PangarsGrace.png",
+            "PangarsNightmares.png",
+            "PangarsPunishers.png",
+            "PangarsRampage.png",
+            "PangarsShine.png",
+            "PangarsTooth.png",
+            "ParasiticCurse.png",
+            "PermanentFrost.png",
+            "PhaelanxsFirearms.png",
+            "PhaelanxsHeatsinks.png",
+            "PhaelanxsSpearhead.png",
+            "PhaelanxsVanguard.png",
+            "PillarsOfStone.png",
+            "PoisonousThorn.png",
+            "PrecisionSights.png",
+            "PrismaticGraceBuff.png",
+            "PrismaticGrace.png",
+            "Prismatic.png",
+            "PyroclasticEnvoy.png",
+            "QuillshotsBonehooks.png",
+            "QuillshotsFury.png",
+            "QuillshotsJavelin.png",
+            "QuillshotsRoar.png",
+            "QuillshotsShredders.png",
+            "QuillshotsStingers.png",
+            "QuillshotsTusk.png",
+            "QuillspikeBoots.png",
+            "QuillspikeGrips.png",
+            "QuillspikeJacket.png",
+            "QuillspikeMask.png",
+            "Radiant.png",
+            "RageOfTheFirebird.png",
+            "RagingBite.png",
+            "RagingBlade.png",
+            "RagingCrash.png",
+            "RagingCruelty.png",
+            "RagingFists.png",
+            "RagingRepeaters.png",
+            "RagingTeeth.png",
+            "RailsplittersCanteen.png",
+            "ReaperOfNight.png",
+            "ReapersDance.png",
+            "RecklessLeap.png",
+            "RecruitsAxe.png",
+            "RecruitsBreastplate.png",
+            "RecruitsChainBlades.png",
+            "RecruitsGloves.png",
+            "RecruitsGreaves.png",
+            "RecruitsHammer.png",
+            "RecruitsLantern.png",
+            "RecruitsMask.png",
+            "RecruitsRepeaters.png",
+            "RecruitsStrikers.png",
+            "RecruitsSword.png",
+            "RecruitsWarPike.png",
+            "RecursiveHilt.png",
+            "RelentlessOnslaught.png",
+            "Repeater.png",
+            "RevenantAbility.png",
+            "Revenant.png",
+            "RevolutionOfBoreus.png",
+            "SaboteursGrip.png",
+            "SahvytsAvengers.png",
+            "SahvytsCleaver.png",
+            "SahvytsCutlass.png",
+            "SahvytsGrapplers.png",
+            "SahvytsJavelin.png",
+            "SahvytsMaul.png",
+            "SahvytsPincers.png",
+            "SalvoChamber.png",
+            "SanityCheck.png",
+            "SavageWellspring.png",
+            "ScopedSights.png",
+            "ScorchingAgonies.png",
+            "ScreamOfTheShrike.png",
+            "SerratedBlades.png",
+            "ShellOfTheSwarm.png",
+            "ShockingGaze.png",
+            "ShockingGrasp.png",
+            "ShockingHeart.png",
+            "ShockingStride.png",
+            "Shock.png",
+            "ShriekOfTheFirebird.png",
+            "ShrikedownGloves.png",
+            "ShrikedownGreaves.png",
+            "ShrikedownHelm.png",
+            "ShrikedownPlate.png",
+            "ShrikesZeal.png",
+            "SightOfStone.png",
+            "SilverSword.png",
+            "SkarnsCalamities.png",
+            "SkarnsDefiance.png",
+            "SkarnsJudgment.png",
+            "SkarnsMalice.png",
+            "SkarnsRancor.png",
+            "SkarnsSmashers.png",
+            "SkarnsSpite.png",
+            "SkarnsVengeance.png",
+            "SkraevwingBoots.png",
+            "SkraevwingGloves.png",
+            "SkraevwingHelmet.png",
+            "SkraevwingJacket.png",
+            "SolidState.png",
+            "SongOfTheShrike.png",
+            "SovereignsDecrees.png",
+            "SovereignsGrudge.png",
+            "SovereignsLash.png",
+            "SovereignsSceptres.png",
+            "SovereignsSorrow.png",
+            "SovereignsTorment.png",
+            "SovereignsWrath.png",
+            "SpellboundBoots.png",
+            "SpellboundGauntlets.png",
+            "SpellboundHood.png",
+            "SpellboundWings.png",
+            "SpireOfDawn.png",
+            "StalkersCries.png",
+            "StalkersMercy.png",
+            "StalkersPrice.png",
+            "StalkersScorn.png",
+            "StalkersSpike.png",
+            "StalkersStrike.png",
+            "StalkersTrap.png",
+            "StaminaTonic.png",
+            "StonewoodBoots.png",
+            "StonewoodChestPlate.png",
+            "StonewoodGauntlets.png",
+            "StonewoodGreatHelm.png",
+            "StormBlades.png",
+            "StormBreakers.png",
+            "StormCutter.png",
+            "StormHammer.png",
+            "StormPike.png",
+            "StormShooters.png",
+            "StormSword.png",
+            "StrideOfThorns.png",
+            "StridersOfTheRift.png",
+            "SurgeProjectors.png",
+            "Sword.png",
+            "TacticiansMagazine.png",
+            "TaintedNeedles.png",
+            "TalonsOfTheFirebird.png",
+            "TectonicFaults.png",
+            "TempestAbility.png",
+            "Tempest.png",
+            "TemporalMechanics.png",
+            "TerminalVoltage.png",
+            "Terra.png",
+            "TheApocalypseNeedle.png",
+            "TheCauterizer.png",
+            "TheConductor.png",
+            "TheGodhand.png",
+            "TheGodhandUniqueEffect.png",
+            "TheGoldenClaws.png",
+            "TheGovernor.png",
+            "TheHunger.png",
+            "TheHungerUniqueEffect.png",
+            "TheSkullforge.png",
+            "TheTwinSuns.png",
+            "TheTwinSunsUniqueEffect.png",
+            "TheWeepingHours.png",
+            "ThraxLegendaryWeaponAbility.png",
+            "ThraxsEmbrace.png",
+            "ThraxsGuile.png",
+            "ThraxsScream.png",
+            "ThraxsShadow.png",
+            "ThrowingSparks.png",
+            "ThunderdeepsCapacitor.png",
+            "ThunderdeepsDynamo.png",
+            "ThunderdeepsRegulators.png",
+            "ThunderdeepsTurbines.png",
+            "ThunderingBlade.png",
+            "ThunderingBolts.png",
+            "ThunderingCutters.png",
+            "ThunderingGuns.png",
+            "ThunderingMaul.png",
+            "ThunderingScythe.png",
+            "ThunderingSpear.png",
+            "TimeweaveGauntlets.png",
+            "TimeweaveHelm.png",
+            "TimeweaveLeggings.png",
+            "TimeweaveRobes.png",
+            "TitansCrash.png",
+            "TorgadoroLegendaryWeaponAbility.png",
+            "TorgadorosApex.png",
+            "TorgadorosBrawn.png",
+            "TorgadorosCore.png",
+            "TorgadorosGait.png",
+            "Torso.png",
+            "TragicEchoBuff.png",
+            "TragicEcho.png",
+            "TrainingSword.png",
+            "TransfusionGrenade.png",
+            "TurbineTrigger.png",
+            "TurmoilOfBoreus.png",
+            "Umbral.png",
+            "UnsteadyGround.png",
+            "UrskaLegendaryWeaponAbility.png",
+            "ValiantOverdrive.png",
+            "ValomyrsBurden.png",
+            "ValomyrsDecree.png",
+            "ValomyrsHope.png",
+            "ValomyrsInstincts.png",
+            "ValomyrsRegard.png",
+            "ValomyrsRevenge.png",
+            "ValomyrsVisions.png",
+            "VergeOfNight.png",
+            "VisageOfThorns.png",
+            "VoiceOfBoreus.png",
+            "Voidbane.png",
+            "VolatileAxecore.png",
+            "VolcanicAegis.png",
+            "VolcanicEruptions.png",
+            "VolcanicGrips.png",
+            "VolcanicHelm.png",
+            "VolcanicTreads.png",
+            "WarPike.png",
+            "Weapon.png",
+            "WeightedCrown.png",
+            "WinterBlasts.png",
+            "WinterGale.png",
+            "WinterIce.png",
+            "WinterSquall.png",
+            "WinterVortex.png",
+            "WinterWinds.png",
+            "WinterWolves.png",
+            "WulfClaws.png",
+            "WulfMane.png",
+            "WulfPaws.png",
+            "WulfPlate.png"
+        ],
+        "perks": [
+            "+6 Acidic",
+            "+6 Adrenaline",
+            "+6 Aegis",
+            "+6 Aetherborne",
+            "+6 Aetherhunter",
+            "+6 Aetheric Attunement",
+            "+6 Aetheric Evasion",
+            "+6 Agility",
+            "+6 Assassin's Frenzy",
+            "+6 Assassin's Vigour",
+            "+6 Barbed",
+            "+6 Berserker",
+            "+6 Bladestorm",
+            "+6 Bloodless",
+            "+6 Cascade",
+            "+6 Catalyst",
+            "+6 Conditioning",
+            "+6 Conduit",
+            "+6 Conservation",
+            "+6 Cunning",
+            "+6 Deconstruction",
+            "+6 Drop",
+            "+6 Earth",
+            "+6 Endurance",
+            "+6 Energized",
+            "+6 Engineer",
+            "+6 Evasion",
+            "+6 Evasive Fury",
+            "+6 Fire",
+            "+6 Fireproof",
+            "+6 Fleet Footed",
+            "+6 Fortress",
+            "+6 Galvanized",
+            "+6 Grace",
+            "+6 Guardian",
+            "+6 Impulse",
+            "+6 Inertia",
+            "+6 Insulated",
+            "+6 Invigorated",
+            "+6 Knockout King",
+            "+6 Lucent",
+            "+6 Medic",
+            "+6 Mender",
+            "+6 Merciless",
+            "+6 Molten",
+            "+6 Nimble",
+            "+6 Nine Lives",
+            "+6 Omnisurge",
+            "+6 Overpower",
+            "+6 Pacifier",
+            "+6 Pack Caller",
+            "+6 Pack Hunter",
+            "+6 Pack Walker",
+            "+6 Parasitic",
+            "+6 Predator",
+            "+6 Pulse",
+            "+6 Rage",
+            "+6 Ragehunter",
+            "+6 Recycle",
+            "+6 Reduce",
+            "+6 Relentless",
+            "+6 Reuse",
+            "+6 Roll",
+            "+6 Rushdown",
+            "+6 Savagery",
+            "+6 Sharpened",
+            "+6 Shellshock Resist",
+            "+6 Sprinter",
+            "+6 Stop",
+            "+6 Strategist",
+            "+6 Stunning Vigour",
+            "+6 Sturdy",
+            "+6 Swift",
+            "+6 Tactician",
+            "+6 Tenacious",
+            "+6 Tough",
+            "+6 Vampiric",
+            "+6 Warmth",
+            "+6 Water",
+            "+6 Weighted Strikes",
+            "+6 Zeal",
+            "+3 Acidic",
+            "+3 Adrenaline",
+            "+3 Aegis",
+            "+3 Aetherborne",
+            "+3 Aetherhunter",
+            "+3 Aetheric Attunement",
+            "+3 Aetheric Evasion",
+            "+3 Agility",
+            "+3 Assassin's Frenzy",
+            "+3 Assassin's Vigour",
+            "+3 Barbed",
+            "+3 Berserker",
+            "+3 Bladestorm",
+            "+3 Bloodless",
+            "+3 Cascade",
+            "+3 Catalyst",
+            "+3 Conditioning",
+            "+3 Conduit",
+            "+3 Conservation",
+            "+3 Cunning",
+            "+3 Deconstruction",
+            "+3 Drop",
+            "+3 Earth",
+            "+3 Endurance",
+            "+3 Energized",
+            "+3 Engineer",
+            "+3 Evasion",
+            "+3 Evasive Fury",
+            "+3 Fire",
+            "+3 Fireproof",
+            "+3 Fleet Footed",
+            "+3 Fortress",
+            "+3 Galvanized",
+            "+3 Grace",
+            "+3 Guardian",
+            "+3 Impulse",
+            "+3 Inertia",
+            "+3 Insulated",
+            "+3 Invigorated",
+            "+3 Knockout King",
+            "+3 Lucent",
+            "+3 Medic",
+            "+3 Mender",
+            "+3 Merciless",
+            "+3 Molten",
+            "+3 Nimble",
+            "+3 Nine Lives",
+            "+3 Omnisurge",
+            "+3 Overpower",
+            "+3 Pacifier",
+            "+3 Pack Caller",
+            "+3 Pack Hunter",
+            "+3 Pack Walker",
+            "+3 Parasitic",
+            "+3 Predator",
+            "+3 Pulse",
+            "+3 Rage",
+            "+3 Ragehunter",
+            "+3 Recycle",
+            "+3 Reduce",
+            "+3 Relentless",
+            "+3 Reuse",
+            "+3 Roll",
+            "+3 Rushdown",
+            "+3 Savagery",
+            "+3 Sharpened",
+            "+3 Shellshock Resist",
+            "+3 Sprinter",
+            "+3 Stop",
+            "+3 Strategist",
+            "+3 Stunning Vigour",
+            "+3 Sturdy",
+            "+3 Swift",
+            "+3 Tactician",
+            "+3 Tenacious",
+            "+3 Tough",
+            "+3 Vampiric",
+            "+3 Warmth",
+            "+3 Water",
+            "+3 Weighted Strikes",
+            "+3 Zeal"
+        ]
+    },
+    "aether_strikers": {
+        "shock": {
+            "armor": [
+                "DarkWatch.png",
+                "SkraevwingJacket.png",
+                "MalkarionsGrasp.png",
+                "StrideOfThorns.png",
+                "SkarnsDefiance.png"
+            ],
+            "best": "⭐",
+            "name": "Shock Aether Strikers",
+            "omnicell": "Revenant.png",
+            "perks": [
+                "+6 Adrenaline",
+                "+6 Catalyst",
+                "+6 Cunning",
+                "+6 Predator",
+                "+6 Pulse",
+                "+3 Berserker",
+                "+3 Overpower"
+            ],
+            "supplies": [
+                "HealingFlask.png",
+                "AetherdriveTonic.png",
+                "BlitzTonic.png",
+                "FrenzyTonic.png"
+            ],
+            "weapon": [
+                "MistralCurrents.png",
+                "SahvytsGrapplers.png",
+                "TitansCrash.png",
+                "CyclonicStrikeplate.png"
+            ]
+        },
+        "blaze": {
+            "armor": [
+                "DarkWatch.png",
+                "SkraevwingJacket.png",
+                "MalkarionsGrasp.png",
+                "StrideOfThorns.png",
+                "SkarnsDefiance.png"
+            ],
+            "name": "Blaze Aether Strikers",
+            "omnicell": "Revenant.png",
+            "perks": [
+                "+6 Adrenaline",
+                "+6 Catalyst",
+                "+6 Cunning",
+                "+6 Overpower",
+                "+6 Predator",
+                "+3 Berserker",
+                "+3 Pulse"
+            ],
+            "supplies": [
+                "HealingFlask.png",
+                "AetherdriveTonic.png",
+                "BlitzTonic.png",
+                "FrenzyTonic.png"
+            ],
+            "weapon": [
+                "TectonicFaults.png",
+                "InfernosFlames.png",
+                "TitansCrash.png",
+                "CyclonicStrikeplate.png"
+            ]
+        },
+        "umbral": {
+            "armor": [
+                "DarkWatch.png",
+                "SkraevwingJacket.png",
+                "MalkarionsGrasp.png",
+                "StrideOfThorns.png",
+                "SkarnsDefiance.png"
+            ],
+            "name": "Umbral Aether Strikers",
+            "omnicell": "Revenant.png",
+            "perks": [
+                "+6 Adrenaline",
+                "+6 Catalyst",
+                "+6 Cunning",
+                "+6 Overpower",
+                "+6 Predator",
+                "+3 Assassin's Frenzy",
+                "+3 Berserker"
+            ],
+            "supplies": [
+                "HealingFlask.png",
+                "AetherdriveTonic.png",
+                "BlitzTonic.png",
+                "FrenzyTonic.png"
+            ],
+            "weapon": [
+                "FracturedRealities.png",
+                "StalkersScorn.png",
+                "TitansCrash.png",
+                "CyclonicStrikeplate.png"
+            ]
+        },
+        "terra": {
+            "armor": [
+                "DarkWatch.png",
+                "SkraevwingJacket.png",
+                "MalkarionsGrasp.png",
+                "StrideOfThorns.png",
+                "SkarnsDefiance.png"
+            ],
+            "name": "Terra Aether Strikers",
+            "omnicell": "Revenant.png",
+            "perks": [
+                "+6 Adrenaline",
+                "+6 Catalyst",
+                "+6 Cunning",
+                "+6 Overpower",
+                "+6 Predator",
+                "+3 Berserker",
+                "+3 Bladestorm"
+            ],
+            "supplies": [
+                "HealingFlask.png",
+                "AetherdriveTonic.png",
+                "BlitzTonic.png",
+                "FrenzyTonic.png"
+            ],
+            "weapon": [
+                "AgentsOfDecay.png",
+                "KharabaksPincers.png",
+                "TitansCrash.png",
+                "CyclonicStrikeplate.png"
+            ]
+        },
+        "frost": {
+            "armor": [
+                "DarkWatch.png",
+                "SkraevwingJacket.png",
+                "MalkarionsGrasp.png",
+                "StrideOfThorns.png",
+                "SkarnsDefiance.png"
+            ],
+            "name": "Frost Aether Strikers",
+            "omnicell": "Revenant.png",
+            "perks": [
+                "+6 Adrenaline",
+                "+6 Catalyst",
+                "+6 Cunning",
+                "+6 Galvanized",
+                "+6 Predator",
+                "+3 Berserker",
+                "+3 Overpower"
+            ],
+            "supplies": [
+                "HealingFlask.png",
+                "AetherdriveTonic.png",
+                "BlitzTonic.png",
+                "FrenzyTonic.png"
+            ],
+            "weapon": [
+                "IceBreakers.png",
+                "FrostwulfsTacklers.png",
+                "TitansCrash.png",
+                "CyclonicStrikeplate.png"
+            ]
+        },
+        "radiant": {
+            "armor": [
+                "DarkWatch.png",
+                "SkraevwingJacket.png",
+                "MalkarionsGrasp.png",
+                "StrideOfThorns.png",
+                "SkarnsDefiance.png"
+            ],
+            "name": "Radiant Aether Strikers",
+            "omnicell": "Revenant.png",
+            "perks": [
+                "+6 Adrenaline",
+                "+6 Catalyst",
+                "+6 Cunning",
+                "+6 Overpower",
+                "+6 Predator",
+                "+3 Berserker",
+                "+3 Recycle"
+            ],
+            "supplies": [
+                "HealingFlask.png",
+                "AetherdriveTonic.png",
+                "BlitzTonic.png",
+                "FrenzyTonic.png"
+            ],
+            "weapon": [
+                "ChaosAndEntropy.png",
+                "HandsOfDawn.png",
+                "TitansCrash.png",
+                "CyclonicStrikeplate.png"
+            ]
+        }
+    },
+    "axe": {
+        "shock": {
+            "armor": [
+                "DarkWatch.png",
+                "ThraxsShadow.png",
+                "MalkarionsGrasp.png",
+                "BladedBoots.png",
+                "SkarnsDefiance.png"
+            ],
+            "best": "⭐",
+            "name": "Shock Axe",
+            "omnicell": "Revenant.png",
+            "perks": [
+                "+6 Catalyst",
+                "+6 Cunning",
+                "+6 Overpower",
+                "+6 Predator",
+                "+6 Pulse",
+                "+3 Assassin's Frenzy",
+                "+3 Recycle"
+            ],
+            "supplies": [
+                "HealingFlask.png",
+                "AetherdriveTonic.png",
+                "BlitzTonic.png",
+                "FrenzyTonic.png"
+            ],
+            "weapon": [
+                "TerminalVoltage.png",
+                "SahvytsCleaver.png",
+                "GrimOnslaught.png",
+                "OverchargedCylinder.png"
+            ]
+        },
+        "blaze": {
+            "armor": [
+                "DarkWatch.png",
+                "LightsVirtue.png",
+                "MalkarionsGrasp.png",
+                "BladedBoots.png",
+                "SkarnsDefiance.png"
+            ],
+            "name": "Blaze Axe",
+            "omnicell": "Revenant.png",
+            "perks": [
+                "+6 Catalyst",
+                "+6 Cunning",
+                "+6 Overpower",
+                "+6 Predator",
+                "+6 Pulse",
+                "+3 Assassin's Frenzy",
+                "+3 Relentless"
+            ],
+            "supplies": [
+                "HealingFlask.png",
+                "AetherdriveTonic.png",
+                "BlitzTonic.png",
+                "FrenzyTonic.png"
+            ],
+            "weapon": [
+                "IncineratorsSong.png",
+                "InfernosDecree.png",
+                "GrimOnslaught.png",
+                "OverchargedCylinder.png"
+            ]
+        },
+        "umbral": {
+            "armor": [
+                "DarkWatch.png",
+                "ThraxsShadow.png",
+                "MalkarionsGrasp.png",
+                "StrideOfThorns.png",
+                "SkarnsDefiance.png"
+            ],
+            "name": "Umbral Axe",
+            "omnicell": "Revenant.png",
+            "perks": [
+                "+6 Catalyst",
+                "+6 Cunning",
+                "+6 Overpower",
+                "+6 Predator",
+                "+6 Pulse",
+                "+3 Assassin's Frenzy",
+                "+3 Recycle"
+            ],
+            "supplies": [
+                "HealingFlask.png",
+                "AetherdriveTonic.png",
+                "BlitzTonic.png",
+                "FrenzyTonic.png"
+            ],
+            "weapon": [
+                "Mindsplitter.png",
+                "StalkersMercy.png",
+                "GrimOnslaught.png",
+                "OverchargedCylinder.png"
+            ]
+        },
+        "terra": {
+            "armor": [
+                "DarkWatch.png",
+                "LightsVirtue.png",
+                "MalkarionsGrasp.png",
+                "BladedBoots.png",
+                "SkarnsDefiance.png"
+            ],
+            "name": "Terra Axe",
+            "omnicell": "Revenant.png",
+            "perks": [
+                "+6 Catalyst",
+                "+6 Cunning",
+                "+6 Overpower",
+                "+6 Predator",
+                "+6 Pulse",
+                "+3 Assassin's Frenzy",
+                "+3 Deconstruction"
+            ],
+            "supplies": [
+                "HealingFlask.png",
+                "AetherdriveTonic.png",
+                "BlitzTonic.png",
+                "FrenzyTonic.png"
+            ],
+            "weapon": [
+                "MalignantScourge.png",
+                "KharabaksClaw.png",
+                "GrimOnslaught.png",
+                "OverchargedCylinder.png"
+            ]
+        },
+        "frost": {
+            "armor": [
+                "DarkWatch.png",
+                "LightsVirtue.png",
+                "MalkarionsGrasp.png",
+                "BladedBoots.png",
+                "SkarnsDefiance.png"
+            ],
+            "name": "Frost Axe",
+            "omnicell": "Revenant.png",
+            "perks": [
+                "+6 Catalyst",
+                "+6 Cunning",
+                "+6 Galvanized",
+                "+6 Overpower",
+                "+6 Predator",
+                "+3 Assassin's Frenzy",
+                "+3 Recycle"
+            ],
+            "supplies": [
+                "HealingFlask.png",
+                "AetherdriveTonic.png",
+                "BlitzTonic.png",
+                "FrenzyTonic.png"
+            ],
+            "weapon": [
+                "PermanentFrost.png",
+                "FrostwulfsChomp.png",
+                "GrimOnslaught.png",
+                "OverchargedCylinder.png"
+            ]
+        },
+        "radiant": {
+            "armor": [
+                "DarkWatch.png",
+                "MantleOfThorns.png",
+                "MalkarionsGrasp.png",
+                "BladedBoots.png",
+                "SkarnsDefiance.png"
+            ],
+            "name": "Radiant Axe",
+            "omnicell": "Revenant.png",
+            "perks": [
+                "+6 Catalyst",
+                "+6 Cunning",
+                "+6 Overpower",
+                "+6 Predator",
+                "+6 Pulse",
+                "+3 Assassin's Frenzy",
+                "+3 Recycle"
+            ],
+            "supplies": [
+                "HealingFlask.png",
+                "AetherdriveTonic.png",
+                "BlitzTonic.png",
+                "FrenzyTonic.png"
+            ],
+            "weapon": [
+                "ExistentialCrisis.png",
+                "EdgeOfDawn.png",
+                "GrimOnslaught.png",
+                "OverchargedCylinder.png"
+            ]
+        }
+    },
+    "chain_blades": {
+        "shock": {
+            "armor": [
+                "DarkWatch.png",
+                "LightsVirtue.png",
+                "MalkarionsGrasp.png",
+                "BladedBoots.png",
+                "SkarnsDefiance.png"
+            ],
+            "best": "⭐",
+            "name": "Shock Chain Blades",
+            "omnicell": "Revenant.png",
+            "perks": [
+                "+6 Catalyst",
+                "+6 Cunning",
+                "+6 Overpower",
+                "+6 Predator",
+                "+6 Pulse",
+                "+3 Assassin's Frenzy",
+                "+3 Berserker"
+            ],
+            "supplies": [
+                "HealingFlask.png",
+                "AetherdriveTonic.png",
+                "BlitzTonic.png",
+                "FrenzyTonic.png"
+            ],
+            "weapon": [
+                "ElectricCruelties.png",
+                "SahvytsPincers.png",
+                "ReapersDance.png",
+                "HurricaneBlades.png"
+            ]
+        },
+        "blaze": {
+            "armor": [
+                "DarkWatch.png",
+                "LightsVirtue.png",
+                "MalkarionsGrasp.png",
+                "BladedBoots.png",
+                "SkarnsDefiance.png"
+            ],
+            "name": "Blaze Chain Blades",
+            "omnicell": "Revenant.png",
+            "perks": [
+                "+6 Catalyst",
+                "+6 Cunning",
+                "+6 Overpower",
+                "+6 Predator",
+                "+6 Pulse",
+                "+3 Assassin's Frenzy",
+                "+3 Berserker"
+            ],
+            "supplies": [
+                "HealingFlask.png",
+                "AetherdriveTonic.png",
+                "BlitzTonic.png",
+                "FrenzyTonic.png"
+            ],
+            "weapon": [
+                "ScorchingAgonies.png",
+                "InfernosFangs.png",
+                "ReapersDance.png",
+                "HurricaneBlades.png"
+            ]
+        },
+        "umbral": {
+            "armor": [
+                "DarkWatch.png",
+                "ThraxsShadow.png",
+                "MalkarionsGrasp.png",
+                "StrideOfThorns.png",
+                "SkarnsDefiance.png"
+            ],
+            "name": "Umbral Chain Blades",
+            "omnicell": "Revenant.png",
+            "perks": [
+                "+6 Catalyst",
+                "+6 Cunning",
+                "+6 Overpower",
+                "+6 Predator",
+                "+6 Pulse",
+                "+3 Assassin's Frenzy",
+                "+3 Berserker"
+            ],
+            "supplies": [
+                "HealingFlask.png",
+                "AetherdriveTonic.png",
+                "BlitzTonic.png",
+                "FrenzyTonic.png"
+            ],
+            "weapon": [
+                "NightTerrors.png",
+                "StalkersTrap.png",
+                "ReapersDance.png",
+                "HurricaneBlades.png"
+            ]
+        },
+        "terra": {
+            "armor": [
+                "DarkWatch.png",
+                "MantleOfThorns.png",
+                "MalkarionsGrasp.png",
+                "BladedBoots.png",
+                "SkarnsDefiance.png"
+            ],
+            "name": "Terra Chain Blades",
+            "omnicell": "Revenant.png",
+            "perks": [
+                "+6 Catalyst",
+                "+6 Cunning",
+                "+6 Predator",
+                "+6 Pulse",
+                "+3 Assassin's Frenzy",
+                "+3 Berserker",
+                "+3 Bladestorm",
+                "+3 Overpower"
+            ],
+            "supplies": [
+                "HealingFlask.png",
+                "AetherdriveTonic.png",
+                "BlitzTonic.png",
+                "FrenzyTonic.png"
+            ],
+            "weapon": [
+                "DeathBlossoms.png",
+                "KharabaksWings.png",
+                "ReapersDance.png",
+                "HurricaneBlades.png"
+            ]
+        },
+        "frost": {
+            "armor": [
+                "DarkWatch.png",
+                "LightsVirtue.png",
+                "MalkarionsGrasp.png",
+                "BladedBoots.png",
+                "SkarnsDefiance.png"
+            ],
+            "name": "Frost Chain Blades",
+            "omnicell": "Revenant.png",
+            "perks": [
+                "+6 Catalyst",
+                "+6 Cunning",
+                "+6 Galvanized",
+                "+6 Overpower",
+                "+6 Predator",
+                "+3 Assassin's Frenzy",
+                "+3 Berserker"
+            ],
+            "supplies": [
+                "HealingFlask.png",
+                "AetherdriveTonic.png",
+                "BlitzTonic.png",
+                "FrenzyTonic.png"
+            ],
+            "weapon": [
+                "BlizzardsTeeth.png",
+                "FrostwulfsSkinners.png",
+                "ReapersDance.png",
+                "HurricaneBlades.png"
+            ]
+        },
+        "radiant": {
+            "armor": [
+                "DarkWatch.png",
+                "MantleOfThorns.png",
+                "MalkarionsGrasp.png",
+                "BladedBoots.png",
+                "SkarnsDefiance.png"
+            ],
+            "name": "Radiant Chain Blades",
+            "omnicell": "Revenant.png",
+            "perks": [
+                "+6 Catalyst",
+                "+6 Cunning",
+                "+6 Overpower",
+                "+6 Predator",
+                "+6 Pulse",
+                "+3 Assassin's Frenzy",
+                "+3 Berserker"
+            ],
+            "supplies": [
+                "HealingFlask.png",
+                "AetherdriveTonic.png",
+                "BlitzTonic.png",
+                "FrenzyTonic.png"
+            ],
+            "weapon": [
+                "TheWeepingHours.png",
+                "FangsOfDawn.png",
+                "ReapersDance.png",
+                "HurricaneBlades.png"
+            ]
+        }
+    },
+    "hammer": {
+        "shock": {
+            "armor": [
+                "DarkWatch.png",
+                "LightsVirtue.png",
+                "MalkarionsGrasp.png",
+                "BladedBoots.png",
+                "SkarnsDefiance.png"
+            ],
+            "best": "⭐",
+            "name": "Shock Hammer",
+            "omnicell": "Revenant.png",
+            "perks": [
+                "+6 Catalyst",
+                "+6 Cunning",
+                "+6 Overpower",
+                "+6 Predator",
+                "+3 Assassin's Frenzy",
+                "+3 Berserker",
+                "+3 Pulse",
+                "+3 Recycle"
+            ],
+            "supplies": [
+                "HealingFlask.png",
+                "AetherdriveTonic.png",
+                "BlitzTonic.png",
+                "FrenzyTonic.png"
+            ],
+            "weapon": [
+                "GalvanicImpact.png",
+                "SahvytsMaul.png",
+                "MightyLandbreaker.png",
+                "ExtendedClip.png"
+            ]
+        },
+        "blaze": {
+            "armor": [
+                "DarkWatch.png",
+                "ThraxsShadow.png",
+                "MalkarionsGrasp.png",
+                "StrideOfThorns.png",
+                "SkarnsDefiance.png"
+            ],
+            "name": "Blaze Hammer",
+            "omnicell": "Revenant.png",
+            "perks": [
+                "+6 Catalyst",
+                "+6 Cunning",
+                "+6 Galvanized",
+                "+6 Overpower",
+                "+6 Predator",
+                "+3 Berserker",
+                "+3 Recycle"
+            ],
+            "supplies": [
+                "HealingFlask.png",
+                "AetherdriveTonic.png",
+                "BlitzTonic.png",
+                "FrenzyTonic.png"
+            ],
+            "weapon": [
+                "MagmaQuake.png",
+                "InfernosBurden.png",
+                "MightyLandbreaker.png",
+                "ExtendedClip.png"
+            ]
+        },
+        "umbral": {
+            "armor": [
+                "DarkWatch.png",
+                "ThraxsShadow.png",
+                "MalkarionsGrasp.png",
+                "StrideOfThorns.png",
+                "SkarnsDefiance.png"
+            ],
+            "name": "Umbral Hammer",
+            "omnicell": "Revenant.png",
+            "perks": [
+                "+6 Catalyst",
+                "+6 Cunning",
+                "+6 Galvanized",
+                "+6 Overpower",
+                "+6 Predator",
+                "+3 Assassin's Frenzy",
+                "+3 Berserker"
+            ],
+            "supplies": [
+                "HealingFlask.png",
+                "AetherdriveTonic.png",
+                "BlitzTonic.png",
+                "FrenzyTonic.png"
+            ],
+            "weapon": [
+                "SanityCheck.png",
+                "StalkersPrice.png",
+                "MightyLandbreaker.png",
+                "ExtendedClip.png"
+            ]
+        },
+        "terra": {
+            "armor": [
+                "DarkWatch.png",
+                "LightsVirtue.png",
+                "MalkarionsGrasp.png",
+                "BladedBoots.png",
+                "SkarnsDefiance.png"
+            ],
+            "name": "Terra Hammer",
+            "omnicell": "Revenant.png",
+            "perks": [
+                "+6 Catalyst",
+                "+6 Cunning",
+                "+6 Overpower",
+                "+6 Predator",
+                "+3 Assassin's Frenzy",
+                "+3 Berserker",
+                "+3 Deconstruction",
+                "+3 Recycle"
+            ],
+            "supplies": [
+                "HealingFlask.png",
+                "AetherdriveTonic.png",
+                "BlitzTonic.png",
+                "FrenzyTonic.png"
+            ],
+            "weapon": [
+                "UnsteadyGround.png",
+                "KharabaksJaw.png",
+                "MightyLandbreaker.png",
+                "ExtendedClip.png"
+            ]
+        },
+        "frost": {
+            "armor": [
+                "DarkWatch.png",
+                "LightsVirtue.png",
+                "MalkarionsGrasp.png",
+                "BladedBoots.png",
+                "SkarnsDefiance.png"
+            ],
+            "name": "Frost Hammer",
+            "omnicell": "Revenant.png",
+            "perks": [
+                "+6 Catalyst",
+                "+6 Cunning",
+                "+6 Galvanized",
+                "+6 Overpower",
+                "+6 Predator",
+                "+3 Assassin's Frenzy",
+                "+3 Berserker"
+            ],
+            "supplies": [
+                "HealingFlask.png",
+                "AetherdriveTonic.png",
+                "BlitzTonic.png",
+                "FrenzyTonic.png"
+            ],
+            "weapon": [
+                "BombCyclone.png",
+                "FrostwulfsSlam.png",
+                "MightyLandbreaker.png",
+                "ExtendedClip.png"
+            ]
+        },
+        "radiant": {
+            "armor": [
+                "DarkWatch.png",
+                "MantleOfThorns.png",
+                "MalkarionsGrasp.png",
+                "BladedBoots.png",
+                "SkarnsDefiance.png"
+            ],
+            "name": "Radiant Hammer",
+            "omnicell": "Revenant.png",
+            "perks": [
+                "+6 Catalyst",
+                "+6 Cunning",
+                "+6 Galvanized",
+                "+6 Overpower",
+                "+6 Predator",
+                "+3 Assassin's Frenzy",
+                "+3 Berserker"
+            ],
+            "supplies": [
+                "HealingFlask.png",
+                "AetherdriveTonic.png",
+                "BlitzTonic.png",
+                "FrenzyTonic.png"
+            ],
+            "weapon": [
+                "HistorysBurden.png",
+                "BreakOfDawn.png",
+                "MightyLandbreaker.png",
+                "ExtendedClip.png"
+            ]
+        }
+    },
+    "repeaters": {
+        "shock": {
+            "armor": [
+                "DarkWatch.png",
+                "ThraxsShadow.png",
+                "MalkarionsGrasp.png",
+                "StrideOfThorns.png",
+                "SkarnsDefiance.png"
+            ],
+            "best": "⭐",
+            "name": "Shock Repeaters",
+            "omnicell": "Revenant.png",
+            "perks": [
+                "+6 Catalyst",
+                "+6 Cunning",
+                "+6 Predator",
+                "+6 Pulse",
+                "+6 Recycle",
+                "+3 Berserker",
+                "+3 Overpower"
+            ],
+            "supplies": [
+                "HealingFlask.png",
+                "AetherdriveTonic.png",
+                "BlitzTonic.png",
+                "FrenzyTonic.png"
+            ],
+            "weapon": [
+                "DynamicDeadlights.png",
+                "SahvytsAvengers.png",
+                "SalvoChamber.png",
+                "CaptainsGrip.png",
+                "TacticiansMagazine.png"
+            ]
+        },
+        "blaze": {
+            "armor": [
+                "DarkWatch.png",
+                "ThraxsShadow.png",
+                "MalkarionsGrasp.png",
+                "StrideOfThorns.png",
+                "SkarnsDefiance.png"
+            ],
+            "name": "Blaze Repeaters",
+            "omnicell": "Revenant.png",
+            "perks": [
+                "+6 Catalyst",
+                "+6 Cunning",
+                "+6 Predator",
+                "+6 Pulse",
+                "+6 Recycle",
+                "+3 Berserker",
+                "+3 Overpower"
+            ],
+            "supplies": [
+                "HealingFlask.png",
+                "AetherdriveTonic.png",
+                "BlitzTonic.png",
+                "FrenzyTonic.png"
+            ],
+            "weapon": [
+                "VolcanicEruptions.png",
+                "InfernosRoar.png",
+                "SalvoChamber.png",
+                "CaptainsGrip.png",
+                "TacticiansMagazine.png"
+            ]
+        },
+        "umbral": {
+            "armor": [
+                "DarkWatch.png",
+                "ThraxsShadow.png",
+                "MalkarionsGrasp.png",
+                "StrideOfThorns.png",
+                "SkarnsDefiance.png"
+            ],
+            "name": "Umbral Repeaters",
+            "omnicell": "Revenant.png",
+            "perks": [
+                "+6 Catalyst",
+                "+6 Cunning",
+                "+6 Predator",
+                "+6 Pulse",
+                "+6 Recycle",
+                "+3 Assassin's Frenzy",
+                "+3 Berserker"
+            ],
+            "supplies": [
+                "HealingFlask.png",
+                "AetherdriveTonic.png",
+                "BlitzTonic.png",
+                "FrenzyTonic.png"
+            ],
+            "weapon": [
+                "EldritchTorments.png",
+                "StalkersCries.png",
+                "MarksmanChamber.png",
+                "CaptainsGrip.png",
+                "PrecisionSights.png"
+            ]
+        },
+        "terra": {
+            "armor": [
+                "DarkWatch.png",
+                "ThraxsShadow.png",
+                "MalkarionsGrasp.png",
+                "StrideOfThorns.png",
+                "SkarnsDefiance.png"
+            ],
+            "name": "Terra Repeaters",
+            "omnicell": "Revenant.png",
+            "perks": [
+                "+6 Catalyst",
+                "+6 Cunning",
+                "+6 Predator",
+                "+6 Pulse",
+                "+6 Recycle",
+                "+3 Berserker",
+                "+3 Bladestorm"
+            ],
+            "supplies": [
+                "HealingFlask.png",
+                "AetherdriveTonic.png",
+                "BlitzTonic.png",
+                "FrenzyTonic.png"
+            ],
+            "weapon": [
+                "TaintedNeedles.png",
+                "KharabaksLights.png",
+                "SalvoChamber.png",
+                "CaptainsGrip.png",
+                "TacticiansMagazine.png"
+            ]
+        },
+        "frost": {
+            "armor": [
+                "DarkWatch.png",
+                "ThraxsShadow.png",
+                "MalkarionsGrasp.png",
+                "StrideOfThorns.png",
+                "SkarnsDefiance.png"
+            ],
+            "name": "Frost Repeaters",
+            "omnicell": "Revenant.png",
+            "perks": [
+                "+6 Catalyst",
+                "+6 Cunning",
+                "+6 Galvanized",
+                "+6 Predator",
+                "+6 Recycle",
+                "+3 Berserker",
+                "+3 Overpower"
+            ],
+            "supplies": [
+                "HealingFlask.png",
+                "AetherdriveTonic.png",
+                "BlitzTonic.png",
+                "FrenzyTonic.png"
+            ],
+            "weapon": [
+                "CryoCannons.png",
+                "FrostwulfsChillers.png",
+                "SalvoChamber.png",
+                "CaptainsGrip.png",
+                "TacticiansMagazine.png"
+            ]
+        },
+        "radiant": {
+            "armor": [
+                "DarkWatch.png",
+                "MantleOfThorns.png",
+                "MalkarionsGrasp.png",
+                "Chronotreads.png",
+                "SkarnsDefiance.png"
+            ],
+            "name": "Radiant Repeaters",
+            "omnicell": "Revenant.png",
+            "perks": [
+                "+6 Berserker",
+                "+6 Catalyst",
+                "+6 Cunning",
+                "+6 Predator",
+                "+6 Pulse",
+                "+6 Recycle"
+            ],
+            "supplies": [
+                "HealingFlask.png",
+                "AetherdriveTonic.png",
+                "BlitzTonic.png",
+                "FrenzyTonic.png"
+            ],
+            "weapon": [
+                "TemporalMechanics.png",
+                "Dawnstars.png",
+                "SalvoChamber.png",
+                "CaptainsGrip.png",
+                "TacticiansMagazine.png"
+            ]
+        }
+    },
+    "sword": {
+        "shock": {
+            "armor": [
+                "DarkWatch.png",
+                "SkraevwingJacket.png",
+                "MalkarionsGrasp.png",
+                "StrideOfThorns.png",
+                "SkarnsDefiance.png"
+            ],
+            "best": "⭐",
+            "name": "Shock Sword",
+            "omnicell": "Revenant.png",
+            "perks": [
+                "+6 Adrenaline",
+                "+6 Catalyst",
+                "+6 Cunning",
+                "+6 Overpower",
+                "+6 Predator",
+                "+3 Berserker",
+                "+3 Pulse"
+            ],
+            "supplies": [
+                "HealingFlask.png",
+                "AetherdriveTonic.png",
+                "BlitzTonic.png",
+                "FrenzyTonic.png"
+            ],
+            "weapon": [
+                "CyclonicFury.png",
+                "SahvytsCutlass.png",
+                "ValiantOverdrive.png",
+                "DynamicBladecore.png"
+            ]
+        },
+        "blaze": {
+            "armor": [
+                "DarkWatch.png",
+                "SkraevwingJacket.png",
+                "MalkarionsGrasp.png",
+                "StrideOfThorns.png",
+                "SkarnsDefiance.png"
+            ],
+            "name": "Blaze Sword",
+            "omnicell": "Revenant.png",
+            "perks": [
+                "+6 Adrenaline",
+                "+6 Catalyst",
+                "+6 Cunning",
+                "+6 Endurance",
+                "+6 Overpower",
+                "+6 Predator"
+            ],
+            "supplies": [
+                "HealingFlask.png",
+                "AetherdriveTonic.png",
+                "BlitzTonic.png",
+                "FrenzyTonic.png"
+            ],
+            "weapon": [
+                "TheCauterizer.png",
+                "InfernosRazor.png",
+                "ValiantOverdrive.png",
+                "DynamicBladecore.png"
+            ]
+        },
+        "umbral": {
+            "armor": [
+                "DarkWatch.png",
+                "SkraevwingJacket.png",
+                "MalkarionsGrasp.png",
+                "StrideOfThorns.png",
+                "SkarnsDefiance.png"
+            ],
+            "name": "Umbral Sword",
+            "omnicell": "Revenant.png",
+            "perks": [
+                "+6 Adrenaline",
+                "+6 Catalyst",
+                "+6 Cunning",
+                "+6 Overpower",
+                "+6 Predator",
+                "+3 Assassin's Frenzy",
+                "+3 Berserker"
+            ],
+            "supplies": [
+                "HealingFlask.png",
+                "AetherdriveTonic.png",
+                "BlitzTonic.png",
+                "FrenzyTonic.png"
+            ],
+            "weapon": [
+                "Voidbane.png",
+                "StalkersStrike.png",
+                "ValiantOverdrive.png",
+                "DynamicBladecore.png"
+            ]
+        },
+        "terra": {
+            "armor": [
+                "DarkWatch.png",
+                "SkraevwingJacket.png",
+                "MalkarionsGrasp.png",
+                "StrideOfThorns.png",
+                "SkarnsDefiance.png"
+            ],
+            "name": "Terra Sword",
+            "omnicell": "Revenant.png",
+            "perks": [
+                "+6 Adrenaline",
+                "+6 Catalyst",
+                "+6 Cunning",
+                "+6 Overpower",
+                "+6 Predator",
+                "+3 Berserker",
+                "+3 Bladestorm"
+            ],
+            "supplies": [
+                "HealingFlask.png",
+                "AetherdriveTonic.png",
+                "BlitzTonic.png",
+                "FrenzyTonic.png"
+            ],
+            "weapon": [
+                "PoisonousThorn.png",
+                "KharabaksSpur.png",
+                "ValiantOverdrive.png",
+                "DynamicBladecore.png"
+            ]
+        },
+        "frost": {
+            "armor": [
+                "DarkWatch.png",
+                "SkraevwingJacket.png",
+                "MalkarionsGrasp.png",
+                "StrideOfThorns.png",
+                "SkarnsDefiance.png"
+            ],
+            "name": "Frost Sword",
+            "omnicell": "Revenant.png",
+            "perks": [
+                "+6 Adrenaline",
+                "+6 Catalyst",
+                "+6 Cunning",
+                "+6 Galvanized",
+                "+6 Predator",
+                "+3 Berserker",
+                "+3 Overpower"
+            ],
+            "supplies": [
+                "HealingFlask.png",
+                "AetherdriveTonic.png",
+                "BlitzTonic.png",
+                "FrenzyTonic.png"
+            ],
+            "weapon": [
+                "Hypothermica.png",
+                "FrostwulfsBite.png",
+                "ValiantOverdrive.png",
+                "DynamicBladecore.png"
+            ]
+        },
+        "radiant": {
+            "armor": [
+                "DarkWatch.png",
+                "SkraevwingJacket.png",
+                "MalkarionsGrasp.png",
+                "SkraevwingBoots.png",
+                "SkarnsDefiance.png"
+            ],
+            "name": "Radiant Sword",
+            "omnicell": "Revenant.png",
+            "perks": [
+                "+6 Adrenaline",
+                "+6 Catalyst",
+                "+6 Cunning",
+                "+6 Endurance",
+                "+6 Overpower",
+                "+6 Predator"
+            ],
+            "supplies": [
+                "HealingFlask.png",
+                "AetherdriveTonic.png",
+                "BlitzTonic.png",
+                "FrenzyTonic.png"
+            ],
+            "weapon": [
+                "EdgeOfTomorrow.png",
+                "CallOfDawn.png",
+                "ValiantOverdrive.png",
+                "DynamicBladecore.png"
+            ]
+        }
+    },
+    "war_pike": {
+        "shock": {
+            "armor": [
+                "DarkWatch.png",
+                "SkraevwingJacket.png",
+                "MalkarionsGrasp.png",
+                "BladedBoots.png",
+                "SkarnsDefiance.png"
+            ],
+            "best": "⭐",
+            "name": "Shock War Pike",
+            "omnicell": "Revenant.png",
+            "perks": [
+                "+6 Adrenaline",
+                "+6 Catalyst",
+                "+6 Cunning",
+                "+6 Predator",
+                "+3 Assassin's Frenzy",
+                "+3 Berserker",
+                "+3 Overpower",
+                "+3 Pulse"
+            ],
+            "supplies": [
+                "HealingFlask.png",
+                "AetherdriveTonic.png",
+                "BlitzTonic.png",
+                "FrenzyTonic.png"
+            ],
+            "weapon": [
+                "TheConductor.png",
+                "SahvytsJavelin.png",
+                "SavageWellspring.png",
+                "MunitionsAmplifier.png"
+            ]
+        },
+        "blaze": {
+            "armor": [
+                "DarkWatch.png",
+                "SkraevwingJacket.png",
+                "MalkarionsGrasp.png",
+                "BladedBoots.png",
+                "SkarnsDefiance.png"
+            ],
+            "name": "Blaze War Pike",
+            "omnicell": "Revenant.png",
+            "perks": [
+                "+6 Adrenaline",
+                "+6 Catalyst",
+                "+6 Cunning",
+                "+6 Overpower",
+                "+6 Predator",
+                "+3 Assassin's Frenzy",
+                "+3 Berserker"
+            ],
+            "supplies": [
+                "HealingFlask.png",
+                "AetherdriveTonic.png",
+                "BlitzTonic.png",
+                "FrenzyTonic.png"
+            ],
+            "weapon": [
+                "PyroclasticEnvoy.png",
+                "InfernosArrow.png",
+                "SavageWellspring.png",
+                "MunitionsAmplifier.png"
+            ]
+        },
+        "umbral": {
+            "armor": [
+                "DarkWatch.png",
+                "SkraevwingJacket.png",
+                "MalkarionsGrasp.png",
+                "StrideOfThorns.png",
+                "SkarnsDefiance.png"
+            ],
+            "name": "Umbral War Pike",
+            "omnicell": "Revenant.png",
+            "perks": [
+                "+6 Adrenaline",
+                "+6 Catalyst",
+                "+6 Cunning",
+                "+6 Overpower",
+                "+6 Predator",
+                "+3 Assassin's Frenzy",
+                "+3 Berserker"
+            ],
+            "supplies": [
+                "HealingFlask.png",
+                "AetherdriveTonic.png",
+                "BlitzTonic.png",
+                "FrenzyTonic.png"
+            ],
+            "weapon": [
+                "TheApocalypseNeedle.png",
+                "StalkersSpike.png",
+                "SavageWellspring.png",
+                "MunitionsAmplifier.png"
+            ]
+        },
+        "terra": {
+            "armor": [
+                "DarkWatch.png",
+                "SkraevwingJacket.png",
+                "MalkarionsGrasp.png",
+                "BladedBoots.png",
+                "SkarnsDefiance.png"
+            ],
+            "name": "Terra War Pike",
+            "omnicell": "Revenant.png",
+            "perks": [
+                "+6 Adrenaline",
+                "+6 Catalyst",
+                "+6 Cunning",
+                "+6 Overpower",
+                "+6 Predator",
+                "+3 Assassin's Frenzy",
+                "+3 Bladestorm"
+            ],
+            "supplies": [
+                "HealingFlask.png",
+                "AetherdriveTonic.png",
+                "BlitzTonic.png",
+                "FrenzyTonic.png"
+            ],
+            "weapon": [
+                "ParasiticCurse.png",
+                "KharabaksSting.png",
+                "SavageWellspring.png",
+                "MunitionsAmplifier.png"
+            ]
+        },
+        "frost": {
+            "armor": [
+                "DarkWatch.png",
+                "LightsVirtue.png",
+                "TorgadorosBrawn.png",
+                "BladedBoots.png",
+                "SkarnsDefiance.png"
+            ],
+            "name": "Frost War Pike",
+            "omnicell": "Revenant.png",
+            "perks": [
+                "+6 Catalyst",
+                "+6 Cunning",
+                "+6 Galvanized",
+                "+6 Overpower",
+                "+6 Predator",
+                "+3 Assassin's Frenzy",
+                "+3 Berserker"
+            ],
+            "supplies": [
+                "HealingFlask.png",
+                "AetherdriveTonic.png",
+                "BlitzTonic.png",
+                "FrenzyTonic.png"
+            ],
+            "weapon": [
+                "ColdHell.png",
+                "FrostwulfsRip.png",
+                "SavageWellspring.png",
+                "MunitionsAmplifier.png"
+            ]
+        },
+        "radiant": {
+            "armor": [
+                "DarkWatch.png",
+                "SkraevwingJacket.png",
+                "MalkarionsGrasp.png",
+                "SkraevwingBoots.png",
+                "SkarnsDefiance.png"
+            ],
+            "name": "Radiant War Pike",
+            "omnicell": "Revenant.png",
+            "perks": [
+                "+6 Adrenaline",
+                "+6 Catalyst",
+                "+6 Cunning",
+                "+6 Overpower",
+                "+6 Predator",
+                "+3 Assassin's Frenzy",
+                "+3 Berserker"
+            ],
+            "supplies": [
+                "HealingFlask.png",
+                "AetherdriveTonic.png",
+                "BlitzTonic.png",
+                "FrenzyTonic.png"
+            ],
+            "weapon": [
+                "MillenniumsEnd.png",
+                "SpireOfDawn.png",
+                "SavageWellspring.png",
+                "MunitionsAmplifier.png"
+            ]
+        }
+    }
+}

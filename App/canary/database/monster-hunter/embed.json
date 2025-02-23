@@ -1,0 +1,231 @@
+{
+    "mhfu": {
+        "bird_wyvern": {},
+        "carapaceon": {},
+        "elder_dragon": {},
+        "fanged_beast": {},
+        "flying_wyvern": {},
+        "herbivore": {},
+        "lynian": {
+            "felyne": {
+                "icon": "Felyne.png",
+                "name": "Felyne アイルー (Airū)",
+                "description": "Cat-like humanoids called Lynians that are noted for their white fur. Felynes are quiet and peaceful until angered, in which case they may attack. Capable of speech, they are sometimes found in the employ of human masters.",
+                "elements": "N/A",
+                "ailments": "N/A",
+                "weakness": ":fire: Fire\n:droplet: Water\n:zap: Thunder\n:ice_cube: Ice"
+            },
+            "melynx": {
+                "icon": "Melynx.png",
+                "name": "Melynx メラルー (Merarū)",
+                "description": "Cat-like humanoids called Lynians with black fur. Their sticky-fingers never miss a chance to steal things and take them back to their den, forcing victims to seek out their lost items. Distracted by the sight of Felvine.",
+                "elements": "N/A",
+                "ailments": "N/A",
+                "weakness": ":fire: Fire\n:droplet: Water\n:zap: Thunder\n:ice_cube: Ice"
+            },
+            "shakalaka": {
+                "icon": "Shakalaka.png",
+                "name": "Shakalaka チャチャブー (Chachabū)",
+                "description": "A small, four-limbed monster known for always wearing a mask. Their camouflage-like qualities make them difficult to spot, but if you do, you're in trouble! Their leader, the King Shakalaka, is known to wear a crown like object.",
+                "elements": "N/A",
+                "ailments": ":zzz: Sleep\n:test_tube: Poison",
+                "weakness": ":ice_cube: Ice"
+            },
+            "king_shakalaka": {
+                "icon": "King_Shakalaka.png",
+                "name": "King Shakalaka キングチャチャブー (Kingu Chachabū)",
+                "description": "This Shakalaka chieftain pulls together the Shakalaka's as one, in order to act. Extremely quick to anger when approached, this hot-head can invoke his fiery wrath with emotion alone. Feared by even the most skilled hunters.",
+                "elements": ":fire: Fire",
+                "ailments": ":zzz: Sleep",
+                "weakness": ":ice_cube: Ice"
+            }
+        },
+        "neopteron": {
+            "vespoid": {
+                "icon": "Vespoid.png",
+                "name": "Vespoid ランゴスタ (Rangosuta)",
+                "description": "An enormous, wasp-like insectoid with a poisonous stinger that paralyzes prey. Easily damaged, there are rarely any usable parts left to harvest from them once they are killed.",
+                "elements": "N/A",
+                "ailments": ":zap: Paralysis",
+                "weakness": ":fire: Fire\n:test_tube: Poison"
+            },
+            "vespoid_queen": {
+                "icon": "Vespoid_Queen.png",
+                "name": "Vespoid Queen クイーンランゴスタ (Kuīn Rangosuta)",
+                "description": "A massive thorax and brilliant, gigantic wings mark the Vespoid Queen. It commands its subjects through unique flight patterns, and will stab any intruders with a poisonous stinger that also causes paralysis. It also spits acidic bodily fluid at its prey.",
+                "elements": "N/A",
+                "ailments": ":zap: Paralysis\n:shield: Defense Down",
+                "weakness": ":fire: Fire"
+            },
+            "hornetaur": {
+                "icon": "Hornetaur.png",
+                "name": "Hornetaur カンタロス (Kantarosu)",
+                "description": "A Vespoid-like monster with a thick shell. Easily damaged, there are rarely any usable materials left to harvest from them once killed. But if you could sap their health gradually...",
+                "elements": "N/A",
+                "ailments": "N/A",
+                "weakness": ":fire: Fire\n:droplet: Water"
+            },
+            "great_thunderbug": {
+                "icon": "Great_Thunderbug.png",
+                "name": "Great Thunderbug 大雷光虫 (Dai Raikō Mushi)",
+                "description": "An abnormally large Thunderbug raised inside the body of an elder dragon and known to inhabit the same areas as its former host, its electrical attack is deadly. This bug has various uses as material for crafting weapons and items.",
+                "elements": ":zap: Thunder",
+                "ailments": ":zap: Paralysis",
+                "weakness": ":droplet: Water"
+            }
+        },
+        "piscine_wyvern": {
+            "cephalos": {
+                "icon": "Cephalos.png",
+                "name": "Cephalos ガレオス (Gareosu)",
+                "description": "Wyverns found only in the Desert. They resemble a Plesioth, but live and \"swim\" in sand rather than water. They seldom appear above land, but when their hearing is disturbed...",
+                "elements": ":droplet: Water",
+                "ailments": ":zap: Paralysis\n:droplet: Waterblight",
+                "weakness": ":ice_cube: Ice\n:zap: Thunder"
+            },
+            "cephadrome": {
+                "icon": "Cephadrome.png",
+                "name": "Cephadrome ドスガレオス (Dosugareosu)",
+                "description": "The alpha monster form of the Cephalos. Larger and armored with black scales, they fit the appearance of a leader perfectly. Their fins hold a paralyzing toxin.",
+                "elements": ":droplet: Water",
+                "ailments": ":zap: Paralysis\n:droplet: Waterblight",
+                "weakness": ":ice_cube: Ice\n:zap: Thunder"
+            },
+            "plesioth": {
+                "icon": "Plesioth.png",
+                "name": "Plesioth ガノトトス (Ganototosu)",
+                "description": "An enormous, flightless, aquatic wyvern with wings that have evolved into fins for swimming. Although superficially fish-like, they can move on land as well. They love frogs.",
+                "elements": ":droplet: Water",
+                "ailments": ":zzz: Sleep",
+                "weakness": ":zap: Thunder\n:fire: Fire"
+            },
+            "green_plesioth": {
+                "icon": "Green_Plesioth.png",
+                "name": "Green Plesioth ガノトトス亜種 (Ganototosu Ashu)",
+                "description": "An enormous, flightless, aquatic wyvern with wings that have evolved into fins for swimming. Although superficially fish-like, they can move on land as well. They love frogs.",
+                "elements": ":droplet: Water",
+                "ailments": ":zzz: Sleep",
+                "weakness": ":zap: Thunder\n:fire: Fire"
+            },
+            "lavasioth": {
+                "icon": "Lavasioth.png",
+                "name": "Lavasioth ヴォルガノス (Voruganosu)",
+                "description": "A piscine wyvern that resides in magma. Its scales are covered by layers of cooled magma, which makes it one hard nut to crack. It swims around in lava, spewing the molten rock it takes in at its prey... Researchers love to study its peculiar way of life.",
+                "elements": ":fire: Fire",
+                "ailments": "N/A",
+                "weakness": ":droplet: Water"
+            }
+        }
+    },
+    "mhp3rd": {
+        "bird_wyvern": {},
+        "brute_wyvern": {},
+        "elder_dragon": {},
+        "fanged_beast": {},
+        "fanged_wyvern": {},
+        "flying_wyvern": {},
+        "herbivore": {},
+        "leviathan": {},
+        "lynian": {
+            "felyne": {
+                "icon": "Felyne.png",
+                "name": "Felyne アイルー (Airū)",
+                "description": "ネコに似た姿を持つ獣人族。白毛が特徴。普段はおとなしいが攻撃されると逆上し、誰かれ構わず襲いかかる。好奇心が旺盛で、人語を解し人間社会に溶け込もうとする者もいるようだ。また、マタタビが好きで、その匂いを察知するとどこまでも追いかける。",
+                "elements": "N/A",
+                "ailments": "N/A",
+                "weakness": ":fire: Fire\n:droplet: Water\n:zap: Thunder\n:ice_cube: Ice"
+            },
+            "melynx": {
+                "icon": "Melynx.png",
+                "name": "Melynx メラルー (Merarū)",
+                "description": "ネコに似た姿を持つ獣人族。黒毛が特徴。アイルーにもまして好奇心が旺盛で大の悪戯好き。手癖が悪く人から物を盗み集落に持ち帰ってしまう。マタタビが大好物なのだが、直接食らうと酔っぱらってしまうようだ。酔っぱらうと落し物をすることがある。",
+                "elements": "N/A",
+                "ailments": "N/A",
+                "weakness": ":fire: Fire\n:droplet: Water\n:zap: Thunder\n:ice_cube: Ice"
+            }
+        },
+        "neopteron": {
+            "altaroth": {
+                "icon": "Altaroth.png",
+                "name": "Altaroth オルタロス (Orutarosu)",
+                "description": "様々な場所に広く生息する “甲虫” 。実やキノコ、ハチミツなどを体内に取り込み、巣まで運んでいくという習性を持つ。そのため、腹部が膨らんでいる固体からは有益な素材が採取できる。また、摂取している素材によって腹部の色が変化するようだ。",
+                "elements": "N/A",
+                "ailments": ":shield: Defense Down\n:zap: Paralysis",
+                "weakness": ":fire: Fire\n:droplet: Water\n:zap: Thunder\n:ice_cube: Ice\n:dragon: Dragon\n:test_tube: Poison"
+            },
+            "bnahabra": {
+                "icon": "Bnahabra.png",
+                "name": "Bnahabra ブナハブラ (Bunahabura)",
+                "description": "あらゆる環境に生息する “飛甲虫” 。麻痺性の毒を持ちテリトリーに入ってくる者を襲ってくる。死体に卵を産みつけ繁殖する事でも知られ、耐性を下げる特殊な体液で腐食を促進させるようだ。この飛甲虫の素材を手に入れるためには毒を用いるのがベスト。",
+                "elements": "N/A",
+                "ailments": ":zap: Paralysis\n:shield: Defense Down",
+                "weakness": ":fire: Fire"
+            }
+        },
+        "piscine_wyvern": {
+            "delex": {
+                "icon": "Delex.png",
+                "name": "Delex デルクス (Derukusu)",
+                "description": "砂漠地帯に生息する肉食モンスター。常に４～５匹の群れで行動する。大型のモンスターが狩りをする場に居合わせるとその獲物を取り囲むように泳ぎだし、獲物を追い詰め、おこぼれにあずかろうとする。音には敏感なため音爆弾などで一網打尽にできる。",
+                "elements": ":droplet: Water",
+                "ailments": ":droplet: Waterblight",
+                "weakness": ":droplet: Water\n:zap: Thunder"
+            }
+        }
+    },
+    "mhtri": {
+        "bird_wyvern": {},
+        "brute_wyvern": {},
+        "elder_dragon": {},
+        "fish": {},
+        "flying_wyvern": {},
+        "herbivore": {},
+        "leviathan": {},
+        "lynian": {
+            "felyne": {
+                "icon": "Felyne.png",
+                "name": "Felyne アイルー (Airū)",
+                "description": "Bipedal creatures resembling cats, known for their light hair. Though usually docile, they will attack viciously if provoked. Naturally curious, some try to enter human society. Fond of Felvine, they will follow its scent anywhere.",
+                "elements": "N/A",
+                "ailments": "N/A",
+                "weakness": ":fire: Fire\n:droplet: Water\n:zap: Thunder\n:ice_cube: Ice"
+            },
+            "melynx": {
+                "icon": "Melynx.png",
+                "name": "Melynx メラルー (Merarū)",
+                "description": "Bipedal creatures resembling cats, known for their dark hair. more curious then Felynes and possessed by kleptomania, Melynxes take what they can steal back to their dens. Felvine intoxicates them, causing them to sometimes drop items.",
+                "elements": "N/A",
+                "ailments": "N/A",
+                "weakness": ":fire: Fire\n:droplet: Water\n:zap: Thunder\n:ice_cube: Ice"
+            }
+        },
+        "neopteron": {
+            "altaroth": {
+                "icon": "Altaroth.png",
+                "name": "Altaroth オルタロス (Orutarosu)",
+                "description": "Insects that widely inhabit many areas. Noted for absorbing fruit, mushrooms and honey, then carrying them back to their nest. Materials can thus be collected from their swollen abdomens, whose color is related to what is being carried.",
+                "elements": "N/A",
+                "ailments": ":shield: Defense Down\n:zap: Paralysis",
+                "weakness": ":fire: Fire\n:droplet: Water\n:zap: Thunder\n:ice_cube: Ice\n:dragon: Dragon\n:test_tube: Poison"
+            },
+            "bnahabra": {
+                "icon": "Bnahabra.png",
+                "name": "Bnahabra ブナハブラ (Bunahabura)",
+                "description": "Flying insects that inhabit most environments. They attack invaders with a paralyzing poison and lay eggs in carrion together with a bodily fluid that hastens decomposition. Attracted to light, they will gather around any fire.",
+                "elements": "N/A",
+                "ailments": ":zap: Paralysis\n:shield: Defense Down",
+                "weakness": ":fire: Fire"
+            }
+        },
+        "piscine_wyvern": {
+            "delex": {
+                "icon": "Delex.png",
+                "name": "Delex デルクス (Derukusu)",
+                "description": "Carnivorous monsters that inhabit deserts. Delex always travel in schools of five or six. When near large monsters on a hunt, they attempt to surround the prey and scavenge food. Known to flee if other Delex are injured.",
+                "elements": ":droplet: Water",
+                "ailments": ":droplet: Waterblight",
+                "weakness": ":droplet: Water\n:zap: Thunder"
+            }
+        }
+    }
+}

@@ -1,0 +1,702 @@
+[
+  {
+    "completion_time": 80822,
+    "platform": "WIN",
+    "platform_name": "FroogalReforging",
+    "rank": 1,
+    "weapon": 1
+  },
+  {
+    "completion_time": 81583,
+    "platform": "WIN",
+    "platform_name": "Sliferx",
+    "rank": 2,
+    "weapon": 1
+  },
+  {
+    "completion_time": 82830,
+    "platform": "PSN",
+    "platform_name": "tttm73",
+    "rank": 3,
+    "weapon": 1
+  },
+  {
+    "completion_time": 83560,
+    "platform": "WIN",
+    "platform_name": "ChokiitoS",
+    "rank": 4,
+    "weapon": 1
+  },
+  {
+    "completion_time": 86243,
+    "platform": "WIN",
+    "platform_name": "ΘffZera",
+    "rank": 5,
+    "weapon": 1
+  },
+  {
+    "completion_time": 97860,
+    "platform": "WIN",
+    "platform_name": "Zillouś",
+    "rank": 6,
+    "weapon": 4
+  },
+  {
+    "completion_time": 99526,
+    "platform": "WIN",
+    "platform_name": "HadesVita",
+    "rank": 7,
+    "weapon": 1
+  },
+  {
+    "completion_time": 102104,
+    "platform": "PSN",
+    "platform_name": "Awkward_Geese",
+    "rank": 8,
+    "weapon": 4
+  },
+  {
+    "completion_time": 108059,
+    "platform": "WIN",
+    "platform_name": "BreppSkrepp",
+    "rank": 9,
+    "weapon": 1
+  },
+  {
+    "completion_time": 117239,
+    "platform": "WIN",
+    "platform_name": "Cpt. Maelstrom",
+    "rank": 10,
+    "weapon": 4
+  },
+  {
+    "completion_time": 121213,
+    "platform": "WIN",
+    "platform_name": "Akeada",
+    "rank": 11,
+    "weapon": 4
+  },
+  {
+    "completion_time": 121698,
+    "platform": "WIN",
+    "platform_name": "ShrikeInADiaper",
+    "rank": 12,
+    "weapon": 4
+  },
+  {
+    "completion_time": 124320,
+    "platform": "WIN",
+    "platform_name": "Apea",
+    "rank": 13,
+    "weapon": 4
+  },
+  {
+    "completion_time": 126023,
+    "platform": "WIN",
+    "platform_name": "gawzzey",
+    "rank": 14,
+    "weapon": 1
+  },
+  {
+    "completion_time": 127822,
+    "platform": "WIN",
+    "platform_name": "FLM_Bloom",
+    "rank": 15,
+    "weapon": 4
+  },
+  {
+    "completion_time": 128755,
+    "platform": "WIN",
+    "platform_name": "Antarr",
+    "rank": 16,
+    "weapon": 4
+  },
+  {
+    "completion_time": 131707,
+    "platform": "WIN",
+    "platform_name": "Thirty-",
+    "rank": 17,
+    "weapon": 4
+  },
+  {
+    "completion_time": 133800,
+    "platform": "PSN",
+    "platform_name": "OhPagg7u7",
+    "rank": 18,
+    "weapon": 1
+  },
+  {
+    "completion_time": 134321,
+    "platform": "WIN",
+    "platform_name": "Floki フローキ",
+    "rank": 19,
+    "weapon": 4
+  },
+  {
+    "completion_time": 135346,
+    "platform": "XBL",
+    "platform_name": "Seblackz",
+    "rank": 20,
+    "weapon": 1
+  },
+  {
+    "completion_time": 136163,
+    "platform": "WIN",
+    "platform_name": "uɐS",
+    "rank": 21,
+    "weapon": 4
+  },
+  {
+    "completion_time": 139111,
+    "platform": "WIN",
+    "platform_name": "Derperifica",
+    "rank": 22,
+    "weapon": 4
+  },
+  {
+    "completion_time": 141015,
+    "platform": "WIN",
+    "platform_name": "Ossan_jp",
+    "rank": 23,
+    "weapon": 1
+  },
+  {
+    "completion_time": 145989,
+    "platform": "WIN",
+    "platform_name": "ThiccAddicc",
+    "rank": 24,
+    "weapon": 4
+  },
+  {
+    "completion_time": 150876,
+    "platform": "WIN",
+    "platform_name": "Crypticsalt",
+    "rank": 25,
+    "weapon": 4
+  },
+  {
+    "completion_time": 152488,
+    "platform": "WIN",
+    "platform_name": "Rjet824",
+    "rank": 26,
+    "weapon": 4
+  },
+  {
+    "completion_time": 153110,
+    "platform": "WIN",
+    "platform_name": "ekko111",
+    "rank": 27,
+    "weapon": 4
+  },
+  {
+    "completion_time": 154680,
+    "platform": "WIN",
+    "platform_name": "Noppe.",
+    "rank": 28,
+    "weapon": 4
+  },
+  {
+    "completion_time": 156014,
+    "platform": "WIN",
+    "platform_name": "K55VT",
+    "rank": 29,
+    "weapon": 4
+  },
+  {
+    "completion_time": 156889,
+    "platform": "PSN",
+    "platform_name": "Lexperty_ObLi",
+    "rank": 30,
+    "weapon": 1
+  },
+  {
+    "completion_time": 158879,
+    "platform": "WIN",
+    "platform_name": "ButWhyEleven",
+    "rank": 31,
+    "weapon": 4
+  },
+  {
+    "completion_time": 159925,
+    "platform": "WIN",
+    "platform_name": "Reapeth",
+    "rank": 32,
+    "weapon": 4
+  },
+  {
+    "completion_time": 161554,
+    "platform": "PSN",
+    "platform_name": "Baltosai",
+    "rank": 33,
+    "weapon": 1
+  },
+  {
+    "completion_time": 164249,
+    "platform": "WIN",
+    "platform_name": "Mylariane",
+    "rank": 34,
+    "weapon": 4
+  },
+  {
+    "completion_time": 165421,
+    "platform": "WIN",
+    "platform_name": "Deboltex",
+    "rank": 35,
+    "weapon": 2
+  },
+  {
+    "completion_time": 166083,
+    "platform": "WIN",
+    "platform_name": "Shubaca",
+    "rank": 36,
+    "weapon": 4
+  },
+  {
+    "completion_time": 166901,
+    "platform": "PSN",
+    "platform_name": "blackheart123-74",
+    "rank": 37,
+    "weapon": 1
+  },
+  {
+    "completion_time": 167163,
+    "platform": "PSN",
+    "platform_name": "RIPthePepperoni",
+    "rank": 38,
+    "weapon": 4
+  },
+  {
+    "completion_time": 167790,
+    "platform": "WIN",
+    "platform_name": "ShadowKnight986",
+    "rank": 39,
+    "weapon": 1
+  },
+  {
+    "completion_time": 169352,
+    "platform": "WIN",
+    "platform_name": "Shnuppadoodledoo",
+    "rank": 40,
+    "weapon": 4
+  },
+  {
+    "completion_time": 169913,
+    "platform": "WIN",
+    "platform_name": "TamagoSot",
+    "rank": 41,
+    "weapon": 4
+  },
+  {
+    "completion_time": 170562,
+    "platform": "PSN",
+    "platform_name": "lIDoomsday",
+    "rank": 42,
+    "weapon": 1
+  },
+  {
+    "completion_time": 171587,
+    "platform": "PSN",
+    "platform_name": "Havane-Kush",
+    "rank": 43,
+    "weapon": 2
+  },
+  {
+    "completion_time": 171874,
+    "platform": "PSN",
+    "platform_name": "Kulayyz",
+    "rank": 44,
+    "weapon": 4
+  },
+  {
+    "completion_time": 174649,
+    "platform": "WIN",
+    "platform_name": "ARC-Sabre",
+    "rank": 45,
+    "weapon": 4
+  },
+  {
+    "completion_time": 177129,
+    "platform": "PSN",
+    "platform_name": "GaminGDiaVoloS",
+    "rank": 46,
+    "weapon": 4
+  },
+  {
+    "completion_time": 177923,
+    "platform": "WIN",
+    "platform_name": "Tal1s_",
+    "rank": 47,
+    "weapon": 1
+  },
+  {
+    "completion_time": 178138,
+    "platform": "WIN",
+    "platform_name": "OhDough",
+    "rank": 48,
+    "weapon": 4
+  },
+  {
+    "completion_time": 178454,
+    "platform": "WIN",
+    "platform_name": "Morimirai",
+    "rank": 49,
+    "weapon": 1
+  },
+  {
+    "completion_time": 178850,
+    "platform": "WIN",
+    "platform_name": "OverFrazz",
+    "rank": 50,
+    "weapon": 1
+  },
+  {
+    "completion_time": 178912,
+    "platform": "WIN",
+    "platform_name": "Yeptune",
+    "rank": 51,
+    "weapon": 4
+  },
+  {
+    "completion_time": 179747,
+    "platform": "WIN",
+    "platform_name": "Annaka_25",
+    "rank": 52,
+    "weapon": 6
+  },
+  {
+    "completion_time": 179917,
+    "platform": "WIN",
+    "platform_name": "Shaanks",
+    "rank": 53,
+    "weapon": 4
+  },
+  {
+    "completion_time": 179972,
+    "platform": "WIN",
+    "platform_name": "Doidolokobr",
+    "rank": 54,
+    "weapon": 4
+  },
+  {
+    "completion_time": 180882,
+    "platform": "WIN",
+    "platform_name": "Dumdumdurum",
+    "rank": 55,
+    "weapon": 4
+  },
+  {
+    "completion_time": 183570,
+    "platform": "WIN",
+    "platform_name": "Feedfestx",
+    "rank": 56,
+    "weapon": 4
+  },
+  {
+    "completion_time": 188485,
+    "platform": "WIN",
+    "platform_name": "Beowulf55",
+    "rank": 57,
+    "weapon": 4
+  },
+  {
+    "completion_time": 191632,
+    "platform": "WIN",
+    "platform_name": "SnugglyFoo",
+    "rank": 58,
+    "weapon": 4
+  },
+  {
+    "completion_time": 192037,
+    "platform": "WIN",
+    "platform_name": "Geinmachi",
+    "rank": 59,
+    "weapon": 4
+  },
+  {
+    "completion_time": 192345,
+    "platform": "WIN",
+    "platform_name": "CatGoesBark",
+    "rank": 60,
+    "weapon": 4
+  },
+  {
+    "completion_time": 192468,
+    "platform": "PSN",
+    "platform_name": "Kendoq",
+    "rank": 61,
+    "weapon": 4
+  },
+  {
+    "completion_time": 196301,
+    "platform": "PSN",
+    "platform_name": "Neptune_fcgb",
+    "rank": 62,
+    "weapon": 4
+  },
+  {
+    "completion_time": 198336,
+    "platform": "WIN",
+    "platform_name": "CrazyPam.",
+    "rank": 63,
+    "weapon": 4
+  },
+  {
+    "completion_time": 200437,
+    "platform": "WIN",
+    "platform_name": "TTvLionSuit",
+    "rank": 64,
+    "weapon": 4
+  },
+  {
+    "completion_time": 204177,
+    "platform": "WIN",
+    "platform_name": "Predhelt",
+    "rank": 65,
+    "weapon": 2
+  },
+  {
+    "completion_time": 208182,
+    "platform": "WIN",
+    "platform_name": "Actual9",
+    "rank": 66,
+    "weapon": 4
+  },
+  {
+    "completion_time": 208362,
+    "platform": "WIN",
+    "platform_name": "Dymence",
+    "rank": 67,
+    "weapon": 4
+  },
+  {
+    "completion_time": 211208,
+    "platform": "WIN",
+    "platform_name": "PSNChicken",
+    "rank": 68,
+    "weapon": 4
+  },
+  {
+    "completion_time": 216343,
+    "platform": "WIN",
+    "platform_name": "JigglyComet",
+    "rank": 69,
+    "weapon": 4
+  },
+  {
+    "completion_time": 218866,
+    "platform": "WIN",
+    "platform_name": "Magranon_",
+    "rank": 70,
+    "weapon": 5
+  },
+  {
+    "completion_time": 220070,
+    "platform": "WIN",
+    "platform_name": "Killamac",
+    "rank": 71,
+    "weapon": 4
+  },
+  {
+    "completion_time": 222138,
+    "platform": "WIN",
+    "platform_name": "ivopiro",
+    "rank": 72,
+    "weapon": 4
+  },
+  {
+    "completion_time": 222582,
+    "platform": "WIN",
+    "platform_name": "Shadowdragon1080",
+    "rank": 73,
+    "weapon": 4
+  },
+  {
+    "completion_time": 225490,
+    "platform": "WIN",
+    "platform_name": "Fran_19",
+    "rank": 74,
+    "weapon": 4
+  },
+  {
+    "completion_time": 226885,
+    "platform": "WIN",
+    "platform_name": "ғℓαco",
+    "rank": 75,
+    "weapon": 4
+  },
+  {
+    "completion_time": 227209,
+    "platform": "WIN",
+    "platform_name": "MrBakulat",
+    "rank": 76,
+    "weapon": 4
+  },
+  {
+    "completion_time": 227743,
+    "platform": "PSN",
+    "platform_name": "Viet-Bongz",
+    "rank": 77,
+    "weapon": 4
+  },
+  {
+    "completion_time": 229081,
+    "platform": "WIN",
+    "platform_name": "Toshi86",
+    "rank": 78,
+    "weapon": 1
+  },
+  {
+    "completion_time": 229467,
+    "platform": "WIN",
+    "platform_name": "arcaniaX",
+    "rank": 79,
+    "weapon": 4
+  },
+  {
+    "completion_time": 230501,
+    "platform": "PSN",
+    "platform_name": "LORDEXODIA01",
+    "rank": 80,
+    "weapon": 4
+  },
+  {
+    "completion_time": 233194,
+    "platform": "WIN",
+    "platform_name": "MadLink43",
+    "rank": 81,
+    "weapon": 4
+  },
+  {
+    "completion_time": 235271,
+    "platform": "WIN",
+    "platform_name": "EeanYan",
+    "rank": 82,
+    "weapon": 4
+  },
+  {
+    "completion_time": 236500,
+    "platform": "WIN",
+    "platform_name": "iskasa.",
+    "rank": 83,
+    "weapon": 4
+  },
+  {
+    "completion_time": 237852,
+    "platform": "WIN",
+    "platform_name": "Redwood-original",
+    "rank": 84,
+    "weapon": 4
+  },
+  {
+    "completion_time": 237928,
+    "platform": "WIN",
+    "platform_name": "RoboDeviant",
+    "rank": 85,
+    "weapon": 4
+  },
+  {
+    "completion_time": 240029,
+    "platform": "WIN",
+    "platform_name": "Its_Extrem0",
+    "rank": 86,
+    "weapon": 4
+  },
+  {
+    "completion_time": 242248,
+    "platform": "PSN",
+    "platform_name": "BlaSter_BlueGT",
+    "rank": 87,
+    "weapon": 1
+  },
+  {
+    "completion_time": 243095,
+    "platform": "WIN",
+    "platform_name": "Frylord66666",
+    "rank": 88,
+    "weapon": 4
+  },
+  {
+    "completion_time": 243241,
+    "platform": "WIN",
+    "platform_name": "iTs_ThE_MiGhTy",
+    "rank": 89,
+    "weapon": 1
+  },
+  {
+    "completion_time": 245272,
+    "platform": "WIN",
+    "platform_name": "Yippyyayay",
+    "rank": 90,
+    "weapon": 4
+  },
+  {
+    "completion_time": 248980,
+    "platform": "WIN",
+    "platform_name": "ims0faking",
+    "rank": 91,
+    "weapon": 2
+  },
+  {
+    "completion_time": 256406,
+    "platform": "WIN",
+    "platform_name": "Trufflepastaz",
+    "rank": 92,
+    "weapon": 4
+  },
+  {
+    "completion_time": 257039,
+    "platform": "WIN",
+    "platform_name": "永遠に Royta",
+    "rank": 93,
+    "weapon": 4
+  },
+  {
+    "completion_time": 262366,
+    "platform": "WIN",
+    "platform_name": "Bearforms",
+    "rank": 94,
+    "weapon": 4
+  },
+  {
+    "completion_time": 263115,
+    "platform": "WIN",
+    "platform_name": "Ne_meSIS117",
+    "rank": 95,
+    "weapon": 4
+  },
+  {
+    "completion_time": 263693,
+    "platform": "WIN",
+    "platform_name": "L丨ch",
+    "rank": 96,
+    "weapon": 4
+  },
+  {
+    "completion_time": 264306,
+    "platform": "WIN",
+    "platform_name": "吃大鱼的小鱼",
+    "rank": 97,
+    "weapon": 4
+  },
+  {
+    "completion_time": 265624,
+    "platform": "WIN",
+    "platform_name": "Cana002",
+    "rank": 98,
+    "weapon": 2
+  },
+  {
+    "completion_time": 267582,
+    "platform": "XBL",
+    "platform_name": "KiddNativeYT",
+    "rank": 99,
+    "weapon": 2
+  },
+  {
+    "completion_time": 270980,
+    "platform": "PSN",
+    "platform_name": "Mike_Hunter1349",
+    "rank": 100,
+    "weapon": 1
+  }
+]

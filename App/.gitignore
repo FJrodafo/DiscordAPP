@@ -1,0 +1,25 @@
+# dependencies
+/node_modules
+
+# assets
+/canary/assets/command-output/*.png
+/canary/assets/dauntless/original
+/canary/assets/games/original
+/canary/assets/monster-hunter/mhfu/original
+/canary/assets/monster-hunter/mhp3rd/original
+/canary/assets/monster-hunter/mhtri/original
+
+# database
+/canary/database/dauntless/leaderboards-dataset.json
+/canary/database/data.json
+/canary/database/log.txt
+
+# secrets
+/canary/config.json
+/shrikebot/config.json
+/src/config.json
+.env
+
+# misc
+/deprecated
+/shrikebot
