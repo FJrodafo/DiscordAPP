@@ -6,7 +6,7 @@
 ## Database
 
 <details>
-<summary>Expand</summary>
+<summary>Monster Hunter</summary>
 
 - [ ] MHFU [Wiki](https://monsterhunter.fandom.com/wiki/MHFU:_Monsters)
     - [ ] Herbivores
