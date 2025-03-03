@@ -31,3 +31,7 @@
 
 - [ ] Add [modals](https://discordjs.guide/interactions/modals.html)
 - [ ] Add [localized responses](https://discordjs.guide/slash-commands/advanced-creation.html#localizations)
+
+## Dependencies
+
+- [ ] Update Dependencies [Node v22.14.0](https://nodejs.org/docs/latest-v22.x/api/index.html)
