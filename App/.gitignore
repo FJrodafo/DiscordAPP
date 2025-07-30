@@ -16,10 +16,8 @@
 
 # secrets
 /canary/config.json
-/shrikebot/config.json
 /src/config.json
 .env
 
 # misc
 /deprecated
-/shrikebot
