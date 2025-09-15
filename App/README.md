@@ -49,6 +49,7 @@ App/
 │   └── index.js
 ├── docker-compose.yaml
 ├── Dockerfile
+├── eslint.config.js
 ├── package-lock.json
 └── package.json
 ```
@@ -85,9 +86,9 @@ npm install
 
 ## Final steps
 
-If you have the `config.json` file into the `src` directory correctly configurated and Node v16.11.0 or higher installed on your machine, then you are good to go!
+If you have the `config.json` file into the `src` directory correctly configurated and Node v22.14.0 installed on your machine, then you are good to go!
 
-To check if you already have Node installed on your machine, run `node -v` in your terminal. Otherwise, you will need to install Node v16.11.0 or higher or, as a last option, check out the [Docker](#using-docker) alternative.
+To check if you already have Node installed on your machine, run `node -v` in your terminal. Otherwise, you will need to install Node v22.14.0 or, as a last option, check out the [Docker](#using-docker) alternative.
 
 Finally, if you have Node installed, run the following command to activate your Discord APP (Make sure you are in the `App` directory):
 
@@ -96,7 +97,7 @@ npm start
 # Press 'Ctrl + C' to exit
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open Discord and access the server where your Discord APP is located to see the result.
 
 ## Using Docker
 
@@ -104,7 +105,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 Make sure to create and configurate the `config.json` file correctly into the `src` directory before running Docker commands...
 
-Build the container:
+Build the container (Make sure you are in the `App` directory):
 
 ```shell
 docker compose build
@@ -124,7 +125,7 @@ docker compose down
 
 ### Build Docker image on your own
 
-If you don't have Node v16.11.0 or higher installed on your machine, you can build a Docker image by running the [Dockerfile](./Dockerfile) (Make sure to create and configurate the `config.json` file correctly into the `src` directory before building the docker image).
+If you don't have Node v22.14.0 installed on your machine, you can build a Docker image by running the [Dockerfile](./Dockerfile) (Make sure to create and configurate the `config.json` file correctly into the `src` directory before building the docker image).
 
 Open a terminal and run the following command (Make sure you are in the `App` directory):
 
@@ -136,6 +137,24 @@ After the build completes, you can run your container with the following command
 
 ```shell
 docker run -dp 127.0.0.1:3000:3000 discord-app
+```
+
+Get the container ID:
+
+```shell
+docker ps -a
+```
+
+Stop the container:
+
+```shell
+docker stop <container-id>
+```
+
+Delete the container:
+
+```shell
+docker rm <container-id>
 ```
 
 > [!IMPORTANT]
