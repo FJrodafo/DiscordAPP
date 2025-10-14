@@ -65,7 +65,7 @@ module.exports = {
             path.resolve(__dirname, './../../assets/economy/Work.gif'),
         );
         const embed = new EmbedBuilder()
-            .setTitle('After eight hours of work!')
+            .setTitle('After a long day at work!')
             .setDescription(description)
             .setImage('attachment://Work.gif')
             .setTimestamp()
