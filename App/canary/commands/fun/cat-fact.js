@@ -10,7 +10,7 @@ module.exports = {
     async execute(interaction) {
         const catResult = await request('https://catfact.ninja/fact');
         const { fact } = await catResult.body.json();
-
-        await interaction.reply({ content: fact });
+        const message = await interaction.reply({ content: fact, fetchReply: true });
+        if (message.channel) message.react('🐈');
     },
 };
