@@ -66,7 +66,7 @@ module.exports = {
                 ),
             ),
         );
-        // Monster Hunter 3rd
+        // Monster Hunter Portable 3rd
         const MHP3rd = new ActionRowBuilder().addComponents(
             new StringSelectMenuBuilder().setCustomId('MHP3rd').setPlaceholder('Select the monster class!').addOptions(
                 menuData.mhp3rd.monster_classes.map((mhp3rd_monster_class) =>
@@ -153,7 +153,7 @@ module.exports = {
                 if (selectedClass === 'neopteron') await interaction.editReply({ components: [MHFUneopterons] });
                 if (selectedClass === 'piscine_wyvern') await interaction.editReply({ components: [MHFUpiscineWyverns] });
             }
-            // Monster Hunter 3rd
+            // Monster Hunter Portable 3rd
             if (i.customId === 'MHP3rd') {
                 selectedClass = selectedValues;
                 if (selectedClass === 'lynian') await interaction.editReply({ components: [MHP3rdLynians] });
