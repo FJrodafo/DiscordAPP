@@ -19,6 +19,11 @@
     "mhfu": {
         "monster_classes": [
             {
+                "label": "Herbivore",
+                "description": "草食種 (Sōshokushu)",
+                "value": "herbivore"
+            },
+            {
                 "label": "Lynian",
                 "description": "獣人種 (Jūjinshu)",
                 "value": "lynian"
@@ -39,7 +44,38 @@
         "elder_dragons": [],
         "fanged_beasts": [],
         "flying_wyverns": [],
-        "herbivores": [],
+        "herbivores": [
+            {
+                "label": "Anteka",
+                "description": "ガウシカ (Gaushika)",
+                "value": "anteka"
+            },
+            {
+                "label": "Popo",
+                "description": "ポポ (Popo)",
+                "value": "popo"
+            },
+            {
+                "label": "Kelbi",
+                "description": "ケルビ (Kerubi)",
+                "value": "kelbi"
+            },
+            {
+                "label": "Mosswine",
+                "description": "モス (Mosu)",
+                "value": "mosswine"
+            },
+            {
+                "label": "Aptonoth",
+                "description": "アプトノス (Aputonosu)",
+                "value": "aptonoth"
+            },
+            {
+                "label": "Apceros",
+                "description": "アプケロス (Apukerosu)",
+                "value": "apceros"
+            }
+        ],
         "lynians": [
             {
                 "label": "Felyne",

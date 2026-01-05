@@ -38,6 +38,13 @@ module.exports = {
                 ),
             ),
         );
+        const MHFUherbivores = new ActionRowBuilder().addComponents(
+            new StringSelectMenuBuilder().setCustomId('MHFUherbivores').setPlaceholder('Select the monster!').addOptions(
+                menuData.mhfu.herbivores.map((mhfu_herbivore) =>
+                    new StringSelectMenuOptionBuilder().setLabel(mhfu_herbivore.label).setDescription(mhfu_herbivore.description).setValue(mhfu_herbivore.value),
+                ),
+            ),
+        );
         const MHFUlynians = new ActionRowBuilder().addComponents(
             new StringSelectMenuBuilder().setCustomId('MHFUlynians').setPlaceholder('Select the monster!').addOptions(
                 menuData.mhfu.lynians.map((mhfu_lynian) =>
@@ -141,6 +148,7 @@ module.exports = {
             // Monster Hunter Freedom Unite
             if (i.customId === 'MHFU') {
                 selectedClass = selectedValues;
+                if (selectedClass === 'herbivore') await interaction.editReply({ components: [MHFUherbivores] });
                 if (selectedClass === 'lynian') await interaction.editReply({ components: [MHFUlynians] });
                 if (selectedClass === 'neopteron') await interaction.editReply({ components: [MHFUneopterons] });
                 if (selectedClass === 'piscine_wyvern') await interaction.editReply({ components: [MHFUpiscineWyverns] });
@@ -161,6 +169,7 @@ module.exports = {
             }
             // Output
             if (
+                i.customId === 'MHFUherbivores' ||
                 i.customId === 'MHFUlynians' || i.customId === 'MHP3rdLynians' || i.customId === 'MHTriLynians' ||
                 i.customId === 'MHFUneopterons' || i.customId === 'MHP3rdNeopterons' || i.customId === 'MHTriNeopterons' ||
                 i.customId === 'MHFUpiscineWyverns' || i.customId === 'MHP3rdPiscineWyverns' || i.customId === 'MHTriPiscineWyvern'
