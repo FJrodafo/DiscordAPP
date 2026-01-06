@@ -190,6 +190,3 @@ There are currently no tests configured.
 ## Resources
 
 Do you want to try a sample of the APP yourself? Add it to any server by clicking the following link: https://discord.com/oauth2/authorize?client_id=1260588948544290927
-
-<link rel="stylesheet" href="./README.css">
-<a class="scrollup" href="#top">&#x1F53C</a>
