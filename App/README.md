@@ -1,3 +1,7 @@
+# DiscordAPP
+
+A simple Discord APP made in JavaScript!
+
 ## Index
 
 1. [Attribution](#attribution)
