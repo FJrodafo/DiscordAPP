@@ -10,11 +10,7 @@ module.exports = (client) => {
     const logsRoutes = require('./routes/logs.js')();
     const desiredPort = process.env.PORT ?? 3000;
 
-    app.use(
-        express.static(
-            path.join(__dirname, 'public'),
-        ),
-    );
+    app.use(express.static(path.join(__dirname, 'public')));
 
     app.use('/api', apiRoutes);
 
