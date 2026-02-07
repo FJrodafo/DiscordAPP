@@ -1,11 +1,10 @@
 const { Events, ActivityType } = require('discord.js');
+const dashboard = require('./../../dashboard/index.js');
 
 module.exports = {
     name: Events.ClientReady,
     once: true,
     execute(client) {
-        console.log(`Ready! Logged in as ${client.user.tag}`);
-        console.log(`Server count: ${client.guilds.cache.size}`);
         const status = [
             { activities: [{ name: 'I respond to DMs', type: ActivityType.Custom }], status: 'online' },
             { activities: [{ name: 'custom', type: ActivityType.Custom, state: 'What\'s on your mind?' }], status: 'online' },
@@ -21,5 +20,6 @@ module.exports = {
         }
         updateStatus();
         setInterval(updateStatus, 600_000);
+        dashboard(client);
     },
 };

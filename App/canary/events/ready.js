@@ -4,6 +4,7 @@ const {
 } = require('discord.js');
 const fs = require('fs');
 const path = require('path');
+const dashboard = require('./../../dashboard/index.js');
 
 module.exports = {
     name: Events.ClientReady,
@@ -15,7 +16,6 @@ module.exports = {
         const serverCount = `Server count: ${client.guilds.cache.size}`;
         const logMessage = `${timestamp} - ${readyMessage} ${serverCount}\n`;
         fs.appendFileSync(logPath, logMessage, 'utf8');
-        console.log(`${readyMessage}\n${serverCount}`);
         // Watching
         const moviesJsonPath = path.resolve(__dirname, './../database/movies/names.json');
         const moviesData = require(moviesJsonPath);
@@ -53,5 +53,6 @@ module.exports = {
         }
         updateStatus();
         setInterval(updateStatus, 4_000_000);
+        dashboard(client);
     },
 };
