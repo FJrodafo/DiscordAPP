@@ -25,14 +25,23 @@ This project was build by following the [Discordjs guide](https://discordjs.guid
 
 ```
 App/
-├── node_modules/
+├── canary/
 │   └── ...
 ├── dashboard/
 │   ├── public/
 │   │   ├── index.html
 │   │   ├── script.js
 │   │   └── style.css
+│   ├── routes/
+│   │   ├── api.js
+│   │   └── logs.js
+│   ├── utils/
+│   │   └── *.js
 │   └── index.js
+├── deprecated/
+│   └── ...
+├── node_modules/
+│   └── ...
 ├── src/
 │   ├── commands/
 │   │   ├── admin/
