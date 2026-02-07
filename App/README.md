@@ -27,6 +27,12 @@ This project was build by following the [Discordjs guide](https://discordjs.guid
 App/
 ├── node_modules/
 │   └── ...
+├── dashboard/
+│   ├── public/
+│   │   ├── index.html
+│   │   ├── script.js
+│   │   └── style.css
+│   └── index.js
 ├── src/
 │   ├── commands/
 │   │   ├── admin/
