@@ -5,6 +5,7 @@ const {
 const fs = require('fs');
 const path = require('path');
 const dashboard = require('./../../dashboard/index.js');
+const dashboardLogs = require('./../../dashboard/utils/logs.js');
 
 module.exports = {
     name: Events.ClientReady,
@@ -12,7 +13,7 @@ module.exports = {
     execute(client) {
         const logPath = path.resolve(__dirname, './../database/log.txt');
         const date = new Date(), timestamp = date.toLocaleString();
-        const readyMessage = `Ready! Logged in as ${client.user.tag}`;
+        const readyMessage = `Ready! ${client.user.tag}`;
         const serverCount = `Server count: ${client.guilds.cache.size}`;
         const logMessage = `${timestamp} - ${readyMessage} ${serverCount}\n`;
         fs.appendFileSync(logPath, logMessage, 'utf8');
@@ -53,6 +54,9 @@ module.exports = {
         }
         updateStatus();
         setInterval(updateStatus, 4_000_000);
+        // Dashboard
         dashboard(client);
+        dashboardLogs.add(`Ready! ${client.user.tag}`);
+        dashboardLogs.add(`Server count: ${client.guilds.cache.size}`);
     },
 };

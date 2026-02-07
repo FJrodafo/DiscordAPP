@@ -1,5 +1,6 @@
 const { Events, ActivityType } = require('discord.js');
 const dashboard = require('./../../dashboard/index.js');
+const dashboardLogs = require('./../../dashboard/utils/logs.js');
 
 module.exports = {
     name: Events.ClientReady,
@@ -20,6 +21,9 @@ module.exports = {
         }
         updateStatus();
         setInterval(updateStatus, 600_000);
+        // Dashboard
         dashboard(client);
+        dashboardLogs.add(`Ready! ${client.user.tag}`);
+        dashboardLogs.add(`Server count: ${client.guilds.cache.size}`);
     },
 };
