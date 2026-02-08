@@ -5,3 +5,7 @@ document.getElementById('apiBtn').addEventListener('click', () => {
 document.getElementById('logsBtn').addEventListener('click', () => {
     window.open('/logs', '_blank');
 });
+
+document.getElementById('metricsBtn').addEventListener('click', () => {
+    window.open('/metrics', '_blank');
+});
