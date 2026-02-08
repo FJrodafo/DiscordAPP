@@ -34,9 +34,11 @@ App/
 │   │   └── style.css
 │   ├── routes/
 │   │   ├── api.js
-│   │   └── logs.js
+│   │   ├── logs.js
+│   │   └── metrics.js
 │   ├── utils/
-│   │   └── *.js
+│   │   ├── format.js
+│   │   └── logs.js
 │   └── index.js
 ├── deprecated/
 │   └── ...
