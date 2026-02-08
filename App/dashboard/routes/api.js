@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { formatAge } = require('./../utils/format-age.js');
-const { formatTime } = require('./../utils/format-time.js');
+const { formatAge, formatTime, formatMemory, formatCPU } = require('./../utils/format.js');
 
 module.exports = (client) => {
     router.get('/', (_, res) => {
@@ -57,10 +56,8 @@ module.exports = (client) => {
                 },
                 system: {
                     uptime: formatTime(Math.floor(process.uptime())),
-                    memoryRSS: Math.round(process.memoryUsage().rss / 1024 / 1024),
-                    memoryHeapUsed: Math.round(process.memoryUsage().heapUsed / 1024 / 1024),
-                    memoryHeapTotal: Math.round(process.memoryUsage().heapTotal / 1024 / 1024),
-                    cpuUsage: process.cpuUsage(),
+                    memory: formatMemory(),
+                    cpu: formatCPU(),
                     pid: process.pid,
                     version: process.version,
                     platform: process.platform,
