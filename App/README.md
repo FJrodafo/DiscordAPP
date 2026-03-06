@@ -2,6 +2,9 @@
 
 A simple Discord APP made in JavaScript!
 
+[![Discord](https://img.shields.io/discord/1055998258025091102?style=flat&logo=discord&logoColor=ffffff&label=&color=5865F2)](https://discord.com/oauth2/authorize?client_id=1260588948544290927)
+[![GitHub Stars](https://img.shields.io/github/stars/FJrodafo/DiscordAPP?style=social&logo=github&logoColor=000000&label=Stars&labelColor=ffffff&color=ffffff)](https://github.com/FJrodafo/DiscordAPP/stargazers)
+
 ## Index
 
 1. [Attribution](#attribution)
