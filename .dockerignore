@@ -1,0 +1,6 @@
+/.github
+/.vscode
+/canary
+/deprecated
+/node_modules
+/releases

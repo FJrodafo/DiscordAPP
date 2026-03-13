@@ -13,8 +13,6 @@ jobs:
         with:
           node-version: "24"
       - name: Install dependencies
-        working-directory: App
         run: npm install
       - name: Lint
-        working-directory: App
         run: npm run eslint
