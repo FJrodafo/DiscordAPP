@@ -1,0 +1,22 @@
+# Git
+/.git
+.gitattributes
+.gitignore
+
+# GitHub
+/.github
+
+# VSCode
+/.vscode
+
+# Canary
+/canary
+
+# Deprecated
+/deprecated
+
+# Releases
+/releases
+
+# Docker
+.dockerignore
