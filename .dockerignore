@@ -17,6 +17,3 @@
 
 # Releases
 /releases
-
-# npm
-.npmignore
