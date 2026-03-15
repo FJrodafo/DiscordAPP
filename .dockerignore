@@ -17,3 +17,6 @@
 
 # Releases
 /releases
+
+# Secrets
+.env
