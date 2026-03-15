@@ -1,6 +1,3 @@
-# Dependencies
-/node_modules
-
 # Assets
 /canary/assets/command-output/*.png
 /canary/assets/dauntless/original
@@ -9,18 +6,21 @@
 /canary/assets/monster-hunter/mhp3rd/original
 /canary/assets/monster-hunter/mhtri/original
 
+# Dependencies
+/node_modules
+
+# Deprecated
+/deprecated
+
 # Database
 /canary/database/dauntless/leaderboards-dataset.json
 /canary/database/data.json
 /canary/database/log.txt
 
+# Releases
+/releases/v*
+
 # Secrets
 /canary/config.json
 /src/config.json
 .env
-
-# Misc
-/deprecated
-
-# Releases
-/releases/v*
