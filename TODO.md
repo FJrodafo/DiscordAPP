@@ -2,6 +2,9 @@
 
 - [ ] Create a Docker image/container and push it to Docker Hub and GitHub Packages.
 
+- [ ] Add games: Dispatch, The Dark Queen of Mortholme, Gravity Rush, Resident Evil 6.
+- [ ] Add movies: Vampiros en la Habana (1985).
+
 ## Commands
 
 - [x] fix clover
