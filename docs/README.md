@@ -91,11 +91,13 @@ Open a terminal in the directory where you store your repositories and clone it 
 ```shell
 # HTTPS
 git clone https://github.com/FJrodafo/DiscordAPP.git
+cd DiscordAPP/
 ```
 
 ```shell
 # SSH
 git clone git@github.com:FJrodafo/DiscordAPP.git
+cd DiscordAPP/
 ```
 
 ## Set up the project
@@ -104,6 +106,7 @@ This project needs a `config.json` into the `src/` directory with some data rela
 
 ```shell
 cp src/config.example.json src/config.json
+nano src/config.json
 ```
 
 ## Install dependencies
