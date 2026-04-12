@@ -24,9 +24,6 @@ LICENSE
 # Dependencies
 /node_modules
 
-# Releases
-/releases
-
 # Secrets
 /canary/config.json
 /src/config.json

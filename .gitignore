@@ -17,11 +17,6 @@
 /canary/database/data.json
 /canary/database/log.txt
 
-# Releases
-/releases/*
-!releases/CHANGELOG.md
-!releases/VERSION.md
-
 # Secrets
 /canary/config.json
 /src/config.json

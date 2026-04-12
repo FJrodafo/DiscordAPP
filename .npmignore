@@ -15,9 +15,6 @@
 # Deprecated
 /deprecated
 
-# Releases
-/releases
-
 # Secrets
 /canary/config.json
 /src/config.json
