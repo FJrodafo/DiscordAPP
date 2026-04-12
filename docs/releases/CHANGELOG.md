@@ -8,8 +8,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ### Added
 
-- npm package published to npmjs and GitHub Packages (`@fjrodafo/discord-app`).
-- Publish scripts: `publish:npm` and `publish:github`.
+- ...
 
 ### Changed
 
@@ -26,6 +25,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 ### Fixed
 
 - ...
+
+### Security
+
+- ...
+
+## [1.0.1] - 2026/04/13
+
+### Added
+
+- npm package published to npmjs and GitHub Packages (`@fjrodafo/discord-app`).
+- Publish scripts: `publish:npm` and `publish:github`.
 
 ### Security
 
@@ -51,5 +61,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - Dashboard logging on bot ready (bot tag and server count).
 - Docker support: `Dockerfile`, `docker-compose.yaml` and `.dockerignore`.
 
-[unreleased]: https://github.com/FJrodafo/DiscordAPP/compare/1.0.0...HEAD
+[unreleased]: https://github.com/FJrodafo/DiscordAPP/compare/1.0.1...HEAD
+[1.0.1]: https://github.com/FJrodafo/DiscordAPP/releases/tag/1.0.1
 [1.0.0]: https://github.com/FJrodafo/DiscordAPP/releases/tag/1.0.0

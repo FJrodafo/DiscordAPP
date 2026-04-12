@@ -20,7 +20,7 @@ FROM node:24-alpine AS runner
 LABEL org.opencontainers.image.authors="Francisco José Rodríguez Afonso" \
       org.opencontainers.image.documentation="https://fjrodafo.github.io/DiscordAPP/" \
       org.opencontainers.image.source="https://github.com/FJrodafo/DiscordAPP" \
-      org.opencontainers.image.version="1.0.0" \
+      org.opencontainers.image.version="1.0.1" \
       org.opencontainers.image.vendor="FJrodafo" \
       org.opencontainers.image.licenses="CC0-1.0" \
       org.opencontainers.image.title="DiscordAPP" \
