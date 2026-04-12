@@ -46,4 +46,4 @@ EXPOSE 3000
 
 USER appuser
 
-CMD ["node", "src/index.js"]
+CMD ["npm", "start"]
