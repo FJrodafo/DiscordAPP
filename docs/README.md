@@ -192,7 +192,9 @@ docker build -t discord-app:latest .
 After the build completes, you can run your container with the following command:
 
 ```shell
-docker run -dp 127.0.0.1:3000:3000 discord-app:latest
+docker run -dp 127.0.0.1:3000:3000 \
+  -v $(pwd)/src/config.json:/app/src/config.json:ro \
+  discord-app:latest
 ```
 
 ### Build & Push (Ignore this subsection)
