@@ -15,6 +15,9 @@
 # Deprecated
 /deprecated/
 
+# Documents
+/docs/
+
 # Dependencies
 /node_modules/
 
@@ -22,3 +25,11 @@
 /canary/config.json
 /src/config.json
 /.env
+
+# Docker
+/.dockerignore
+/Dockerfile
+/docker-compose.yaml
+
+# Dev tooling
+/eslint.config.js
