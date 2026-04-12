@@ -3,6 +3,10 @@
 [![GitHub Pages](https://img.shields.io/badge/%20-FFFFFF?style=social&logo=githubpages&logoColor=black&logoSize=auto)](https://fjrodafo.github.io/DiscordAPP/)
 [![GitHub Stars](https://img.shields.io/github/stars/FJrodafo/DiscordAPP?style=social&logo=github&logoColor=black&label=Stars&labelColor=FFFFFF&color=FFFFFF)](https://github.com/FJrodafo/DiscordAPP/stargazers)
 
+[![Docker Container](https://img.shields.io/badge/DiscordAPP-2560FF?style=flat&logo=docker&logoColor=FFFFFF)](https://github.com/FJrodafo/DiscordAPP/pkgs/container/discord-app)
+[![Docker Pulls](https://img.shields.io/docker/pulls/fjrodafo/discord-app?style=flat&logo=docker&logoColor=FFFFFF&label=Pulls&labelColor=2560FF&color=2560FF)](https://hub.docker.com/r/fjrodafo/discord-app)
+[![Image Size](https://img.shields.io/docker/image-size/fjrodafo/discord-app?style=flat&logo=docker&logoColor=FFFFFF&label=Size&labelColor=2560FF&color=2560FF)](https://hub.docker.com/r/fjrodafo/discord-app)
+
 [![Discord](https://img.shields.io/discord/1055998258025091102?style=flat&logo=discord&logoColor=ffffff&label=&color=5865F2)](https://discord.com/oauth2/authorize?client_id=1260588948544290927)
 
 ## Index
