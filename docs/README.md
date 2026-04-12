@@ -171,6 +171,12 @@ Run the container:
 docker compose up -d
 ```
 
+Check the container logs:
+
+```shell
+docker logs -f discord-app
+```
+
 Stop the Container:
 
 ```shell
@@ -189,12 +195,26 @@ Open a terminal and run the following command:
 docker build -t discord-app:latest .
 ```
 
-After the build completes, you can run your container with the following command:
+After the build completes, run the image inside a container with the following command:
 
 ```shell
 docker run -dp 127.0.0.1:3000:3000 \
   -v $(pwd)/src/config.json:/app/src/config.json:ro \
   discord-app:latest
+```
+
+Check the container logs:
+
+```shell
+docker ps -a
+docker logs -f <container_id>
+```
+
+Stop and remove the Container:
+
+```shell
+docker stop <container_id>
+docker rm <container_id>
 ```
 
 ### Build & Push (Ignore this subsection)
