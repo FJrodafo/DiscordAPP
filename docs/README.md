@@ -24,7 +24,7 @@ A simple Discord Application made in JavaScript!
 
 This project has been developed on a [Linux](https://github.com/torvalds/linux) system. To learn more about the system, visit the [Dotfiles](https://github.com/FJrodafo/Dotfiles) repository.
 
-This project was build by following the [Discordjs guide](https://discordjs.guide/). I have modified small details of the code. This is just an example of what the final project would look like.
+This project was built by following the [Discordjs guide](https://discordjs.guide/). I have modified small details of the code. This is just an example of what the final project would look like.
 
 ## Project structure
 
@@ -113,7 +113,7 @@ npm i
 
 ## Final steps
 
-If you have the `config.json` file into the `src/` directory correctly configurated and Node v24.x installed on your machine, then you are good to go!
+If you have the `config.json` file into the `src/` directory correctly configured and Node v24.x installed on your machine, then you are good to go!
 
 To check if you already have Node installed on your machine, run `node -v` in your terminal. Otherwise, you will need to install Node v24.x or higher or, as a last option, check out the [Docker](#using-docker) alternative.
 
@@ -128,9 +128,25 @@ Open Discord and access the server where your Discord APP is located to see the 
 
 ## Using Docker
 
-> [!CAUTION]
+You can find a Docker image of this project ready to be pulled on [GitHub Packages](https://github.com/FJrodafo/DiscordAPP/pkgs/container/discord-app) or [Docker Hub](https://hub.docker.com/r/fjrodafo/discord-app) official website!
+
+Pull the latest image with the following commands:
+
+```shell
+# GitHub Packages
+docker pull ghcr.io/fjrodafo/discord-app:latest
+```
+
+```shell
+# Docker Hub
+docker pull fjrodafo/discord-app:latest
+```
+
+> [!IMPORTANT]
 > 
-> Do not include a `.env` or `config.json` file in the Docker image. Environment variables must be provided at runtime.
+> Please note that when using Docker, port 3000 on localhost will be occupied by the Discord application for its proper functioning.
+> 
+> If you already have applications that use port 3000, don't worry, the dashboard uses the [@fjrodafo/port-finder](https://github.com/FJrodafo/PortFinder) library, which will always search for a free port to run the application without any problems.
 
 ### Run with Docker Compose (Recommended)
 
@@ -141,6 +157,10 @@ Build the container:
 ```shell
 docker compose build
 ```
+
+> [!NOTE]
+> 
+> If you want to build the image locally, uncomment the `build` section in `docker-compose.yaml` and run `docker compose build`. Otherwise, skip directly to the next step.
 
 Run the container:
 
@@ -154,35 +174,43 @@ Stop the Container:
 docker compose down
 ```
 
-> [!IMPORTANT]
-> 
-> Please note that when using Docker, port 3000 on localhost will be occupied by the Discord application for its proper functioning.
-> 
-> If you already have applications that use port 3000, don't worry, the dashboard uses the [@fjrodafo/port-finder](https://github.com/FJrodafo/PortFinder) library, which will always search for a free port to run the application without any problems.
-
 ### Build Docker image manually
 
 If you prefer not to use Docker Compose, you can build and run the image manually.
 
-If you don't have Node v24.x or higher installed on your machine, you can build a Docker image by running the [Dockerfile](https://github.com/FJrodafo/DiscordAPP/blob/main/Dockerfile) (Make sure to create and configurate the `config.json` file correctly into the `src/` directory before building the docker image).
+If you don't have Node v24.x or higher installed on your machine, you can build a Docker image by running the [Dockerfile](https://github.com/FJrodafo/DiscordAPP/blob/main/Dockerfile) (Make sure to create and configure the `config.json` file correctly into the `src/` directory before building the docker image).
 
 Open a terminal and run the following command:
 
 ```shell
-docker build -t discord-app .
+docker build -t discord-app:latest .
 ```
 
 After the build completes, you can run your container with the following command:
 
 ```shell
-docker run -dp 127.0.0.1:3000:3000 discord-app
+docker run -dp 127.0.0.1:3000:3000 discord-app:latest
 ```
 
-> [!IMPORTANT]
-> 
-> Please note that when using Docker, port 3000 on localhost will be occupied by the Discord application for its proper functioning.
-> 
-> If you already have applications that use port 3000, don't worry, the dashboard uses the [@fjrodafo/port-finder](https://github.com/FJrodafo/PortFinder) library, which will always search for a free port to run the application without any problems.
+### Build & Push (Ignore this subsection)
+
+```shell
+docker build \
+  -t ghcr.io/fjrodafo/discord-app:1 \
+  -t ghcr.io/fjrodafo/discord-app:1.0 \
+  -t ghcr.io/fjrodafo/discord-app:1.0.0 \
+  -t ghcr.io/fjrodafo/discord-app:latest \
+  -t fjrodafo/discord-app:1.0.0 \
+  -t fjrodafo/discord-app:latest \
+  .
+
+docker push ghcr.io/fjrodafo/discord-app:1
+docker push ghcr.io/fjrodafo/discord-app:1.0
+docker push ghcr.io/fjrodafo/discord-app:1.0.0
+docker push ghcr.io/fjrodafo/discord-app:latest
+docker push fjrodafo/discord-app:1.0.0
+docker push fjrodafo/discord-app:latest
+```
 
 ## Available Scripts
 
@@ -208,7 +236,7 @@ Automatically fixes all errors caught by eslint.
 
 There are currently no tests configured.
 
-### `npm run test`
+### `npm run tarball`
 
 Simulates packaging a project into a `.tgz` archive (as if preparing it for distribution) without actually generating the file.
 
