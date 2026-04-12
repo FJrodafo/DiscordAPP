@@ -1,21 +1,48 @@
-# syntax=docker/dockerfile:1
+# ─────────────────────────────────────
+#  Stage 1 – deps
+#  Install only production dependencies
+# ─────────────────────────────────────
+FROM node:24-alpine AS deps
 
-# Use the official lightweight Node.js 22.14-slim image.
-# https://hub.docker.com/_/node
-FROM node:22.14-slim
+WORKDIR /app
 
-# Create and change to the app directory.
-WORKDIR /App
+COPY package.json package-lock.json ./
 
-# Copy application dependency manifests to the container image.
-# A wildcard is used to ensure both package.json and package-lock.json are copied.
-COPY package*.json ./
+RUN npm ci --omit=dev
 
-# Install all dependencies.
-RUN npm install
+# ─────────────────
+#  Stage 2 – runner
+#  Lean final image
+# ─────────────────
+FROM node:24-alpine AS runner
 
-# Copy local code to the container image.
-COPY . .
+LABEL org.opencontainers.image.authors="Francisco José Rodríguez Afonso" \
+      org.opencontainers.image.documentation="https://fjrodafo.github.io/DiscordAPP/" \
+      org.opencontainers.image.source="https://github.com/FJrodafo/DiscordAPP" \
+      org.opencontainers.image.version="1.0.0" \
+      org.opencontainers.image.vendor="FJrodafo" \
+      org.opencontainers.image.licenses="CC0-1.0" \
+      org.opencontainers.image.title="DiscordAPP" \
+      org.opencontainers.image.description="A simple Discord Application made in JavaScript!"
 
-# Run the web service on container startup.
-CMD [ "npm", "start" ]
+# Add non-root user for security
+RUN apk add --no-cache curl && \
+    addgroup --system --gid 1001 appgroup && \
+    adduser --system --uid 1001 --ingroup appgroup appuser
+
+WORKDIR /app
+
+# Copy installed dependencies from previous stage
+COPY --from=deps /app/node_modules ./node_modules
+
+# Copy application source (config.json is NOT included – provided at runtime)
+COPY src/ ./src/
+COPY dashboard/ ./dashboard/
+COPY package.json ./
+
+# The dashboard will look for a free port starting at 3000
+EXPOSE 3000
+
+USER appuser
+
+CMD ["node", "src/index.js"]
