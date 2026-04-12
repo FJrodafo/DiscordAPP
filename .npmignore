@@ -25,6 +25,7 @@
 /canary/config.json
 /src/config.json
 /.env
+/.env.*
 
 # Docker
 /.dockerignore
