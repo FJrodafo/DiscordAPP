@@ -8,7 +8,8 @@ WORKDIR /app
 
 COPY package.json package-lock.json ./
 
-RUN npm ci --omit=dev
+RUN apk add --no-cache python3 make g++ pkgconf cairo-dev pango-dev jpeg-dev giflib-dev \
+    && npm ci --omit=dev
 
 # ─────────────────
 #  Stage 2 – runner
@@ -26,9 +27,9 @@ LABEL org.opencontainers.image.authors="Francisco José Rodríguez Afonso" \
       org.opencontainers.image.description="A simple Discord Application made in JavaScript!"
 
 # Add non-root user for security
-RUN apk add --no-cache curl && \
-    addgroup --system --gid 1001 appgroup && \
-    adduser --system --uid 1001 --ingroup appgroup appuser
+RUN apk add --no-cache curl cairo pango jpeg giflib \
+    && addgroup --system --gid 1001 appgroup \
+    && adduser --system --uid 1001 --ingroup appgroup appuser
 
 WORKDIR /app
 
