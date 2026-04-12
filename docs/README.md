@@ -267,7 +267,7 @@ Simulates packaging a project into a `.tgz` archive (as if preparing it for dist
 
 ## Additional information
 
-Do you want to try a sample of the APP yourself? Add it to any server! [link](https://discord.com/oauth2/authorize?client_id=1260588948544290927)
+Do you want to try a sample of the APP yourself? Add it to any server! [[link](https://discord.com/oauth2/authorize?client_id=1260588948544290927)]
 
 ## Credits
 
