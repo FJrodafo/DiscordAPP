@@ -8,7 +8,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ### Added
 
-- ...
+- npm package published to npmjs and GitHub Packages (`@fjrodafo/discord-app`).
+- Publish scripts: `publish:npm` and `publish:github`.
 
 ### Changed
 
@@ -28,7 +29,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ### Security
 
-- ...
+- Added `/.env.*` to `.dockerignore` to prevent environment files from being included in the Docker image.
 
 ## [1.0.0] - 2026/04/12
 
