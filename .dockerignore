@@ -1,38 +1,35 @@
 # Git
-/.git
-.gitattributes
-.gitignore
+/.git/
+/.gitattributes
+/.gitignore
 
 # GitHub
-/.github
+/.github/
 
 # VSCode
-/.vscode
+/.vscode/
 
 # Canary
-/canary
+/canary/
 
 # Deprecated
-/deprecated
+/deprecated/
 
 # Documents
-/docs
-CONTRIBUTING
-LICENSE
-*.md
+/docs/
 
 # Dependencies
-/node_modules
+/node_modules/
 
 # Secrets
 /canary/config.json
 /src/config.json
-.env
+/.env
 
 # Docker
-.dockerignore
-Dockerfile
-docker-compose.yaml
+/.dockerignore
+/Dockerfile
+/docker-compose.yaml
 
 # Dev tooling
-eslint.config.js
+/eslint.config.js

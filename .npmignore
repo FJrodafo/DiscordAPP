@@ -1,21 +1,24 @@
 # Git
-/.git
-.gitattributes
-.gitignore
+/.git/
+/.gitattributes
+/.gitignore
 
 # GitHub
-/.github
+/.github/
 
 # VSCode
-/.vscode
+/.vscode/
 
 # Canary
-/canary
+/canary/
 
 # Deprecated
-/deprecated
+/deprecated/
+
+# Dependencies
+/node_modules/
 
 # Secrets
 /canary/config.json
 /src/config.json
-.env
+/.env
