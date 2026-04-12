@@ -44,10 +44,7 @@ This project was built by following the [Discordjs guide](https://discordjs.guid
 │   │   └── logs.js
 │   └── index.js
 ├── docs/
-|   ├── _config.yaml
-|   ├── CODE_OF_CONDUCT.md
-|   ├── README.md
-|   └── SECURITY.md
+|   └── *.md
 ├── src/
 │   ├── commands/
 │   │   ├── admin/
@@ -74,6 +71,8 @@ This project was built by following the [Discordjs guide](https://discordjs.guid
 │   └── index.js
 ├── CONTRIBUTING
 ├── LICENSE
+├── .dockerignore
+├── .npmignore
 ├── docker-compose.yaml
 ├── Dockerfile
 ├── eslint.config.js
