@@ -16,9 +16,6 @@ Use this file to organize, prioritize, and track your progress.
 
 ## Database
 
-<details>
-<summary>Monster Hunter</summary>
-
 - [ ] MHFU [Wiki](https://monsterhunter.fandom.com/wiki/MHFU:_Monsters)
     - [x] Herbivores
         - [x] [embed.json --> mhfu --> herbivore](./App/canary/database/monster-hunter/embed.json)
@@ -68,7 +65,6 @@ Use this file to organize, prioritize, and track your progress.
             - [ ] Kelbi
             - [ ] Popo
             - [ ] Rhenoplos
-</details>
 
 ## Features
 
