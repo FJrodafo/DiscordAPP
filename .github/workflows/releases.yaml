@@ -20,9 +20,9 @@ jobs:
       # Build artifacts
       - name: Build artifacts
         run: |
-          zip -r ${{ env.ARTIFACT }}-${{ github.ref_name }}.zip dashboard/ docs/ src/ CONTRIBUTING LICENSE .dockerignore .npmignore docker-compose.yaml Dockerfile eslint.config.js package-lock.json package.json
+          zip -r ${{ env.ARTIFACT }}-${{ github.ref_name }}.zip CONTRIBUTING LICENSE dashboard/ docs/ src/ .dockerignore .npmignore docker-compose.yaml Dockerfile eslint.config.js package-lock.json package.json
           unzip -l ${{ env.ARTIFACT }}-${{ github.ref_name }}.zip
-          tar -czvf ${{ env.ARTIFACT }}-${{ github.ref_name }}.tar.gz dashboard/ docs/ src/ CONTRIBUTING LICENSE .dockerignore .npmignore docker-compose.yaml Dockerfile eslint.config.js package-lock.json package.json
+          tar -czvf ${{ env.ARTIFACT }}-${{ github.ref_name }}.tar.gz CONTRIBUTING LICENSE dashboard/ docs/ src/ .dockerignore .npmignore docker-compose.yaml Dockerfile eslint.config.js package-lock.json package.json
           tar -tzvf ${{ env.ARTIFACT }}-${{ github.ref_name }}.tar.gz
       # Create GitHub Release
       - name: Create GitHub Release
