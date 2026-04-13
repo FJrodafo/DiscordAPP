@@ -231,17 +231,17 @@ docker rm <container_id>
 docker build \
   -t ghcr.io/fjrodafo/discord-app:1 \
   -t ghcr.io/fjrodafo/discord-app:1.0 \
-  -t ghcr.io/fjrodafo/discord-app:1.0.1 \
+  -t ghcr.io/fjrodafo/discord-app:1.0.2 \
   -t ghcr.io/fjrodafo/discord-app:latest \
-  -t fjrodafo/discord-app:1.0.1 \
+  -t fjrodafo/discord-app:1.0.2 \
   -t fjrodafo/discord-app:latest \
   .
 
 docker push ghcr.io/fjrodafo/discord-app:1
 docker push ghcr.io/fjrodafo/discord-app:1.0
-docker push ghcr.io/fjrodafo/discord-app:1.0.1
+docker push ghcr.io/fjrodafo/discord-app:1.0.2
 docker push ghcr.io/fjrodafo/discord-app:latest
-docker push fjrodafo/discord-app:1.0.1
+docker push fjrodafo/discord-app:1.0.2
 docker push fjrodafo/discord-app:latest
 ```
 

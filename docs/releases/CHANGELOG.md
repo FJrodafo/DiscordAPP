@@ -8,11 +8,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ### Added
 
-- npm Badges in `README.md`.
+- ...
 
 ### Changed
 
-- Project description.
+- ...
 
 ### Deprecated
 
@@ -29,6 +29,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 ### Security
 
 - ...
+
+## [1.0.2] - 2026/04/13
+
+### Added
+
+- npm Badges in `README.md`.
+
+### Changed
+
+- Project description.
 
 ## [1.0.1] - 2026/04/13
 
@@ -61,6 +71,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - Dashboard logging on bot ready (bot tag and server count).
 - Docker support: `Dockerfile`, `docker-compose.yaml` and `.dockerignore`.
 
-[unreleased]: https://github.com/FJrodafo/DiscordAPP/compare/1.0.1...HEAD
+[unreleased]: https://github.com/FJrodafo/DiscordAPP/compare/1.0.2...HEAD
+[1.0.2]: https://github.com/FJrodafo/DiscordAPP/releases/tag/1.0.2
 [1.0.1]: https://github.com/FJrodafo/DiscordAPP/releases/tag/1.0.1
 [1.0.0]: https://github.com/FJrodafo/DiscordAPP/releases/tag/1.0.0
