@@ -24,7 +24,8 @@
 7. [Using Docker](#using-docker)
 8. [Available Scripts](#available-scripts)
 9. [Additional information](#additional-information)
-10. [Credits](#credits)
+10. [Resources](#resources)
+11. [Credits](#credits)
 
 ## Introduction
 
@@ -275,6 +276,16 @@ Simulates packaging a project into a `.tgz` archive (as if preparing it for dist
 ## Additional information
 
 Do you want to try a sample of the APP yourself? Add it to any server! [[link](https://discord.com/oauth2/authorize?client_id=1260588948544290927)]
+
+## Resources
+
+[Discordjs](https://discord.js.org/)
+·
+[Docs](https://discord.js.org/docs)
+·
+[Guide](https://discordjs.guide/)
+·
+[GitHub](https://github.com/discordjs/discord.js)
 
 ## Credits
 
