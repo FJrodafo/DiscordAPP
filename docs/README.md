@@ -5,7 +5,11 @@
 
 [![Docker Container](https://img.shields.io/badge/DiscordAPP-2560FF?style=flat&logo=docker&logoColor=FFFFFF)](https://github.com/FJrodafo/DiscordAPP/pkgs/container/discord-app)
 [![Docker Pulls](https://img.shields.io/docker/pulls/fjrodafo/discord-app?style=flat&logo=docker&logoColor=FFFFFF&label=Pulls&labelColor=2560FF&color=2560FF)](https://hub.docker.com/r/fjrodafo/discord-app)
-[![Image Size](https://img.shields.io/docker/image-size/fjrodafo/discord-app?style=flat&logo=docker&logoColor=FFFFFF&label=Size&labelColor=2560FF&color=2560FF)](https://hub.docker.com/r/fjrodafo/discord-app)
+[![Docker Image Size](https://img.shields.io/docker/image-size/fjrodafo/discord-app?style=flat&logo=docker&logoColor=FFFFFF&label=Size&labelColor=2560FF&color=2560FF)](https://hub.docker.com/r/fjrodafo/discord-app)
+
+[![npm](https://img.shields.io/badge/DiscordAPP-CD0000?style=flat&logo=npm&logoColor=FFFFFF)](https://github.com/FJrodafo/DiscordAPP/pkgs/npm/discord-app)
+[![npm Downloads](https://img.shields.io/npm/d18m/@fjrodafo/discord-app?style=flat&logo=npm&logoColor=FFFFFF&label=Downloads&labelColor=CD0000&color=CD0000)](https://www.npmjs.com/package/@fjrodafo/discord-app)
+[![npm Unpacked Size](https://img.shields.io/npm/unpacked-size/@fjrodafo/discord-app?style=flat&logo=npm&logoColor=FFFFFF&label=Size&labelColor=CD0000&color=CD0000)](https://www.npmjs.com/package/@fjrodafo/discord-app)
 
 [![Discord](https://img.shields.io/discord/1055998258025091102?style=flat&logo=discord&logoColor=ffffff&label=&color=5865F2)](https://discord.com/oauth2/authorize?client_id=1260588948544290927)
 
