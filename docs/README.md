@@ -29,7 +29,7 @@
 
 ## Introduction
 
-A simple Discord Application made in JavaScript!
+A simple Discord APP made in JavaScript!
 
 This project has been developed on a [Linux](https://github.com/torvalds/linux) system. To learn more about the system, visit the [Dotfiles](https://github.com/FJrodafo/Dotfiles) repository.
 
@@ -155,7 +155,7 @@ docker pull fjrodafo/discord-app:latest
 
 > [!IMPORTANT]
 > 
-> Please note that when using Docker, port 3000 on localhost will be occupied by the Discord application for its proper functioning.
+> Please note that when using Docker, port 3000 on localhost will be occupied by the Discord APP for its proper functioning.
 > 
 > If you already have applications that use port 3000, don't worry, the dashboard uses the [@fjrodafo/port-finder](https://github.com/FJrodafo/PortFinder) library, which will always search for a free port to run the application without any problems.
 

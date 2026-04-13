@@ -24,7 +24,7 @@ LABEL org.opencontainers.image.authors="Francisco José Rodríguez Afonso" \
       org.opencontainers.image.vendor="FJrodafo" \
       org.opencontainers.image.licenses="CC0-1.0" \
       org.opencontainers.image.title="DiscordAPP" \
-      org.opencontainers.image.description="A simple Discord Application made in JavaScript!"
+      org.opencontainers.image.description="A simple Discord APP made in JavaScript!"
 
 # Add non-root user for security
 RUN apk add --no-cache curl cairo pango jpeg giflib \
