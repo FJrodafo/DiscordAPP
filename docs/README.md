@@ -82,6 +82,7 @@ This project was built by following the [Discordjs guide](https://discordjs.guid
 ├── LICENSE
 ├── .dockerignore
 ├── .npmignore
+├── .npmrc
 ├── docker-compose.yaml
 ├── Dockerfile
 ├── eslint.config.js
