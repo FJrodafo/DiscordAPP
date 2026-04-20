@@ -7,7 +7,7 @@ Use this file to organize, prioritize, and track your progress.
 - [x] Create a Docker image/container and push it to Docker Hub and GitHub Packages.
 - [ ] Multi-arch Docker image published to Docker Hub and GitHub Packages (`linux/amd64`, `linux/arm64`).
 
-- [ ] Add games: Dispatch, The Dark Queen of Mortholme, Gravity Rush, Resident Evil 6.
+- [ ] Add games: Dispatch, The Dark Queen of Mortholme, Gravity Rush, Resident Evil 6, Signalis.
 - [ ] Add movies: Vampiros en la Habana (1985).
 
 ## Commands
