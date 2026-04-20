@@ -1,20 +1,27 @@
 services:
+  # DiscordAPP
   discord-app:
     #build:
     #  context: .
     #  dockerfile: Dockerfile
     image: fjrodafo/discord-app:latest
     container_name: discord-app
-    volumes:
-      - ./src/config.json:/app/src/config.json:ro
-    ports:
-      - "127.0.0.1:3000:3000"
     environment:
       - NODE_ENV=production
-    restart: unless-stopped
+    ports:
+      - "127.0.0.1:3000:3000"
+    networks:
+      - discord-app_network
+    volumes:
+      - ./src/config.json:/app/src/config.json:ro
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:3000"]
       interval: 30s
       timeout: 30s
       retries: 3
       start_period: 15s
+    restart: unless-stopped
+# Networks
+networks:
+  discord-app_network:
+    name: discord-app_network
