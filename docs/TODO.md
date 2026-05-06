@@ -8,7 +8,7 @@ Use this file to organize, prioritize, and track your progress.
 - [ ] Multi-arch Docker image published to Docker Hub and GitHub Packages (`linux/amd64`, `linux/arm64`).
 
 - [ ] Add games: Dispatch, The Dark Queen of Mortholme, Gravity Rush, Resident Evil 6, Signalis.
-- [ ] Add movies: Vampiros en la Habana (1985).
+- [ ] Add movies: Vampiros en la Habana (1985), The Amazing Digital Circus (2023).
 
 ## Commands
 
