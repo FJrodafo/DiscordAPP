@@ -41,7 +41,10 @@ COPY canary/ ./canary/
 COPY dashboard/ ./dashboard/
 COPY package.json ./
 
-# The dashboard will look for a free port starting at 3000
+# Create the database folder with permissions for appuser
+RUN mkdir -p /app/canary/database \
+    && chown -R appuser:appgroup /app/canary/database
+
 EXPOSE 3000
 
 USER appuser
