@@ -5,22 +5,24 @@ MAJOR="1"
 MINOR="1.0"
 PATCH="1.0.0"
 
-build_and_push() {
-    docker build \
-        -t "ghcr.io/fjrodafo/discord-app:${MAJOR}" \
-        -t "ghcr.io/fjrodafo/discord-app:${MINOR}" \
-        -t "ghcr.io/fjrodafo/discord-app:${PATCH}" \
-        -t "ghcr.io/fjrodafo/discord-app:latest" \
-        -t "fjrodafo/discord-app:${MAJOR}" \
-        -t "fjrodafo/discord-app:${MINOR}" \
-        -t "fjrodafo/discord-app:${PATCH}" \
-        -t "fjrodafo/discord-app:latest" \
-        .
+docker build \
+    -t "ghcr.io/fjrodafo/discord-app:${MAJOR}" \
+    -t "ghcr.io/fjrodafo/discord-app:${MINOR}" \
+    -t "ghcr.io/fjrodafo/discord-app:${PATCH}" \
+    -t "ghcr.io/fjrodafo/discord-app:latest" \
+    -t "fjrodafo/discord-app:${MAJOR}" \
+    -t "fjrodafo/discord-app:${MINOR}" \
+    -t "fjrodafo/discord-app:${PATCH}" \
+    -t "fjrodafo/discord-app:latest" \
+    .
 
-    for tag in "${MAJOR}" "${MINOR}" "${PATCH}" "latest"; do
-        docker push "ghcr.io/fjrodafo/discord-app:${tag}"
-        docker push "fjrodafo/discord-app:${tag}"
-    done
-}
+docker build \
+    -f Dockerfile.canary \
+    -t "ghcr.io/fjrodafo/discord-app:canary" \
+    -t "fjrodafo/discord-app:canary" \
+    .
 
-build_and_push
+for tag in "${MAJOR}" "${MINOR}" "${PATCH}" "latest" "canary"; do
+    docker push "ghcr.io/fjrodafo/discord-app:${tag}"
+    docker push "fjrodafo/discord-app:${tag}"
+done
