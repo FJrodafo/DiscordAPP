@@ -9,9 +9,6 @@
 # VSCode
 /.vscode/
 
-# Canary
-/canary/
-
 # Deprecated
 /deprecated/
 
