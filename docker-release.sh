@@ -22,7 +22,7 @@ docker build \
     -t "fjrodafo/discord-app:canary" \
     .
 
-for tag in "${MAJOR}" "${MINOR}" "${PATCH}" "canary" "latest"; do
+for tag in "${MAJOR}" "${MINOR}" "${PATCH}" "latest" "canary"; do
     docker push "ghcr.io/fjrodafo/discord-app:${tag}"
     docker push "fjrodafo/discord-app:${tag}"
 done
