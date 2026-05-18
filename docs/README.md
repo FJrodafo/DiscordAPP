@@ -226,26 +226,6 @@ docker stop <container_id>
 docker rm <container_id>
 ```
 
-### Build & Push (Ignore this subsection)
-
-```shell
-docker build \
-  -t ghcr.io/fjrodafo/discord-app:1 \
-  -t ghcr.io/fjrodafo/discord-app:1.0 \
-  -t ghcr.io/fjrodafo/discord-app:1.0.2 \
-  -t ghcr.io/fjrodafo/discord-app:latest \
-  -t fjrodafo/discord-app:1.0.2 \
-  -t fjrodafo/discord-app:latest \
-  .
-
-docker push ghcr.io/fjrodafo/discord-app:1
-docker push ghcr.io/fjrodafo/discord-app:1.0
-docker push ghcr.io/fjrodafo/discord-app:1.0.2
-docker push ghcr.io/fjrodafo/discord-app:latest
-docker push fjrodafo/discord-app:1.0.2
-docker push fjrodafo/discord-app:latest
-```
-
 ## Available Scripts
 
 In the project directory, you can run:
