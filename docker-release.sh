@@ -2,8 +2,8 @@
 set -euo pipefail
 
 MAJOR="1"
-MINOR="1.0"
-PATCH="1.0.3"
+MINOR="1.1"
+PATCH="1.1.0"
 
 docker build \
     -t "ghcr.io/fjrodafo/discord-app:${MAJOR}" \
