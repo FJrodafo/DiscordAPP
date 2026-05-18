@@ -8,11 +8,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ### Added
 
-- Dashboard support for the canary version.
+- ...
 
 ### Changed
 
-- Moved `randomMovie`, `randomGame`, and `status` array inside `updateStatus()` so new random values are computed on every call.
+- ...
 
 ### Deprecated
 
@@ -24,11 +24,25 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ### Fixed
 
-- Random game and movie titles not rotating on each status update interval.
+- ...
 
 ### Security
 
 - ...
+
+## [1.0.3] - 2026/05/18
+
+### Added
+
+- Dashboard support for the canary version.
+
+### Changed
+
+- Moved `randomMovie`, `randomGame`, and `status` array inside `updateStatus()` so new random values are computed on every call.
+
+### Fixed
+
+- Random game and movie titles not rotating on each status update interval.
 
 ## [1.0.2] - 2026/04/13
 
@@ -71,7 +85,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - Dashboard logging on bot ready (bot tag and server count).
 - Docker support: `Dockerfile`, `docker-compose.yaml` and `.dockerignore`.
 
-[Unreleased]: https://github.com/FJrodafo/DiscordAPP/compare/1.0.2...HEAD
+[Unreleased]: https://github.com/FJrodafo/DiscordAPP/compare/1.0.3...HEAD
+[1.0.3]: https://github.com/FJrodafo/DiscordAPP/releases/tag/1.0.3
 [1.0.2]: https://github.com/FJrodafo/DiscordAPP/releases/tag/1.0.2
 [1.0.1]: https://github.com/FJrodafo/DiscordAPP/releases/tag/1.0.1
 [1.0.0]: https://github.com/FJrodafo/DiscordAPP/releases/tag/1.0.0
