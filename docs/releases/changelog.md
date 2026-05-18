@@ -8,11 +8,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ### Added
 
-- ...
+- Dashboard support for the canary version.
 
 ### Changed
 
-- ...
+- Moved `randomMovie`, `randomGame`, and `status` array inside `updateStatus()` so new random values are computed on every call.
 
 ### Deprecated
 
@@ -24,7 +24,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ### Fixed
 
-- ...
+- Random game and movie titles not rotating on each status update interval.
 
 ### Security
 
