@@ -37,7 +37,7 @@ module.exports = {
         const targetUser = interaction.options.getUser('user');
 
         const jsonPath = path.resolve(__dirname, './../../database/data.json');
-        const logPath = path.resolve(__dirname, './../../database/log.txt');
+        const logPath = path.resolve(__dirname, './../../database/logs.txt');
 
         // Read JSON file asynchronously
         let users = [];
@@ -84,7 +84,7 @@ module.exports = {
             await fs.appendFile(logPath, logMessage, 'utf8');
         }
         catch (err) {
-            console.error('Error writing to data.json/log.txt:', err);
+            console.error('Error writing to data.json/logs.txt:', err);
             return interaction.reply({
                 content: 'There was an error updating the database.',
                 ephemeral: true,

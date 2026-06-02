@@ -11,7 +11,7 @@ module.exports = {
     name: Events.ClientReady,
     once: true,
     execute(client) {
-        const logPath = path.resolve(__dirname, './../database/log.txt');
+        const logPath = path.resolve(__dirname, './../database/logs.txt');
         const date = new Date(), timestamp = date.toLocaleString();
         const readyMessage = `Ready! ${client.user.tag}`;
         const serverCount = `Server count: ${client.guilds.cache.size}`;
