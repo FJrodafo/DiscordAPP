@@ -27,7 +27,7 @@ LABEL org.opencontainers.image.authors="Francisco José Rodríguez Afonso" \
       org.opencontainers.image.description="A simple Discord APP made in JavaScript!"
 
 # Add non-root user for security
-RUN apk add --no-cache curl cairo pango jpeg giflib \
+RUN apk add --no-cache curl cairo pango jpeg giflib su-exec \
     && addgroup --system --gid 1001 appgroup \
     && adduser --system --uid 1001 --ingroup appgroup appuser
 
@@ -41,14 +41,16 @@ COPY canary/ ./canary/
 COPY dashboard/ ./dashboard/
 COPY package.json ./
 
-# Create the database and assets folders with permissions for appuser
+# Create the database and assets folders
 RUN mkdir -p /app/canary/database \
-    && mkdir -p /app/canary/assets/command-output \
-    && chown -R appuser:appgroup /app/canary/database \
-    && chown -R appuser:appgroup /app/canary/assets/command-output
+    && mkdir -p /app/canary/assets/command-output
+
+# Entrypoint script to handle permissions and start the app
+COPY docker-entrypoint.canary.sh ./
+RUN chmod +x docker-entrypoint.canary.sh
 
 EXPOSE 3000
 
-USER appuser
+ENTRYPOINT ["./docker-entrypoint.canary.sh"]
 
 CMD ["npm", "run", "canary"]
