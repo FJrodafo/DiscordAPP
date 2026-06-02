@@ -41,9 +41,11 @@ COPY canary/ ./canary/
 COPY dashboard/ ./dashboard/
 COPY package.json ./
 
-# Create the database folder with permissions for appuser
+# Create the database and assets folders with permissions for appuser
 RUN mkdir -p /app/canary/database \
-    && chown -R appuser:appgroup /app/canary/database
+    && mkdir -p /app/canary/assets/command-output \
+    && chown -R appuser:appgroup /app/canary/database \
+    && chown -R appuser:appgroup /app/canary/assets/command-output
 
 EXPOSE 3000
 
