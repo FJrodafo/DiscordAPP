@@ -8,7 +8,7 @@ module.exports = {
     execute(client) {
         const status = [
             { activities: [{ name: 'I respond to DMs', type: ActivityType.Custom }], status: 'online' },
-            { activities: [{ name: 'custom', type: ActivityType.Custom, state: 'What\'s on your mind?' }], status: 'online' },
+            { activities: [{ name: 'custom', type: ActivityType.Custom, state: 'Coding below the stars!' }], status: 'online' },
             { activities: [{ name: 'Music', type: ActivityType.Listening }], status: 'idle' },
             { activities: [{ name: 'Movies', type: ActivityType.Watching }], status: 'dnd' },
             { activities: [{ name: 'Video Games', type: ActivityType.Playing }], status: 'idle' },

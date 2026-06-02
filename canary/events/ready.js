@@ -36,7 +36,7 @@ module.exports = {
                         // name is exposed through the API but not shown in the client for ActivityType.Custom
                         name: 'custom',
                         type: ActivityType.Custom,
-                        state: '🐥',
+                        state: 'What\'s on your mind?',
                     }],
                     status: 'online',
                 },
