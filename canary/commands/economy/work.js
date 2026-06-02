@@ -36,7 +36,7 @@ module.exports = {
         const userExists = users.find(u => u.user === userId);
 
         // If the user is not registered, send a message to register
-        if (!userExists) return interaction.reply({ content: 'To register use: `/register`', ephemeral: true });
+        if (!userExists) return interaction.reply({ content: 'You are not registered.\nTo register use: `/register`', ephemeral: true });
 
         // Update user coins
         userExists.coins += (40 + (userExists.karma * 2));

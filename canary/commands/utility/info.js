@@ -69,7 +69,7 @@ async function handleUserInfo(interaction) {
     const userExists = users.find(u => u.user === userId);
 
     // If the user is not registered, send a message to register
-    if (!userExists) return interaction.reply({ content: 'To register use: `/register`', ephemeral: true });
+    if (!userExists) return interaction.reply({ content: 'This user or you are not registered yet.\nTo register use: `/register`', ephemeral: true });
 
     // Embed color based on user role
     const embedColor = getEmbedColor(member);

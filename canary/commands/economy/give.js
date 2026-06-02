@@ -56,7 +56,7 @@ module.exports = {
         // Check if the user is already registered
         const userId = interaction.user.id.toString();
         const userExists = users.find(u => u.user === userId);
-        if (!userExists) return interaction.reply({ content: 'To register use: `/register`', ephemeral: true });
+        if (!userExists) return interaction.reply({ content: 'You are not registered.\nTo register use: `/register`', ephemeral: true });
 
         // Check if the target user is already registered
         const targetUserId = targetUser.id.toString();
