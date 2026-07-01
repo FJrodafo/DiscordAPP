@@ -1,7 +1,7 @@
 const { Events } = require('discord.js');
 
 const cooldowns = new Map();
-const COOLDOWN_MS = 60_000; // 1 minute
+const COOLDOWN_MS = 60_000;
 
 module.exports = {
     name: Events.MessageCreate,
