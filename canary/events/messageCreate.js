@@ -1,5 +1,8 @@
 const { Events } = require('discord.js');
 
+const cooldowns = new Map();
+const COOLDOWN_MS = 60_000; // 1 minute
+
 module.exports = {
     name: Events.MessageCreate,
 
@@ -11,6 +14,10 @@ module.exports = {
      */
     async execute(message) {
         if (message.author.bot) return;
-        if (message.content.toLowerCase() === 'hi') await message.channel.send('hi');
+        if (message.content.toLowerCase() === 'hi') {
+            if (cooldowns.has('hi') && Date.now() - cooldowns.get('hi') < COOLDOWN_MS) return;
+            await message.channel.send('hi');
+            cooldowns.set('hi', Date.now());
+        }
     },
 };
