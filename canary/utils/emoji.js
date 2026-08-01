@@ -13,4 +13,6 @@ module.exports = {
     'arrow_up': '↑', 'arrow_left': '←',
     'arrow_right': '→', 'arrow_down': '↓',
     'first': '🥇', 'second': '🥈', 'third': '🥉',
+    '1jp': '1️⃣🇯🇵', '2fr': '2️⃣🇫🇷', '3jp': '3️⃣🇯🇵', '4us': '4️⃣🇺🇸',
+    '5es': '5️⃣🇪🇸', '6ke': '6️⃣🇰🇪', '7gb': '7️⃣🇬🇧', '8jp': '8️⃣🇯🇵',
 };
