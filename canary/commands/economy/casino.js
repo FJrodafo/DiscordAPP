@@ -35,14 +35,14 @@ module.exports = {
                 .setDescription('Choose a horse number!')
                 .setRequired(true)
                 .addChoices(
-                    { name: 'One', value: 1 },
-                    { name: 'Two', value: 2 },
-                    { name: 'Three', value: 3 },
-                    { name: 'Four', value: 4 },
-                    { name: 'Five', value: 5 },
-                    { name: 'Six', value: 6 },
-                    { name: 'Seven', value: 7 },
-                    { name: 'Eight', value: 8 },
+                    { name: 'One Japan', value: 1 },
+                    { name: 'Two France', value: 2 },
+                    { name: 'Three Japan', value: 3 },
+                    { name: 'Four USA', value: 4 },
+                    { name: 'Five Spain', value: 5 },
+                    { name: 'Six Kenya', value: 6 },
+                    { name: 'Seven Great Britain', value: 7 },
+                    { name: 'Eight Japan', value: 8 },
                 ),
             ),
         )
@@ -174,7 +174,7 @@ async function handleVirtualHorseRacing(interaction, userExists, users, jsonPath
 
     // Emojis
     const rankingEmojis = [emoji.first, emoji.second, emoji.third, '**4th**', '**5th**', '**6th**', '**7th**', '**8th**'];
-    const horseEmojis = [emoji[1], emoji[2], emoji[3], emoji[4], emoji[5], emoji[6], emoji[7], emoji[8]];
+    const horseEmojis = [emoji['1jp'], emoji['2fr'], emoji['3jp'], emoji['4us'], emoji['5es'], emoji['6ke'], emoji['7gb'], emoji['8jp']];
 
     // Determine the outcome of the race
     let payout = 0;
