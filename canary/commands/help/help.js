@@ -13,6 +13,7 @@ const emoji = require('./../../utils/emoji.js');
 
 module.exports = {
     category: 'help',
+    cooldown: 120,
     data: new SlashCommandBuilder()
         .setName('help')
         .setDescription('Shows all available commands!')
@@ -69,7 +70,7 @@ module.exports = {
             const page = new EmbedBuilder()
                 .setColor(0x5865f2)
                 .setTitle('All available commands:')
-                .setDescription('You have one minute to turn the page until the buttons are disabled...')
+                .setDescription('You have two minutes to turn the page until the buttons are disabled...')
                 .setFooter({ text: `Page ${Math.floor(i / commandsPerPage) + 1} of ${totalPages}` });
 
             for (let j = i; j < i + commandsPerPage && j < commands.length; j++) {
