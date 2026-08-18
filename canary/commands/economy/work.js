@@ -58,9 +58,9 @@ module.exports = {
 
         // Final result
         let description = '';
-        if (userExists.karma > 0) description = `You have earned \`40\` coins!\n\nA bonus of \`${userExists.karma * 2}\` coins have been added due to your good karma!`;
-        else if (userExists.karma < 0) description = `You have earned \`40\` coins!\n\nYou have been deducted \`${userExists.karma * 2}\` coins due to your bad karma!`;
-        else description = 'You have earned `40` coins!';
+        if (userExists.karma > 0) description = `You have earned \`50\` coins!\n\nA bonus of \`${userExists.karma * 2}\` coins have been added due to your good karma!`;
+        else if (userExists.karma < 0) description = `You have earned \`50\` coins!\n\nYou have been deducted \`${userExists.karma * 2}\` coins due to your bad karma!`;
+        else description = 'You have earned `50` coins!';
         const imageFile = new AttachmentBuilder(
             path.resolve(__dirname, './../../assets/economy/Work.gif'),
         );
