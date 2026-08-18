@@ -39,13 +39,13 @@ module.exports = {
         if (!userExists) return interaction.reply({ content: 'You are not registered.\nTo register use: `/register`', ephemeral: true });
 
         // Update user coins
-        userExists.coins += (40 + (userExists.karma * 2));
+        userExists.coins += (50 + (userExists.karma * 2));
 
         // Save the updated JSON file and log the transaction asynchronously
         try {
             await fs.writeFile(jsonPath, JSON.stringify(users, null, 2), 'utf8');
             const date = new Date(), timestamp = date.toLocaleString();
-            const logMessage = `${timestamp} - ${interaction.user.id} got a payout of ${40 + (userExists.karma * 2)} from work.js\n`;
+            const logMessage = `${timestamp} - ${interaction.user.id} got a payout of ${50 + (userExists.karma * 2)} from work.js\n`;
             await fs.appendFile(logPath, logMessage, 'utf8');
         }
         catch (err) {
