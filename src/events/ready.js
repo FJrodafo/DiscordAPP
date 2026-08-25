@@ -10,7 +10,7 @@ module.exports = {
             { activities: [{ name: 'I respond to DMs', type: ActivityType.Custom }], status: 'online' },
             { activities: [{ name: 'custom', type: ActivityType.Custom, state: 'Coding below the stars!' }], status: 'online' },
             { activities: [{ name: 'Music', type: ActivityType.Listening }], status: 'idle' },
-            { activities: [{ name: 'Movies', type: ActivityType.Watching }], status: 'dnd' },
+            { activities: [{ name: 'Movies and Series', type: ActivityType.Watching }], status: 'dnd' },
             { activities: [{ name: 'Video Games', type: ActivityType.Playing }], status: 'idle' },
             { activities: [{ name: 'Video Games', type: ActivityType.Competing }], status: 'dnd' },
             { activities: [{ name: 'Video Games', type: ActivityType.Streaming, url: 'https://www.twitch.tv/directory' }] },

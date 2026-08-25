@@ -18,7 +18,7 @@ module.exports = {
         const logMessage = `${timestamp} - ${readyMessage} ${serverCount}\n`;
         fs.appendFileSync(logPath, logMessage, 'utf8');
         // Watching
-        const moviesJsonPath = path.resolve(__dirname, './../database/movies/names.json');
+        const moviesJsonPath = path.resolve(__dirname, './../database/movies-series/names.json');
         const moviesData = require(moviesJsonPath);
         // Games
         const gamesJsonPath = path.resolve(__dirname, './../database/games/names.json');
