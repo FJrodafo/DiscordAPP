@@ -18,6 +18,11 @@
 # Dependencies
 /node_modules/
 
+# Database
+/canary/database/dauntless/leaderboards-dataset.json
+/canary/database/data.json
+/canary/database/logs.txt
+
 # Secrets
 /canary/config.json
 /src/config.json

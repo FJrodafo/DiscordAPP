@@ -6,11 +6,11 @@
 /canary/assets/monster-hunter/mhp3rd/original/
 /canary/assets/monster-hunter/mhtri/original/
 
-# Dependencies
-/node_modules/
-
 # Deprecated
 /deprecated/
+
+# Dependencies
+/node_modules/
 
 # Database
 /canary/database/dauntless/leaderboards-dataset.json
