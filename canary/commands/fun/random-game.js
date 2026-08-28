@@ -1,7 +1,6 @@
 const {
     SlashCommandBuilder,
     AttachmentBuilder,
-    EmbedBuilder,
 } = require('discord.js');
 const path = require('path');
 
@@ -20,8 +19,7 @@ module.exports = {
         const imageFile = new AttachmentBuilder(
             path.resolve(__dirname, `./../../assets/games/list/${data[randomGame]}`),
         );
-        const embed = new EmbedBuilder().setImage(`attachment://${data[randomGame]}`);
 
-        await interaction.reply({ embeds: [embed], files: [imageFile] });
+        await interaction.reply({ files: [imageFile] });
     },
 };
