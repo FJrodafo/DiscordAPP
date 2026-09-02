@@ -1,16 +1,16 @@
 #!/bin/bash
 
 # Path to the directory containing the image files
-DIRECTORY="./../../assets/games/list"
+DIRECTORY="./../../assets/movies-series/list"
 
 # Output JSON file path
-JSON_FILE="./../../assets/games/icons.json"
+JSON_FILE="./../../assets/movies-series/icons.json"
 
 # Create the header of the JSON file
 echo "[" > $JSON_FILE
 
-# Iterate over the .jpg files in the directory
-for IMAGE_FILE in "$DIRECTORY"/*.jpg; do
+# Iterate over the files in the directory
+for IMAGE_FILE in "$DIRECTORY"/*; do
     # Get only the file name (without the path)
     FILE_NAME=$(basename "$IMAGE_FILE")
 
