@@ -28,23 +28,10 @@ module.exports = {
             const randomMovie = Math.floor(Math.random() * moviesData.length);
             const randomGame = Math.floor(Math.random() * gamesData.length);
             const status = [
-                // Custom
                 { activities: [{ name: 'I respond to DMs', type: ActivityType.Custom }], status: 'online' },
-                { activities: [{ name: '/help', type: ActivityType.Custom }], status: 'online' },
-                {
-                    activities: [{
-                        // name is exposed through the API but not shown in the client for ActivityType.Custom
-                        name: 'custom',
-                        type: ActivityType.Custom,
-                        state: 'What\'s on your mind?',
-                    }],
-                    status: 'online',
-                },
-                // Listening
-                { activities: [{ name: 'me', type: ActivityType.Listening }], status: 'idle' },
-                // Watching
+                { activities: [{ name: 'custom', type: ActivityType.Custom, state: 'What\'s on your mind?' }], status: 'online' },
+                { activities: [{ name: 'Music', type: ActivityType.Listening }], status: 'idle' },
                 { activities: [{ name: moviesData[randomMovie], type: ActivityType.Watching }], status: 'dnd' },
-                // Games
                 { activities: [{ name: gamesData[randomGame], type: ActivityType.Playing }], status: 'idle' },
                 { activities: [{ name: gamesData[randomGame], type: ActivityType.Competing }], status: 'dnd' },
                 { activities: [{ name: gamesData[randomGame], type: ActivityType.Streaming, url: 'https://www.twitch.tv/directory' }] },
