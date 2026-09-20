@@ -5,8 +5,7 @@ const dashboardLogs = require('./../../dashboard/utils/logs.js');
 module.exports = {
     name: Events.ClientReady,
     once: true,
-    async execute(client) {
-        await client.application.fetch();
+    execute(client) {
         const status = [
             { activities: [{ name: 'I respond to DMs', type: ActivityType.Custom }], status: 'online' },
             { activities: [{ name: 'custom', type: ActivityType.Custom, state: 'Coding below the stars!' }], status: 'online' },
